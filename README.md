@@ -3,4 +3,4 @@ The code and tests necessary to perform all memory related functions for the NYU
 
 The visual below shows what the components in this repo are responsible for.
 
-<img width="1470" alt="NYU-mem-diagram" src="https://user-images.githubusercontent.com/15825280/223213394-5c208e2e-e372-40e6-b6a8-d93fd81b76e0.png">
+<img width="1470" alt="NYU-mem-diagram" src="https://user-images.githubusercontent.com/15825280/223213685-0a68827b-3431-4f53-80e9-ac2f422e81f3.png">
