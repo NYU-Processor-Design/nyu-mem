@@ -1,0 +1,15 @@
+{
+  "name": "nyu-mem",
+  "version": "0.0.1",
+  "description": "NYU Processor Design's Memory",
+  "homepage": "https://github.com/NYU-Processor-Design/nyu-mem",
+  "maintainers": [
+    ""
+  ],
+  "license": "CC0-1.0",
+  "dependencies": [
+    "nyu-cmake",
+    "nyu-util",
+    "catch2"
+  ]
+}
