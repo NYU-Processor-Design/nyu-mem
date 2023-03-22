@@ -4,7 +4,7 @@
   "description": "NYU Processor Design's Memory",
   "homepage": "https://github.com/NYU-Processor-Design/nyu-mem",
   "maintainers": [
-    ""
+    "Sean Doyle <spd7416@nyu.edu>"
   ],
   "license": "CC0-1.0",
   "dependencies": [
