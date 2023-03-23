@@ -18,6 +18,7 @@ endif()
 project(nyu-mem VERSION 1.0.0)
 
 find_package(nyu-cmake CONFIG REQUIRED)
+find_package(nyu-util REQUIRED CONFIG)
 
 
 add_library(mem INTERFACE)
