@@ -1,3 +1,3 @@
-nyu_add_sv(mem 
-    MemCtrl.sv
+nyu_add_sv(mem
+  MemCtrl.sv
 )

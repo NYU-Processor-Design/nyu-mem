@@ -13,13 +13,18 @@ if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     ${vcpkg_SOURCE_DIR}/scripts/buildsystems/vcpkg.cmake
     CACHE FILEPATH "Vcpkg toolchain file"
   )
+  set(VCPKG_ROOT_DIR ${vcpkg_SOURCE_DIR} CACHE PATH "Vcpkg Root Directory")
 endif()
+
+add_custom_target(UpdateVcpkgBaseline
+  ${VCPKG_ROOT_DIR}/vcpkg x-update-baseline
+)
 
 project(nyu-mem VERSION 1.0.0)
 
 find_package(nyu-cmake CONFIG REQUIRED)
-find_package(nyu-util REQUIRED CONFIG)
-
+find_package(nyu-util CONFIG REQUIRED)
+find_package(nyu-amba CONFIG REQUIRED)
 
 add_library(mem INTERFACE)
 
