@@ -10,6 +10,7 @@
   "dependencies": [
     "nyu-cmake",
     "nyu-util",
+    "nyu-amba",
     "catch2"
   ]
 }
