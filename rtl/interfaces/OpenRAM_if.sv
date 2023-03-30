@@ -33,13 +33,13 @@ interface OpenRam_if #(
   modport openRAMCtrl(
     input clk,
 
-    input addr,
-    input dataIn,
-    input OE_B,
-    input CS_B,
-    input WE_B,
+    output addr,
+    output dataIn,
+    output OE_B,
+    output CS_B,
+    output WE_B,
 
-    output dataOut
+    input dataOut
   );
 
 endinterface
