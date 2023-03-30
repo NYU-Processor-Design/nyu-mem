@@ -22,9 +22,11 @@ module MemCtrl_tl #(
   assign mem_if.wData = wData;
   assign mem_if.write = write;
 
-  assign resp = mem_if.resp;
-  assign rData = mem_if.rData;
+  OpenRam_if #(DataWidth, AddrWidth) open_RAM_if (
+      clk
+  );
 
-  MemCtrl mem (mem_if.memCtrl);
+
+  MemCtrl mem (mem_if.memCtrl, open_RAM_if.openRAMCtrl);
 
 endmodule
