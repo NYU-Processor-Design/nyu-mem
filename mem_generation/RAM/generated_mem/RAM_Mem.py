@@ -1,7 +1,7 @@
 # Data word size
 word_size = 8
 # Number of words in the memory
-num_words = 128
+num_words = 16
 
 # Read-Write ports
 num_rw_ports = 1
@@ -20,11 +20,11 @@ supply_voltages = [ 3.3 ]
 temperatures = [ 25 ]
 
 # Output directory for the results
-output_path = "temp"
+output_path = "generated_mem"
 # Output file base name
-output_name = "sram_16x2"
+output_name = "RAM_Mem"
 
-output_dir = "/Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation"
+output_dir = "/Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM"
 
 # Disable analytical models for full characterization (WARNING: slow!)
 # analytical_delay = False

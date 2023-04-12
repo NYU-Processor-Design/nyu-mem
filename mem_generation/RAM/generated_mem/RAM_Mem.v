@@ -1,8 +1,8 @@
 // OpenRAM SRAM model
-// Words: 128
+// Words: 16
 // Word size: 8
 
-module sram_16x2(
+module RAM_Mem(
 `ifdef USE_POWER_PINS
     vdd,
     gnd,
@@ -12,7 +12,7 @@ module sram_16x2(
   );
 
   parameter DATA_WIDTH = 8 ;
-  parameter ADDR_WIDTH = 7 ;
+  parameter ADDR_WIDTH = 4 ;
   parameter RAM_DEPTH = 1 << ADDR_WIDTH;
   // FIXME: This delay is arbitrary.
   parameter DELAY = 3 ;

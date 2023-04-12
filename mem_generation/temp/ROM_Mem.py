@@ -1,8 +1,10 @@
 # Data word size
 word_size = 8
 # Number of words in the memory
-num_words = 128
+num_words = 16
 
+# Since this is ROM, set the number of read ports to a non-zero value and the 
+# number of Read-Write and just Write ports to 0.
 # Read-Write ports
 num_rw_ports = 1
 # Read-only ports
@@ -22,7 +24,7 @@ temperatures = [ 25 ]
 # Output directory for the results
 output_path = "temp"
 # Output file base name
-output_name = "sram_16x2"
+output_name = "ROM_Mem"
 
 output_dir = "/Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation"
 

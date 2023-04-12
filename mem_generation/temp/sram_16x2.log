@@ -9,11 +9,11 @@
 |=========        Development help: openram-dev-group@ucsc.edu        =========|
 |=========                See LICENSE for license info                =========|
 |==============================================================================|
-** Start: 04/06/2023 11:40:05
+** Start: 04/12/2023 12:24:16
 Technology: scn4m_subm
-Total size: 32 bits
-Word size: 2
-Words: 16
+Total size: 1024 bits
+Word size: 8
+Words: 128
 Banks: 1
 RW ports: 1
 R-only ports: 0
@@ -32,41 +32,41 @@ Output files are:
 /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.log
 /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.lef
 /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.gds
-** Submodules: 0.3 seconds
+** Submodules: 0.9 seconds
 ** Placement: 0.0 seconds
 **** Retrieving pins: 0.0 seconds
 **** Analyzing pins: 0.0 seconds
-**** Finding blockages: 0.0 seconds
+**** Finding blockages: 0.2 seconds
 **** Converting blockages: 0.0 seconds
 **** Converting pins: 0.0 seconds
 **** Separating adjacent pins: 0.0 seconds
-*** Finding pins and blockages: 0.6 seconds
-*** Maze routing pins: 1.7 seconds
+*** Finding pins and blockages: 2.4 seconds
+*** Maze routing pins: 7.4 seconds
 **** Retrieving pins: 0.0 seconds
 **** Analyzing pins: 0.0 seconds
-**** Finding blockages: 0.1 seconds
+**** Finding blockages: 0.2 seconds
 **** Converting blockages: 0.0 seconds
-**** Converting pins: 0.5 seconds
-**** Separating adjacent pins: 0.3 seconds
-*** Finding pins and blockages: 1.5 seconds
-*** Maze routing supplies: 16.1 seconds
-** Routing: 24.6 seconds
+**** Converting pins: 1.1 seconds
+**** Separating adjacent pins: 1.8 seconds
+*** Finding pins and blockages: 5.6 seconds
+*** Maze routing supplies: 42.4 seconds
+** Routing: 75.0 seconds
 ** Verification: 0.0 seconds
-** SRAM creation: 24.9 seconds
+** SRAM creation: 75.9 seconds
 SP: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.sp
-** Spice writing: 0.0 seconds
+** Spice writing: 0.1 seconds
 GDS: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.gds
-** GDS: 0.0 seconds
+** GDS: 0.1 seconds
 LEF: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.lef
 ** LEF: 0.0 seconds
 LVS: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.lvs.sp
 ** LVS writing: 0.0 seconds
 LIB: Characterizing... 
-** Characterization: 0.2 seconds
+** Characterization: 0.4 seconds
 Config: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.py
 ** Config: 0.0 seconds
 Datasheet: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.html
 ** Datasheet: 0.0 seconds
 Verilog: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/temp/sram_16x2.v
 ** Verilog: 0.0 seconds
-** End: 25.2 seconds
+** End: 76.6 seconds

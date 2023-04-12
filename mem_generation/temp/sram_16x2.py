@@ -1,7 +1,14 @@
 # Data word size
-word_size = 2
+word_size = 8
 # Number of words in the memory
-num_words = 16
+num_words = 128
+
+# Read-Write ports
+num_rw_ports = 1
+# Read-only ports
+num_r_ports = 0
+# Write-only ports
+num_w_ports = 0
 
 # Technology to use in $OPENRAM_TECH
 tech_name = "scn4m_subm"

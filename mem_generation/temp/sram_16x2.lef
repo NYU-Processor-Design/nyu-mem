@@ -7,50 +7,113 @@ UNITS
 END UNITS
 MACRO sram_16x2
    CLASS BLOCK ;
-   SIZE 286.8 BY 426.0 ;
+   SIZE 531.6 BY 589.2 ;
    SYMMETRY X Y R90 ;
    PIN din0[0]
       DIRECTION INPUT ;
       PORT
          LAYER metal4 ;
-         RECT  144.0 0.0 145.2 3.6 ;
+         RECT  206.4 0.0 207.6 3.6 ;
       END
    END din0[0]
    PIN din0[1]
       DIRECTION INPUT ;
       PORT
          LAYER metal4 ;
-         RECT  165.6 0.0 166.8 3.6 ;
+         RECT  230.4 0.0 231.6 3.6 ;
       END
    END din0[1]
+   PIN din0[2]
+      DIRECTION INPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  249.6 0.0 250.8 3.6 ;
+      END
+   END din0[2]
+   PIN din0[3]
+      DIRECTION INPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  273.6 0.0 274.8 3.6 ;
+      END
+   END din0[3]
+   PIN din0[4]
+      DIRECTION INPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  295.2 0.0 296.4 3.6 ;
+      END
+   END din0[4]
+   PIN din0[5]
+      DIRECTION INPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  314.4 0.0 315.6 3.6 ;
+      END
+   END din0[5]
+   PIN din0[6]
+      DIRECTION INPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  336.0 0.0 337.2 3.6 ;
+      END
+   END din0[6]
+   PIN din0[7]
+      DIRECTION INPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  360.0 0.0 361.2 3.6 ;
+      END
+   END din0[7]
    PIN addr0[0]
       DIRECTION INPUT ;
       PORT
-         LAYER metal3 ;
-         RECT  0.0 324.0 3.6 325.2 ;
+         LAYER metal4 ;
+         RECT  163.2 0.0 164.4 3.6 ;
       END
    END addr0[0]
    PIN addr0[1]
       DIRECTION INPUT ;
       PORT
          LAYER metal4 ;
-         RECT  103.2 422.4 104.4 426.0 ;
+         RECT  187.2 0.0 188.4 3.6 ;
       END
    END addr0[1]
    PIN addr0[2]
       DIRECTION INPUT ;
       PORT
-         LAYER metal4 ;
-         RECT  100.8 422.4 102.0 426.0 ;
+         LAYER metal3 ;
+         RECT  0.0 367.2 3.6 368.4 ;
       END
    END addr0[2]
    PIN addr0[3]
       DIRECTION INPUT ;
       PORT
-         LAYER metal4 ;
-         RECT  98.4 422.4 99.6 426.0 ;
+         LAYER metal3 ;
+         RECT  0.0 391.2 3.6 392.4 ;
       END
    END addr0[3]
+   PIN addr0[4]
+      DIRECTION INPUT ;
+      PORT
+         LAYER metal3 ;
+         RECT  0.0 408.0 3.6 409.2 ;
+      END
+   END addr0[4]
+   PIN addr0[5]
+      DIRECTION INPUT ;
+      PORT
+         LAYER metal3 ;
+         RECT  0.0 432.0 3.6 433.2 ;
+      END
+   END addr0[5]
+   PIN addr0[6]
+      DIRECTION INPUT ;
+      PORT
+         LAYER metal3 ;
+         RECT  0.0 448.8 3.6 450.0 ;
+      END
+   END addr0[6]
    PIN csb0
       DIRECTION INPUT ;
       PORT
@@ -62,7 +125,7 @@ MACRO sram_16x2
       DIRECTION INPUT ;
       PORT
          LAYER metal3 ;
-         RECT  0.0 57.6 3.6 58.8 ;
+         RECT  0.0 60.0 3.6 61.2 ;
       END
    END web0
    PIN clk0
@@ -75,30 +138,72 @@ MACRO sram_16x2
    PIN dout0[0]
       DIRECTION OUTPUT ;
       PORT
-         LAYER metal3 ;
-         RECT  283.2 141.6 286.8 142.8 ;
+         LAYER metal4 ;
+         RECT  271.2 0.0 272.4 3.6 ;
       END
    END dout0[0]
    PIN dout0[1]
       DIRECTION OUTPUT ;
       PORT
-         LAYER metal3 ;
-         RECT  283.2 136.8 286.8 138.0 ;
+         LAYER metal4 ;
+         RECT  297.6 0.0 298.8 3.6 ;
       END
    END dout0[1]
+   PIN dout0[2]
+      DIRECTION OUTPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  324.0 0.0 325.2 3.6 ;
+      END
+   END dout0[2]
+   PIN dout0[3]
+      DIRECTION OUTPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  352.8 0.0 354.0 3.6 ;
+      END
+   END dout0[3]
+   PIN dout0[4]
+      DIRECTION OUTPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  379.2 0.0 380.4 3.6 ;
+      END
+   END dout0[4]
+   PIN dout0[5]
+      DIRECTION OUTPUT ;
+      PORT
+         LAYER metal4 ;
+         RECT  408.0 0.0 409.2 3.6 ;
+      END
+   END dout0[5]
+   PIN dout0[6]
+      DIRECTION OUTPUT ;
+      PORT
+         LAYER metal3 ;
+         RECT  528.0 105.6 531.6 106.8 ;
+      END
+   END dout0[6]
+   PIN dout0[7]
+      DIRECTION OUTPUT ;
+      PORT
+         LAYER metal3 ;
+         RECT  528.0 110.4 531.6 111.6 ;
+      END
+   END dout0[7]
    PIN vdd
       DIRECTION INOUT ;
       USE POWER ; 
       SHAPE ABUTMENT ; 
       PORT
-         LAYER metal3 ;
-         RECT  12.0 408.0 274.8 414.0 ;
          LAYER metal4 ;
-         RECT  12.0 12.0 18.0 414.0 ;
-         LAYER metal4 ;
-         RECT  268.8 12.0 274.8 414.0 ;
+         RECT  513.6 12.0 519.6 577.2 ;
          LAYER metal3 ;
-         RECT  12.0 12.0 274.8 18.0 ;
+         RECT  12.0 12.0 519.6 18.0 ;
+         LAYER metal4 ;
+         RECT  12.0 12.0 18.0 577.2 ;
+         LAYER metal3 ;
+         RECT  12.0 571.2 519.6 577.2 ;
       END
    END vdd
    PIN gnd
@@ -107,73 +212,85 @@ MACRO sram_16x2
       SHAPE ABUTMENT ; 
       PORT
          LAYER metal3 ;
-         RECT  0.0 0.0 286.8 6.0 ;
+         RECT  0.0 0.0 531.6 6.0 ;
          LAYER metal4 ;
-         RECT  0.0 0.0 6.0 426.0 ;
+         RECT  0.0 0.0 6.0 589.2 ;
          LAYER metal3 ;
-         RECT  0.0 420.0 286.8 426.0 ;
+         RECT  0.0 583.2 531.6 589.2 ;
          LAYER metal4 ;
-         RECT  280.8 0.0 286.8 426.0 ;
+         RECT  525.6 0.0 531.6 589.2 ;
       END
    END gnd
    OBS
    LAYER  metal1 ;
-      RECT  1.4 1.4 285.4 424.6 ;
+      RECT  1.4 1.4 530.2 587.8 ;
    LAYER  metal2 ;
-      RECT  1.4 1.4 285.4 424.6 ;
+      RECT  1.4 1.4 530.2 587.8 ;
    LAYER  metal3 ;
-      RECT  4.8 322.8 285.4 326.4 ;
-      RECT  1.4 38.4 4.8 56.4 ;
-      RECT  1.4 60.0 4.8 322.8 ;
-      RECT  4.8 140.4 282.0 144.0 ;
-      RECT  4.8 144.0 282.0 322.8 ;
-      RECT  282.0 144.0 285.4 322.8 ;
-      RECT  282.0 139.2 285.4 140.4 ;
-      RECT  4.8 326.4 10.8 406.8 ;
-      RECT  4.8 406.8 10.8 415.2 ;
-      RECT  10.8 326.4 276.0 406.8 ;
-      RECT  276.0 326.4 285.4 406.8 ;
-      RECT  276.0 406.8 285.4 415.2 ;
+      RECT  4.8 366.0 530.2 369.6 ;
+      RECT  1.4 369.6 4.8 390.0 ;
+      RECT  1.4 393.6 4.8 406.8 ;
+      RECT  1.4 410.4 4.8 430.8 ;
+      RECT  1.4 434.4 4.8 447.6 ;
+      RECT  1.4 38.4 4.8 58.8 ;
+      RECT  1.4 62.4 4.8 366.0 ;
+      RECT  4.8 104.4 526.8 108.0 ;
+      RECT  4.8 108.0 526.8 366.0 ;
+      RECT  526.8 108.0 530.2 109.2 ;
+      RECT  526.8 112.8 530.2 366.0 ;
       RECT  4.8 10.8 10.8 19.2 ;
-      RECT  4.8 19.2 10.8 140.4 ;
-      RECT  10.8 19.2 276.0 140.4 ;
-      RECT  276.0 10.8 282.0 19.2 ;
-      RECT  276.0 19.2 282.0 140.4 ;
+      RECT  4.8 19.2 10.8 104.4 ;
+      RECT  10.8 19.2 520.8 104.4 ;
+      RECT  520.8 10.8 526.8 19.2 ;
+      RECT  520.8 19.2 526.8 104.4 ;
+      RECT  4.8 369.6 10.8 570.0 ;
+      RECT  4.8 570.0 10.8 578.4 ;
+      RECT  10.8 369.6 520.8 570.0 ;
+      RECT  520.8 369.6 530.2 570.0 ;
+      RECT  520.8 570.0 530.2 578.4 ;
       RECT  1.4 7.2 4.8 34.8 ;
-      RECT  282.0 7.2 285.4 135.6 ;
+      RECT  526.8 7.2 530.2 104.4 ;
       RECT  4.8 7.2 10.8 10.8 ;
-      RECT  10.8 7.2 276.0 10.8 ;
-      RECT  276.0 7.2 282.0 10.8 ;
-      RECT  1.4 326.4 4.8 418.8 ;
-      RECT  4.8 415.2 10.8 418.8 ;
-      RECT  10.8 415.2 276.0 418.8 ;
-      RECT  276.0 415.2 285.4 418.8 ;
+      RECT  10.8 7.2 520.8 10.8 ;
+      RECT  520.8 7.2 526.8 10.8 ;
+      RECT  1.4 451.2 4.8 582.0 ;
+      RECT  4.8 578.4 10.8 582.0 ;
+      RECT  10.8 578.4 520.8 582.0 ;
+      RECT  520.8 578.4 530.2 582.0 ;
    LAYER  metal4 ;
-      RECT  141.6 6.0 147.6 424.6 ;
-      RECT  147.6 1.4 163.2 6.0 ;
-      RECT  100.8 6.0 106.8 420.0 ;
-      RECT  106.8 6.0 141.6 420.0 ;
-      RECT  106.8 420.0 141.6 424.6 ;
-      RECT  87.6 1.4 141.6 6.0 ;
+      RECT  204.0 6.0 210.0 587.8 ;
+      RECT  210.0 1.4 228.0 6.0 ;
+      RECT  234.0 1.4 247.2 6.0 ;
+      RECT  277.2 1.4 292.8 6.0 ;
+      RECT  166.8 1.4 184.8 6.0 ;
+      RECT  190.8 1.4 204.0 6.0 ;
+      RECT  87.6 1.4 160.8 6.0 ;
+      RECT  253.2 1.4 268.8 6.0 ;
+      RECT  301.2 1.4 312.0 6.0 ;
+      RECT  318.0 1.4 321.6 6.0 ;
+      RECT  327.6 1.4 333.6 6.0 ;
+      RECT  339.6 1.4 350.4 6.0 ;
+      RECT  356.4 1.4 357.6 6.0 ;
+      RECT  363.6 1.4 376.8 6.0 ;
+      RECT  382.8 1.4 405.6 6.0 ;
+      RECT  210.0 6.0 511.2 9.6 ;
+      RECT  210.0 9.6 511.2 579.6 ;
+      RECT  210.0 579.6 511.2 587.8 ;
+      RECT  511.2 6.0 522.0 9.6 ;
+      RECT  511.2 579.6 522.0 587.8 ;
       RECT  9.6 6.0 20.4 9.6 ;
-      RECT  9.6 416.4 20.4 420.0 ;
-      RECT  20.4 6.0 100.8 9.6 ;
-      RECT  20.4 9.6 100.8 416.4 ;
-      RECT  20.4 416.4 100.8 420.0 ;
-      RECT  147.6 6.0 266.4 9.6 ;
-      RECT  147.6 9.6 266.4 416.4 ;
-      RECT  147.6 416.4 266.4 424.6 ;
-      RECT  266.4 6.0 277.2 9.6 ;
-      RECT  266.4 416.4 277.2 424.6 ;
-      RECT  8.4 420.0 96.0 424.6 ;
+      RECT  9.6 579.6 20.4 587.8 ;
+      RECT  20.4 6.0 204.0 9.6 ;
+      RECT  20.4 9.6 204.0 579.6 ;
+      RECT  20.4 579.6 204.0 587.8 ;
       RECT  8.4 1.4 81.6 6.0 ;
       RECT  8.4 6.0 9.6 9.6 ;
-      RECT  8.4 9.6 9.6 416.4 ;
-      RECT  8.4 416.4 9.6 420.0 ;
-      RECT  169.2 1.4 278.4 6.0 ;
-      RECT  277.2 6.0 278.4 9.6 ;
-      RECT  277.2 9.6 278.4 416.4 ;
-      RECT  277.2 416.4 278.4 424.6 ;
+      RECT  8.4 9.6 9.6 579.6 ;
+      RECT  8.4 579.6 9.6 587.8 ;
+      RECT  411.6 1.4 523.2 6.0 ;
+      RECT  522.0 6.0 523.2 9.6 ;
+      RECT  522.0 9.6 523.2 579.6 ;
+      RECT  522.0 579.6 523.2 587.8 ;
    END
 END    sram_16x2
 END    LIBRARY
