@@ -1,5 +1,5 @@
 |==============================================================================|
-|=========                       OpenRAM v1.2.7                       =========|
+|=========                       OpenRAM v1.2.8                       =========|
 |=========                                                            =========|
 |=========               VLSI Design and Automation Lab               =========|
 |=========        Computer Science and Engineering Department         =========|
@@ -9,7 +9,7 @@
 |=========        Development help: openram-dev-group@ucsc.edu        =========|
 |=========                See LICENSE for license info                =========|
 |==============================================================================|
-** Start: 04/12/2023 12:43:17
+** Start: 04/13/2023 11:06:23
 Technology: scn4m_subm
 Total size: 128 bits
 Word size: 8
@@ -47,12 +47,12 @@ Output files are:
 **** Finding blockages: 0.1 seconds
 **** Converting blockages: 0.0 seconds
 **** Converting pins: 0.6 seconds
-**** Separating adjacent pins: 0.5 seconds
-*** Finding pins and blockages: 1.9 seconds
-*** Maze routing supplies: 19.6 seconds
-** Routing: 34.6 seconds
+**** Separating adjacent pins: 0.4 seconds
+*** Finding pins and blockages: 1.8 seconds
+*** Maze routing supplies: 20.6 seconds
+** Routing: 35.3 seconds
 ** Verification: 0.0 seconds
-** SRAM creation: 34.9 seconds
+** SRAM creation: 35.7 seconds
 SP: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM/generated_mem/RAM_Mem.sp
 ** Spice writing: 0.1 seconds
 GDS: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM/generated_mem/RAM_Mem.gds
@@ -62,11 +62,19 @@ LEF: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generat
 LVS: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM/generated_mem/RAM_Mem.lvs.sp
 ** LVS writing: 0.0 seconds
 LIB: Characterizing... 
-** Characterization: 0.2 seconds
+WARNING: file lib.py: line 777: Failed to retrieve git id
+
+WARNING: file lib.py: line 777: Failed to retrieve git id
+
+WARNING: file lib.py: line 777: Failed to retrieve git id
+
+WARNING: file lib.py: line 777: Failed to retrieve git id
+
+** Characterization: 0.3 seconds
 Config: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM/generated_mem/RAM_Mem.py
 ** Config: 0.0 seconds
 Datasheet: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM/generated_mem/RAM_Mem.html
 ** Datasheet: 0.0 seconds
 Verilog: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM/generated_mem/RAM_Mem.v
 ** Verilog: 0.0 seconds
-** End: 35.3 seconds
+** End: 36.1 seconds

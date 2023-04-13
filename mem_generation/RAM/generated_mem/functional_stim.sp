@@ -1,8 +1,8 @@
 * Functional test stimulus file for 10ns period
 
 * TT process corner
-.include "/Users/seandoyle/NYU/classes/ProcessorDesign/openram/technology/scn4m_subm/models/nom/pmos.sp"
-.include "/Users/seandoyle/NYU/classes/ProcessorDesign/openram/technology/scn4m_subm/models/nom/nmos.sp"
+.include "/Users/seandoyle/.virtualenvs/OpenRAM/lib/python3.9/site-packages/openram/technology/scn4m_subm/models/nom/pmos.sp"
+.include "/Users/seandoyle/.virtualenvs/OpenRAM/lib/python3.9/site-packages/openram/technology/scn4m_subm/models/nom/nmos.sp"
 .include "RAM_Mem.sp"
 
 * Global Power Supplies
@@ -35,207 +35,204 @@ CD07 dout0_7  0 39.2968f
 
 * Sequence of operations
 *	Idle during cycle 0 (0ns - 10ns)
-*	Writing 01111110  to  address 1110 (from port 0) during cycle 1 (10ns - 20ns)
-*	Writing 10111010  to  address 1110 (from port 0) during cycle 2 (20ns - 30ns)
-*	Writing 11101101  to  address 0000 (from port 0) during cycle 3 (30ns - 40ns)
-*	Reading 11101101 from address 0000 (from port 0) during cycle 4 (40ns - 50ns)
-*	Reading 11101101 from address 0000 (from port 0) during cycle 6 (60ns - 70ns)
-*	Reading 11101101 from address 0000 (from port 0) during cycle 7 (70ns - 80ns)
-*	Reading 10111010 from address 1110 (from port 0) during cycle 9 (90ns - 100ns)
-*	Reading 11101101 from address 0000 (from port 0) during cycle 10 (100ns - 110ns)
-*	Writing 11110001  to  address 1110 (from port 0) during cycle 11 (110ns - 120ns)
-*	Reading 11101101 from address 0000 (from port 0) during cycle 13 (130ns - 140ns)
-*	Reading 11110001 from address 1110 (from port 0) during cycle 14 (140ns - 150ns)
-*	Reading 11101101 from address 0000 (from port 0) during cycle 16 (160ns - 170ns)
-*	Reading 11110001 from address 1110 (from port 0) during cycle 17 (170ns - 180ns)
-*	Reading 11101101 from address 0000 (from port 0) during cycle 18 (180ns - 190ns)
-*	Writing 10010100  to  address 0000 (from port 0) during cycle 19 (190ns - 200ns)
-*	Reading 11110001 from address 1110 (from port 0) during cycle 20 (200ns - 210ns)
-*	Reading 11110001 from address 1110 (from port 0) during cycle 21 (210ns - 220ns)
-*	Reading 10010100 from address 0000 (from port 0) during cycle 22 (220ns - 230ns)
-*	Writing 11101111  to  address 1110 (from port 0) during cycle 23 (230ns - 240ns)
-*	Reading 10010100 from address 0000 (from port 0) during cycle 24 (240ns - 250ns)
-*	Reading 11101111 from address 1110 (from port 0) during cycle 25 (250ns - 260ns)
-*	Reading 10010100 from address 0000 (from port 0) during cycle 26 (260ns - 270ns)
-*	Reading 11101111 from address 1110 (from port 0) during cycle 27 (270ns - 280ns)
-*	Reading 11101111 from address 1110 (from port 0) during cycle 28 (280ns - 290ns)
-*	Reading 10010100 from address 0000 (from port 0) during cycle 29 (290ns - 300ns)
-*	Writing 11010101  to  address 1110 (from port 0) during cycle 31 (310ns - 320ns)
-*	Reading 10010100 from address 0000 (from port 0) during cycle 32 (320ns - 330ns)
-*	Reading 10010100 from address 0000 (from port 0) during cycle 33 (330ns - 340ns)
-*	Writing 10001100  to  address 0000 (from port 0) during cycle 34 (340ns - 350ns)
-*	Writing 00100001  to  address 0000 (from port 0) during cycle 35 (350ns - 360ns)
-*	Reading 11010101 from address 1110 (from port 0) during cycle 36 (360ns - 370ns)
-*	Reading 11010101 from address 1110 (from port 0) during cycle 37 (370ns - 380ns)
-*	Writing 11011101  to  address 1110 (from port 0) during cycle 38 (380ns - 390ns)
-*	Writing 10000011  to  address 0000 (from port 0) during cycle 39 (390ns - 400ns)
-*	Writing 00010000  to  address 0000 (from port 0) during cycle 40 (400ns - 410ns)
-*	Writing 10101111  to  address 0000 (from port 0) during cycle 41 (410ns - 420ns)
-*	Reading 10101111 from address 0000 (from port 0) during cycle 42 (420ns - 430ns)
-*	Reading 11011101 from address 1110 (from port 0) during cycle 43 (430ns - 440ns)
-*	Writing 10000101  to  address 1110 (from port 0) during cycle 44 (440ns - 450ns)
-*	Reading 10000101 from address 1110 (from port 0) during cycle 46 (460ns - 470ns)
-*	Reading 10101111 from address 0000 (from port 0) during cycle 47 (470ns - 480ns)
-*	Reading 10101111 from address 0000 (from port 0) during cycle 48 (480ns - 490ns)
-*	Writing 01000000  to  address 0000 (from port 0) during cycle 49 (490ns - 500ns)
-*	Reading 01000000 from address 0000 (from port 0) during cycle 52 (520ns - 530ns)
-*	Writing 00111101  to  address 1110 (from port 0) during cycle 53 (530ns - 540ns)
-*	Reading 00111101 from address 1110 (from port 0) during cycle 54 (540ns - 550ns)
-*	Reading 00111101 from address 1110 (from port 0) during cycle 55 (550ns - 560ns)
-*	Reading 01000000 from address 0000 (from port 0) during cycle 56 (560ns - 570ns)
-*	Writing 01001010  to  address 1110 (from port 0) during cycle 57 (570ns - 580ns)
-*	Reading 01001010 from address 1110 (from port 0) during cycle 59 (590ns - 600ns)
-*	Reading 01000000 from address 0000 (from port 0) during cycle 60 (600ns - 610ns)
-*	Reading 01000000 from address 0000 (from port 0) during cycle 62 (620ns - 630ns)
-*	Writing 11101100  to  address 0000 (from port 0) during cycle 63 (630ns - 640ns)
-*	Writing 01000110  to  address 0000 (from port 0) during cycle 64 (640ns - 650ns)
-*	Reading 01001010 from address 1110 (from port 0) during cycle 66 (660ns - 670ns)
-*	Reading 01001010 from address 1110 (from port 0) during cycle 67 (670ns - 680ns)
-*	Reading 01000110 from address 0000 (from port 0) during cycle 69 (690ns - 700ns)
-*	Writing 00101010  to  address 1110 (from port 0) during cycle 71 (710ns - 720ns)
-*	Writing 10110110  to  address 0000 (from port 0) during cycle 72 (720ns - 730ns)
-*	Reading 00101010 from address 1110 (from port 0) during cycle 74 (740ns - 750ns)
-*	Writing 10010100  to  address 0000 (from port 0) during cycle 75 (750ns - 760ns)
-*	Writing 01100010  to  address 0000 (from port 0) during cycle 76 (760ns - 770ns)
-*	Reading 01100010 from address 0000 (from port 0) during cycle 77 (770ns - 780ns)
-*	Writing 10100010  to  address 0000 (from port 0) during cycle 81 (810ns - 820ns)
-*	Reading 00101010 from address 1110 (from port 0) during cycle 82 (820ns - 830ns)
-*	Reading 10100010 from address 0000 (from port 0) during cycle 83 (830ns - 840ns)
-*	Reading 10100010 from address 0000 (from port 0) during cycle 84 (840ns - 850ns)
-*	Reading 00101010 from address 1110 (from port 0) during cycle 86 (860ns - 870ns)
-*	Writing 01111110  to  address 0000 (from port 0) during cycle 88 (880ns - 890ns)
-*	Reading 00101010 from address 1110 (from port 0) during cycle 89 (890ns - 900ns)
-*	Reading 00101010 from address 1110 (from port 0) during cycle 92 (920ns - 930ns)
-*	Reading 00101010 from address 1110 (from port 0) during cycle 93 (930ns - 940ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 94 (940ns - 950ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 95 (950ns - 960ns)
-*	Reading 00101010 from address 1110 (from port 0) during cycle 96 (960ns - 970ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 97 (970ns - 980ns)
-*	Reading 00101010 from address 1110 (from port 0) during cycle 99 (990ns - 1000ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 100 (1000ns - 1010ns)
-*	Writing 11101010  to  address 1110 (from port 0) during cycle 101 (1010ns - 1020ns)
-*	Reading 11101010 from address 1110 (from port 0) during cycle 103 (1030ns - 1040ns)
-*	Reading 11101010 from address 1110 (from port 0) during cycle 104 (1040ns - 1050ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 105 (1050ns - 1060ns)
-*	Writing 10101011  to  address 1110 (from port 0) during cycle 108 (1080ns - 1090ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 109 (1090ns - 1100ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 110 (1100ns - 1110ns)
-*	Writing 10011011  to  address 1110 (from port 0) during cycle 113 (1130ns - 1140ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 115 (1150ns - 1160ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 116 (1160ns - 1170ns)
-*	Reading 10011011 from address 1110 (from port 0) during cycle 117 (1170ns - 1180ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 119 (1190ns - 1200ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 120 (1200ns - 1210ns)
-*	Reading 10011011 from address 1110 (from port 0) during cycle 121 (1210ns - 1220ns)
-*	Reading 01111110 from address 0000 (from port 0) during cycle 122 (1220ns - 1230ns)
-*	Writing 00001000  to  address 0000 (from port 0) during cycle 123 (1230ns - 1240ns)
-*	Reading 10011011 from address 1110 (from port 0) during cycle 124 (1240ns - 1250ns)
-*	Reading 10011011 from address 1110 (from port 0) during cycle 125 (1250ns - 1260ns)
-*	Reading 10011011 from address 1110 (from port 0) during cycle 126 (1260ns - 1270ns)
-*	Writing 11010110  to  address 0000 (from port 0) during cycle 127 (1270ns - 1280ns)
-*	Reading 10011011 from address 1110 (from port 0) during cycle 128 (1280ns - 1290ns)
-*	Reading 10011011 from address 1110 (from port 0) during cycle 129 (1290ns - 1300ns)
-*	Writing 01110011  to  address 0000 (from port 0) during cycle 130 (1300ns - 1310ns)
-*	Writing 00001000  to  address 1110 (from port 0) during cycle 132 (1320ns - 1330ns)
-*	Reading 01110011 from address 0000 (from port 0) during cycle 134 (1340ns - 1350ns)
-*	Writing 11001100  to  address 1110 (from port 0) during cycle 136 (1360ns - 1370ns)
-*	Reading 01110011 from address 0000 (from port 0) during cycle 137 (1370ns - 1380ns)
-*	Writing 00100111  to  address 1110 (from port 0) during cycle 138 (1380ns - 1390ns)
-*	Writing 10011100  to  address 1110 (from port 0) during cycle 139 (1390ns - 1400ns)
-*	Reading 10011100 from address 1110 (from port 0) during cycle 140 (1400ns - 1410ns)
-*	Writing 10110111  to  address 1110 (from port 0) during cycle 141 (1410ns - 1420ns)
-*	Reading 01110011 from address 0000 (from port 0) during cycle 142 (1420ns - 1430ns)
-*	Reading 10110111 from address 1110 (from port 0) during cycle 143 (1430ns - 1440ns)
-*	Writing 11011111  to  address 0000 (from port 0) during cycle 144 (1440ns - 1450ns)
-*	Writing 00101100  to  address 0000 (from port 0) during cycle 146 (1460ns - 1470ns)
-*	Reading 10110111 from address 1110 (from port 0) during cycle 148 (1480ns - 1490ns)
-*	Reading 10110111 from address 1110 (from port 0) during cycle 149 (1490ns - 1500ns)
-*	Writing 10101000  to  address 0000 (from port 0) during cycle 150 (1500ns - 1510ns)
-*	Writing 01110001  to  address 0000 (from port 0) during cycle 151 (1510ns - 1520ns)
-*	Writing 00111111  to  address 1110 (from port 0) during cycle 154 (1540ns - 1550ns)
-*	Reading 00111111 from address 1110 (from port 0) during cycle 155 (1550ns - 1560ns)
-*	Reading 01110001 from address 0000 (from port 0) during cycle 157 (1570ns - 1580ns)
-*	Reading 00111111 from address 1110 (from port 0) during cycle 158 (1580ns - 1590ns)
-*	Writing 01001011  to  address 1110 (from port 0) during cycle 159 (1590ns - 1600ns)
-*	Writing 10001111  to  address 0000 (from port 0) during cycle 162 (1620ns - 1630ns)
-*	Reading 10001111 from address 0000 (from port 0) during cycle 163 (1630ns - 1640ns)
-*	Writing 11111000  to  address 1110 (from port 0) during cycle 164 (1640ns - 1650ns)
-*	Reading 11111000 from address 1110 (from port 0) during cycle 167 (1670ns - 1680ns)
-*	Reading 11111000 from address 1110 (from port 0) during cycle 169 (1690ns - 1700ns)
-*	Writing 01000100  to  address 1110 (from port 0) during cycle 171 (1710ns - 1720ns)
-*	Reading 10001111 from address 0000 (from port 0) during cycle 172 (1720ns - 1730ns)
-*	Reading 01000100 from address 1110 (from port 0) during cycle 173 (1730ns - 1740ns)
-*	Reading 10001111 from address 0000 (from port 0) during cycle 174 (1740ns - 1750ns)
-*	Reading 10001111 from address 0000 (from port 0) during cycle 176 (1760ns - 1770ns)
-*	Writing 11001001  to  address 1110 (from port 0) during cycle 177 (1770ns - 1780ns)
-*	Reading 11001001 from address 1110 (from port 0) during cycle 178 (1780ns - 1790ns)
-*	Writing 01100010  to  address 0000 (from port 0) during cycle 180 (1800ns - 1810ns)
-*	Reading 01100010 from address 0000 (from port 0) during cycle 181 (1810ns - 1820ns)
-*	Writing 10100111  to  address 1110 (from port 0) during cycle 182 (1820ns - 1830ns)
-*	Writing 01010110  to  address 0000 (from port 0) during cycle 183 (1830ns - 1840ns)
-*	Reading 10100111 from address 1110 (from port 0) during cycle 184 (1840ns - 1850ns)
-*	Reading 10100111 from address 1110 (from port 0) during cycle 185 (1850ns - 1860ns)
-*	Writing 01001101  to  address 1110 (from port 0) during cycle 186 (1860ns - 1870ns)
-*	Reading 01010110 from address 0000 (from port 0) during cycle 187 (1870ns - 1880ns)
-*	Reading 01010110 from address 0000 (from port 0) during cycle 188 (1880ns - 1890ns)
-*	Reading 01010110 from address 0000 (from port 0) during cycle 190 (1900ns - 1910ns)
-*	Reading 01010110 from address 0000 (from port 0) during cycle 191 (1910ns - 1920ns)
-*	Reading 01001101 from address 1110 (from port 0) during cycle 192 (1920ns - 1930ns)
-*	Reading 01010110 from address 0000 (from port 0) during cycle 194 (1940ns - 1950ns)
-*	Reading 01001101 from address 1110 (from port 0) during cycle 195 (1950ns - 1960ns)
-*	Writing 11001000  to  address 1110 (from port 0) during cycle 196 (1960ns - 1970ns)
-*	Reading 11001000 from address 1110 (from port 0) during cycle 197 (1970ns - 1980ns)
-*	Reading 01010110 from address 0000 (from port 0) during cycle 198 (1980ns - 1990ns)
-*	Reading 11001000 from address 1110 (from port 0) during cycle 199 (1990ns - 2000ns)
-*	Writing 10001110  to  address 0000 (from port 0) during cycle 200 (2000ns - 2010ns)
-*	Writing 00011000  to  address 0000 (from port 0) during cycle 202 (2020ns - 2030ns)
+*	Writing 00000111  to  address 1110 (from port 0) during cycle 1 (10ns - 20ns)
+*	Writing 01001110  to  address 1110 (from port 0) during cycle 2 (20ns - 30ns)
+*	Writing 10100110  to  address 1110 (from port 0) during cycle 3 (30ns - 40ns)
+*	Reading 10100110 from address 1110 (from port 0) during cycle 4 (40ns - 50ns)
+*	Reading 10100110 from address 1110 (from port 0) during cycle 5 (50ns - 60ns)
+*	Reading 10100110 from address 1110 (from port 0) during cycle 6 (60ns - 70ns)
+*	Reading 10100110 from address 1110 (from port 0) during cycle 7 (70ns - 80ns)
+*	Reading 10100110 from address 1110 (from port 0) during cycle 8 (80ns - 90ns)
+*	Reading 10100110 from address 1110 (from port 0) during cycle 9 (90ns - 100ns)
+*	Reading 10100110 from address 1110 (from port 0) during cycle 10 (100ns - 110ns)
+*	Reading 10100110 from address 1110 (from port 0) during cycle 11 (110ns - 120ns)
+*	Writing 01101100  to  address 1110 (from port 0) during cycle 13 (130ns - 140ns)
+*	Writing 01001001  to  address 0000 (from port 0) during cycle 14 (140ns - 150ns)
+*	Reading 01001001 from address 0000 (from port 0) during cycle 15 (150ns - 160ns)
+*	Reading 01001001 from address 0000 (from port 0) during cycle 16 (160ns - 170ns)
+*	Reading 01001001 from address 0000 (from port 0) during cycle 18 (180ns - 190ns)
+*	Reading 01001001 from address 0000 (from port 0) during cycle 22 (220ns - 230ns)
+*	Reading 01001001 from address 0000 (from port 0) during cycle 23 (230ns - 240ns)
+*	Reading 01101100 from address 1110 (from port 0) during cycle 24 (240ns - 250ns)
+*	Reading 01101100 from address 1110 (from port 0) during cycle 25 (250ns - 260ns)
+*	Reading 01101100 from address 1110 (from port 0) during cycle 26 (260ns - 270ns)
+*	Writing 11110011  to  address 1110 (from port 0) during cycle 27 (270ns - 280ns)
+*	Reading 11110011 from address 1110 (from port 0) during cycle 28 (280ns - 290ns)
+*	Writing 01000110  to  address 1110 (from port 0) during cycle 29 (290ns - 300ns)
+*	Reading 01000110 from address 1110 (from port 0) during cycle 30 (300ns - 310ns)
+*	Reading 01001001 from address 0000 (from port 0) during cycle 31 (310ns - 320ns)
+*	Reading 01001001 from address 0000 (from port 0) during cycle 32 (320ns - 330ns)
+*	Reading 01001001 from address 0000 (from port 0) during cycle 38 (380ns - 390ns)
+*	Writing 01010101  to  address 0000 (from port 0) during cycle 39 (390ns - 400ns)
+*	Reading 01000110 from address 1110 (from port 0) during cycle 41 (410ns - 420ns)
+*	Reading 01000110 from address 1110 (from port 0) during cycle 42 (420ns - 430ns)
+*	Reading 01010101 from address 0000 (from port 0) during cycle 43 (430ns - 440ns)
+*	Reading 01000110 from address 1110 (from port 0) during cycle 45 (450ns - 460ns)
+*	Reading 01000110 from address 1110 (from port 0) during cycle 47 (470ns - 480ns)
+*	Reading 01000110 from address 1110 (from port 0) during cycle 48 (480ns - 490ns)
+*	Reading 01000110 from address 1110 (from port 0) during cycle 50 (500ns - 510ns)
+*	Writing 01100001  to  address 1110 (from port 0) during cycle 51 (510ns - 520ns)
+*	Reading 01010101 from address 0000 (from port 0) during cycle 52 (520ns - 530ns)
+*	Reading 01010101 from address 0000 (from port 0) during cycle 53 (530ns - 540ns)
+*	Reading 01100001 from address 1110 (from port 0) during cycle 55 (550ns - 560ns)
+*	Reading 01010101 from address 0000 (from port 0) during cycle 56 (560ns - 570ns)
+*	Reading 01100001 from address 1110 (from port 0) during cycle 57 (570ns - 580ns)
+*	Reading 01100001 from address 1110 (from port 0) during cycle 59 (590ns - 600ns)
+*	Reading 01100001 from address 1110 (from port 0) during cycle 61 (610ns - 620ns)
+*	Reading 01100001 from address 1110 (from port 0) during cycle 63 (630ns - 640ns)
+*	Writing 10001110  to  address 1110 (from port 0) during cycle 64 (640ns - 650ns)
+*	Reading 10001110 from address 1110 (from port 0) during cycle 65 (650ns - 660ns)
+*	Writing 10100011  to  address 0000 (from port 0) during cycle 66 (660ns - 670ns)
+*	Reading 10001110 from address 1110 (from port 0) during cycle 67 (670ns - 680ns)
+*	Reading 10100011 from address 0000 (from port 0) during cycle 68 (680ns - 690ns)
+*	Reading 10100011 from address 0000 (from port 0) during cycle 69 (690ns - 700ns)
+*	Reading 10001110 from address 1110 (from port 0) during cycle 70 (700ns - 710ns)
+*	Reading 10100011 from address 0000 (from port 0) during cycle 72 (720ns - 730ns)
+*	Writing 00111100  to  address 0000 (from port 0) during cycle 73 (730ns - 740ns)
+*	Writing 10111100  to  address 1110 (from port 0) during cycle 74 (740ns - 750ns)
+*	Reading 00111100 from address 0000 (from port 0) during cycle 77 (770ns - 780ns)
+*	Reading 00111100 from address 0000 (from port 0) during cycle 78 (780ns - 790ns)
+*	Reading 10111100 from address 1110 (from port 0) during cycle 81 (810ns - 820ns)
+*	Writing 11101011  to  address 1110 (from port 0) during cycle 82 (820ns - 830ns)
+*	Reading 11101011 from address 1110 (from port 0) during cycle 83 (830ns - 840ns)
+*	Writing 10110111  to  address 1110 (from port 0) during cycle 84 (840ns - 850ns)
+*	Reading 00111100 from address 0000 (from port 0) during cycle 85 (850ns - 860ns)
+*	Reading 00111100 from address 0000 (from port 0) during cycle 86 (860ns - 870ns)
+*	Reading 10110111 from address 1110 (from port 0) during cycle 87 (870ns - 880ns)
+*	Reading 00111100 from address 0000 (from port 0) during cycle 88 (880ns - 890ns)
+*	Reading 00111100 from address 0000 (from port 0) during cycle 89 (890ns - 900ns)
+*	Reading 10110111 from address 1110 (from port 0) during cycle 90 (900ns - 910ns)
+*	Reading 10110111 from address 1110 (from port 0) during cycle 91 (910ns - 920ns)
+*	Reading 00111100 from address 0000 (from port 0) during cycle 92 (920ns - 930ns)
+*	Writing 11111100  to  address 1110 (from port 0) during cycle 93 (930ns - 940ns)
+*	Writing 11100011  to  address 0000 (from port 0) during cycle 94 (940ns - 950ns)
+*	Writing 10000110  to  address 1110 (from port 0) during cycle 95 (950ns - 960ns)
+*	Writing 00000111  to  address 0000 (from port 0) during cycle 97 (970ns - 980ns)
+*	Reading 10000110 from address 1110 (from port 0) during cycle 98 (980ns - 990ns)
+*	Reading 10000110 from address 1110 (from port 0) during cycle 99 (990ns - 1000ns)
+*	Reading 00000111 from address 0000 (from port 0) during cycle 100 (1000ns - 1010ns)
+*	Reading 00000111 from address 0000 (from port 0) during cycle 101 (1010ns - 1020ns)
+*	Reading 10000110 from address 1110 (from port 0) during cycle 103 (1030ns - 1040ns)
+*	Reading 00000111 from address 0000 (from port 0) during cycle 104 (1040ns - 1050ns)
+*	Writing 10010100  to  address 1110 (from port 0) during cycle 105 (1050ns - 1060ns)
+*	Reading 10010100 from address 1110 (from port 0) during cycle 106 (1060ns - 1070ns)
+*	Reading 10010100 from address 1110 (from port 0) during cycle 107 (1070ns - 1080ns)
+*	Writing 00100001  to  address 1110 (from port 0) during cycle 108 (1080ns - 1090ns)
+*	Reading 00100001 from address 1110 (from port 0) during cycle 109 (1090ns - 1100ns)
+*	Writing 01010111  to  address 1110 (from port 0) during cycle 110 (1100ns - 1110ns)
+*	Reading 00000111 from address 0000 (from port 0) during cycle 111 (1110ns - 1120ns)
+*	Writing 11111001  to  address 0000 (from port 0) during cycle 112 (1120ns - 1130ns)
+*	Reading 01010111 from address 1110 (from port 0) during cycle 113 (1130ns - 1140ns)
+*	Writing 01101100  to  address 0000 (from port 0) during cycle 114 (1140ns - 1150ns)
+*	Writing 00000101  to  address 0000 (from port 0) during cycle 115 (1150ns - 1160ns)
+*	Writing 11101010  to  address 0000 (from port 0) during cycle 116 (1160ns - 1170ns)
+*	Writing 00000101  to  address 0000 (from port 0) during cycle 117 (1170ns - 1180ns)
+*	Reading 01010111 from address 1110 (from port 0) during cycle 118 (1180ns - 1190ns)
+*	Reading 00000101 from address 0000 (from port 0) during cycle 121 (1210ns - 1220ns)
+*	Reading 01010111 from address 1110 (from port 0) during cycle 122 (1220ns - 1230ns)
+*	Reading 00000101 from address 0000 (from port 0) during cycle 124 (1240ns - 1250ns)
+*	Reading 01010111 from address 1110 (from port 0) during cycle 125 (1250ns - 1260ns)
+*	Reading 00000101 from address 0000 (from port 0) during cycle 128 (1280ns - 1290ns)
+*	Reading 00000101 from address 0000 (from port 0) during cycle 132 (1320ns - 1330ns)
+*	Reading 00000101 from address 0000 (from port 0) during cycle 133 (1330ns - 1340ns)
+*	Reading 01010111 from address 1110 (from port 0) during cycle 134 (1340ns - 1350ns)
+*	Writing 11010110  to  address 1110 (from port 0) during cycle 138 (1380ns - 1390ns)
+*	Writing 10010110  to  address 0000 (from port 0) during cycle 140 (1400ns - 1410ns)
+*	Writing 00000100  to  address 0000 (from port 0) during cycle 141 (1410ns - 1420ns)
+*	Writing 10000110  to  address 1110 (from port 0) during cycle 144 (1440ns - 1450ns)
+*	Writing 00111110  to  address 0000 (from port 0) during cycle 146 (1460ns - 1470ns)
+*	Reading 10000110 from address 1110 (from port 0) during cycle 147 (1470ns - 1480ns)
+*	Reading 00111110 from address 0000 (from port 0) during cycle 148 (1480ns - 1490ns)
+*	Reading 00111110 from address 0000 (from port 0) during cycle 150 (1500ns - 1510ns)
+*	Writing 10101110  to  address 1110 (from port 0) during cycle 152 (1520ns - 1530ns)
+*	Reading 10101110 from address 1110 (from port 0) during cycle 153 (1530ns - 1540ns)
+*	Reading 10101110 from address 1110 (from port 0) during cycle 154 (1540ns - 1550ns)
+*	Writing 00100110  to  address 0000 (from port 0) during cycle 155 (1550ns - 1560ns)
+*	Writing 00011110  to  address 0000 (from port 0) during cycle 156 (1560ns - 1570ns)
+*	Reading 00011110 from address 0000 (from port 0) during cycle 158 (1580ns - 1590ns)
+*	Reading 00011110 from address 0000 (from port 0) during cycle 159 (1590ns - 1600ns)
+*	Reading 10101110 from address 1110 (from port 0) during cycle 160 (1600ns - 1610ns)
+*	Writing 00001010  to  address 1110 (from port 0) during cycle 162 (1620ns - 1630ns)
+*	Reading 00001010 from address 1110 (from port 0) during cycle 164 (1640ns - 1650ns)
+*	Writing 11111001  to  address 1110 (from port 0) during cycle 165 (1650ns - 1660ns)
+*	Writing 01100001  to  address 0000 (from port 0) during cycle 166 (1660ns - 1670ns)
+*	Reading 11111001 from address 1110 (from port 0) during cycle 167 (1670ns - 1680ns)
+*	Reading 11111001 from address 1110 (from port 0) during cycle 169 (1690ns - 1700ns)
+*	Reading 01100001 from address 0000 (from port 0) during cycle 171 (1710ns - 1720ns)
+*	Reading 01100001 from address 0000 (from port 0) during cycle 173 (1730ns - 1740ns)
+*	Reading 01100001 from address 0000 (from port 0) during cycle 174 (1740ns - 1750ns)
+*	Reading 11111001 from address 1110 (from port 0) during cycle 175 (1750ns - 1760ns)
+*	Reading 11111001 from address 1110 (from port 0) during cycle 176 (1760ns - 1770ns)
+*	Writing 01110010  to  address 1110 (from port 0) during cycle 178 (1780ns - 1790ns)
+*	Reading 01110010 from address 1110 (from port 0) during cycle 179 (1790ns - 1800ns)
+*	Reading 01110010 from address 1110 (from port 0) during cycle 181 (1810ns - 1820ns)
+*	Reading 01110010 from address 1110 (from port 0) during cycle 182 (1820ns - 1830ns)
+*	Reading 01110010 from address 1110 (from port 0) during cycle 183 (1830ns - 1840ns)
+*	Reading 01110010 from address 1110 (from port 0) during cycle 184 (1840ns - 1850ns)
+*	Writing 00100001  to  address 1110 (from port 0) during cycle 186 (1860ns - 1870ns)
+*	Reading 01100001 from address 0000 (from port 0) during cycle 187 (1870ns - 1880ns)
+*	Reading 01100001 from address 0000 (from port 0) during cycle 188 (1880ns - 1890ns)
+*	Writing 10110011  to  address 0000 (from port 0) during cycle 189 (1890ns - 1900ns)
+*	Reading 00100001 from address 1110 (from port 0) during cycle 190 (1900ns - 1910ns)
+*	Reading 10110011 from address 0000 (from port 0) during cycle 191 (1910ns - 1920ns)
+*	Writing 11100110  to  address 1110 (from port 0) during cycle 192 (1920ns - 1930ns)
+*	Reading 10110011 from address 0000 (from port 0) during cycle 193 (1930ns - 1940ns)
+*	Reading 11100110 from address 1110 (from port 0) during cycle 194 (1940ns - 1950ns)
+*	Reading 11100110 from address 1110 (from port 0) during cycle 195 (1950ns - 1960ns)
+*	Reading 11100110 from address 1110 (from port 0) during cycle 197 (1970ns - 1980ns)
+*	Writing 10010001  to  address 0000 (from port 0) during cycle 198 (1980ns - 1990ns)
+*	Reading 10010001 from address 0000 (from port 0) during cycle 199 (1990ns - 2000ns)
+*	Reading 11100110 from address 1110 (from port 0) during cycle 200 (2000ns - 2010ns)
+*	Writing 11001100  to  address 1110 (from port 0) during cycle 202 (2020ns - 2030ns)
+*	Reading 11001100 from address 1110 (from port 0) during cycle 203 (2030ns - 2040ns)
+*	Reading 10010001 from address 0000 (from port 0) during cycle 204 (2040ns - 2050ns)
 *	Idle during cycle 205 (2050ns - 2060ns)
 
 * Generation of data and address signals
-* (time, data): [(0, 0), (10, 0), (20, 0), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 1), (140, 1), (150, 1), (160, 1), (170, 1), (180, 1), (190, 0), (200, 0), (210, 0), (220, 0), (230, 1), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 1), (320, 1), (330, 1), (340, 0), (350, 1), (360, 1), (370, 1), (380, 1), (390, 1), (400, 0), (410, 1), (420, 1), (430, 1), (440, 1), (450, 1), (460, 1), (470, 1), (480, 1), (490, 0), (500, 0), (510, 0), (520, 0), (530, 1), (540, 1), (550, 1), (560, 1), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 0), (640, 0), (650, 0), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 0), (720, 0), (730, 0), (740, 0), (750, 0), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 0), (830, 0), (840, 0), (850, 0), (860, 0), (870, 0), (880, 0), (890, 0), (900, 0), (910, 0), (920, 0), (930, 0), (940, 0), (950, 0), (960, 0), (970, 0), (980, 0), (990, 0), (1000, 0), (1010, 0), (1020, 0), (1030, 0), (1040, 0), (1050, 0), (1060, 0), (1070, 0), (1080, 1), (1090, 1), (1100, 1), (1110, 1), (1120, 1), (1130, 1), (1140, 1), (1150, 1), (1160, 1), (1170, 1), (1180, 1), (1190, 1), (1200, 1), (1210, 1), (1220, 1), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 1), (1310, 1), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 1), (1390, 0), (1400, 0), (1410, 1), (1420, 1), (1430, 1), (1440, 1), (1450, 1), (1460, 0), (1470, 0), (1480, 0), (1490, 0), (1500, 0), (1510, 1), (1520, 1), (1530, 1), (1540, 1), (1550, 1), (1560, 1), (1570, 1), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 1), (1630, 1), (1640, 0), (1650, 0), (1660, 0), (1670, 0), (1680, 0), (1690, 0), (1700, 0), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 1), (1780, 1), (1790, 1), (1800, 0), (1810, 0), (1820, 1), (1830, 0), (1840, 0), (1850, 0), (1860, 1), (1870, 1), (1880, 1), (1890, 1), (1900, 1), (1910, 1), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 0), (1970, 0), (1980, 0), (1990, 0), (2000, 0), (2010, 0), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
-Vdin0_0  din0_0  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 0.0v 19.45n 0.0v 19.55n 0.0v 29.45n 0.0v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 3.3v 319.45n 3.3v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 0.0v 349.45n 0.0v 349.55n 3.3v 359.45n 3.3v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 3.3v 389.45n 3.3v 389.55n 3.3v 399.45n 3.3v 399.55n 0.0v 409.45n 0.0v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 0.0v 719.45n 0.0v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 0.0v 749.45n 0.0v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 0.0v 879.45n 0.0v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 0.0v 909.45n 0.0v 909.55n 0.0v 919.45n 0.0v 919.55n 0.0v 929.45n 0.0v 929.55n 0.0v 939.45n 0.0v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 0.0v 969.45n 0.0v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 3.3v 1159.45n 3.3v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 3.3v 1309.45n 3.3v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 0.0v 1659.45n 0.0v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 0.0v 1689.45n 0.0v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 0.0v 1709.45n 0.0v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 3.3v 1879.45n 3.3v 1879.55n 3.3v 1889.45n 3.3v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
-* (time, data): [(0, 0), (10, 1), (20, 1), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 0), (100, 0), (110, 0), (120, 0), (130, 0), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 1), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 1), (400, 0), (410, 1), (420, 1), (430, 1), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 0), (540, 0), (550, 0), (560, 0), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 0), (640, 1), (650, 1), (660, 1), (670, 1), (680, 1), (690, 1), (700, 1), (710, 1), (720, 1), (730, 1), (740, 1), (750, 0), (760, 1), (770, 1), (780, 1), (790, 1), (800, 1), (810, 1), (820, 1), (830, 1), (840, 1), (850, 1), (860, 1), (870, 1), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 1), (950, 1), (960, 1), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 1), (1060, 1), (1070, 1), (1080, 1), (1090, 1), (1100, 1), (1110, 1), (1120, 1), (1130, 1), (1140, 1), (1150, 1), (1160, 1), (1170, 1), (1180, 1), (1190, 1), (1200, 1), (1210, 1), (1220, 1), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 1), (1280, 1), (1290, 1), (1300, 1), (1310, 1), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 1), (1390, 0), (1400, 0), (1410, 1), (1420, 1), (1430, 1), (1440, 1), (1450, 1), (1460, 0), (1470, 0), (1480, 0), (1490, 0), (1500, 0), (1510, 0), (1520, 0), (1530, 0), (1540, 1), (1550, 1), (1560, 1), (1570, 1), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 1), (1630, 1), (1640, 0), (1650, 0), (1660, 0), (1670, 0), (1680, 0), (1690, 0), (1700, 0), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 0), (1780, 0), (1790, 0), (1800, 1), (1810, 1), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 0), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 0), (1930, 0), (1940, 0), (1950, 0), (1960, 0), (1970, 0), (1980, 0), (1990, 0), (2000, 1), (2010, 1), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
-Vdin0_1  din0_1  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 0.0v 99.45n 0.0v 99.55n 0.0v 109.45n 0.0v 109.55n 0.0v 119.45n 0.0v 119.55n 0.0v 129.45n 0.0v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 3.3v 399.45n 3.3v 399.55n 0.0v 409.45n 0.0v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 0.0v 639.45n 0.0v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 3.3v 699.45n 3.3v 699.55n 3.3v 709.45n 3.3v 709.55n 3.3v 719.45n 3.3v 719.55n 3.3v 729.45n 3.3v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 0.0v 759.45n 0.0v 759.55n 3.3v 769.45n 3.3v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 3.3v 819.45n 3.3v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 3.3v 1159.45n 3.3v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 3.3v 1309.45n 3.3v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 0.0v 1659.45n 0.0v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 0.0v 1689.45n 0.0v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 0.0v 1709.45n 0.0v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
-* (time, data): [(0, 0), (10, 1), (20, 0), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 0), (120, 0), (130, 0), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 1), (200, 1), (210, 1), (220, 1), (230, 1), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 1), (320, 1), (330, 1), (340, 1), (350, 0), (360, 0), (370, 0), (380, 1), (390, 0), (400, 0), (410, 1), (420, 1), (430, 1), (440, 1), (450, 1), (460, 1), (470, 1), (480, 1), (490, 0), (500, 0), (510, 0), (520, 0), (530, 1), (540, 1), (550, 1), (560, 1), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 1), (640, 1), (650, 1), (660, 1), (670, 1), (680, 1), (690, 1), (700, 1), (710, 0), (720, 1), (730, 1), (740, 1), (750, 1), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 0), (830, 0), (840, 0), (850, 0), (860, 0), (870, 0), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 1), (950, 1), (960, 1), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 0), (1020, 0), (1030, 0), (1040, 0), (1050, 0), (1060, 0), (1070, 0), (1080, 0), (1090, 0), (1100, 0), (1110, 0), (1120, 0), (1130, 0), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 1), (1280, 1), (1290, 1), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 1), (1370, 1), (1380, 1), (1390, 1), (1400, 1), (1410, 1), (1420, 1), (1430, 1), (1440, 1), (1450, 1), (1460, 1), (1470, 1), (1480, 1), (1490, 1), (1500, 0), (1510, 0), (1520, 0), (1530, 0), (1540, 1), (1550, 1), (1560, 1), (1570, 1), (1580, 1), (1590, 0), (1600, 0), (1610, 0), (1620, 1), (1630, 1), (1640, 0), (1650, 0), (1660, 0), (1670, 0), (1680, 0), (1690, 0), (1700, 0), (1710, 1), (1720, 1), (1730, 1), (1740, 1), (1750, 1), (1760, 1), (1770, 0), (1780, 0), (1790, 0), (1800, 0), (1810, 0), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 1), (1870, 1), (1880, 1), (1890, 1), (1900, 1), (1910, 1), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 0), (1970, 0), (1980, 0), (1990, 0), (2000, 1), (2010, 1), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
-Vdin0_2  din0_2  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 0.0v 29.45n 0.0v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 0.0v 119.45n 0.0v 119.55n 0.0v 129.45n 0.0v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 3.3v 199.45n 3.3v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 3.3v 229.45n 3.3v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 3.3v 319.45n 3.3v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 3.3v 349.45n 3.3v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 3.3v 389.45n 3.3v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 3.3v 639.45n 3.3v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 3.3v 699.45n 3.3v 699.55n 3.3v 709.45n 3.3v 709.55n 0.0v 719.45n 0.0v 719.55n 3.3v 729.45n 3.3v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 0.0v 879.45n 0.0v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 0.0v 1139.45n 0.0v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 3.3v 1469.45n 3.3v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 0.0v 1619.45n 0.0v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 0.0v 1659.45n 0.0v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 0.0v 1689.45n 0.0v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 0.0v 1709.45n 0.0v 1709.55n 3.3v 1719.45n 3.3v 1719.55n 3.3v 1729.45n 3.3v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 3.3v 1749.45n 3.3v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 3.3v 1879.45n 3.3v 1879.55n 3.3v 1889.45n 3.3v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
-* (time, data): [(0, 0), (10, 1), (20, 1), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 0), (120, 0), (130, 0), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 1), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 0), (320, 0), (330, 0), (340, 1), (350, 0), (360, 0), (370, 0), (380, 1), (390, 0), (400, 0), (410, 1), (420, 1), (430, 1), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 1), (540, 1), (550, 1), (560, 1), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 1), (640, 0), (650, 0), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 1), (720, 0), (730, 0), (740, 0), (750, 0), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 0), (830, 0), (840, 0), (850, 0), (860, 0), (870, 0), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 1), (950, 1), (960, 1), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 1), (1060, 1), (1070, 1), (1080, 1), (1090, 1), (1100, 1), (1110, 1), (1120, 1), (1130, 1), (1140, 1), (1150, 1), (1160, 1), (1170, 1), (1180, 1), (1190, 1), (1200, 1), (1210, 1), (1220, 1), (1230, 1), (1240, 1), (1250, 1), (1260, 1), (1270, 0), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 1), (1330, 1), (1340, 1), (1350, 1), (1360, 1), (1370, 1), (1380, 0), (1390, 1), (1400, 1), (1410, 0), (1420, 0), (1430, 0), (1440, 1), (1450, 1), (1460, 1), (1470, 1), (1480, 1), (1490, 1), (1500, 1), (1510, 0), (1520, 0), (1530, 0), (1540, 1), (1550, 1), (1560, 1), (1570, 1), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 1), (1630, 1), (1640, 1), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 1), (1780, 1), (1790, 1), (1800, 0), (1810, 0), (1820, 0), (1830, 0), (1840, 0), (1850, 0), (1860, 1), (1870, 1), (1880, 1), (1890, 1), (1900, 1), (1910, 1), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 1), (1990, 1), (2000, 1), (2010, 1), (2020, 1), (2030, 1), (2040, 1), (2050, 1)]
-Vdin0_3  din0_3  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 0.0v 119.45n 0.0v 119.55n 0.0v 129.45n 0.0v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 3.3v 349.45n 3.3v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 3.3v 389.45n 3.3v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 3.3v 639.45n 3.3v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 3.3v 719.45n 3.3v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 0.0v 749.45n 0.0v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 0.0v 879.45n 0.0v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 3.3v 1159.45n 3.3v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 3.3v 1239.45n 3.3v 1239.55n 3.3v 1249.45n 3.3v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 3.3v 1329.45n 3.3v 1329.55n 3.3v 1339.45n 3.3v 1339.55n 3.3v 1349.45n 3.3v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 3.3v 1469.45n 3.3v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 3.3v 1509.45n 3.3v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 3.3v 1879.45n 3.3v 1879.55n 3.3v 1889.45n 3.3v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 3.3v 1989.45n 3.3v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 3.3v 2029.45n 3.3v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 3.3v 2049.45n 3.3v 2049.55n 3.3v )
-* (time, data): [(0, 0), (10, 1), (20, 1), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 0), (100, 0), (110, 1), (120, 1), (130, 1), (140, 1), (150, 1), (160, 1), (170, 1), (180, 1), (190, 1), (200, 1), (210, 1), (220, 1), (230, 0), (240, 0), (250, 0), (260, 0), (270, 0), (280, 0), (290, 0), (300, 0), (310, 1), (320, 1), (330, 1), (340, 0), (350, 0), (360, 0), (370, 0), (380, 1), (390, 0), (400, 1), (410, 0), (420, 0), (430, 0), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 1), (540, 1), (550, 1), (560, 1), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 0), (640, 0), (650, 0), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 0), (720, 1), (730, 1), (740, 1), (750, 1), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 0), (830, 0), (840, 0), (850, 0), (860, 0), (870, 0), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 1), (950, 1), (960, 1), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 0), (1020, 0), (1030, 0), (1040, 0), (1050, 0), (1060, 0), (1070, 0), (1080, 0), (1090, 0), (1100, 0), (1110, 0), (1120, 0), (1130, 1), (1140, 1), (1150, 1), (1160, 1), (1170, 1), (1180, 1), (1190, 1), (1200, 1), (1210, 1), (1220, 1), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 1), (1280, 1), (1290, 1), (1300, 1), (1310, 1), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 0), (1390, 1), (1400, 1), (1410, 1), (1420, 1), (1430, 1), (1440, 1), (1450, 1), (1460, 0), (1470, 0), (1480, 0), (1490, 0), (1500, 0), (1510, 1), (1520, 1), (1530, 1), (1540, 1), (1550, 1), (1560, 1), (1570, 1), (1580, 1), (1590, 0), (1600, 0), (1610, 0), (1620, 0), (1630, 0), (1640, 1), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 0), (1780, 0), (1790, 0), (1800, 0), (1810, 0), (1820, 0), (1830, 1), (1840, 1), (1850, 1), (1860, 0), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 0), (1930, 0), (1940, 0), (1950, 0), (1960, 0), (1970, 0), (1980, 0), (1990, 0), (2000, 0), (2010, 0), (2020, 1), (2030, 1), (2040, 1), (2050, 1)]
-Vdin0_4  din0_4  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 0.0v 99.45n 0.0v 99.55n 0.0v 109.45n 0.0v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 3.3v 199.45n 3.3v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 3.3v 229.45n 3.3v 229.55n 0.0v 239.45n 0.0v 239.55n 0.0v 249.45n 0.0v 249.55n 0.0v 259.45n 0.0v 259.55n 0.0v 269.45n 0.0v 269.55n 0.0v 279.45n 0.0v 279.55n 0.0v 289.45n 0.0v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 3.3v 319.45n 3.3v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 3.3v 389.45n 3.3v 389.55n 0.0v 399.45n 0.0v 399.55n 3.3v 409.45n 3.3v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 0.0v 719.45n 0.0v 719.55n 3.3v 729.45n 3.3v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 0.0v 879.45n 0.0v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 3.3v 1159.45n 3.3v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 3.3v 1309.45n 3.3v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 0.0v 1619.45n 0.0v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 3.3v 2029.45n 3.3v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 3.3v 2049.45n 3.3v 2049.55n 3.3v )
-* (time, data): [(0, 0), (10, 1), (20, 1), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 1), (140, 1), (150, 1), (160, 1), (170, 1), (180, 1), (190, 0), (200, 0), (210, 0), (220, 0), (230, 1), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 0), (320, 0), (330, 0), (340, 0), (350, 1), (360, 1), (370, 1), (380, 0), (390, 0), (400, 0), (410, 1), (420, 1), (430, 1), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 1), (540, 1), (550, 1), (560, 1), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 1), (640, 0), (650, 0), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 1), (720, 1), (730, 1), (740, 1), (750, 0), (760, 1), (770, 1), (780, 1), (790, 1), (800, 1), (810, 1), (820, 1), (830, 1), (840, 1), (850, 1), (860, 1), (870, 1), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 1), (950, 1), (960, 1), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 1), (1060, 1), (1070, 1), (1080, 1), (1090, 1), (1100, 1), (1110, 1), (1120, 1), (1130, 0), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 1), (1310, 1), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 1), (1390, 0), (1400, 0), (1410, 1), (1420, 1), (1430, 1), (1440, 0), (1450, 0), (1460, 1), (1470, 1), (1480, 1), (1490, 1), (1500, 1), (1510, 1), (1520, 1), (1530, 1), (1540, 1), (1550, 1), (1560, 1), (1570, 1), (1580, 1), (1590, 0), (1600, 0), (1610, 0), (1620, 0), (1630, 0), (1640, 1), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 0), (1780, 0), (1790, 0), (1800, 1), (1810, 1), (1820, 1), (1830, 0), (1840, 0), (1850, 0), (1860, 0), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 0), (1930, 0), (1940, 0), (1950, 0), (1960, 0), (1970, 0), (1980, 0), (1990, 0), (2000, 0), (2010, 0), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
-Vdin0_5  din0_5  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 3.3v 359.45n 3.3v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 3.3v 639.45n 3.3v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 3.3v 719.45n 3.3v 719.55n 3.3v 729.45n 3.3v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 0.0v 759.45n 0.0v 759.55n 3.3v 769.45n 3.3v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 3.3v 819.45n 3.3v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 0.0v 1139.45n 0.0v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 3.3v 1309.45n 3.3v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 3.3v 1469.45n 3.3v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 3.3v 1509.45n 3.3v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 0.0v 1619.45n 0.0v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
-* (time, data): [(0, 0), (10, 1), (20, 0), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 1), (140, 1), (150, 1), (160, 1), (170, 1), (180, 1), (190, 0), (200, 0), (210, 0), (220, 0), (230, 1), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 1), (320, 1), (330, 1), (340, 0), (350, 0), (360, 0), (370, 0), (380, 1), (390, 0), (400, 0), (410, 0), (420, 0), (430, 0), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 1), (500, 1), (510, 1), (520, 1), (530, 0), (540, 0), (550, 0), (560, 0), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 1), (640, 1), (650, 1), (660, 1), (670, 1), (680, 1), (690, 1), (700, 1), (710, 0), (720, 0), (730, 0), (740, 0), (750, 0), (760, 1), (770, 1), (780, 1), (790, 1), (800, 1), (810, 0), (820, 0), (830, 0), (840, 0), (850, 0), (860, 0), (870, 0), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 1), (950, 1), (960, 1), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 1), (1060, 1), (1070, 1), (1080, 0), (1090, 0), (1100, 0), (1110, 0), (1120, 0), (1130, 0), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 1), (1280, 1), (1290, 1), (1300, 1), (1310, 1), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 1), (1370, 1), (1380, 0), (1390, 0), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 1), (1450, 1), (1460, 0), (1470, 0), (1480, 0), (1490, 0), (1500, 0), (1510, 1), (1520, 1), (1530, 1), (1540, 0), (1550, 0), (1560, 0), (1570, 0), (1580, 0), (1590, 1), (1600, 1), (1610, 1), (1620, 0), (1630, 0), (1640, 1), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 1), (1720, 1), (1730, 1), (1740, 1), (1750, 1), (1760, 1), (1770, 1), (1780, 1), (1790, 1), (1800, 1), (1810, 1), (1820, 0), (1830, 1), (1840, 1), (1850, 1), (1860, 1), (1870, 1), (1880, 1), (1890, 1), (1900, 1), (1910, 1), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 1), (1990, 1), (2000, 0), (2010, 0), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
-Vdin0_6  din0_6  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 0.0v 29.45n 0.0v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 3.3v 319.45n 3.3v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 3.3v 389.45n 3.3v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 3.3v 499.45n 3.3v 499.55n 3.3v 509.45n 3.3v 509.55n 3.3v 519.45n 3.3v 519.55n 3.3v 529.45n 3.3v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 3.3v 639.45n 3.3v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 3.3v 699.45n 3.3v 699.55n 3.3v 709.45n 3.3v 709.55n 0.0v 719.45n 0.0v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 0.0v 749.45n 0.0v 749.55n 0.0v 759.45n 0.0v 759.55n 3.3v 769.45n 3.3v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 0.0v 819.45n 0.0v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 0.0v 879.45n 0.0v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 0.0v 1139.45n 0.0v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 3.3v 1309.45n 3.3v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 0.0v 1549.45n 0.0v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 3.3v 1719.45n 3.3v 1719.55n 3.3v 1729.45n 3.3v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 3.3v 1749.45n 3.3v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 3.3v 1879.45n 3.3v 1879.55n 3.3v 1889.45n 3.3v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 3.3v 1989.45n 3.3v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
-* (time, data): [(0, 0), (10, 0), (20, 1), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 1), (140, 1), (150, 1), (160, 1), (170, 1), (180, 1), (190, 1), (200, 1), (210, 1), (220, 1), (230, 1), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 1), (320, 1), (330, 1), (340, 1), (350, 0), (360, 0), (370, 0), (380, 1), (390, 1), (400, 0), (410, 1), (420, 1), (430, 1), (440, 1), (450, 1), (460, 1), (470, 1), (480, 1), (490, 0), (500, 0), (510, 0), (520, 0), (530, 0), (540, 0), (550, 0), (560, 0), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 1), (640, 0), (650, 0), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 0), (720, 1), (730, 1), (740, 1), (750, 1), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 1), (820, 1), (830, 1), (840, 1), (850, 1), (860, 1), (870, 1), (880, 0), (890, 0), (900, 0), (910, 0), (920, 0), (930, 0), (940, 0), (950, 0), (960, 0), (970, 0), (980, 0), (990, 0), (1000, 0), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 1), (1060, 1), (1070, 1), (1080, 1), (1090, 1), (1100, 1), (1110, 1), (1120, 1), (1130, 1), (1140, 1), (1150, 1), (1160, 1), (1170, 1), (1180, 1), (1190, 1), (1200, 1), (1210, 1), (1220, 1), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 1), (1280, 1), (1290, 1), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 1), (1370, 1), (1380, 0), (1390, 1), (1400, 1), (1410, 1), (1420, 1), (1430, 1), (1440, 1), (1450, 1), (1460, 0), (1470, 0), (1480, 0), (1490, 0), (1500, 1), (1510, 0), (1520, 0), (1530, 0), (1540, 0), (1550, 0), (1560, 0), (1570, 0), (1580, 0), (1590, 0), (1600, 0), (1610, 0), (1620, 1), (1630, 1), (1640, 1), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 1), (1780, 1), (1790, 1), (1800, 0), (1810, 0), (1820, 1), (1830, 0), (1840, 0), (1850, 0), (1860, 0), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 0), (1930, 0), (1940, 0), (1950, 0), (1960, 1), (1970, 1), (1980, 1), (1990, 1), (2000, 1), (2010, 1), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
-Vdin0_7  din0_7  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 0.0v 19.45n 0.0v 19.55n 3.3v 29.45n 3.3v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 3.3v 199.45n 3.3v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 3.3v 229.45n 3.3v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 3.3v 319.45n 3.3v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 3.3v 349.45n 3.3v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 3.3v 389.45n 3.3v 389.55n 3.3v 399.45n 3.3v 399.55n 0.0v 409.45n 0.0v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 3.3v 639.45n 3.3v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 0.0v 719.45n 0.0v 719.55n 3.3v 729.45n 3.3v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 3.3v 819.45n 3.3v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 0.0v 909.45n 0.0v 909.55n 0.0v 919.45n 0.0v 919.55n 0.0v 929.45n 0.0v 929.55n 0.0v 939.45n 0.0v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 0.0v 969.45n 0.0v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 3.3v 1159.45n 3.3v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 3.3v 1509.45n 3.3v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 0.0v 1549.45n 0.0v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 0.0v 1619.45n 0.0v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 3.3v 1989.45n 3.3v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
+* (time, data): [(0, 0), (10, 1), (20, 0), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 0), (100, 0), (110, 0), (120, 0), (130, 0), (140, 1), (150, 1), (160, 1), (170, 1), (180, 1), (190, 1), (200, 1), (210, 1), (220, 1), (230, 1), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 0), (300, 0), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 1), (400, 1), (410, 1), (420, 1), (430, 1), (440, 1), (450, 1), (460, 1), (470, 1), (480, 1), (490, 1), (500, 1), (510, 1), (520, 1), (530, 1), (540, 1), (550, 1), (560, 1), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 1), (640, 0), (650, 0), (660, 1), (670, 1), (680, 1), (690, 1), (700, 1), (710, 1), (720, 1), (730, 0), (740, 0), (750, 0), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 1), (830, 1), (840, 1), (850, 1), (860, 1), (870, 1), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 0), (940, 1), (950, 0), (960, 0), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 0), (1060, 0), (1070, 0), (1080, 1), (1090, 1), (1100, 1), (1110, 1), (1120, 1), (1130, 1), (1140, 0), (1150, 1), (1160, 0), (1170, 1), (1180, 1), (1190, 1), (1200, 1), (1210, 1), (1220, 1), (1230, 1), (1240, 1), (1250, 1), (1260, 1), (1270, 1), (1280, 1), (1290, 1), (1300, 1), (1310, 1), (1320, 1), (1330, 1), (1340, 1), (1350, 1), (1360, 1), (1370, 1), (1380, 0), (1390, 0), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 0), (1450, 0), (1460, 0), (1470, 0), (1480, 0), (1490, 0), (1500, 0), (1510, 0), (1520, 0), (1530, 0), (1540, 0), (1550, 0), (1560, 0), (1570, 0), (1580, 0), (1590, 0), (1600, 0), (1610, 0), (1620, 0), (1630, 0), (1640, 0), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 1), (1720, 1), (1730, 1), (1740, 1), (1750, 1), (1760, 1), (1770, 1), (1780, 0), (1790, 0), (1800, 0), (1810, 0), (1820, 0), (1830, 0), (1840, 0), (1850, 0), (1860, 1), (1870, 1), (1880, 1), (1890, 1), (1900, 1), (1910, 1), (1920, 0), (1930, 0), (1940, 0), (1950, 0), (1960, 0), (1970, 0), (1980, 1), (1990, 1), (2000, 1), (2010, 1), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
+Vdin0_0  din0_0  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 0.0v 29.45n 0.0v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 0.0v 99.45n 0.0v 99.55n 0.0v 109.45n 0.0v 109.55n 0.0v 119.45n 0.0v 119.55n 0.0v 129.45n 0.0v 129.55n 0.0v 139.45n 0.0v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 3.3v 199.45n 3.3v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 3.3v 229.45n 3.3v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 3.3v 399.45n 3.3v 399.55n 3.3v 409.45n 3.3v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 3.3v 499.45n 3.3v 499.55n 3.3v 509.45n 3.3v 509.55n 3.3v 519.45n 3.3v 519.55n 3.3v 529.45n 3.3v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 3.3v 639.45n 3.3v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 3.3v 699.45n 3.3v 699.55n 3.3v 709.45n 3.3v 709.55n 3.3v 719.45n 3.3v 719.55n 3.3v 729.45n 3.3v 729.55n 0.0v 739.45n 0.0v 739.55n 0.0v 749.45n 0.0v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 0.0v 939.45n 0.0v 939.55n 3.3v 949.45n 3.3v 949.55n 0.0v 959.45n 0.0v 959.55n 0.0v 969.45n 0.0v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 3.3v 1159.45n 3.3v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 3.3v 1239.45n 3.3v 1239.55n 3.3v 1249.45n 3.3v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 3.3v 1309.45n 3.3v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 3.3v 1329.45n 3.3v 1329.55n 3.3v 1339.45n 3.3v 1339.55n 3.3v 1349.45n 3.3v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 0.0v 1549.45n 0.0v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 0.0v 1619.45n 0.0v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 3.3v 1719.45n 3.3v 1719.55n 3.3v 1729.45n 3.3v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 3.3v 1749.45n 3.3v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 3.3v 1879.45n 3.3v 1879.55n 3.3v 1889.45n 3.3v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 3.3v 1989.45n 3.3v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
+* (time, data): [(0, 0), (10, 1), (20, 1), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 0), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 0), (250, 0), (260, 0), (270, 1), (280, 1), (290, 1), (300, 1), (310, 1), (320, 1), (330, 1), (340, 1), (350, 1), (360, 1), (370, 1), (380, 1), (390, 0), (400, 0), (410, 0), (420, 0), (430, 0), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 0), (540, 0), (550, 0), (560, 0), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 0), (640, 1), (650, 1), (660, 1), (670, 1), (680, 1), (690, 1), (700, 1), (710, 1), (720, 1), (730, 0), (740, 0), (750, 0), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 1), (830, 1), (840, 1), (850, 1), (860, 1), (870, 1), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 0), (940, 1), (950, 1), (960, 1), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 0), (1060, 0), (1070, 0), (1080, 0), (1090, 0), (1100, 1), (1110, 1), (1120, 0), (1130, 0), (1140, 0), (1150, 0), (1160, 1), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 1), (1390, 1), (1400, 1), (1410, 0), (1420, 0), (1430, 0), (1440, 1), (1450, 1), (1460, 1), (1470, 1), (1480, 1), (1490, 1), (1500, 1), (1510, 1), (1520, 1), (1530, 1), (1540, 1), (1550, 1), (1560, 1), (1570, 1), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 1), (1630, 1), (1640, 1), (1650, 0), (1660, 0), (1670, 0), (1680, 0), (1690, 0), (1700, 0), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 0), (1780, 1), (1790, 1), (1800, 1), (1810, 1), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 0), (1870, 0), (1880, 0), (1890, 1), (1900, 1), (1910, 1), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 0), (2000, 0), (2010, 0), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
+Vdin0_1  din0_1  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 0.0v 249.45n 0.0v 249.55n 0.0v 259.45n 0.0v 259.55n 0.0v 269.45n 0.0v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 3.3v 319.45n 3.3v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 3.3v 349.45n 3.3v 349.55n 3.3v 359.45n 3.3v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 3.3v 389.45n 3.3v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 3.3v 699.45n 3.3v 699.55n 3.3v 709.45n 3.3v 709.55n 3.3v 719.45n 3.3v 719.55n 3.3v 729.45n 3.3v 729.55n 0.0v 739.45n 0.0v 739.55n 0.0v 749.45n 0.0v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 0.0v 939.45n 0.0v 939.55n 3.3v 949.45n 3.3v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 0.0v 1139.45n 0.0v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 3.3v 1469.45n 3.3v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 3.3v 1509.45n 3.3v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 0.0v 1659.45n 0.0v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 0.0v 1689.45n 0.0v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 0.0v 1709.45n 0.0v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
+* (time, data): [(0, 0), (10, 1), (20, 1), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 1), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 0), (250, 0), (260, 0), (270, 0), (280, 0), (290, 1), (300, 1), (310, 1), (320, 1), (330, 1), (340, 1), (350, 1), (360, 1), (370, 1), (380, 1), (390, 1), (400, 1), (410, 1), (420, 1), (430, 1), (440, 1), (450, 1), (460, 1), (470, 1), (480, 1), (490, 1), (500, 1), (510, 0), (520, 0), (530, 0), (540, 0), (550, 0), (560, 0), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 0), (640, 1), (650, 1), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 0), (720, 0), (730, 1), (740, 1), (750, 1), (760, 1), (770, 1), (780, 1), (790, 1), (800, 1), (810, 1), (820, 0), (830, 0), (840, 1), (850, 1), (860, 1), (870, 1), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 0), (950, 1), (960, 1), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 1), (1060, 1), (1070, 1), (1080, 0), (1090, 0), (1100, 1), (1110, 1), (1120, 0), (1130, 0), (1140, 1), (1150, 1), (1160, 0), (1170, 1), (1180, 1), (1190, 1), (1200, 1), (1210, 1), (1220, 1), (1230, 1), (1240, 1), (1250, 1), (1260, 1), (1270, 1), (1280, 1), (1290, 1), (1300, 1), (1310, 1), (1320, 1), (1330, 1), (1340, 1), (1350, 1), (1360, 1), (1370, 1), (1380, 1), (1390, 1), (1400, 1), (1410, 1), (1420, 1), (1430, 1), (1440, 1), (1450, 1), (1460, 1), (1470, 1), (1480, 1), (1490, 1), (1500, 1), (1510, 1), (1520, 1), (1530, 1), (1540, 1), (1550, 1), (1560, 1), (1570, 1), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 0), (1630, 0), (1640, 0), (1650, 0), (1660, 0), (1670, 0), (1680, 0), (1690, 0), (1700, 0), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 0), (1780, 0), (1790, 0), (1800, 0), (1810, 0), (1820, 0), (1830, 0), (1840, 0), (1850, 0), (1860, 0), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 0), (2000, 0), (2010, 0), (2020, 1), (2030, 1), (2040, 1), (2050, 1)]
+Vdin0_2  din0_2  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 0.0v 249.45n 0.0v 249.55n 0.0v 259.45n 0.0v 259.55n 0.0v 269.45n 0.0v 269.55n 0.0v 279.45n 0.0v 279.55n 0.0v 289.45n 0.0v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 3.3v 319.45n 3.3v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 3.3v 349.45n 3.3v 349.55n 3.3v 359.45n 3.3v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 3.3v 389.45n 3.3v 389.55n 3.3v 399.45n 3.3v 399.55n 3.3v 409.45n 3.3v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 3.3v 499.45n 3.3v 499.55n 3.3v 509.45n 3.3v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 0.0v 719.45n 0.0v 719.55n 0.0v 729.45n 0.0v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 3.3v 819.45n 3.3v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 0.0v 949.45n 0.0v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 0.0v 1139.45n 0.0v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 3.3v 1159.45n 3.3v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 3.3v 1239.45n 3.3v 1239.55n 3.3v 1249.45n 3.3v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 3.3v 1309.45n 3.3v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 3.3v 1329.45n 3.3v 1329.55n 3.3v 1339.45n 3.3v 1339.55n 3.3v 1349.45n 3.3v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 3.3v 1469.45n 3.3v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 3.3v 1509.45n 3.3v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 0.0v 1659.45n 0.0v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 0.0v 1689.45n 0.0v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 0.0v 1709.45n 0.0v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 3.3v 2029.45n 3.3v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 3.3v 2049.45n 3.3v 2049.55n 3.3v )
+* (time, data): [(0, 0), (10, 0), (20, 1), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 0), (100, 0), (110, 0), (120, 0), (130, 1), (140, 1), (150, 1), (160, 1), (170, 1), (180, 1), (190, 1), (200, 1), (210, 1), (220, 1), (230, 1), (240, 1), (250, 1), (260, 1), (270, 0), (280, 0), (290, 0), (300, 0), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 0), (400, 0), (410, 0), (420, 0), (430, 0), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 0), (540, 0), (550, 0), (560, 0), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 0), (640, 1), (650, 1), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 0), (720, 0), (730, 1), (740, 1), (750, 1), (760, 1), (770, 1), (780, 1), (790, 1), (800, 1), (810, 1), (820, 1), (830, 1), (840, 0), (850, 0), (860, 0), (870, 0), (880, 0), (890, 0), (900, 0), (910, 0), (920, 0), (930, 1), (940, 0), (950, 0), (960, 0), (970, 0), (980, 0), (990, 0), (1000, 0), (1010, 0), (1020, 0), (1030, 0), (1040, 0), (1050, 0), (1060, 0), (1070, 0), (1080, 0), (1090, 0), (1100, 0), (1110, 0), (1120, 1), (1130, 1), (1140, 1), (1150, 0), (1160, 1), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 0), (1390, 0), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 0), (1450, 0), (1460, 1), (1470, 1), (1480, 1), (1490, 1), (1500, 1), (1510, 1), (1520, 1), (1530, 1), (1540, 1), (1550, 0), (1560, 1), (1570, 1), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 1), (1630, 1), (1640, 1), (1650, 1), (1660, 0), (1670, 0), (1680, 0), (1690, 0), (1700, 0), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 0), (1780, 0), (1790, 0), (1800, 0), (1810, 0), (1820, 0), (1830, 0), (1840, 0), (1850, 0), (1860, 0), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 0), (1930, 0), (1940, 0), (1950, 0), (1960, 0), (1970, 0), (1980, 0), (1990, 0), (2000, 0), (2010, 0), (2020, 1), (2030, 1), (2040, 1), (2050, 1)]
+Vdin0_3  din0_3  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 0.0v 19.45n 0.0v 19.55n 3.3v 29.45n 3.3v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 0.0v 99.45n 0.0v 99.55n 0.0v 109.45n 0.0v 109.55n 0.0v 119.45n 0.0v 119.55n 0.0v 129.45n 0.0v 129.55n 3.3v 139.45n 3.3v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 3.3v 199.45n 3.3v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 3.3v 229.45n 3.3v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 0.0v 279.45n 0.0v 279.55n 0.0v 289.45n 0.0v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 0.0v 719.45n 0.0v 719.55n 0.0v 729.45n 0.0v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 3.3v 819.45n 3.3v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 0.0v 879.45n 0.0v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 0.0v 909.45n 0.0v 909.55n 0.0v 919.45n 0.0v 919.55n 0.0v 929.45n 0.0v 929.55n 3.3v 939.45n 3.3v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 0.0v 969.45n 0.0v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 3.3v 1469.45n 3.3v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 3.3v 1509.45n 3.3v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 0.0v 1689.45n 0.0v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 0.0v 1709.45n 0.0v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 3.3v 2029.45n 3.3v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 3.3v 2049.45n 3.3v 2049.55n 3.3v )
+* (time, data): [(0, 0), (10, 0), (20, 0), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 0), (100, 0), (110, 0), (120, 0), (130, 0), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 0), (250, 0), (260, 0), (270, 1), (280, 1), (290, 0), (300, 0), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 1), (400, 1), (410, 1), (420, 1), (430, 1), (440, 1), (450, 1), (460, 1), (470, 1), (480, 1), (490, 1), (500, 1), (510, 0), (520, 0), (530, 0), (540, 0), (550, 0), (560, 0), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 0), (640, 0), (650, 0), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 0), (720, 0), (730, 1), (740, 1), (750, 1), (760, 1), (770, 1), (780, 1), (790, 1), (800, 1), (810, 1), (820, 0), (830, 0), (840, 1), (850, 1), (860, 1), (870, 1), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 0), (950, 0), (960, 0), (970, 0), (980, 0), (990, 0), (1000, 0), (1010, 0), (1020, 0), (1030, 0), (1040, 0), (1050, 1), (1060, 1), (1070, 1), (1080, 0), (1090, 0), (1100, 1), (1110, 1), (1120, 1), (1130, 1), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 1), (1390, 1), (1400, 1), (1410, 0), (1420, 0), (1430, 0), (1440, 0), (1450, 0), (1460, 1), (1470, 1), (1480, 1), (1490, 1), (1500, 1), (1510, 1), (1520, 0), (1530, 0), (1540, 0), (1550, 0), (1560, 1), (1570, 1), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 0), (1630, 0), (1640, 0), (1650, 1), (1660, 0), (1670, 0), (1680, 0), (1690, 0), (1700, 0), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 0), (1780, 1), (1790, 1), (1800, 1), (1810, 1), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 0), (1870, 0), (1880, 0), (1890, 1), (1900, 1), (1910, 1), (1920, 0), (1930, 0), (1940, 0), (1950, 0), (1960, 0), (1970, 0), (1980, 1), (1990, 1), (2000, 1), (2010, 1), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
+Vdin0_4  din0_4  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 0.0v 19.45n 0.0v 19.55n 0.0v 29.45n 0.0v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 0.0v 99.45n 0.0v 99.55n 0.0v 109.45n 0.0v 109.55n 0.0v 119.45n 0.0v 119.55n 0.0v 129.45n 0.0v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 0.0v 249.45n 0.0v 249.55n 0.0v 259.45n 0.0v 259.55n 0.0v 269.45n 0.0v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 3.3v 399.45n 3.3v 399.55n 3.3v 409.45n 3.3v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 3.3v 499.45n 3.3v 499.55n 3.3v 509.45n 3.3v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 0.0v 719.45n 0.0v 719.55n 0.0v 729.45n 0.0v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 3.3v 819.45n 3.3v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 0.0v 969.45n 0.0v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 3.3v 1469.45n 3.3v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 3.3v 1509.45n 3.3v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 0.0v 1549.45n 0.0v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 0.0v 1689.45n 0.0v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 0.0v 1709.45n 0.0v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 3.3v 1989.45n 3.3v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
+* (time, data): [(0, 0), (10, 0), (20, 0), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 1), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 0), (250, 0), (260, 0), (270, 1), (280, 1), (290, 0), (300, 0), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 0), (400, 0), (410, 0), (420, 0), (430, 0), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 0), (500, 0), (510, 1), (520, 1), (530, 1), (540, 1), (550, 1), (560, 1), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 1), (640, 0), (650, 0), (660, 1), (670, 1), (680, 1), (690, 1), (700, 1), (710, 1), (720, 1), (730, 1), (740, 1), (750, 1), (760, 1), (770, 1), (780, 1), (790, 1), (800, 1), (810, 1), (820, 1), (830, 1), (840, 1), (850, 1), (860, 1), (870, 1), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 1), (950, 0), (960, 0), (970, 0), (980, 0), (990, 0), (1000, 0), (1010, 0), (1020, 0), (1030, 0), (1040, 0), (1050, 0), (1060, 0), (1070, 0), (1080, 1), (1090, 1), (1100, 0), (1110, 0), (1120, 1), (1130, 1), (1140, 1), (1150, 0), (1160, 1), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 0), (1390, 0), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 0), (1450, 0), (1460, 1), (1470, 1), (1480, 1), (1490, 1), (1500, 1), (1510, 1), (1520, 1), (1530, 1), (1540, 1), (1550, 1), (1560, 0), (1570, 0), (1580, 0), (1590, 0), (1600, 0), (1610, 0), (1620, 0), (1630, 0), (1640, 0), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 1), (1720, 1), (1730, 1), (1740, 1), (1750, 1), (1760, 1), (1770, 1), (1780, 1), (1790, 1), (1800, 1), (1810, 1), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 1), (1870, 1), (1880, 1), (1890, 1), (1900, 1), (1910, 1), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 0), (2000, 0), (2010, 0), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
+Vdin0_5  din0_5  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 0.0v 19.45n 0.0v 19.55n 0.0v 29.45n 0.0v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 0.0v 249.45n 0.0v 249.55n 0.0v 259.45n 0.0v 259.55n 0.0v 269.45n 0.0v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 3.3v 519.45n 3.3v 519.55n 3.3v 529.45n 3.3v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 3.3v 639.45n 3.3v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 3.3v 699.45n 3.3v 699.55n 3.3v 709.45n 3.3v 709.55n 3.3v 719.45n 3.3v 719.55n 3.3v 729.45n 3.3v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 3.3v 819.45n 3.3v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 0.0v 959.45n 0.0v 959.55n 0.0v 969.45n 0.0v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 3.3v 1469.45n 3.3v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 3.3v 1509.45n 3.3v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 0.0v 1619.45n 0.0v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 3.3v 1719.45n 3.3v 1719.55n 3.3v 1729.45n 3.3v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 3.3v 1749.45n 3.3v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 3.3v 1879.45n 3.3v 1879.55n 3.3v 1889.45n 3.3v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
+* (time, data): [(0, 0), (10, 0), (20, 1), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 0), (100, 0), (110, 0), (120, 0), (130, 1), (140, 1), (150, 1), (160, 1), (170, 1), (180, 1), (190, 1), (200, 1), (210, 1), (220, 1), (230, 1), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 1), (320, 1), (330, 1), (340, 1), (350, 1), (360, 1), (370, 1), (380, 1), (390, 1), (400, 1), (410, 1), (420, 1), (430, 1), (440, 1), (450, 1), (460, 1), (470, 1), (480, 1), (490, 1), (500, 1), (510, 1), (520, 1), (530, 1), (540, 1), (550, 1), (560, 1), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 1), (640, 0), (650, 0), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 0), (720, 0), (730, 0), (740, 0), (750, 0), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 1), (830, 1), (840, 0), (850, 0), (860, 0), (870, 0), (880, 0), (890, 0), (900, 0), (910, 0), (920, 0), (930, 1), (940, 1), (950, 0), (960, 0), (970, 0), (980, 0), (990, 0), (1000, 0), (1010, 0), (1020, 0), (1030, 0), (1040, 0), (1050, 0), (1060, 0), (1070, 0), (1080, 0), (1090, 0), (1100, 1), (1110, 1), (1120, 1), (1130, 1), (1140, 1), (1150, 0), (1160, 1), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 1), (1390, 1), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 0), (1450, 0), (1460, 0), (1470, 0), (1480, 0), (1490, 0), (1500, 0), (1510, 0), (1520, 0), (1530, 0), (1540, 0), (1550, 0), (1560, 0), (1570, 0), (1580, 0), (1590, 0), (1600, 0), (1610, 0), (1620, 0), (1630, 0), (1640, 0), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 1), (1720, 1), (1730, 1), (1740, 1), (1750, 1), (1760, 1), (1770, 1), (1780, 1), (1790, 1), (1800, 1), (1810, 1), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 0), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 0), (2000, 0), (2010, 0), (2020, 1), (2030, 1), (2040, 1), (2050, 1)]
+Vdin0_6  din0_6  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 0.0v 19.45n 0.0v 19.55n 3.3v 29.45n 3.3v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 0.0v 99.45n 0.0v 99.55n 0.0v 109.45n 0.0v 109.55n 0.0v 119.45n 0.0v 119.55n 0.0v 129.45n 0.0v 129.55n 3.3v 139.45n 3.3v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 3.3v 199.45n 3.3v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 3.3v 229.45n 3.3v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 3.3v 319.45n 3.3v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 3.3v 349.45n 3.3v 349.55n 3.3v 359.45n 3.3v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 3.3v 389.45n 3.3v 389.55n 3.3v 399.45n 3.3v 399.55n 3.3v 409.45n 3.3v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 3.3v 499.45n 3.3v 499.55n 3.3v 509.45n 3.3v 509.55n 3.3v 519.45n 3.3v 519.55n 3.3v 529.45n 3.3v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 3.3v 639.45n 3.3v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 0.0v 719.45n 0.0v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 0.0v 749.45n 0.0v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 0.0v 879.45n 0.0v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 0.0v 909.45n 0.0v 909.55n 0.0v 919.45n 0.0v 919.55n 0.0v 929.45n 0.0v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 0.0v 959.45n 0.0v 959.55n 0.0v 969.45n 0.0v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 0.0v 1549.45n 0.0v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 0.0v 1619.45n 0.0v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 3.3v 1719.45n 3.3v 1719.55n 3.3v 1729.45n 3.3v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 3.3v 1749.45n 3.3v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 3.3v 2029.45n 3.3v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 3.3v 2049.45n 3.3v 2049.55n 3.3v )
+* (time, data): [(0, 0), (10, 0), (20, 0), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 0), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 0), (250, 0), (260, 0), (270, 1), (280, 1), (290, 0), (300, 0), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 0), (400, 0), (410, 0), (420, 0), (430, 0), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 0), (540, 0), (550, 0), (560, 0), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 0), (640, 1), (650, 1), (660, 1), (670, 1), (680, 1), (690, 1), (700, 1), (710, 1), (720, 1), (730, 0), (740, 1), (750, 1), (760, 1), (770, 1), (780, 1), (790, 1), (800, 1), (810, 1), (820, 1), (830, 1), (840, 1), (850, 1), (860, 1), (870, 1), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 1), (950, 1), (960, 1), (970, 0), (980, 0), (990, 0), (1000, 0), (1010, 0), (1020, 0), (1030, 0), (1040, 0), (1050, 1), (1060, 1), (1070, 1), (1080, 0), (1090, 0), (1100, 0), (1110, 0), (1120, 1), (1130, 1), (1140, 0), (1150, 0), (1160, 1), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 1), (1390, 1), (1400, 1), (1410, 0), (1420, 0), (1430, 0), (1440, 1), (1450, 1), (1460, 0), (1470, 0), (1480, 0), (1490, 0), (1500, 0), (1510, 0), (1520, 1), (1530, 1), (1540, 1), (1550, 0), (1560, 0), (1570, 0), (1580, 0), (1590, 0), (1600, 0), (1610, 0), (1620, 0), (1630, 0), (1640, 0), (1650, 1), (1660, 0), (1670, 0), (1680, 0), (1690, 0), (1700, 0), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 0), (1780, 0), (1790, 0), (1800, 0), (1810, 0), (1820, 0), (1830, 0), (1840, 0), (1850, 0), (1860, 0), (1870, 0), (1880, 0), (1890, 1), (1900, 1), (1910, 1), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 1), (1990, 1), (2000, 1), (2010, 1), (2020, 1), (2030, 1), (2040, 1), (2050, 1)]
+Vdin0_7  din0_7  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 0.0v 19.45n 0.0v 19.55n 0.0v 29.45n 0.0v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 0.0v 249.45n 0.0v 249.55n 0.0v 259.45n 0.0v 259.55n 0.0v 269.45n 0.0v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 3.3v 699.45n 3.3v 699.55n 3.3v 709.45n 3.3v 709.55n 3.3v 719.45n 3.3v 719.55n 3.3v 729.45n 3.3v 729.55n 0.0v 739.45n 0.0v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 3.3v 819.45n 3.3v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 0.0v 1619.45n 0.0v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 0.0v 1689.45n 0.0v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 0.0v 1709.45n 0.0v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 3.3v 1989.45n 3.3v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 3.3v 2029.45n 3.3v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 3.3v 2049.45n 3.3v 2049.55n 3.3v )
 * (time, data): [(0, 0), (10, 0), (20, 0), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 0), (100, 0), (110, 0), (120, 0), (130, 0), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 0), (250, 0), (260, 0), (270, 0), (280, 0), (290, 0), (300, 0), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 0), (400, 0), (410, 0), (420, 0), (430, 0), (440, 0), (450, 0), (460, 0), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 0), (540, 0), (550, 0), (560, 0), (570, 0), (580, 0), (590, 0), (600, 0), (610, 0), (620, 0), (630, 0), (640, 0), (650, 0), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 0), (720, 0), (730, 0), (740, 0), (750, 0), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 0), (830, 0), (840, 0), (850, 0), (860, 0), (870, 0), (880, 0), (890, 0), (900, 0), (910, 0), (920, 0), (930, 0), (940, 0), (950, 0), (960, 0), (970, 0), (980, 0), (990, 0), (1000, 0), (1010, 0), (1020, 0), (1030, 0), (1040, 0), (1050, 0), (1060, 0), (1070, 0), (1080, 0), (1090, 0), (1100, 0), (1110, 0), (1120, 0), (1130, 0), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 0), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 0), (1350, 0), (1360, 0), (1370, 0), (1380, 0), (1390, 0), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 0), (1450, 0), (1460, 0), (1470, 0), (1480, 0), (1490, 0), (1500, 0), (1510, 0), (1520, 0), (1530, 0), (1540, 0), (1550, 0), (1560, 0), (1570, 0), (1580, 0), (1590, 0), (1600, 0), (1610, 0), (1620, 0), (1630, 0), (1640, 0), (1650, 0), (1660, 0), (1670, 0), (1680, 0), (1690, 0), (1700, 0), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 0), (1780, 0), (1790, 0), (1800, 0), (1810, 0), (1820, 0), (1830, 0), (1840, 0), (1850, 0), (1860, 0), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 0), (1930, 0), (1940, 0), (1950, 0), (1960, 0), (1970, 0), (1980, 0), (1990, 0), (2000, 0), (2010, 0), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
 Va0_0  a0_0  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 0.0v 19.45n 0.0v 19.55n 0.0v 29.45n 0.0v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 0.0v 99.45n 0.0v 99.55n 0.0v 109.45n 0.0v 109.55n 0.0v 119.45n 0.0v 119.55n 0.0v 129.45n 0.0v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 0.0v 249.45n 0.0v 249.55n 0.0v 259.45n 0.0v 259.55n 0.0v 269.45n 0.0v 269.55n 0.0v 279.45n 0.0v 279.55n 0.0v 289.45n 0.0v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 0.0v 459.45n 0.0v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 0.0v 579.45n 0.0v 579.55n 0.0v 589.45n 0.0v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 0.0v 719.45n 0.0v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 0.0v 749.45n 0.0v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 0.0v 879.45n 0.0v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 0.0v 909.45n 0.0v 909.55n 0.0v 919.45n 0.0v 919.55n 0.0v 929.45n 0.0v 929.55n 0.0v 939.45n 0.0v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 0.0v 969.45n 0.0v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 0.0v 1139.45n 0.0v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 0.0v 1549.45n 0.0v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 0.0v 1619.45n 0.0v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 0.0v 1659.45n 0.0v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 0.0v 1689.45n 0.0v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 0.0v 1709.45n 0.0v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
-* (time, data): [(0, 0), (10, 1), (20, 1), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 1), (100, 0), (110, 1), (120, 1), (130, 0), (140, 1), (150, 1), (160, 0), (170, 1), (180, 0), (190, 0), (200, 1), (210, 1), (220, 0), (230, 1), (240, 0), (250, 1), (260, 0), (270, 1), (280, 1), (290, 0), (300, 0), (310, 1), (320, 0), (330, 0), (340, 0), (350, 0), (360, 1), (370, 1), (380, 1), (390, 0), (400, 0), (410, 0), (420, 0), (430, 1), (440, 1), (450, 1), (460, 1), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 1), (540, 1), (550, 1), (560, 0), (570, 1), (580, 1), (590, 1), (600, 0), (610, 0), (620, 0), (630, 0), (640, 0), (650, 0), (660, 1), (670, 1), (680, 1), (690, 0), (700, 0), (710, 1), (720, 0), (730, 0), (740, 1), (750, 0), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 1), (830, 0), (840, 0), (850, 0), (860, 1), (870, 1), (880, 0), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 0), (950, 0), (960, 1), (970, 0), (980, 0), (990, 1), (1000, 0), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 0), (1060, 0), (1070, 0), (1080, 1), (1090, 0), (1100, 0), (1110, 0), (1120, 0), (1130, 1), (1140, 1), (1150, 0), (1160, 0), (1170, 1), (1180, 1), (1190, 0), (1200, 0), (1210, 1), (1220, 0), (1230, 0), (1240, 1), (1250, 1), (1260, 1), (1270, 0), (1280, 1), (1290, 1), (1300, 0), (1310, 0), (1320, 1), (1330, 1), (1340, 0), (1350, 0), (1360, 1), (1370, 0), (1380, 1), (1390, 1), (1400, 1), (1410, 1), (1420, 0), (1430, 1), (1440, 0), (1450, 0), (1460, 0), (1470, 0), (1480, 1), (1490, 1), (1500, 0), (1510, 0), (1520, 0), (1530, 0), (1540, 1), (1550, 1), (1560, 1), (1570, 0), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 0), (1630, 0), (1640, 1), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 1), (1720, 0), (1730, 1), (1740, 0), (1750, 0), (1760, 0), (1770, 1), (1780, 1), (1790, 1), (1800, 0), (1810, 0), (1820, 1), (1830, 0), (1840, 1), (1850, 1), (1860, 1), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 1), (1930, 1), (1940, 0), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 1), (2000, 0), (2010, 0), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
-Va0_1  a0_1  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 3.3v 99.45n 3.3v 99.55n 0.0v 109.45n 0.0v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 0.0v 139.45n 0.0v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 0.0v 169.45n 0.0v 169.55n 3.3v 179.45n 3.3v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 0.0v 229.45n 0.0v 229.55n 3.3v 239.45n 3.3v 239.55n 0.0v 249.45n 0.0v 249.55n 3.3v 259.45n 3.3v 259.55n 0.0v 269.45n 0.0v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 3.3v 319.45n 3.3v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 3.3v 389.45n 3.3v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 0.0v 569.45n 0.0v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 3.3v 719.45n 3.3v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 3.3v 749.45n 3.3v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 3.3v 829.45n 3.3v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 0.0v 889.45n 0.0v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 3.3v 969.45n 3.3v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 3.3v 999.45n 3.3v 999.55n 0.0v 1009.45n 0.0v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 3.3v 1249.45n 3.3v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 3.3v 1329.45n 3.3v 1329.55n 3.3v 1339.45n 3.3v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 3.3v 1719.45n 3.3v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
-* (time, data): [(0, 0), (10, 1), (20, 1), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 1), (100, 0), (110, 1), (120, 1), (130, 0), (140, 1), (150, 1), (160, 0), (170, 1), (180, 0), (190, 0), (200, 1), (210, 1), (220, 0), (230, 1), (240, 0), (250, 1), (260, 0), (270, 1), (280, 1), (290, 0), (300, 0), (310, 1), (320, 0), (330, 0), (340, 0), (350, 0), (360, 1), (370, 1), (380, 1), (390, 0), (400, 0), (410, 0), (420, 0), (430, 1), (440, 1), (450, 1), (460, 1), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 1), (540, 1), (550, 1), (560, 0), (570, 1), (580, 1), (590, 1), (600, 0), (610, 0), (620, 0), (630, 0), (640, 0), (650, 0), (660, 1), (670, 1), (680, 1), (690, 0), (700, 0), (710, 1), (720, 0), (730, 0), (740, 1), (750, 0), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 1), (830, 0), (840, 0), (850, 0), (860, 1), (870, 1), (880, 0), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 0), (950, 0), (960, 1), (970, 0), (980, 0), (990, 1), (1000, 0), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 0), (1060, 0), (1070, 0), (1080, 1), (1090, 0), (1100, 0), (1110, 0), (1120, 0), (1130, 1), (1140, 1), (1150, 0), (1160, 0), (1170, 1), (1180, 1), (1190, 0), (1200, 0), (1210, 1), (1220, 0), (1230, 0), (1240, 1), (1250, 1), (1260, 1), (1270, 0), (1280, 1), (1290, 1), (1300, 0), (1310, 0), (1320, 1), (1330, 1), (1340, 0), (1350, 0), (1360, 1), (1370, 0), (1380, 1), (1390, 1), (1400, 1), (1410, 1), (1420, 0), (1430, 1), (1440, 0), (1450, 0), (1460, 0), (1470, 0), (1480, 1), (1490, 1), (1500, 0), (1510, 0), (1520, 0), (1530, 0), (1540, 1), (1550, 1), (1560, 1), (1570, 0), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 0), (1630, 0), (1640, 1), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 1), (1720, 0), (1730, 1), (1740, 0), (1750, 0), (1760, 0), (1770, 1), (1780, 1), (1790, 1), (1800, 0), (1810, 0), (1820, 1), (1830, 0), (1840, 1), (1850, 1), (1860, 1), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 1), (1930, 1), (1940, 0), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 1), (2000, 0), (2010, 0), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
-Va0_2  a0_2  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 3.3v 99.45n 3.3v 99.55n 0.0v 109.45n 0.0v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 0.0v 139.45n 0.0v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 0.0v 169.45n 0.0v 169.55n 3.3v 179.45n 3.3v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 0.0v 229.45n 0.0v 229.55n 3.3v 239.45n 3.3v 239.55n 0.0v 249.45n 0.0v 249.55n 3.3v 259.45n 3.3v 259.55n 0.0v 269.45n 0.0v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 3.3v 319.45n 3.3v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 3.3v 389.45n 3.3v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 0.0v 569.45n 0.0v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 3.3v 719.45n 3.3v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 3.3v 749.45n 3.3v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 3.3v 829.45n 3.3v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 0.0v 889.45n 0.0v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 3.3v 969.45n 3.3v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 3.3v 999.45n 3.3v 999.55n 0.0v 1009.45n 0.0v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 3.3v 1249.45n 3.3v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 3.3v 1329.45n 3.3v 1329.55n 3.3v 1339.45n 3.3v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 3.3v 1719.45n 3.3v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
-* (time, data): [(0, 0), (10, 1), (20, 1), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 1), (100, 0), (110, 1), (120, 1), (130, 0), (140, 1), (150, 1), (160, 0), (170, 1), (180, 0), (190, 0), (200, 1), (210, 1), (220, 0), (230, 1), (240, 0), (250, 1), (260, 0), (270, 1), (280, 1), (290, 0), (300, 0), (310, 1), (320, 0), (330, 0), (340, 0), (350, 0), (360, 1), (370, 1), (380, 1), (390, 0), (400, 0), (410, 0), (420, 0), (430, 1), (440, 1), (450, 1), (460, 1), (470, 0), (480, 0), (490, 0), (500, 0), (510, 0), (520, 0), (530, 1), (540, 1), (550, 1), (560, 0), (570, 1), (580, 1), (590, 1), (600, 0), (610, 0), (620, 0), (630, 0), (640, 0), (650, 0), (660, 1), (670, 1), (680, 1), (690, 0), (700, 0), (710, 1), (720, 0), (730, 0), (740, 1), (750, 0), (760, 0), (770, 0), (780, 0), (790, 0), (800, 0), (810, 0), (820, 1), (830, 0), (840, 0), (850, 0), (860, 1), (870, 1), (880, 0), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 0), (950, 0), (960, 1), (970, 0), (980, 0), (990, 1), (1000, 0), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 0), (1060, 0), (1070, 0), (1080, 1), (1090, 0), (1100, 0), (1110, 0), (1120, 0), (1130, 1), (1140, 1), (1150, 0), (1160, 0), (1170, 1), (1180, 1), (1190, 0), (1200, 0), (1210, 1), (1220, 0), (1230, 0), (1240, 1), (1250, 1), (1260, 1), (1270, 0), (1280, 1), (1290, 1), (1300, 0), (1310, 0), (1320, 1), (1330, 1), (1340, 0), (1350, 0), (1360, 1), (1370, 0), (1380, 1), (1390, 1), (1400, 1), (1410, 1), (1420, 0), (1430, 1), (1440, 0), (1450, 0), (1460, 0), (1470, 0), (1480, 1), (1490, 1), (1500, 0), (1510, 0), (1520, 0), (1530, 0), (1540, 1), (1550, 1), (1560, 1), (1570, 0), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 0), (1630, 0), (1640, 1), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 1), (1720, 0), (1730, 1), (1740, 0), (1750, 0), (1760, 0), (1770, 1), (1780, 1), (1790, 1), (1800, 0), (1810, 0), (1820, 1), (1830, 0), (1840, 1), (1850, 1), (1860, 1), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 1), (1930, 1), (1940, 0), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 1), (2000, 0), (2010, 0), (2020, 0), (2030, 0), (2040, 0), (2050, 0)]
-Va0_3  a0_3  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 3.3v 99.45n 3.3v 99.55n 0.0v 109.45n 0.0v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 0.0v 139.45n 0.0v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 0.0v 169.45n 0.0v 169.55n 3.3v 179.45n 3.3v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 0.0v 229.45n 0.0v 229.55n 3.3v 239.45n 3.3v 239.55n 0.0v 249.45n 0.0v 249.55n 3.3v 259.45n 3.3v 259.55n 0.0v 269.45n 0.0v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 3.3v 319.45n 3.3v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 3.3v 389.45n 3.3v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 0.0v 569.45n 0.0v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 0.0v 609.45n 0.0v 609.55n 0.0v 619.45n 0.0v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 3.3v 719.45n 3.3v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 3.3v 749.45n 3.3v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 0.0v 819.45n 0.0v 819.55n 3.3v 829.45n 3.3v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 0.0v 889.45n 0.0v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 3.3v 969.45n 3.3v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 3.3v 999.45n 3.3v 999.55n 0.0v 1009.45n 0.0v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 3.3v 1249.45n 3.3v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 3.3v 1329.45n 3.3v 1329.55n 3.3v 1339.45n 3.3v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 0.0v 1359.45n 0.0v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 3.3v 1419.45n 3.3v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 0.0v 1459.45n 0.0v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 3.3v 1719.45n 3.3v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 0.0v 2019.45n 0.0v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
+* (time, data): [(0, 0), (10, 1), (20, 1), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 1), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 0), (400, 0), (410, 1), (420, 1), (430, 0), (440, 0), (450, 1), (460, 1), (470, 1), (480, 1), (490, 1), (500, 1), (510, 1), (520, 0), (530, 0), (540, 0), (550, 1), (560, 0), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 1), (640, 1), (650, 1), (660, 0), (670, 1), (680, 0), (690, 0), (700, 1), (710, 1), (720, 0), (730, 0), (740, 1), (750, 1), (760, 1), (770, 0), (780, 0), (790, 0), (800, 0), (810, 1), (820, 1), (830, 1), (840, 1), (850, 0), (860, 0), (870, 1), (880, 0), (890, 0), (900, 1), (910, 1), (920, 0), (930, 1), (940, 0), (950, 1), (960, 1), (970, 0), (980, 1), (990, 1), (1000, 0), (1010, 0), (1020, 0), (1030, 1), (1040, 0), (1050, 1), (1060, 1), (1070, 1), (1080, 1), (1090, 1), (1100, 1), (1110, 0), (1120, 0), (1130, 1), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 1), (1190, 1), (1200, 1), (1210, 0), (1220, 1), (1230, 1), (1240, 0), (1250, 1), (1260, 1), (1270, 1), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 1), (1350, 1), (1360, 1), (1370, 1), (1380, 1), (1390, 1), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 1), (1450, 1), (1460, 0), (1470, 1), (1480, 0), (1490, 0), (1500, 0), (1510, 0), (1520, 1), (1530, 1), (1540, 1), (1550, 0), (1560, 0), (1570, 0), (1580, 0), (1590, 0), (1600, 1), (1610, 1), (1620, 1), (1630, 1), (1640, 1), (1650, 1), (1660, 0), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 1), (1760, 1), (1770, 1), (1780, 1), (1790, 1), (1800, 1), (1810, 1), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 1), (1870, 0), (1880, 0), (1890, 0), (1900, 1), (1910, 0), (1920, 1), (1930, 0), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 0), (2000, 1), (2010, 1), (2020, 1), (2030, 1), (2040, 0), (2050, 0)]
+Va0_1  a0_1  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 3.3v 499.45n 3.3v 499.55n 3.3v 509.45n 3.3v 509.55n 3.3v 519.45n 3.3v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 3.3v 559.45n 3.3v 559.55n 0.0v 569.45n 0.0v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 3.3v 639.45n 3.3v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 0.0v 669.45n 0.0v 669.55n 3.3v 679.45n 3.3v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 3.3v 709.45n 3.3v 709.55n 3.3v 719.45n 3.3v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 3.3v 819.45n 3.3v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 3.3v 879.45n 3.3v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 0.0v 929.45n 0.0v 929.55n 3.3v 939.45n 3.3v 939.55n 0.0v 949.45n 0.0v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 0.0v 979.45n 0.0v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 3.3v 1239.45n 3.3v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 3.3v 1349.45n 3.3v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 3.3v 2029.45n 3.3v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
+* (time, data): [(0, 0), (10, 1), (20, 1), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 1), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 0), (400, 0), (410, 1), (420, 1), (430, 0), (440, 0), (450, 1), (460, 1), (470, 1), (480, 1), (490, 1), (500, 1), (510, 1), (520, 0), (530, 0), (540, 0), (550, 1), (560, 0), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 1), (640, 1), (650, 1), (660, 0), (670, 1), (680, 0), (690, 0), (700, 1), (710, 1), (720, 0), (730, 0), (740, 1), (750, 1), (760, 1), (770, 0), (780, 0), (790, 0), (800, 0), (810, 1), (820, 1), (830, 1), (840, 1), (850, 0), (860, 0), (870, 1), (880, 0), (890, 0), (900, 1), (910, 1), (920, 0), (930, 1), (940, 0), (950, 1), (960, 1), (970, 0), (980, 1), (990, 1), (1000, 0), (1010, 0), (1020, 0), (1030, 1), (1040, 0), (1050, 1), (1060, 1), (1070, 1), (1080, 1), (1090, 1), (1100, 1), (1110, 0), (1120, 0), (1130, 1), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 1), (1190, 1), (1200, 1), (1210, 0), (1220, 1), (1230, 1), (1240, 0), (1250, 1), (1260, 1), (1270, 1), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 1), (1350, 1), (1360, 1), (1370, 1), (1380, 1), (1390, 1), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 1), (1450, 1), (1460, 0), (1470, 1), (1480, 0), (1490, 0), (1500, 0), (1510, 0), (1520, 1), (1530, 1), (1540, 1), (1550, 0), (1560, 0), (1570, 0), (1580, 0), (1590, 0), (1600, 1), (1610, 1), (1620, 1), (1630, 1), (1640, 1), (1650, 1), (1660, 0), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 1), (1760, 1), (1770, 1), (1780, 1), (1790, 1), (1800, 1), (1810, 1), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 1), (1870, 0), (1880, 0), (1890, 0), (1900, 1), (1910, 0), (1920, 1), (1930, 0), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 0), (2000, 1), (2010, 1), (2020, 1), (2030, 1), (2040, 0), (2050, 0)]
+Va0_2  a0_2  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 3.3v 499.45n 3.3v 499.55n 3.3v 509.45n 3.3v 509.55n 3.3v 519.45n 3.3v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 3.3v 559.45n 3.3v 559.55n 0.0v 569.45n 0.0v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 3.3v 639.45n 3.3v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 0.0v 669.45n 0.0v 669.55n 3.3v 679.45n 3.3v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 3.3v 709.45n 3.3v 709.55n 3.3v 719.45n 3.3v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 3.3v 819.45n 3.3v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 3.3v 879.45n 3.3v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 0.0v 929.45n 0.0v 929.55n 3.3v 939.45n 3.3v 939.55n 0.0v 949.45n 0.0v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 0.0v 979.45n 0.0v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 3.3v 1239.45n 3.3v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 3.3v 1349.45n 3.3v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 3.3v 2029.45n 3.3v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
+* (time, data): [(0, 0), (10, 1), (20, 1), (30, 1), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 1), (140, 0), (150, 0), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 0), (400, 0), (410, 1), (420, 1), (430, 0), (440, 0), (450, 1), (460, 1), (470, 1), (480, 1), (490, 1), (500, 1), (510, 1), (520, 0), (530, 0), (540, 0), (550, 1), (560, 0), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 1), (640, 1), (650, 1), (660, 0), (670, 1), (680, 0), (690, 0), (700, 1), (710, 1), (720, 0), (730, 0), (740, 1), (750, 1), (760, 1), (770, 0), (780, 0), (790, 0), (800, 0), (810, 1), (820, 1), (830, 1), (840, 1), (850, 0), (860, 0), (870, 1), (880, 0), (890, 0), (900, 1), (910, 1), (920, 0), (930, 1), (940, 0), (950, 1), (960, 1), (970, 0), (980, 1), (990, 1), (1000, 0), (1010, 0), (1020, 0), (1030, 1), (1040, 0), (1050, 1), (1060, 1), (1070, 1), (1080, 1), (1090, 1), (1100, 1), (1110, 0), (1120, 0), (1130, 1), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 1), (1190, 1), (1200, 1), (1210, 0), (1220, 1), (1230, 1), (1240, 0), (1250, 1), (1260, 1), (1270, 1), (1280, 0), (1290, 0), (1300, 0), (1310, 0), (1320, 0), (1330, 0), (1340, 1), (1350, 1), (1360, 1), (1370, 1), (1380, 1), (1390, 1), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 1), (1450, 1), (1460, 0), (1470, 1), (1480, 0), (1490, 0), (1500, 0), (1510, 0), (1520, 1), (1530, 1), (1540, 1), (1550, 0), (1560, 0), (1570, 0), (1580, 0), (1590, 0), (1600, 1), (1610, 1), (1620, 1), (1630, 1), (1640, 1), (1650, 1), (1660, 0), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 1), (1760, 1), (1770, 1), (1780, 1), (1790, 1), (1800, 1), (1810, 1), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 1), (1870, 0), (1880, 0), (1890, 0), (1900, 1), (1910, 0), (1920, 1), (1930, 0), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 0), (2000, 1), (2010, 1), (2020, 1), (2030, 1), (2040, 0), (2050, 0)]
+Va0_3  a0_3  0 PWL (0n 0.0v 9.45n 0.0v 9.55n 3.3v 19.45n 3.3v 19.55n 3.3v 29.45n 3.3v 29.55n 3.3v 39.45n 3.3v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 3.3v 499.45n 3.3v 499.55n 3.3v 509.45n 3.3v 509.55n 3.3v 519.45n 3.3v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 3.3v 559.45n 3.3v 559.55n 0.0v 569.45n 0.0v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 3.3v 639.45n 3.3v 639.55n 3.3v 649.45n 3.3v 649.55n 3.3v 659.45n 3.3v 659.55n 0.0v 669.45n 0.0v 669.55n 3.3v 679.45n 3.3v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 3.3v 709.45n 3.3v 709.55n 3.3v 719.45n 3.3v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 3.3v 749.45n 3.3v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 0.0v 799.45n 0.0v 799.55n 0.0v 809.45n 0.0v 809.55n 3.3v 819.45n 3.3v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 3.3v 879.45n 3.3v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 0.0v 929.45n 0.0v 929.55n 3.3v 939.45n 3.3v 939.55n 0.0v 949.45n 0.0v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 0.0v 979.45n 0.0v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 0.0v 1029.45n 0.0v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 3.3v 1089.45n 3.3v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 3.3v 1239.45n 3.3v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 0.0v 1319.45n 0.0v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 3.3v 1349.45n 3.3v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 3.3v 1389.45n 3.3v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 3.3v 1449.45n 3.3v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 3.3v 1629.45n 3.3v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 3.3v 1869.45n 3.3v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 3.3v 2029.45n 3.3v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 0.0v )
 
  * Generation of control signals
-* (time, data): [(0, 1), (10, 0), (20, 0), (30, 0), (40, 0), (50, 1), (60, 0), (70, 0), (80, 1), (90, 0), (100, 0), (110, 0), (120, 1), (130, 0), (140, 0), (150, 1), (160, 0), (170, 0), (180, 0), (190, 0), (200, 0), (210, 0), (220, 0), (230, 0), (240, 0), (250, 0), (260, 0), (270, 0), (280, 0), (290, 0), (300, 1), (310, 0), (320, 0), (330, 0), (340, 0), (350, 0), (360, 0), (370, 0), (380, 0), (390, 0), (400, 0), (410, 0), (420, 0), (430, 0), (440, 0), (450, 1), (460, 0), (470, 0), (480, 0), (490, 0), (500, 1), (510, 1), (520, 0), (530, 0), (540, 0), (550, 0), (560, 0), (570, 0), (580, 1), (590, 0), (600, 0), (610, 1), (620, 0), (630, 0), (640, 0), (650, 1), (660, 0), (670, 0), (680, 1), (690, 0), (700, 1), (710, 0), (720, 0), (730, 1), (740, 0), (750, 0), (760, 0), (770, 0), (780, 1), (790, 1), (800, 1), (810, 0), (820, 0), (830, 0), (840, 0), (850, 1), (860, 0), (870, 1), (880, 0), (890, 0), (900, 1), (910, 1), (920, 0), (930, 0), (940, 0), (950, 0), (960, 0), (970, 0), (980, 1), (990, 0), (1000, 0), (1010, 0), (1020, 1), (1030, 0), (1040, 0), (1050, 0), (1060, 1), (1070, 1), (1080, 0), (1090, 0), (1100, 0), (1110, 1), (1120, 1), (1130, 0), (1140, 1), (1150, 0), (1160, 0), (1170, 0), (1180, 1), (1190, 0), (1200, 0), (1210, 0), (1220, 0), (1230, 0), (1240, 0), (1250, 0), (1260, 0), (1270, 0), (1280, 0), (1290, 0), (1300, 0), (1310, 1), (1320, 0), (1330, 1), (1340, 0), (1350, 1), (1360, 0), (1370, 0), (1380, 0), (1390, 0), (1400, 0), (1410, 0), (1420, 0), (1430, 0), (1440, 0), (1450, 1), (1460, 0), (1470, 1), (1480, 0), (1490, 0), (1500, 0), (1510, 0), (1520, 1), (1530, 1), (1540, 0), (1550, 0), (1560, 1), (1570, 0), (1580, 0), (1590, 0), (1600, 1), (1610, 1), (1620, 0), (1630, 0), (1640, 0), (1650, 1), (1660, 1), (1670, 0), (1680, 1), (1690, 0), (1700, 1), (1710, 0), (1720, 0), (1730, 0), (1740, 0), (1750, 1), (1760, 0), (1770, 0), (1780, 0), (1790, 1), (1800, 0), (1810, 0), (1820, 0), (1830, 0), (1840, 0), (1850, 0), (1860, 0), (1870, 0), (1880, 0), (1890, 1), (1900, 0), (1910, 0), (1920, 0), (1930, 1), (1940, 0), (1950, 0), (1960, 0), (1970, 0), (1980, 0), (1990, 0), (2000, 0), (2010, 1), (2020, 0), (2030, 1), (2040, 1), (2050, 1)]
-VCSB0 CSB0 0 PWL (0n 3.3v 9.45n 3.3v 9.55n 0.0v 19.45n 0.0v 19.55n 0.0v 29.45n 0.0v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 3.3v 59.45n 3.3v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 3.3v 89.45n 3.3v 89.55n 0.0v 99.45n 0.0v 99.55n 0.0v 109.45n 0.0v 109.55n 0.0v 119.45n 0.0v 119.55n 3.3v 129.45n 3.3v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 3.3v 159.45n 3.3v 159.55n 0.0v 169.45n 0.0v 169.55n 0.0v 179.45n 0.0v 179.55n 0.0v 189.45n 0.0v 189.55n 0.0v 199.45n 0.0v 199.55n 0.0v 209.45n 0.0v 209.55n 0.0v 219.45n 0.0v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 0.0v 249.45n 0.0v 249.55n 0.0v 259.45n 0.0v 259.55n 0.0v 269.45n 0.0v 269.55n 0.0v 279.45n 0.0v 279.55n 0.0v 289.45n 0.0v 289.55n 0.0v 299.45n 0.0v 299.55n 3.3v 309.45n 3.3v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 0.0v 339.45n 0.0v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 0.0v 369.45n 0.0v 369.55n 0.0v 379.45n 0.0v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 0.0v 439.45n 0.0v 439.55n 0.0v 449.45n 0.0v 449.55n 3.3v 459.45n 3.3v 459.55n 0.0v 469.45n 0.0v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 0.0v 499.45n 0.0v 499.55n 3.3v 509.45n 3.3v 509.55n 3.3v 519.45n 3.3v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 0.0v 549.45n 0.0v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 0.0v 579.45n 0.0v 579.55n 3.3v 589.45n 3.3v 589.55n 0.0v 599.45n 0.0v 599.55n 0.0v 609.45n 0.0v 609.55n 3.3v 619.45n 3.3v 619.55n 0.0v 629.45n 0.0v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 3.3v 659.45n 3.3v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 3.3v 689.45n 3.3v 689.55n 0.0v 699.45n 0.0v 699.55n 3.3v 709.45n 3.3v 709.55n 0.0v 719.45n 0.0v 719.55n 0.0v 729.45n 0.0v 729.55n 3.3v 739.45n 3.3v 739.55n 0.0v 749.45n 0.0v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 0.0v 779.45n 0.0v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 0.0v 819.45n 0.0v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 3.3v 859.45n 3.3v 859.55n 0.0v 869.45n 0.0v 869.55n 3.3v 879.45n 3.3v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 0.0v 929.45n 0.0v 929.55n 0.0v 939.45n 0.0v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 0.0v 969.45n 0.0v 969.55n 0.0v 979.45n 0.0v 979.55n 3.3v 989.45n 3.3v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 0.0v 1139.45n 0.0v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 0.0v 1199.45n 0.0v 1199.55n 0.0v 1209.45n 0.0v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 0.0v 1269.45n 0.0v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 0.0v 1299.45n 0.0v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 3.3v 1339.45n 3.3v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 0.0v 1379.45n 0.0v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 0.0v 1429.45n 0.0v 1429.55n 0.0v 1439.45n 0.0v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 0.0v 1499.45n 0.0v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 0.0v 1549.45n 0.0v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 0.0v 1579.45n 0.0v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 0.0v 1639.45n 0.0v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 0.0v 1729.45n 0.0v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 0.0v 1859.45n 0.0v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 3.3v 2049.45n 3.3v 2049.55n 3.3v )
-* (time, data): [(0, 1), (10, 0), (20, 0), (30, 0), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 0), (120, 1), (130, 1), (140, 1), (150, 1), (160, 1), (170, 1), (180, 1), (190, 0), (200, 1), (210, 1), (220, 1), (230, 0), (240, 1), (250, 1), (260, 1), (270, 1), (280, 1), (290, 1), (300, 1), (310, 0), (320, 1), (330, 1), (340, 0), (350, 0), (360, 1), (370, 1), (380, 0), (390, 0), (400, 0), (410, 0), (420, 1), (430, 1), (440, 0), (450, 1), (460, 1), (470, 1), (480, 1), (490, 0), (500, 1), (510, 1), (520, 1), (530, 0), (540, 1), (550, 1), (560, 1), (570, 0), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 0), (640, 0), (650, 1), (660, 1), (670, 1), (680, 1), (690, 1), (700, 1), (710, 0), (720, 0), (730, 1), (740, 1), (750, 0), (760, 0), (770, 1), (780, 1), (790, 1), (800, 1), (810, 0), (820, 1), (830, 1), (840, 1), (850, 1), (860, 1), (870, 1), (880, 0), (890, 1), (900, 1), (910, 1), (920, 1), (930, 1), (940, 1), (950, 1), (960, 1), (970, 1), (980, 1), (990, 1), (1000, 1), (1010, 0), (1020, 1), (1030, 1), (1040, 1), (1050, 1), (1060, 1), (1070, 1), (1080, 0), (1090, 1), (1100, 1), (1110, 1), (1120, 1), (1130, 0), (1140, 1), (1150, 1), (1160, 1), (1170, 1), (1180, 1), (1190, 1), (1200, 1), (1210, 1), (1220, 1), (1230, 0), (1240, 1), (1250, 1), (1260, 1), (1270, 0), (1280, 1), (1290, 1), (1300, 0), (1310, 1), (1320, 0), (1330, 1), (1340, 1), (1350, 1), (1360, 0), (1370, 1), (1380, 0), (1390, 0), (1400, 1), (1410, 0), (1420, 1), (1430, 1), (1440, 0), (1450, 1), (1460, 0), (1470, 1), (1480, 1), (1490, 1), (1500, 0), (1510, 0), (1520, 1), (1530, 1), (1540, 0), (1550, 1), (1560, 1), (1570, 1), (1580, 1), (1590, 0), (1600, 1), (1610, 1), (1620, 0), (1630, 1), (1640, 0), (1650, 1), (1660, 1), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 0), (1720, 1), (1730, 1), (1740, 1), (1750, 1), (1760, 1), (1770, 0), (1780, 1), (1790, 1), (1800, 0), (1810, 1), (1820, 0), (1830, 0), (1840, 1), (1850, 1), (1860, 0), (1870, 1), (1880, 1), (1890, 1), (1900, 1), (1910, 1), (1920, 1), (1930, 1), (1940, 1), (1950, 1), (1960, 0), (1970, 1), (1980, 1), (1990, 1), (2000, 0), (2010, 1), (2020, 0), (2030, 1), (2040, 1), (2050, 1)]
-VWEB0 WEB0 0 PWL (0n 3.3v 9.45n 3.3v 9.55n 0.0v 19.45n 0.0v 19.55n 0.0v 29.45n 0.0v 29.55n 0.0v 39.45n 0.0v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 0.0v 119.45n 0.0v 119.55n 3.3v 129.45n 3.3v 129.55n 3.3v 139.45n 3.3v 139.55n 3.3v 149.45n 3.3v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 0.0v 199.45n 0.0v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 3.3v 229.45n 3.3v 229.55n 0.0v 239.45n 0.0v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 3.3v 279.45n 3.3v 279.55n 3.3v 289.45n 3.3v 289.55n 3.3v 299.45n 3.3v 299.55n 3.3v 309.45n 3.3v 309.55n 0.0v 319.45n 0.0v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 0.0v 349.45n 0.0v 349.55n 0.0v 359.45n 0.0v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 0.0v 409.45n 0.0v 409.55n 0.0v 419.45n 0.0v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 0.0v 449.45n 0.0v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 0.0v 499.45n 0.0v 499.55n 3.3v 509.45n 3.3v 509.55n 3.3v 519.45n 3.3v 519.55n 3.3v 529.45n 3.3v 529.55n 0.0v 539.45n 0.0v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 0.0v 579.45n 0.0v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 3.3v 659.45n 3.3v 659.55n 3.3v 669.45n 3.3v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 3.3v 699.45n 3.3v 699.55n 3.3v 709.45n 3.3v 709.55n 0.0v 719.45n 0.0v 719.55n 0.0v 729.45n 0.0v 729.55n 3.3v 739.45n 3.3v 739.55n 3.3v 749.45n 3.3v 749.55n 0.0v 759.45n 0.0v 759.55n 0.0v 769.45n 0.0v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 0.0v 819.45n 0.0v 819.55n 3.3v 829.45n 3.3v 829.55n 3.3v 839.45n 3.3v 839.55n 3.3v 849.45n 3.3v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 0.0v 889.45n 0.0v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 3.3v 939.45n 3.3v 939.55n 3.3v 949.45n 3.3v 949.55n 3.3v 959.45n 3.3v 959.55n 3.3v 969.45n 3.3v 969.55n 3.3v 979.45n 3.3v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 3.3v 1059.45n 3.3v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 3.3v 1109.45n 3.3v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 3.3v 1129.45n 3.3v 1129.55n 0.0v 1139.45n 0.0v 1139.55n 3.3v 1149.45n 3.3v 1149.55n 3.3v 1159.45n 3.3v 1159.55n 3.3v 1169.45n 3.3v 1169.55n 3.3v 1179.45n 3.3v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 0.0v 1239.45n 0.0v 1239.55n 3.3v 1249.45n 3.3v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 0.0v 1279.45n 0.0v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 0.0v 1309.45n 0.0v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 3.3v 1339.45n 3.3v 1339.55n 3.3v 1349.45n 3.3v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 0.0v 1369.45n 0.0v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 0.0v 1399.45n 0.0v 1399.55n 3.3v 1409.45n 3.3v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 0.0v 1519.45n 0.0v 1519.55n 3.3v 1529.45n 3.3v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 0.0v 1549.45n 0.0v 1549.55n 3.3v 1559.45n 3.3v 1559.55n 3.3v 1569.45n 3.3v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 3.3v 1659.45n 3.3v 1659.55n 3.3v 1669.45n 3.3v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 3.3v 1729.45n 3.3v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 3.3v 1749.45n 3.3v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 0.0v 1779.45n 0.0v 1779.55n 3.3v 1789.45n 3.3v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 0.0v 1809.45n 0.0v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 3.3v 1879.45n 3.3v 1879.55n 3.3v 1889.45n 3.3v 1889.55n 3.3v 1899.45n 3.3v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 3.3v 1929.45n 3.3v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 0.0v 1969.45n 0.0v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 3.3v 1989.45n 3.3v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 3.3v 2049.45n 3.3v 2049.55n 3.3v )
+* (time, data): [(0, 1), (10, 0), (20, 0), (30, 0), (40, 0), (50, 0), (60, 0), (70, 0), (80, 0), (90, 0), (100, 0), (110, 0), (120, 1), (130, 0), (140, 0), (150, 0), (160, 0), (170, 1), (180, 0), (190, 1), (200, 1), (210, 1), (220, 0), (230, 0), (240, 0), (250, 0), (260, 0), (270, 0), (280, 0), (290, 0), (300, 0), (310, 0), (320, 0), (330, 1), (340, 1), (350, 1), (360, 1), (370, 1), (380, 0), (390, 0), (400, 1), (410, 0), (420, 0), (430, 0), (440, 1), (450, 0), (460, 1), (470, 0), (480, 0), (490, 1), (500, 0), (510, 0), (520, 0), (530, 0), (540, 1), (550, 0), (560, 0), (570, 0), (580, 1), (590, 0), (600, 1), (610, 0), (620, 1), (630, 0), (640, 0), (650, 0), (660, 0), (670, 0), (680, 0), (690, 0), (700, 0), (710, 1), (720, 0), (730, 0), (740, 0), (750, 1), (760, 1), (770, 0), (780, 0), (790, 1), (800, 1), (810, 0), (820, 0), (830, 0), (840, 0), (850, 0), (860, 0), (870, 0), (880, 0), (890, 0), (900, 0), (910, 0), (920, 0), (930, 0), (940, 0), (950, 0), (960, 1), (970, 0), (980, 0), (990, 0), (1000, 0), (1010, 0), (1020, 1), (1030, 0), (1040, 0), (1050, 0), (1060, 0), (1070, 0), (1080, 0), (1090, 0), (1100, 0), (1110, 0), (1120, 0), (1130, 0), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 0), (1190, 1), (1200, 1), (1210, 0), (1220, 0), (1230, 1), (1240, 0), (1250, 0), (1260, 1), (1270, 1), (1280, 0), (1290, 1), (1300, 1), (1310, 1), (1320, 0), (1330, 0), (1340, 0), (1350, 1), (1360, 1), (1370, 1), (1380, 0), (1390, 1), (1400, 0), (1410, 0), (1420, 1), (1430, 1), (1440, 0), (1450, 1), (1460, 0), (1470, 0), (1480, 0), (1490, 1), (1500, 0), (1510, 1), (1520, 0), (1530, 0), (1540, 0), (1550, 0), (1560, 0), (1570, 1), (1580, 0), (1590, 0), (1600, 0), (1610, 1), (1620, 0), (1630, 1), (1640, 0), (1650, 0), (1660, 0), (1670, 0), (1680, 1), (1690, 0), (1700, 1), (1710, 0), (1720, 1), (1730, 0), (1740, 0), (1750, 0), (1760, 0), (1770, 1), (1780, 0), (1790, 0), (1800, 1), (1810, 0), (1820, 0), (1830, 0), (1840, 0), (1850, 1), (1860, 0), (1870, 0), (1880, 0), (1890, 0), (1900, 0), (1910, 0), (1920, 0), (1930, 0), (1940, 0), (1950, 0), (1960, 1), (1970, 0), (1980, 0), (1990, 0), (2000, 0), (2010, 1), (2020, 0), (2030, 0), (2040, 0), (2050, 1)]
+VCSB0 CSB0 0 PWL (0n 3.3v 9.45n 3.3v 9.55n 0.0v 19.45n 0.0v 19.55n 0.0v 29.45n 0.0v 29.55n 0.0v 39.45n 0.0v 39.55n 0.0v 49.45n 0.0v 49.55n 0.0v 59.45n 0.0v 59.55n 0.0v 69.45n 0.0v 69.55n 0.0v 79.45n 0.0v 79.55n 0.0v 89.45n 0.0v 89.55n 0.0v 99.45n 0.0v 99.55n 0.0v 109.45n 0.0v 109.55n 0.0v 119.45n 0.0v 119.55n 3.3v 129.45n 3.3v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 0.0v 159.45n 0.0v 159.55n 0.0v 169.45n 0.0v 169.55n 3.3v 179.45n 3.3v 179.55n 0.0v 189.45n 0.0v 189.55n 3.3v 199.45n 3.3v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 0.0v 229.45n 0.0v 229.55n 0.0v 239.45n 0.0v 239.55n 0.0v 249.45n 0.0v 249.55n 0.0v 259.45n 0.0v 259.55n 0.0v 269.45n 0.0v 269.55n 0.0v 279.45n 0.0v 279.55n 0.0v 289.45n 0.0v 289.55n 0.0v 299.45n 0.0v 299.55n 0.0v 309.45n 0.0v 309.55n 0.0v 319.45n 0.0v 319.55n 0.0v 329.45n 0.0v 329.55n 3.3v 339.45n 3.3v 339.55n 3.3v 349.45n 3.3v 349.55n 3.3v 359.45n 3.3v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 0.0v 389.45n 0.0v 389.55n 0.0v 399.45n 0.0v 399.55n 3.3v 409.45n 3.3v 409.55n 0.0v 419.45n 0.0v 419.55n 0.0v 429.45n 0.0v 429.55n 0.0v 439.45n 0.0v 439.55n 3.3v 449.45n 3.3v 449.55n 0.0v 459.45n 0.0v 459.55n 3.3v 469.45n 3.3v 469.55n 0.0v 479.45n 0.0v 479.55n 0.0v 489.45n 0.0v 489.55n 3.3v 499.45n 3.3v 499.55n 0.0v 509.45n 0.0v 509.55n 0.0v 519.45n 0.0v 519.55n 0.0v 529.45n 0.0v 529.55n 0.0v 539.45n 0.0v 539.55n 3.3v 549.45n 3.3v 549.55n 0.0v 559.45n 0.0v 559.55n 0.0v 569.45n 0.0v 569.55n 0.0v 579.45n 0.0v 579.55n 3.3v 589.45n 3.3v 589.55n 0.0v 599.45n 0.0v 599.55n 3.3v 609.45n 3.3v 609.55n 0.0v 619.45n 0.0v 619.55n 3.3v 629.45n 3.3v 629.55n 0.0v 639.45n 0.0v 639.55n 0.0v 649.45n 0.0v 649.55n 0.0v 659.45n 0.0v 659.55n 0.0v 669.45n 0.0v 669.55n 0.0v 679.45n 0.0v 679.55n 0.0v 689.45n 0.0v 689.55n 0.0v 699.45n 0.0v 699.55n 0.0v 709.45n 0.0v 709.55n 3.3v 719.45n 3.3v 719.55n 0.0v 729.45n 0.0v 729.55n 0.0v 739.45n 0.0v 739.55n 0.0v 749.45n 0.0v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 0.0v 779.45n 0.0v 779.55n 0.0v 789.45n 0.0v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 0.0v 819.45n 0.0v 819.55n 0.0v 829.45n 0.0v 829.55n 0.0v 839.45n 0.0v 839.55n 0.0v 849.45n 0.0v 849.55n 0.0v 859.45n 0.0v 859.55n 0.0v 869.45n 0.0v 869.55n 0.0v 879.45n 0.0v 879.55n 0.0v 889.45n 0.0v 889.55n 0.0v 899.45n 0.0v 899.55n 0.0v 909.45n 0.0v 909.55n 0.0v 919.45n 0.0v 919.55n 0.0v 929.45n 0.0v 929.55n 0.0v 939.45n 0.0v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 3.3v 969.45n 3.3v 969.55n 0.0v 979.45n 0.0v 979.55n 0.0v 989.45n 0.0v 989.55n 0.0v 999.45n 0.0v 999.55n 0.0v 1009.45n 0.0v 1009.55n 0.0v 1019.45n 0.0v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 0.0v 1039.45n 0.0v 1039.55n 0.0v 1049.45n 0.0v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 0.0v 1069.45n 0.0v 1069.55n 0.0v 1079.45n 0.0v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 0.0v 1099.45n 0.0v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 0.0v 1119.45n 0.0v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 0.0v 1139.45n 0.0v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 0.0v 1189.45n 0.0v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 0.0v 1219.45n 0.0v 1219.55n 0.0v 1229.45n 0.0v 1229.55n 3.3v 1239.45n 3.3v 1239.55n 0.0v 1249.45n 0.0v 1249.55n 0.0v 1259.45n 0.0v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 0.0v 1289.45n 0.0v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 3.3v 1309.45n 3.3v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 0.0v 1329.45n 0.0v 1329.55n 0.0v 1339.45n 0.0v 1339.55n 0.0v 1349.45n 0.0v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 0.0v 1479.45n 0.0v 1479.55n 0.0v 1489.45n 0.0v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 0.0v 1509.45n 0.0v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 0.0v 1539.45n 0.0v 1539.55n 0.0v 1549.45n 0.0v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 0.0v 1589.45n 0.0v 1589.55n 0.0v 1599.45n 0.0v 1599.55n 0.0v 1609.45n 0.0v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 0.0v 1649.45n 0.0v 1649.55n 0.0v 1659.45n 0.0v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 0.0v 1679.45n 0.0v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 0.0v 1699.45n 0.0v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 0.0v 1719.45n 0.0v 1719.55n 3.3v 1729.45n 3.3v 1729.55n 0.0v 1739.45n 0.0v 1739.55n 0.0v 1749.45n 0.0v 1749.55n 0.0v 1759.45n 0.0v 1759.55n 0.0v 1769.45n 0.0v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 0.0v 1799.45n 0.0v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 0.0v 1819.45n 0.0v 1819.55n 0.0v 1829.45n 0.0v 1829.55n 0.0v 1839.45n 0.0v 1839.55n 0.0v 1849.45n 0.0v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 0.0v 1879.45n 0.0v 1879.55n 0.0v 1889.45n 0.0v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 0.0v 1909.45n 0.0v 1909.55n 0.0v 1919.45n 0.0v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 0.0v 1939.45n 0.0v 1939.55n 0.0v 1949.45n 0.0v 1949.55n 0.0v 1959.45n 0.0v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 0.0v 1979.45n 0.0v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 0.0v 1999.45n 0.0v 1999.55n 0.0v 2009.45n 0.0v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 0.0v 2039.45n 0.0v 2039.55n 0.0v 2049.45n 0.0v 2049.55n 3.3v )
+* (time, data): [(0, 1), (10, 0), (20, 0), (30, 0), (40, 1), (50, 1), (60, 1), (70, 1), (80, 1), (90, 1), (100, 1), (110, 1), (120, 1), (130, 0), (140, 0), (150, 1), (160, 1), (170, 1), (180, 1), (190, 1), (200, 1), (210, 1), (220, 1), (230, 1), (240, 1), (250, 1), (260, 1), (270, 0), (280, 1), (290, 0), (300, 1), (310, 1), (320, 1), (330, 1), (340, 1), (350, 1), (360, 1), (370, 1), (380, 1), (390, 0), (400, 1), (410, 1), (420, 1), (430, 1), (440, 1), (450, 1), (460, 1), (470, 1), (480, 1), (490, 1), (500, 1), (510, 0), (520, 1), (530, 1), (540, 1), (550, 1), (560, 1), (570, 1), (580, 1), (590, 1), (600, 1), (610, 1), (620, 1), (630, 1), (640, 0), (650, 1), (660, 0), (670, 1), (680, 1), (690, 1), (700, 1), (710, 1), (720, 1), (730, 0), (740, 0), (750, 1), (760, 1), (770, 1), (780, 1), (790, 1), (800, 1), (810, 1), (820, 0), (830, 1), (840, 0), (850, 1), (860, 1), (870, 1), (880, 1), (890, 1), (900, 1), (910, 1), (920, 1), (930, 0), (940, 0), (950, 0), (960, 1), (970, 0), (980, 1), (990, 1), (1000, 1), (1010, 1), (1020, 1), (1030, 1), (1040, 1), (1050, 0), (1060, 1), (1070, 1), (1080, 0), (1090, 1), (1100, 0), (1110, 1), (1120, 0), (1130, 1), (1140, 0), (1150, 0), (1160, 0), (1170, 0), (1180, 1), (1190, 1), (1200, 1), (1210, 1), (1220, 1), (1230, 1), (1240, 1), (1250, 1), (1260, 1), (1270, 1), (1280, 1), (1290, 1), (1300, 1), (1310, 1), (1320, 1), (1330, 1), (1340, 1), (1350, 1), (1360, 1), (1370, 1), (1380, 0), (1390, 1), (1400, 0), (1410, 0), (1420, 1), (1430, 1), (1440, 0), (1450, 1), (1460, 0), (1470, 1), (1480, 1), (1490, 1), (1500, 1), (1510, 1), (1520, 0), (1530, 1), (1540, 1), (1550, 0), (1560, 0), (1570, 1), (1580, 1), (1590, 1), (1600, 1), (1610, 1), (1620, 0), (1630, 1), (1640, 1), (1650, 0), (1660, 0), (1670, 1), (1680, 1), (1690, 1), (1700, 1), (1710, 1), (1720, 1), (1730, 1), (1740, 1), (1750, 1), (1760, 1), (1770, 1), (1780, 0), (1790, 1), (1800, 1), (1810, 1), (1820, 1), (1830, 1), (1840, 1), (1850, 1), (1860, 0), (1870, 1), (1880, 1), (1890, 0), (1900, 1), (1910, 1), (1920, 0), (1930, 1), (1940, 1), (1950, 1), (1960, 1), (1970, 1), (1980, 0), (1990, 1), (2000, 1), (2010, 1), (2020, 0), (2030, 1), (2040, 1), (2050, 1)]
+VWEB0 WEB0 0 PWL (0n 3.3v 9.45n 3.3v 9.55n 0.0v 19.45n 0.0v 19.55n 0.0v 29.45n 0.0v 29.55n 0.0v 39.45n 0.0v 39.55n 3.3v 49.45n 3.3v 49.55n 3.3v 59.45n 3.3v 59.55n 3.3v 69.45n 3.3v 69.55n 3.3v 79.45n 3.3v 79.55n 3.3v 89.45n 3.3v 89.55n 3.3v 99.45n 3.3v 99.55n 3.3v 109.45n 3.3v 109.55n 3.3v 119.45n 3.3v 119.55n 3.3v 129.45n 3.3v 129.55n 0.0v 139.45n 0.0v 139.55n 0.0v 149.45n 0.0v 149.55n 3.3v 159.45n 3.3v 159.55n 3.3v 169.45n 3.3v 169.55n 3.3v 179.45n 3.3v 179.55n 3.3v 189.45n 3.3v 189.55n 3.3v 199.45n 3.3v 199.55n 3.3v 209.45n 3.3v 209.55n 3.3v 219.45n 3.3v 219.55n 3.3v 229.45n 3.3v 229.55n 3.3v 239.45n 3.3v 239.55n 3.3v 249.45n 3.3v 249.55n 3.3v 259.45n 3.3v 259.55n 3.3v 269.45n 3.3v 269.55n 0.0v 279.45n 0.0v 279.55n 3.3v 289.45n 3.3v 289.55n 0.0v 299.45n 0.0v 299.55n 3.3v 309.45n 3.3v 309.55n 3.3v 319.45n 3.3v 319.55n 3.3v 329.45n 3.3v 329.55n 3.3v 339.45n 3.3v 339.55n 3.3v 349.45n 3.3v 349.55n 3.3v 359.45n 3.3v 359.55n 3.3v 369.45n 3.3v 369.55n 3.3v 379.45n 3.3v 379.55n 3.3v 389.45n 3.3v 389.55n 0.0v 399.45n 0.0v 399.55n 3.3v 409.45n 3.3v 409.55n 3.3v 419.45n 3.3v 419.55n 3.3v 429.45n 3.3v 429.55n 3.3v 439.45n 3.3v 439.55n 3.3v 449.45n 3.3v 449.55n 3.3v 459.45n 3.3v 459.55n 3.3v 469.45n 3.3v 469.55n 3.3v 479.45n 3.3v 479.55n 3.3v 489.45n 3.3v 489.55n 3.3v 499.45n 3.3v 499.55n 3.3v 509.45n 3.3v 509.55n 0.0v 519.45n 0.0v 519.55n 3.3v 529.45n 3.3v 529.55n 3.3v 539.45n 3.3v 539.55n 3.3v 549.45n 3.3v 549.55n 3.3v 559.45n 3.3v 559.55n 3.3v 569.45n 3.3v 569.55n 3.3v 579.45n 3.3v 579.55n 3.3v 589.45n 3.3v 589.55n 3.3v 599.45n 3.3v 599.55n 3.3v 609.45n 3.3v 609.55n 3.3v 619.45n 3.3v 619.55n 3.3v 629.45n 3.3v 629.55n 3.3v 639.45n 3.3v 639.55n 0.0v 649.45n 0.0v 649.55n 3.3v 659.45n 3.3v 659.55n 0.0v 669.45n 0.0v 669.55n 3.3v 679.45n 3.3v 679.55n 3.3v 689.45n 3.3v 689.55n 3.3v 699.45n 3.3v 699.55n 3.3v 709.45n 3.3v 709.55n 3.3v 719.45n 3.3v 719.55n 3.3v 729.45n 3.3v 729.55n 0.0v 739.45n 0.0v 739.55n 0.0v 749.45n 0.0v 749.55n 3.3v 759.45n 3.3v 759.55n 3.3v 769.45n 3.3v 769.55n 3.3v 779.45n 3.3v 779.55n 3.3v 789.45n 3.3v 789.55n 3.3v 799.45n 3.3v 799.55n 3.3v 809.45n 3.3v 809.55n 3.3v 819.45n 3.3v 819.55n 0.0v 829.45n 0.0v 829.55n 3.3v 839.45n 3.3v 839.55n 0.0v 849.45n 0.0v 849.55n 3.3v 859.45n 3.3v 859.55n 3.3v 869.45n 3.3v 869.55n 3.3v 879.45n 3.3v 879.55n 3.3v 889.45n 3.3v 889.55n 3.3v 899.45n 3.3v 899.55n 3.3v 909.45n 3.3v 909.55n 3.3v 919.45n 3.3v 919.55n 3.3v 929.45n 3.3v 929.55n 0.0v 939.45n 0.0v 939.55n 0.0v 949.45n 0.0v 949.55n 0.0v 959.45n 0.0v 959.55n 3.3v 969.45n 3.3v 969.55n 0.0v 979.45n 0.0v 979.55n 3.3v 989.45n 3.3v 989.55n 3.3v 999.45n 3.3v 999.55n 3.3v 1009.45n 3.3v 1009.55n 3.3v 1019.45n 3.3v 1019.55n 3.3v 1029.45n 3.3v 1029.55n 3.3v 1039.45n 3.3v 1039.55n 3.3v 1049.45n 3.3v 1049.55n 0.0v 1059.45n 0.0v 1059.55n 3.3v 1069.45n 3.3v 1069.55n 3.3v 1079.45n 3.3v 1079.55n 0.0v 1089.45n 0.0v 1089.55n 3.3v 1099.45n 3.3v 1099.55n 0.0v 1109.45n 0.0v 1109.55n 3.3v 1119.45n 3.3v 1119.55n 0.0v 1129.45n 0.0v 1129.55n 3.3v 1139.45n 3.3v 1139.55n 0.0v 1149.45n 0.0v 1149.55n 0.0v 1159.45n 0.0v 1159.55n 0.0v 1169.45n 0.0v 1169.55n 0.0v 1179.45n 0.0v 1179.55n 3.3v 1189.45n 3.3v 1189.55n 3.3v 1199.45n 3.3v 1199.55n 3.3v 1209.45n 3.3v 1209.55n 3.3v 1219.45n 3.3v 1219.55n 3.3v 1229.45n 3.3v 1229.55n 3.3v 1239.45n 3.3v 1239.55n 3.3v 1249.45n 3.3v 1249.55n 3.3v 1259.45n 3.3v 1259.55n 3.3v 1269.45n 3.3v 1269.55n 3.3v 1279.45n 3.3v 1279.55n 3.3v 1289.45n 3.3v 1289.55n 3.3v 1299.45n 3.3v 1299.55n 3.3v 1309.45n 3.3v 1309.55n 3.3v 1319.45n 3.3v 1319.55n 3.3v 1329.45n 3.3v 1329.55n 3.3v 1339.45n 3.3v 1339.55n 3.3v 1349.45n 3.3v 1349.55n 3.3v 1359.45n 3.3v 1359.55n 3.3v 1369.45n 3.3v 1369.55n 3.3v 1379.45n 3.3v 1379.55n 0.0v 1389.45n 0.0v 1389.55n 3.3v 1399.45n 3.3v 1399.55n 0.0v 1409.45n 0.0v 1409.55n 0.0v 1419.45n 0.0v 1419.55n 3.3v 1429.45n 3.3v 1429.55n 3.3v 1439.45n 3.3v 1439.55n 0.0v 1449.45n 0.0v 1449.55n 3.3v 1459.45n 3.3v 1459.55n 0.0v 1469.45n 0.0v 1469.55n 3.3v 1479.45n 3.3v 1479.55n 3.3v 1489.45n 3.3v 1489.55n 3.3v 1499.45n 3.3v 1499.55n 3.3v 1509.45n 3.3v 1509.55n 3.3v 1519.45n 3.3v 1519.55n 0.0v 1529.45n 0.0v 1529.55n 3.3v 1539.45n 3.3v 1539.55n 3.3v 1549.45n 3.3v 1549.55n 0.0v 1559.45n 0.0v 1559.55n 0.0v 1569.45n 0.0v 1569.55n 3.3v 1579.45n 3.3v 1579.55n 3.3v 1589.45n 3.3v 1589.55n 3.3v 1599.45n 3.3v 1599.55n 3.3v 1609.45n 3.3v 1609.55n 3.3v 1619.45n 3.3v 1619.55n 0.0v 1629.45n 0.0v 1629.55n 3.3v 1639.45n 3.3v 1639.55n 3.3v 1649.45n 3.3v 1649.55n 0.0v 1659.45n 0.0v 1659.55n 0.0v 1669.45n 0.0v 1669.55n 3.3v 1679.45n 3.3v 1679.55n 3.3v 1689.45n 3.3v 1689.55n 3.3v 1699.45n 3.3v 1699.55n 3.3v 1709.45n 3.3v 1709.55n 3.3v 1719.45n 3.3v 1719.55n 3.3v 1729.45n 3.3v 1729.55n 3.3v 1739.45n 3.3v 1739.55n 3.3v 1749.45n 3.3v 1749.55n 3.3v 1759.45n 3.3v 1759.55n 3.3v 1769.45n 3.3v 1769.55n 3.3v 1779.45n 3.3v 1779.55n 0.0v 1789.45n 0.0v 1789.55n 3.3v 1799.45n 3.3v 1799.55n 3.3v 1809.45n 3.3v 1809.55n 3.3v 1819.45n 3.3v 1819.55n 3.3v 1829.45n 3.3v 1829.55n 3.3v 1839.45n 3.3v 1839.55n 3.3v 1849.45n 3.3v 1849.55n 3.3v 1859.45n 3.3v 1859.55n 0.0v 1869.45n 0.0v 1869.55n 3.3v 1879.45n 3.3v 1879.55n 3.3v 1889.45n 3.3v 1889.55n 0.0v 1899.45n 0.0v 1899.55n 3.3v 1909.45n 3.3v 1909.55n 3.3v 1919.45n 3.3v 1919.55n 0.0v 1929.45n 0.0v 1929.55n 3.3v 1939.45n 3.3v 1939.55n 3.3v 1949.45n 3.3v 1949.55n 3.3v 1959.45n 3.3v 1959.55n 3.3v 1969.45n 3.3v 1969.55n 3.3v 1979.45n 3.3v 1979.55n 0.0v 1989.45n 0.0v 1989.55n 3.3v 1999.45n 3.3v 1999.55n 3.3v 2009.45n 3.3v 2009.55n 3.3v 2019.45n 3.3v 2019.55n 0.0v 2029.45n 0.0v 2029.55n 3.3v 2039.45n 3.3v 2039.55n 3.3v 2049.45n 3.3v 2049.55n 3.3v )
 * PULSE: period=10
 Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 
  * Generation of dout measurements
-* CHECK dout0_0 Vdout0_0ck4 = 3.3 time = 50
+* CHECK dout0_0 Vdout0_0ck4 = 0 time = 50
 .meas tran vdout0_0ck4 FIND v(dout0_0) AT=50.05n
 
-* CHECK dout0_1 Vdout0_1ck4 = 0 time = 50
+* CHECK dout0_1 Vdout0_1ck4 = 3.3 time = 50
 .meas tran vdout0_1ck4 FIND v(dout0_1) AT=50.05n
 
 * CHECK dout0_2 Vdout0_2ck4 = 3.3 time = 50
 .meas tran vdout0_2ck4 FIND v(dout0_2) AT=50.05n
 
-* CHECK dout0_3 Vdout0_3ck4 = 3.3 time = 50
+* CHECK dout0_3 Vdout0_3ck4 = 0 time = 50
 .meas tran vdout0_3ck4 FIND v(dout0_3) AT=50.05n
 
 * CHECK dout0_4 Vdout0_4ck4 = 0 time = 50
@@ -244,22 +241,46 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_5 Vdout0_5ck4 = 3.3 time = 50
 .meas tran vdout0_5ck4 FIND v(dout0_5) AT=50.05n
 
-* CHECK dout0_6 Vdout0_6ck4 = 3.3 time = 50
+* CHECK dout0_6 Vdout0_6ck4 = 0 time = 50
 .meas tran vdout0_6ck4 FIND v(dout0_6) AT=50.05n
 
 * CHECK dout0_7 Vdout0_7ck4 = 3.3 time = 50
 .meas tran vdout0_7ck4 FIND v(dout0_7) AT=50.05n
 
-* CHECK dout0_0 Vdout0_0ck6 = 3.3 time = 70
+* CHECK dout0_0 Vdout0_0ck5 = 0 time = 60
+.meas tran vdout0_0ck5 FIND v(dout0_0) AT=60.05n
+
+* CHECK dout0_1 Vdout0_1ck5 = 3.3 time = 60
+.meas tran vdout0_1ck5 FIND v(dout0_1) AT=60.05n
+
+* CHECK dout0_2 Vdout0_2ck5 = 3.3 time = 60
+.meas tran vdout0_2ck5 FIND v(dout0_2) AT=60.05n
+
+* CHECK dout0_3 Vdout0_3ck5 = 0 time = 60
+.meas tran vdout0_3ck5 FIND v(dout0_3) AT=60.05n
+
+* CHECK dout0_4 Vdout0_4ck5 = 0 time = 60
+.meas tran vdout0_4ck5 FIND v(dout0_4) AT=60.05n
+
+* CHECK dout0_5 Vdout0_5ck5 = 3.3 time = 60
+.meas tran vdout0_5ck5 FIND v(dout0_5) AT=60.05n
+
+* CHECK dout0_6 Vdout0_6ck5 = 0 time = 60
+.meas tran vdout0_6ck5 FIND v(dout0_6) AT=60.05n
+
+* CHECK dout0_7 Vdout0_7ck5 = 3.3 time = 60
+.meas tran vdout0_7ck5 FIND v(dout0_7) AT=60.05n
+
+* CHECK dout0_0 Vdout0_0ck6 = 0 time = 70
 .meas tran vdout0_0ck6 FIND v(dout0_0) AT=70.05n
 
-* CHECK dout0_1 Vdout0_1ck6 = 0 time = 70
+* CHECK dout0_1 Vdout0_1ck6 = 3.3 time = 70
 .meas tran vdout0_1ck6 FIND v(dout0_1) AT=70.05n
 
 * CHECK dout0_2 Vdout0_2ck6 = 3.3 time = 70
 .meas tran vdout0_2ck6 FIND v(dout0_2) AT=70.05n
 
-* CHECK dout0_3 Vdout0_3ck6 = 3.3 time = 70
+* CHECK dout0_3 Vdout0_3ck6 = 0 time = 70
 .meas tran vdout0_3ck6 FIND v(dout0_3) AT=70.05n
 
 * CHECK dout0_4 Vdout0_4ck6 = 0 time = 70
@@ -268,22 +289,22 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_5 Vdout0_5ck6 = 3.3 time = 70
 .meas tran vdout0_5ck6 FIND v(dout0_5) AT=70.05n
 
-* CHECK dout0_6 Vdout0_6ck6 = 3.3 time = 70
+* CHECK dout0_6 Vdout0_6ck6 = 0 time = 70
 .meas tran vdout0_6ck6 FIND v(dout0_6) AT=70.05n
 
 * CHECK dout0_7 Vdout0_7ck6 = 3.3 time = 70
 .meas tran vdout0_7ck6 FIND v(dout0_7) AT=70.05n
 
-* CHECK dout0_0 Vdout0_0ck7 = 3.3 time = 80
+* CHECK dout0_0 Vdout0_0ck7 = 0 time = 80
 .meas tran vdout0_0ck7 FIND v(dout0_0) AT=80.05n
 
-* CHECK dout0_1 Vdout0_1ck7 = 0 time = 80
+* CHECK dout0_1 Vdout0_1ck7 = 3.3 time = 80
 .meas tran vdout0_1ck7 FIND v(dout0_1) AT=80.05n
 
 * CHECK dout0_2 Vdout0_2ck7 = 3.3 time = 80
 .meas tran vdout0_2ck7 FIND v(dout0_2) AT=80.05n
 
-* CHECK dout0_3 Vdout0_3ck7 = 3.3 time = 80
+* CHECK dout0_3 Vdout0_3ck7 = 0 time = 80
 .meas tran vdout0_3ck7 FIND v(dout0_3) AT=80.05n
 
 * CHECK dout0_4 Vdout0_4ck7 = 0 time = 80
@@ -292,11 +313,35 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_5 Vdout0_5ck7 = 3.3 time = 80
 .meas tran vdout0_5ck7 FIND v(dout0_5) AT=80.05n
 
-* CHECK dout0_6 Vdout0_6ck7 = 3.3 time = 80
+* CHECK dout0_6 Vdout0_6ck7 = 0 time = 80
 .meas tran vdout0_6ck7 FIND v(dout0_6) AT=80.05n
 
 * CHECK dout0_7 Vdout0_7ck7 = 3.3 time = 80
 .meas tran vdout0_7ck7 FIND v(dout0_7) AT=80.05n
+
+* CHECK dout0_0 Vdout0_0ck8 = 0 time = 90
+.meas tran vdout0_0ck8 FIND v(dout0_0) AT=90.05n
+
+* CHECK dout0_1 Vdout0_1ck8 = 3.3 time = 90
+.meas tran vdout0_1ck8 FIND v(dout0_1) AT=90.05n
+
+* CHECK dout0_2 Vdout0_2ck8 = 3.3 time = 90
+.meas tran vdout0_2ck8 FIND v(dout0_2) AT=90.05n
+
+* CHECK dout0_3 Vdout0_3ck8 = 0 time = 90
+.meas tran vdout0_3ck8 FIND v(dout0_3) AT=90.05n
+
+* CHECK dout0_4 Vdout0_4ck8 = 0 time = 90
+.meas tran vdout0_4ck8 FIND v(dout0_4) AT=90.05n
+
+* CHECK dout0_5 Vdout0_5ck8 = 3.3 time = 90
+.meas tran vdout0_5ck8 FIND v(dout0_5) AT=90.05n
+
+* CHECK dout0_6 Vdout0_6ck8 = 0 time = 90
+.meas tran vdout0_6ck8 FIND v(dout0_6) AT=90.05n
+
+* CHECK dout0_7 Vdout0_7ck8 = 3.3 time = 90
+.meas tran vdout0_7ck8 FIND v(dout0_7) AT=90.05n
 
 * CHECK dout0_0 Vdout0_0ck9 = 0 time = 100
 .meas tran vdout0_0ck9 FIND v(dout0_0) AT=100.05n
@@ -304,13 +349,13 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck9 = 3.3 time = 100
 .meas tran vdout0_1ck9 FIND v(dout0_1) AT=100.05n
 
-* CHECK dout0_2 Vdout0_2ck9 = 0 time = 100
+* CHECK dout0_2 Vdout0_2ck9 = 3.3 time = 100
 .meas tran vdout0_2ck9 FIND v(dout0_2) AT=100.05n
 
-* CHECK dout0_3 Vdout0_3ck9 = 3.3 time = 100
+* CHECK dout0_3 Vdout0_3ck9 = 0 time = 100
 .meas tran vdout0_3ck9 FIND v(dout0_3) AT=100.05n
 
-* CHECK dout0_4 Vdout0_4ck9 = 3.3 time = 100
+* CHECK dout0_4 Vdout0_4ck9 = 0 time = 100
 .meas tran vdout0_4ck9 FIND v(dout0_4) AT=100.05n
 
 * CHECK dout0_5 Vdout0_5ck9 = 3.3 time = 100
@@ -322,16 +367,16 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck9 = 3.3 time = 100
 .meas tran vdout0_7ck9 FIND v(dout0_7) AT=100.05n
 
-* CHECK dout0_0 Vdout0_0ck10 = 3.3 time = 110
+* CHECK dout0_0 Vdout0_0ck10 = 0 time = 110
 .meas tran vdout0_0ck10 FIND v(dout0_0) AT=110.05n
 
-* CHECK dout0_1 Vdout0_1ck10 = 0 time = 110
+* CHECK dout0_1 Vdout0_1ck10 = 3.3 time = 110
 .meas tran vdout0_1ck10 FIND v(dout0_1) AT=110.05n
 
 * CHECK dout0_2 Vdout0_2ck10 = 3.3 time = 110
 .meas tran vdout0_2ck10 FIND v(dout0_2) AT=110.05n
 
-* CHECK dout0_3 Vdout0_3ck10 = 3.3 time = 110
+* CHECK dout0_3 Vdout0_3ck10 = 0 time = 110
 .meas tran vdout0_3ck10 FIND v(dout0_3) AT=110.05n
 
 * CHECK dout0_4 Vdout0_4ck10 = 0 time = 110
@@ -340,59 +385,59 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_5 Vdout0_5ck10 = 3.3 time = 110
 .meas tran vdout0_5ck10 FIND v(dout0_5) AT=110.05n
 
-* CHECK dout0_6 Vdout0_6ck10 = 3.3 time = 110
+* CHECK dout0_6 Vdout0_6ck10 = 0 time = 110
 .meas tran vdout0_6ck10 FIND v(dout0_6) AT=110.05n
 
 * CHECK dout0_7 Vdout0_7ck10 = 3.3 time = 110
 .meas tran vdout0_7ck10 FIND v(dout0_7) AT=110.05n
 
-* CHECK dout0_0 Vdout0_0ck13 = 3.3 time = 140
-.meas tran vdout0_0ck13 FIND v(dout0_0) AT=140.05n
+* CHECK dout0_0 Vdout0_0ck11 = 0 time = 120
+.meas tran vdout0_0ck11 FIND v(dout0_0) AT=120.05n
 
-* CHECK dout0_1 Vdout0_1ck13 = 0 time = 140
-.meas tran vdout0_1ck13 FIND v(dout0_1) AT=140.05n
+* CHECK dout0_1 Vdout0_1ck11 = 3.3 time = 120
+.meas tran vdout0_1ck11 FIND v(dout0_1) AT=120.05n
 
-* CHECK dout0_2 Vdout0_2ck13 = 3.3 time = 140
-.meas tran vdout0_2ck13 FIND v(dout0_2) AT=140.05n
+* CHECK dout0_2 Vdout0_2ck11 = 3.3 time = 120
+.meas tran vdout0_2ck11 FIND v(dout0_2) AT=120.05n
 
-* CHECK dout0_3 Vdout0_3ck13 = 3.3 time = 140
-.meas tran vdout0_3ck13 FIND v(dout0_3) AT=140.05n
+* CHECK dout0_3 Vdout0_3ck11 = 0 time = 120
+.meas tran vdout0_3ck11 FIND v(dout0_3) AT=120.05n
 
-* CHECK dout0_4 Vdout0_4ck13 = 0 time = 140
-.meas tran vdout0_4ck13 FIND v(dout0_4) AT=140.05n
+* CHECK dout0_4 Vdout0_4ck11 = 0 time = 120
+.meas tran vdout0_4ck11 FIND v(dout0_4) AT=120.05n
 
-* CHECK dout0_5 Vdout0_5ck13 = 3.3 time = 140
-.meas tran vdout0_5ck13 FIND v(dout0_5) AT=140.05n
+* CHECK dout0_5 Vdout0_5ck11 = 3.3 time = 120
+.meas tran vdout0_5ck11 FIND v(dout0_5) AT=120.05n
 
-* CHECK dout0_6 Vdout0_6ck13 = 3.3 time = 140
-.meas tran vdout0_6ck13 FIND v(dout0_6) AT=140.05n
+* CHECK dout0_6 Vdout0_6ck11 = 0 time = 120
+.meas tran vdout0_6ck11 FIND v(dout0_6) AT=120.05n
 
-* CHECK dout0_7 Vdout0_7ck13 = 3.3 time = 140
-.meas tran vdout0_7ck13 FIND v(dout0_7) AT=140.05n
+* CHECK dout0_7 Vdout0_7ck11 = 3.3 time = 120
+.meas tran vdout0_7ck11 FIND v(dout0_7) AT=120.05n
 
-* CHECK dout0_0 Vdout0_0ck14 = 3.3 time = 150
-.meas tran vdout0_0ck14 FIND v(dout0_0) AT=150.05n
+* CHECK dout0_0 Vdout0_0ck15 = 3.3 time = 160
+.meas tran vdout0_0ck15 FIND v(dout0_0) AT=160.05n
 
-* CHECK dout0_1 Vdout0_1ck14 = 0 time = 150
-.meas tran vdout0_1ck14 FIND v(dout0_1) AT=150.05n
+* CHECK dout0_1 Vdout0_1ck15 = 0 time = 160
+.meas tran vdout0_1ck15 FIND v(dout0_1) AT=160.05n
 
-* CHECK dout0_2 Vdout0_2ck14 = 0 time = 150
-.meas tran vdout0_2ck14 FIND v(dout0_2) AT=150.05n
+* CHECK dout0_2 Vdout0_2ck15 = 0 time = 160
+.meas tran vdout0_2ck15 FIND v(dout0_2) AT=160.05n
 
-* CHECK dout0_3 Vdout0_3ck14 = 0 time = 150
-.meas tran vdout0_3ck14 FIND v(dout0_3) AT=150.05n
+* CHECK dout0_3 Vdout0_3ck15 = 3.3 time = 160
+.meas tran vdout0_3ck15 FIND v(dout0_3) AT=160.05n
 
-* CHECK dout0_4 Vdout0_4ck14 = 3.3 time = 150
-.meas tran vdout0_4ck14 FIND v(dout0_4) AT=150.05n
+* CHECK dout0_4 Vdout0_4ck15 = 0 time = 160
+.meas tran vdout0_4ck15 FIND v(dout0_4) AT=160.05n
 
-* CHECK dout0_5 Vdout0_5ck14 = 3.3 time = 150
-.meas tran vdout0_5ck14 FIND v(dout0_5) AT=150.05n
+* CHECK dout0_5 Vdout0_5ck15 = 0 time = 160
+.meas tran vdout0_5ck15 FIND v(dout0_5) AT=160.05n
 
-* CHECK dout0_6 Vdout0_6ck14 = 3.3 time = 150
-.meas tran vdout0_6ck14 FIND v(dout0_6) AT=150.05n
+* CHECK dout0_6 Vdout0_6ck15 = 3.3 time = 160
+.meas tran vdout0_6ck15 FIND v(dout0_6) AT=160.05n
 
-* CHECK dout0_7 Vdout0_7ck14 = 3.3 time = 150
-.meas tran vdout0_7ck14 FIND v(dout0_7) AT=150.05n
+* CHECK dout0_7 Vdout0_7ck15 = 0 time = 160
+.meas tran vdout0_7ck15 FIND v(dout0_7) AT=160.05n
 
 * CHECK dout0_0 Vdout0_0ck16 = 3.3 time = 170
 .meas tran vdout0_0ck16 FIND v(dout0_0) AT=170.05n
@@ -400,7 +445,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck16 = 0 time = 170
 .meas tran vdout0_1ck16 FIND v(dout0_1) AT=170.05n
 
-* CHECK dout0_2 Vdout0_2ck16 = 3.3 time = 170
+* CHECK dout0_2 Vdout0_2ck16 = 0 time = 170
 .meas tran vdout0_2ck16 FIND v(dout0_2) AT=170.05n
 
 * CHECK dout0_3 Vdout0_3ck16 = 3.3 time = 170
@@ -409,38 +454,14 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_4 Vdout0_4ck16 = 0 time = 170
 .meas tran vdout0_4ck16 FIND v(dout0_4) AT=170.05n
 
-* CHECK dout0_5 Vdout0_5ck16 = 3.3 time = 170
+* CHECK dout0_5 Vdout0_5ck16 = 0 time = 170
 .meas tran vdout0_5ck16 FIND v(dout0_5) AT=170.05n
 
 * CHECK dout0_6 Vdout0_6ck16 = 3.3 time = 170
 .meas tran vdout0_6ck16 FIND v(dout0_6) AT=170.05n
 
-* CHECK dout0_7 Vdout0_7ck16 = 3.3 time = 170
+* CHECK dout0_7 Vdout0_7ck16 = 0 time = 170
 .meas tran vdout0_7ck16 FIND v(dout0_7) AT=170.05n
-
-* CHECK dout0_0 Vdout0_0ck17 = 3.3 time = 180
-.meas tran vdout0_0ck17 FIND v(dout0_0) AT=180.05n
-
-* CHECK dout0_1 Vdout0_1ck17 = 0 time = 180
-.meas tran vdout0_1ck17 FIND v(dout0_1) AT=180.05n
-
-* CHECK dout0_2 Vdout0_2ck17 = 0 time = 180
-.meas tran vdout0_2ck17 FIND v(dout0_2) AT=180.05n
-
-* CHECK dout0_3 Vdout0_3ck17 = 0 time = 180
-.meas tran vdout0_3ck17 FIND v(dout0_3) AT=180.05n
-
-* CHECK dout0_4 Vdout0_4ck17 = 3.3 time = 180
-.meas tran vdout0_4ck17 FIND v(dout0_4) AT=180.05n
-
-* CHECK dout0_5 Vdout0_5ck17 = 3.3 time = 180
-.meas tran vdout0_5ck17 FIND v(dout0_5) AT=180.05n
-
-* CHECK dout0_6 Vdout0_6ck17 = 3.3 time = 180
-.meas tran vdout0_6ck17 FIND v(dout0_6) AT=180.05n
-
-* CHECK dout0_7 Vdout0_7ck17 = 3.3 time = 180
-.meas tran vdout0_7ck17 FIND v(dout0_7) AT=180.05n
 
 * CHECK dout0_0 Vdout0_0ck18 = 3.3 time = 190
 .meas tran vdout0_0ck18 FIND v(dout0_0) AT=190.05n
@@ -448,7 +469,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck18 = 0 time = 190
 .meas tran vdout0_1ck18 FIND v(dout0_1) AT=190.05n
 
-* CHECK dout0_2 Vdout0_2ck18 = 3.3 time = 190
+* CHECK dout0_2 Vdout0_2ck18 = 0 time = 190
 .meas tran vdout0_2ck18 FIND v(dout0_2) AT=190.05n
 
 * CHECK dout0_3 Vdout0_3ck18 = 3.3 time = 190
@@ -457,86 +478,62 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_4 Vdout0_4ck18 = 0 time = 190
 .meas tran vdout0_4ck18 FIND v(dout0_4) AT=190.05n
 
-* CHECK dout0_5 Vdout0_5ck18 = 3.3 time = 190
+* CHECK dout0_5 Vdout0_5ck18 = 0 time = 190
 .meas tran vdout0_5ck18 FIND v(dout0_5) AT=190.05n
 
 * CHECK dout0_6 Vdout0_6ck18 = 3.3 time = 190
 .meas tran vdout0_6ck18 FIND v(dout0_6) AT=190.05n
 
-* CHECK dout0_7 Vdout0_7ck18 = 3.3 time = 190
+* CHECK dout0_7 Vdout0_7ck18 = 0 time = 190
 .meas tran vdout0_7ck18 FIND v(dout0_7) AT=190.05n
 
-* CHECK dout0_0 Vdout0_0ck20 = 3.3 time = 210
-.meas tran vdout0_0ck20 FIND v(dout0_0) AT=210.05n
-
-* CHECK dout0_1 Vdout0_1ck20 = 0 time = 210
-.meas tran vdout0_1ck20 FIND v(dout0_1) AT=210.05n
-
-* CHECK dout0_2 Vdout0_2ck20 = 0 time = 210
-.meas tran vdout0_2ck20 FIND v(dout0_2) AT=210.05n
-
-* CHECK dout0_3 Vdout0_3ck20 = 0 time = 210
-.meas tran vdout0_3ck20 FIND v(dout0_3) AT=210.05n
-
-* CHECK dout0_4 Vdout0_4ck20 = 3.3 time = 210
-.meas tran vdout0_4ck20 FIND v(dout0_4) AT=210.05n
-
-* CHECK dout0_5 Vdout0_5ck20 = 3.3 time = 210
-.meas tran vdout0_5ck20 FIND v(dout0_5) AT=210.05n
-
-* CHECK dout0_6 Vdout0_6ck20 = 3.3 time = 210
-.meas tran vdout0_6ck20 FIND v(dout0_6) AT=210.05n
-
-* CHECK dout0_7 Vdout0_7ck20 = 3.3 time = 210
-.meas tran vdout0_7ck20 FIND v(dout0_7) AT=210.05n
-
-* CHECK dout0_0 Vdout0_0ck21 = 3.3 time = 220
-.meas tran vdout0_0ck21 FIND v(dout0_0) AT=220.05n
-
-* CHECK dout0_1 Vdout0_1ck21 = 0 time = 220
-.meas tran vdout0_1ck21 FIND v(dout0_1) AT=220.05n
-
-* CHECK dout0_2 Vdout0_2ck21 = 0 time = 220
-.meas tran vdout0_2ck21 FIND v(dout0_2) AT=220.05n
-
-* CHECK dout0_3 Vdout0_3ck21 = 0 time = 220
-.meas tran vdout0_3ck21 FIND v(dout0_3) AT=220.05n
-
-* CHECK dout0_4 Vdout0_4ck21 = 3.3 time = 220
-.meas tran vdout0_4ck21 FIND v(dout0_4) AT=220.05n
-
-* CHECK dout0_5 Vdout0_5ck21 = 3.3 time = 220
-.meas tran vdout0_5ck21 FIND v(dout0_5) AT=220.05n
-
-* CHECK dout0_6 Vdout0_6ck21 = 3.3 time = 220
-.meas tran vdout0_6ck21 FIND v(dout0_6) AT=220.05n
-
-* CHECK dout0_7 Vdout0_7ck21 = 3.3 time = 220
-.meas tran vdout0_7ck21 FIND v(dout0_7) AT=220.05n
-
-* CHECK dout0_0 Vdout0_0ck22 = 0 time = 230
+* CHECK dout0_0 Vdout0_0ck22 = 3.3 time = 230
 .meas tran vdout0_0ck22 FIND v(dout0_0) AT=230.05n
 
 * CHECK dout0_1 Vdout0_1ck22 = 0 time = 230
 .meas tran vdout0_1ck22 FIND v(dout0_1) AT=230.05n
 
-* CHECK dout0_2 Vdout0_2ck22 = 3.3 time = 230
+* CHECK dout0_2 Vdout0_2ck22 = 0 time = 230
 .meas tran vdout0_2ck22 FIND v(dout0_2) AT=230.05n
 
-* CHECK dout0_3 Vdout0_3ck22 = 0 time = 230
+* CHECK dout0_3 Vdout0_3ck22 = 3.3 time = 230
 .meas tran vdout0_3ck22 FIND v(dout0_3) AT=230.05n
 
-* CHECK dout0_4 Vdout0_4ck22 = 3.3 time = 230
+* CHECK dout0_4 Vdout0_4ck22 = 0 time = 230
 .meas tran vdout0_4ck22 FIND v(dout0_4) AT=230.05n
 
 * CHECK dout0_5 Vdout0_5ck22 = 0 time = 230
 .meas tran vdout0_5ck22 FIND v(dout0_5) AT=230.05n
 
-* CHECK dout0_6 Vdout0_6ck22 = 0 time = 230
+* CHECK dout0_6 Vdout0_6ck22 = 3.3 time = 230
 .meas tran vdout0_6ck22 FIND v(dout0_6) AT=230.05n
 
-* CHECK dout0_7 Vdout0_7ck22 = 3.3 time = 230
+* CHECK dout0_7 Vdout0_7ck22 = 0 time = 230
 .meas tran vdout0_7ck22 FIND v(dout0_7) AT=230.05n
+
+* CHECK dout0_0 Vdout0_0ck23 = 3.3 time = 240
+.meas tran vdout0_0ck23 FIND v(dout0_0) AT=240.05n
+
+* CHECK dout0_1 Vdout0_1ck23 = 0 time = 240
+.meas tran vdout0_1ck23 FIND v(dout0_1) AT=240.05n
+
+* CHECK dout0_2 Vdout0_2ck23 = 0 time = 240
+.meas tran vdout0_2ck23 FIND v(dout0_2) AT=240.05n
+
+* CHECK dout0_3 Vdout0_3ck23 = 3.3 time = 240
+.meas tran vdout0_3ck23 FIND v(dout0_3) AT=240.05n
+
+* CHECK dout0_4 Vdout0_4ck23 = 0 time = 240
+.meas tran vdout0_4ck23 FIND v(dout0_4) AT=240.05n
+
+* CHECK dout0_5 Vdout0_5ck23 = 0 time = 240
+.meas tran vdout0_5ck23 FIND v(dout0_5) AT=240.05n
+
+* CHECK dout0_6 Vdout0_6ck23 = 3.3 time = 240
+.meas tran vdout0_6ck23 FIND v(dout0_6) AT=240.05n
+
+* CHECK dout0_7 Vdout0_7ck23 = 0 time = 240
+.meas tran vdout0_7ck23 FIND v(dout0_7) AT=240.05n
 
 * CHECK dout0_0 Vdout0_0ck24 = 0 time = 250
 .meas tran vdout0_0ck24 FIND v(dout0_0) AT=250.05n
@@ -547,25 +544,25 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck24 = 3.3 time = 250
 .meas tran vdout0_2ck24 FIND v(dout0_2) AT=250.05n
 
-* CHECK dout0_3 Vdout0_3ck24 = 0 time = 250
+* CHECK dout0_3 Vdout0_3ck24 = 3.3 time = 250
 .meas tran vdout0_3ck24 FIND v(dout0_3) AT=250.05n
 
-* CHECK dout0_4 Vdout0_4ck24 = 3.3 time = 250
+* CHECK dout0_4 Vdout0_4ck24 = 0 time = 250
 .meas tran vdout0_4ck24 FIND v(dout0_4) AT=250.05n
 
-* CHECK dout0_5 Vdout0_5ck24 = 0 time = 250
+* CHECK dout0_5 Vdout0_5ck24 = 3.3 time = 250
 .meas tran vdout0_5ck24 FIND v(dout0_5) AT=250.05n
 
-* CHECK dout0_6 Vdout0_6ck24 = 0 time = 250
+* CHECK dout0_6 Vdout0_6ck24 = 3.3 time = 250
 .meas tran vdout0_6ck24 FIND v(dout0_6) AT=250.05n
 
-* CHECK dout0_7 Vdout0_7ck24 = 3.3 time = 250
+* CHECK dout0_7 Vdout0_7ck24 = 0 time = 250
 .meas tran vdout0_7ck24 FIND v(dout0_7) AT=250.05n
 
-* CHECK dout0_0 Vdout0_0ck25 = 3.3 time = 260
+* CHECK dout0_0 Vdout0_0ck25 = 0 time = 260
 .meas tran vdout0_0ck25 FIND v(dout0_0) AT=260.05n
 
-* CHECK dout0_1 Vdout0_1ck25 = 3.3 time = 260
+* CHECK dout0_1 Vdout0_1ck25 = 0 time = 260
 .meas tran vdout0_1ck25 FIND v(dout0_1) AT=260.05n
 
 * CHECK dout0_2 Vdout0_2ck25 = 3.3 time = 260
@@ -583,7 +580,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_6 Vdout0_6ck25 = 3.3 time = 260
 .meas tran vdout0_6ck25 FIND v(dout0_6) AT=260.05n
 
-* CHECK dout0_7 Vdout0_7ck25 = 3.3 time = 260
+* CHECK dout0_7 Vdout0_7ck25 = 0 time = 260
 .meas tran vdout0_7ck25 FIND v(dout0_7) AT=260.05n
 
 * CHECK dout0_0 Vdout0_0ck26 = 0 time = 270
@@ -595,44 +592,20 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck26 = 3.3 time = 270
 .meas tran vdout0_2ck26 FIND v(dout0_2) AT=270.05n
 
-* CHECK dout0_3 Vdout0_3ck26 = 0 time = 270
+* CHECK dout0_3 Vdout0_3ck26 = 3.3 time = 270
 .meas tran vdout0_3ck26 FIND v(dout0_3) AT=270.05n
 
-* CHECK dout0_4 Vdout0_4ck26 = 3.3 time = 270
+* CHECK dout0_4 Vdout0_4ck26 = 0 time = 270
 .meas tran vdout0_4ck26 FIND v(dout0_4) AT=270.05n
 
-* CHECK dout0_5 Vdout0_5ck26 = 0 time = 270
+* CHECK dout0_5 Vdout0_5ck26 = 3.3 time = 270
 .meas tran vdout0_5ck26 FIND v(dout0_5) AT=270.05n
 
-* CHECK dout0_6 Vdout0_6ck26 = 0 time = 270
+* CHECK dout0_6 Vdout0_6ck26 = 3.3 time = 270
 .meas tran vdout0_6ck26 FIND v(dout0_6) AT=270.05n
 
-* CHECK dout0_7 Vdout0_7ck26 = 3.3 time = 270
+* CHECK dout0_7 Vdout0_7ck26 = 0 time = 270
 .meas tran vdout0_7ck26 FIND v(dout0_7) AT=270.05n
-
-* CHECK dout0_0 Vdout0_0ck27 = 3.3 time = 280
-.meas tran vdout0_0ck27 FIND v(dout0_0) AT=280.05n
-
-* CHECK dout0_1 Vdout0_1ck27 = 3.3 time = 280
-.meas tran vdout0_1ck27 FIND v(dout0_1) AT=280.05n
-
-* CHECK dout0_2 Vdout0_2ck27 = 3.3 time = 280
-.meas tran vdout0_2ck27 FIND v(dout0_2) AT=280.05n
-
-* CHECK dout0_3 Vdout0_3ck27 = 3.3 time = 280
-.meas tran vdout0_3ck27 FIND v(dout0_3) AT=280.05n
-
-* CHECK dout0_4 Vdout0_4ck27 = 0 time = 280
-.meas tran vdout0_4ck27 FIND v(dout0_4) AT=280.05n
-
-* CHECK dout0_5 Vdout0_5ck27 = 3.3 time = 280
-.meas tran vdout0_5ck27 FIND v(dout0_5) AT=280.05n
-
-* CHECK dout0_6 Vdout0_6ck27 = 3.3 time = 280
-.meas tran vdout0_6ck27 FIND v(dout0_6) AT=280.05n
-
-* CHECK dout0_7 Vdout0_7ck27 = 3.3 time = 280
-.meas tran vdout0_7ck27 FIND v(dout0_7) AT=280.05n
 
 * CHECK dout0_0 Vdout0_0ck28 = 3.3 time = 290
 .meas tran vdout0_0ck28 FIND v(dout0_0) AT=290.05n
@@ -640,13 +613,13 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck28 = 3.3 time = 290
 .meas tran vdout0_1ck28 FIND v(dout0_1) AT=290.05n
 
-* CHECK dout0_2 Vdout0_2ck28 = 3.3 time = 290
+* CHECK dout0_2 Vdout0_2ck28 = 0 time = 290
 .meas tran vdout0_2ck28 FIND v(dout0_2) AT=290.05n
 
-* CHECK dout0_3 Vdout0_3ck28 = 3.3 time = 290
+* CHECK dout0_3 Vdout0_3ck28 = 0 time = 290
 .meas tran vdout0_3ck28 FIND v(dout0_3) AT=290.05n
 
-* CHECK dout0_4 Vdout0_4ck28 = 0 time = 290
+* CHECK dout0_4 Vdout0_4ck28 = 3.3 time = 290
 .meas tran vdout0_4ck28 FIND v(dout0_4) AT=290.05n
 
 * CHECK dout0_5 Vdout0_5ck28 = 3.3 time = 290
@@ -658,127 +631,127 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck28 = 3.3 time = 290
 .meas tran vdout0_7ck28 FIND v(dout0_7) AT=290.05n
 
-* CHECK dout0_0 Vdout0_0ck29 = 0 time = 300
-.meas tran vdout0_0ck29 FIND v(dout0_0) AT=300.05n
+* CHECK dout0_0 Vdout0_0ck30 = 0 time = 310
+.meas tran vdout0_0ck30 FIND v(dout0_0) AT=310.05n
 
-* CHECK dout0_1 Vdout0_1ck29 = 0 time = 300
-.meas tran vdout0_1ck29 FIND v(dout0_1) AT=300.05n
+* CHECK dout0_1 Vdout0_1ck30 = 3.3 time = 310
+.meas tran vdout0_1ck30 FIND v(dout0_1) AT=310.05n
 
-* CHECK dout0_2 Vdout0_2ck29 = 3.3 time = 300
-.meas tran vdout0_2ck29 FIND v(dout0_2) AT=300.05n
+* CHECK dout0_2 Vdout0_2ck30 = 3.3 time = 310
+.meas tran vdout0_2ck30 FIND v(dout0_2) AT=310.05n
 
-* CHECK dout0_3 Vdout0_3ck29 = 0 time = 300
-.meas tran vdout0_3ck29 FIND v(dout0_3) AT=300.05n
+* CHECK dout0_3 Vdout0_3ck30 = 0 time = 310
+.meas tran vdout0_3ck30 FIND v(dout0_3) AT=310.05n
 
-* CHECK dout0_4 Vdout0_4ck29 = 3.3 time = 300
-.meas tran vdout0_4ck29 FIND v(dout0_4) AT=300.05n
+* CHECK dout0_4 Vdout0_4ck30 = 0 time = 310
+.meas tran vdout0_4ck30 FIND v(dout0_4) AT=310.05n
 
-* CHECK dout0_5 Vdout0_5ck29 = 0 time = 300
-.meas tran vdout0_5ck29 FIND v(dout0_5) AT=300.05n
+* CHECK dout0_5 Vdout0_5ck30 = 0 time = 310
+.meas tran vdout0_5ck30 FIND v(dout0_5) AT=310.05n
 
-* CHECK dout0_6 Vdout0_6ck29 = 0 time = 300
-.meas tran vdout0_6ck29 FIND v(dout0_6) AT=300.05n
+* CHECK dout0_6 Vdout0_6ck30 = 3.3 time = 310
+.meas tran vdout0_6ck30 FIND v(dout0_6) AT=310.05n
 
-* CHECK dout0_7 Vdout0_7ck29 = 3.3 time = 300
-.meas tran vdout0_7ck29 FIND v(dout0_7) AT=300.05n
+* CHECK dout0_7 Vdout0_7ck30 = 0 time = 310
+.meas tran vdout0_7ck30 FIND v(dout0_7) AT=310.05n
 
-* CHECK dout0_0 Vdout0_0ck32 = 0 time = 330
+* CHECK dout0_0 Vdout0_0ck31 = 3.3 time = 320
+.meas tran vdout0_0ck31 FIND v(dout0_0) AT=320.05n
+
+* CHECK dout0_1 Vdout0_1ck31 = 0 time = 320
+.meas tran vdout0_1ck31 FIND v(dout0_1) AT=320.05n
+
+* CHECK dout0_2 Vdout0_2ck31 = 0 time = 320
+.meas tran vdout0_2ck31 FIND v(dout0_2) AT=320.05n
+
+* CHECK dout0_3 Vdout0_3ck31 = 3.3 time = 320
+.meas tran vdout0_3ck31 FIND v(dout0_3) AT=320.05n
+
+* CHECK dout0_4 Vdout0_4ck31 = 0 time = 320
+.meas tran vdout0_4ck31 FIND v(dout0_4) AT=320.05n
+
+* CHECK dout0_5 Vdout0_5ck31 = 0 time = 320
+.meas tran vdout0_5ck31 FIND v(dout0_5) AT=320.05n
+
+* CHECK dout0_6 Vdout0_6ck31 = 3.3 time = 320
+.meas tran vdout0_6ck31 FIND v(dout0_6) AT=320.05n
+
+* CHECK dout0_7 Vdout0_7ck31 = 0 time = 320
+.meas tran vdout0_7ck31 FIND v(dout0_7) AT=320.05n
+
+* CHECK dout0_0 Vdout0_0ck32 = 3.3 time = 330
 .meas tran vdout0_0ck32 FIND v(dout0_0) AT=330.05n
 
 * CHECK dout0_1 Vdout0_1ck32 = 0 time = 330
 .meas tran vdout0_1ck32 FIND v(dout0_1) AT=330.05n
 
-* CHECK dout0_2 Vdout0_2ck32 = 3.3 time = 330
+* CHECK dout0_2 Vdout0_2ck32 = 0 time = 330
 .meas tran vdout0_2ck32 FIND v(dout0_2) AT=330.05n
 
-* CHECK dout0_3 Vdout0_3ck32 = 0 time = 330
+* CHECK dout0_3 Vdout0_3ck32 = 3.3 time = 330
 .meas tran vdout0_3ck32 FIND v(dout0_3) AT=330.05n
 
-* CHECK dout0_4 Vdout0_4ck32 = 3.3 time = 330
+* CHECK dout0_4 Vdout0_4ck32 = 0 time = 330
 .meas tran vdout0_4ck32 FIND v(dout0_4) AT=330.05n
 
 * CHECK dout0_5 Vdout0_5ck32 = 0 time = 330
 .meas tran vdout0_5ck32 FIND v(dout0_5) AT=330.05n
 
-* CHECK dout0_6 Vdout0_6ck32 = 0 time = 330
+* CHECK dout0_6 Vdout0_6ck32 = 3.3 time = 330
 .meas tran vdout0_6ck32 FIND v(dout0_6) AT=330.05n
 
-* CHECK dout0_7 Vdout0_7ck32 = 3.3 time = 330
+* CHECK dout0_7 Vdout0_7ck32 = 0 time = 330
 .meas tran vdout0_7ck32 FIND v(dout0_7) AT=330.05n
 
-* CHECK dout0_0 Vdout0_0ck33 = 0 time = 340
-.meas tran vdout0_0ck33 FIND v(dout0_0) AT=340.05n
+* CHECK dout0_0 Vdout0_0ck38 = 3.3 time = 390
+.meas tran vdout0_0ck38 FIND v(dout0_0) AT=390.05n
 
-* CHECK dout0_1 Vdout0_1ck33 = 0 time = 340
-.meas tran vdout0_1ck33 FIND v(dout0_1) AT=340.05n
+* CHECK dout0_1 Vdout0_1ck38 = 0 time = 390
+.meas tran vdout0_1ck38 FIND v(dout0_1) AT=390.05n
 
-* CHECK dout0_2 Vdout0_2ck33 = 3.3 time = 340
-.meas tran vdout0_2ck33 FIND v(dout0_2) AT=340.05n
+* CHECK dout0_2 Vdout0_2ck38 = 0 time = 390
+.meas tran vdout0_2ck38 FIND v(dout0_2) AT=390.05n
 
-* CHECK dout0_3 Vdout0_3ck33 = 0 time = 340
-.meas tran vdout0_3ck33 FIND v(dout0_3) AT=340.05n
+* CHECK dout0_3 Vdout0_3ck38 = 3.3 time = 390
+.meas tran vdout0_3ck38 FIND v(dout0_3) AT=390.05n
 
-* CHECK dout0_4 Vdout0_4ck33 = 3.3 time = 340
-.meas tran vdout0_4ck33 FIND v(dout0_4) AT=340.05n
+* CHECK dout0_4 Vdout0_4ck38 = 0 time = 390
+.meas tran vdout0_4ck38 FIND v(dout0_4) AT=390.05n
 
-* CHECK dout0_5 Vdout0_5ck33 = 0 time = 340
-.meas tran vdout0_5ck33 FIND v(dout0_5) AT=340.05n
+* CHECK dout0_5 Vdout0_5ck38 = 0 time = 390
+.meas tran vdout0_5ck38 FIND v(dout0_5) AT=390.05n
 
-* CHECK dout0_6 Vdout0_6ck33 = 0 time = 340
-.meas tran vdout0_6ck33 FIND v(dout0_6) AT=340.05n
+* CHECK dout0_6 Vdout0_6ck38 = 3.3 time = 390
+.meas tran vdout0_6ck38 FIND v(dout0_6) AT=390.05n
 
-* CHECK dout0_7 Vdout0_7ck33 = 3.3 time = 340
-.meas tran vdout0_7ck33 FIND v(dout0_7) AT=340.05n
+* CHECK dout0_7 Vdout0_7ck38 = 0 time = 390
+.meas tran vdout0_7ck38 FIND v(dout0_7) AT=390.05n
 
-* CHECK dout0_0 Vdout0_0ck36 = 3.3 time = 370
-.meas tran vdout0_0ck36 FIND v(dout0_0) AT=370.05n
+* CHECK dout0_0 Vdout0_0ck41 = 0 time = 420
+.meas tran vdout0_0ck41 FIND v(dout0_0) AT=420.05n
 
-* CHECK dout0_1 Vdout0_1ck36 = 0 time = 370
-.meas tran vdout0_1ck36 FIND v(dout0_1) AT=370.05n
+* CHECK dout0_1 Vdout0_1ck41 = 3.3 time = 420
+.meas tran vdout0_1ck41 FIND v(dout0_1) AT=420.05n
 
-* CHECK dout0_2 Vdout0_2ck36 = 3.3 time = 370
-.meas tran vdout0_2ck36 FIND v(dout0_2) AT=370.05n
+* CHECK dout0_2 Vdout0_2ck41 = 3.3 time = 420
+.meas tran vdout0_2ck41 FIND v(dout0_2) AT=420.05n
 
-* CHECK dout0_3 Vdout0_3ck36 = 0 time = 370
-.meas tran vdout0_3ck36 FIND v(dout0_3) AT=370.05n
+* CHECK dout0_3 Vdout0_3ck41 = 0 time = 420
+.meas tran vdout0_3ck41 FIND v(dout0_3) AT=420.05n
 
-* CHECK dout0_4 Vdout0_4ck36 = 3.3 time = 370
-.meas tran vdout0_4ck36 FIND v(dout0_4) AT=370.05n
+* CHECK dout0_4 Vdout0_4ck41 = 0 time = 420
+.meas tran vdout0_4ck41 FIND v(dout0_4) AT=420.05n
 
-* CHECK dout0_5 Vdout0_5ck36 = 0 time = 370
-.meas tran vdout0_5ck36 FIND v(dout0_5) AT=370.05n
+* CHECK dout0_5 Vdout0_5ck41 = 0 time = 420
+.meas tran vdout0_5ck41 FIND v(dout0_5) AT=420.05n
 
-* CHECK dout0_6 Vdout0_6ck36 = 3.3 time = 370
-.meas tran vdout0_6ck36 FIND v(dout0_6) AT=370.05n
+* CHECK dout0_6 Vdout0_6ck41 = 3.3 time = 420
+.meas tran vdout0_6ck41 FIND v(dout0_6) AT=420.05n
 
-* CHECK dout0_7 Vdout0_7ck36 = 3.3 time = 370
-.meas tran vdout0_7ck36 FIND v(dout0_7) AT=370.05n
+* CHECK dout0_7 Vdout0_7ck41 = 0 time = 420
+.meas tran vdout0_7ck41 FIND v(dout0_7) AT=420.05n
 
-* CHECK dout0_0 Vdout0_0ck37 = 3.3 time = 380
-.meas tran vdout0_0ck37 FIND v(dout0_0) AT=380.05n
-
-* CHECK dout0_1 Vdout0_1ck37 = 0 time = 380
-.meas tran vdout0_1ck37 FIND v(dout0_1) AT=380.05n
-
-* CHECK dout0_2 Vdout0_2ck37 = 3.3 time = 380
-.meas tran vdout0_2ck37 FIND v(dout0_2) AT=380.05n
-
-* CHECK dout0_3 Vdout0_3ck37 = 0 time = 380
-.meas tran vdout0_3ck37 FIND v(dout0_3) AT=380.05n
-
-* CHECK dout0_4 Vdout0_4ck37 = 3.3 time = 380
-.meas tran vdout0_4ck37 FIND v(dout0_4) AT=380.05n
-
-* CHECK dout0_5 Vdout0_5ck37 = 0 time = 380
-.meas tran vdout0_5ck37 FIND v(dout0_5) AT=380.05n
-
-* CHECK dout0_6 Vdout0_6ck37 = 3.3 time = 380
-.meas tran vdout0_6ck37 FIND v(dout0_6) AT=380.05n
-
-* CHECK dout0_7 Vdout0_7ck37 = 3.3 time = 380
-.meas tran vdout0_7ck37 FIND v(dout0_7) AT=380.05n
-
-* CHECK dout0_0 Vdout0_0ck42 = 3.3 time = 430
+* CHECK dout0_0 Vdout0_0ck42 = 0 time = 430
 .meas tran vdout0_0ck42 FIND v(dout0_0) AT=430.05n
 
 * CHECK dout0_1 Vdout0_1ck42 = 3.3 time = 430
@@ -787,19 +760,19 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck42 = 3.3 time = 430
 .meas tran vdout0_2ck42 FIND v(dout0_2) AT=430.05n
 
-* CHECK dout0_3 Vdout0_3ck42 = 3.3 time = 430
+* CHECK dout0_3 Vdout0_3ck42 = 0 time = 430
 .meas tran vdout0_3ck42 FIND v(dout0_3) AT=430.05n
 
 * CHECK dout0_4 Vdout0_4ck42 = 0 time = 430
 .meas tran vdout0_4ck42 FIND v(dout0_4) AT=430.05n
 
-* CHECK dout0_5 Vdout0_5ck42 = 3.3 time = 430
+* CHECK dout0_5 Vdout0_5ck42 = 0 time = 430
 .meas tran vdout0_5ck42 FIND v(dout0_5) AT=430.05n
 
-* CHECK dout0_6 Vdout0_6ck42 = 0 time = 430
+* CHECK dout0_6 Vdout0_6ck42 = 3.3 time = 430
 .meas tran vdout0_6ck42 FIND v(dout0_6) AT=430.05n
 
-* CHECK dout0_7 Vdout0_7ck42 = 3.3 time = 430
+* CHECK dout0_7 Vdout0_7ck42 = 0 time = 430
 .meas tran vdout0_7ck42 FIND v(dout0_7) AT=430.05n
 
 * CHECK dout0_0 Vdout0_0ck43 = 3.3 time = 440
@@ -811,7 +784,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck43 = 3.3 time = 440
 .meas tran vdout0_2ck43 FIND v(dout0_2) AT=440.05n
 
-* CHECK dout0_3 Vdout0_3ck43 = 3.3 time = 440
+* CHECK dout0_3 Vdout0_3ck43 = 0 time = 440
 .meas tran vdout0_3ck43 FIND v(dout0_3) AT=440.05n
 
 * CHECK dout0_4 Vdout0_4ck43 = 3.3 time = 440
@@ -823,34 +796,34 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_6 Vdout0_6ck43 = 3.3 time = 440
 .meas tran vdout0_6ck43 FIND v(dout0_6) AT=440.05n
 
-* CHECK dout0_7 Vdout0_7ck43 = 3.3 time = 440
+* CHECK dout0_7 Vdout0_7ck43 = 0 time = 440
 .meas tran vdout0_7ck43 FIND v(dout0_7) AT=440.05n
 
-* CHECK dout0_0 Vdout0_0ck46 = 3.3 time = 470
-.meas tran vdout0_0ck46 FIND v(dout0_0) AT=470.05n
+* CHECK dout0_0 Vdout0_0ck45 = 0 time = 460
+.meas tran vdout0_0ck45 FIND v(dout0_0) AT=460.05n
 
-* CHECK dout0_1 Vdout0_1ck46 = 0 time = 470
-.meas tran vdout0_1ck46 FIND v(dout0_1) AT=470.05n
+* CHECK dout0_1 Vdout0_1ck45 = 3.3 time = 460
+.meas tran vdout0_1ck45 FIND v(dout0_1) AT=460.05n
 
-* CHECK dout0_2 Vdout0_2ck46 = 3.3 time = 470
-.meas tran vdout0_2ck46 FIND v(dout0_2) AT=470.05n
+* CHECK dout0_2 Vdout0_2ck45 = 3.3 time = 460
+.meas tran vdout0_2ck45 FIND v(dout0_2) AT=460.05n
 
-* CHECK dout0_3 Vdout0_3ck46 = 0 time = 470
-.meas tran vdout0_3ck46 FIND v(dout0_3) AT=470.05n
+* CHECK dout0_3 Vdout0_3ck45 = 0 time = 460
+.meas tran vdout0_3ck45 FIND v(dout0_3) AT=460.05n
 
-* CHECK dout0_4 Vdout0_4ck46 = 0 time = 470
-.meas tran vdout0_4ck46 FIND v(dout0_4) AT=470.05n
+* CHECK dout0_4 Vdout0_4ck45 = 0 time = 460
+.meas tran vdout0_4ck45 FIND v(dout0_4) AT=460.05n
 
-* CHECK dout0_5 Vdout0_5ck46 = 0 time = 470
-.meas tran vdout0_5ck46 FIND v(dout0_5) AT=470.05n
+* CHECK dout0_5 Vdout0_5ck45 = 0 time = 460
+.meas tran vdout0_5ck45 FIND v(dout0_5) AT=460.05n
 
-* CHECK dout0_6 Vdout0_6ck46 = 0 time = 470
-.meas tran vdout0_6ck46 FIND v(dout0_6) AT=470.05n
+* CHECK dout0_6 Vdout0_6ck45 = 3.3 time = 460
+.meas tran vdout0_6ck45 FIND v(dout0_6) AT=460.05n
 
-* CHECK dout0_7 Vdout0_7ck46 = 3.3 time = 470
-.meas tran vdout0_7ck46 FIND v(dout0_7) AT=470.05n
+* CHECK dout0_7 Vdout0_7ck45 = 0 time = 460
+.meas tran vdout0_7ck45 FIND v(dout0_7) AT=460.05n
 
-* CHECK dout0_0 Vdout0_0ck47 = 3.3 time = 480
+* CHECK dout0_0 Vdout0_0ck47 = 0 time = 480
 .meas tran vdout0_0ck47 FIND v(dout0_0) AT=480.05n
 
 * CHECK dout0_1 Vdout0_1ck47 = 3.3 time = 480
@@ -859,22 +832,22 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck47 = 3.3 time = 480
 .meas tran vdout0_2ck47 FIND v(dout0_2) AT=480.05n
 
-* CHECK dout0_3 Vdout0_3ck47 = 3.3 time = 480
+* CHECK dout0_3 Vdout0_3ck47 = 0 time = 480
 .meas tran vdout0_3ck47 FIND v(dout0_3) AT=480.05n
 
 * CHECK dout0_4 Vdout0_4ck47 = 0 time = 480
 .meas tran vdout0_4ck47 FIND v(dout0_4) AT=480.05n
 
-* CHECK dout0_5 Vdout0_5ck47 = 3.3 time = 480
+* CHECK dout0_5 Vdout0_5ck47 = 0 time = 480
 .meas tran vdout0_5ck47 FIND v(dout0_5) AT=480.05n
 
-* CHECK dout0_6 Vdout0_6ck47 = 0 time = 480
+* CHECK dout0_6 Vdout0_6ck47 = 3.3 time = 480
 .meas tran vdout0_6ck47 FIND v(dout0_6) AT=480.05n
 
-* CHECK dout0_7 Vdout0_7ck47 = 3.3 time = 480
+* CHECK dout0_7 Vdout0_7ck47 = 0 time = 480
 .meas tran vdout0_7ck47 FIND v(dout0_7) AT=480.05n
 
-* CHECK dout0_0 Vdout0_0ck48 = 3.3 time = 490
+* CHECK dout0_0 Vdout0_0ck48 = 0 time = 490
 .meas tran vdout0_0ck48 FIND v(dout0_0) AT=490.05n
 
 * CHECK dout0_1 Vdout0_1ck48 = 3.3 time = 490
@@ -883,34 +856,58 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck48 = 3.3 time = 490
 .meas tran vdout0_2ck48 FIND v(dout0_2) AT=490.05n
 
-* CHECK dout0_3 Vdout0_3ck48 = 3.3 time = 490
+* CHECK dout0_3 Vdout0_3ck48 = 0 time = 490
 .meas tran vdout0_3ck48 FIND v(dout0_3) AT=490.05n
 
 * CHECK dout0_4 Vdout0_4ck48 = 0 time = 490
 .meas tran vdout0_4ck48 FIND v(dout0_4) AT=490.05n
 
-* CHECK dout0_5 Vdout0_5ck48 = 3.3 time = 490
+* CHECK dout0_5 Vdout0_5ck48 = 0 time = 490
 .meas tran vdout0_5ck48 FIND v(dout0_5) AT=490.05n
 
-* CHECK dout0_6 Vdout0_6ck48 = 0 time = 490
+* CHECK dout0_6 Vdout0_6ck48 = 3.3 time = 490
 .meas tran vdout0_6ck48 FIND v(dout0_6) AT=490.05n
 
-* CHECK dout0_7 Vdout0_7ck48 = 3.3 time = 490
+* CHECK dout0_7 Vdout0_7ck48 = 0 time = 490
 .meas tran vdout0_7ck48 FIND v(dout0_7) AT=490.05n
 
-* CHECK dout0_0 Vdout0_0ck52 = 0 time = 530
+* CHECK dout0_0 Vdout0_0ck50 = 0 time = 510
+.meas tran vdout0_0ck50 FIND v(dout0_0) AT=510.05n
+
+* CHECK dout0_1 Vdout0_1ck50 = 3.3 time = 510
+.meas tran vdout0_1ck50 FIND v(dout0_1) AT=510.05n
+
+* CHECK dout0_2 Vdout0_2ck50 = 3.3 time = 510
+.meas tran vdout0_2ck50 FIND v(dout0_2) AT=510.05n
+
+* CHECK dout0_3 Vdout0_3ck50 = 0 time = 510
+.meas tran vdout0_3ck50 FIND v(dout0_3) AT=510.05n
+
+* CHECK dout0_4 Vdout0_4ck50 = 0 time = 510
+.meas tran vdout0_4ck50 FIND v(dout0_4) AT=510.05n
+
+* CHECK dout0_5 Vdout0_5ck50 = 0 time = 510
+.meas tran vdout0_5ck50 FIND v(dout0_5) AT=510.05n
+
+* CHECK dout0_6 Vdout0_6ck50 = 3.3 time = 510
+.meas tran vdout0_6ck50 FIND v(dout0_6) AT=510.05n
+
+* CHECK dout0_7 Vdout0_7ck50 = 0 time = 510
+.meas tran vdout0_7ck50 FIND v(dout0_7) AT=510.05n
+
+* CHECK dout0_0 Vdout0_0ck52 = 3.3 time = 530
 .meas tran vdout0_0ck52 FIND v(dout0_0) AT=530.05n
 
 * CHECK dout0_1 Vdout0_1ck52 = 0 time = 530
 .meas tran vdout0_1ck52 FIND v(dout0_1) AT=530.05n
 
-* CHECK dout0_2 Vdout0_2ck52 = 0 time = 530
+* CHECK dout0_2 Vdout0_2ck52 = 3.3 time = 530
 .meas tran vdout0_2ck52 FIND v(dout0_2) AT=530.05n
 
 * CHECK dout0_3 Vdout0_3ck52 = 0 time = 530
 .meas tran vdout0_3ck52 FIND v(dout0_3) AT=530.05n
 
-* CHECK dout0_4 Vdout0_4ck52 = 0 time = 530
+* CHECK dout0_4 Vdout0_4ck52 = 3.3 time = 530
 .meas tran vdout0_4ck52 FIND v(dout0_4) AT=530.05n
 
 * CHECK dout0_5 Vdout0_5ck52 = 0 time = 530
@@ -922,29 +919,29 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck52 = 0 time = 530
 .meas tran vdout0_7ck52 FIND v(dout0_7) AT=530.05n
 
-* CHECK dout0_0 Vdout0_0ck54 = 3.3 time = 550
-.meas tran vdout0_0ck54 FIND v(dout0_0) AT=550.05n
+* CHECK dout0_0 Vdout0_0ck53 = 3.3 time = 540
+.meas tran vdout0_0ck53 FIND v(dout0_0) AT=540.05n
 
-* CHECK dout0_1 Vdout0_1ck54 = 0 time = 550
-.meas tran vdout0_1ck54 FIND v(dout0_1) AT=550.05n
+* CHECK dout0_1 Vdout0_1ck53 = 0 time = 540
+.meas tran vdout0_1ck53 FIND v(dout0_1) AT=540.05n
 
-* CHECK dout0_2 Vdout0_2ck54 = 3.3 time = 550
-.meas tran vdout0_2ck54 FIND v(dout0_2) AT=550.05n
+* CHECK dout0_2 Vdout0_2ck53 = 3.3 time = 540
+.meas tran vdout0_2ck53 FIND v(dout0_2) AT=540.05n
 
-* CHECK dout0_3 Vdout0_3ck54 = 3.3 time = 550
-.meas tran vdout0_3ck54 FIND v(dout0_3) AT=550.05n
+* CHECK dout0_3 Vdout0_3ck53 = 0 time = 540
+.meas tran vdout0_3ck53 FIND v(dout0_3) AT=540.05n
 
-* CHECK dout0_4 Vdout0_4ck54 = 3.3 time = 550
-.meas tran vdout0_4ck54 FIND v(dout0_4) AT=550.05n
+* CHECK dout0_4 Vdout0_4ck53 = 3.3 time = 540
+.meas tran vdout0_4ck53 FIND v(dout0_4) AT=540.05n
 
-* CHECK dout0_5 Vdout0_5ck54 = 3.3 time = 550
-.meas tran vdout0_5ck54 FIND v(dout0_5) AT=550.05n
+* CHECK dout0_5 Vdout0_5ck53 = 0 time = 540
+.meas tran vdout0_5ck53 FIND v(dout0_5) AT=540.05n
 
-* CHECK dout0_6 Vdout0_6ck54 = 0 time = 550
-.meas tran vdout0_6ck54 FIND v(dout0_6) AT=550.05n
+* CHECK dout0_6 Vdout0_6ck53 = 3.3 time = 540
+.meas tran vdout0_6ck53 FIND v(dout0_6) AT=540.05n
 
-* CHECK dout0_7 Vdout0_7ck54 = 0 time = 550
-.meas tran vdout0_7ck54 FIND v(dout0_7) AT=550.05n
+* CHECK dout0_7 Vdout0_7ck53 = 0 time = 540
+.meas tran vdout0_7ck53 FIND v(dout0_7) AT=540.05n
 
 * CHECK dout0_0 Vdout0_0ck55 = 3.3 time = 560
 .meas tran vdout0_0ck55 FIND v(dout0_0) AT=560.05n
@@ -952,37 +949,37 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck55 = 0 time = 560
 .meas tran vdout0_1ck55 FIND v(dout0_1) AT=560.05n
 
-* CHECK dout0_2 Vdout0_2ck55 = 3.3 time = 560
+* CHECK dout0_2 Vdout0_2ck55 = 0 time = 560
 .meas tran vdout0_2ck55 FIND v(dout0_2) AT=560.05n
 
-* CHECK dout0_3 Vdout0_3ck55 = 3.3 time = 560
+* CHECK dout0_3 Vdout0_3ck55 = 0 time = 560
 .meas tran vdout0_3ck55 FIND v(dout0_3) AT=560.05n
 
-* CHECK dout0_4 Vdout0_4ck55 = 3.3 time = 560
+* CHECK dout0_4 Vdout0_4ck55 = 0 time = 560
 .meas tran vdout0_4ck55 FIND v(dout0_4) AT=560.05n
 
 * CHECK dout0_5 Vdout0_5ck55 = 3.3 time = 560
 .meas tran vdout0_5ck55 FIND v(dout0_5) AT=560.05n
 
-* CHECK dout0_6 Vdout0_6ck55 = 0 time = 560
+* CHECK dout0_6 Vdout0_6ck55 = 3.3 time = 560
 .meas tran vdout0_6ck55 FIND v(dout0_6) AT=560.05n
 
 * CHECK dout0_7 Vdout0_7ck55 = 0 time = 560
 .meas tran vdout0_7ck55 FIND v(dout0_7) AT=560.05n
 
-* CHECK dout0_0 Vdout0_0ck56 = 0 time = 570
+* CHECK dout0_0 Vdout0_0ck56 = 3.3 time = 570
 .meas tran vdout0_0ck56 FIND v(dout0_0) AT=570.05n
 
 * CHECK dout0_1 Vdout0_1ck56 = 0 time = 570
 .meas tran vdout0_1ck56 FIND v(dout0_1) AT=570.05n
 
-* CHECK dout0_2 Vdout0_2ck56 = 0 time = 570
+* CHECK dout0_2 Vdout0_2ck56 = 3.3 time = 570
 .meas tran vdout0_2ck56 FIND v(dout0_2) AT=570.05n
 
 * CHECK dout0_3 Vdout0_3ck56 = 0 time = 570
 .meas tran vdout0_3ck56 FIND v(dout0_3) AT=570.05n
 
-* CHECK dout0_4 Vdout0_4ck56 = 0 time = 570
+* CHECK dout0_4 Vdout0_4ck56 = 3.3 time = 570
 .meas tran vdout0_4ck56 FIND v(dout0_4) AT=570.05n
 
 * CHECK dout0_5 Vdout0_5ck56 = 0 time = 570
@@ -994,22 +991,46 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck56 = 0 time = 570
 .meas tran vdout0_7ck56 FIND v(dout0_7) AT=570.05n
 
-* CHECK dout0_0 Vdout0_0ck59 = 0 time = 600
+* CHECK dout0_0 Vdout0_0ck57 = 3.3 time = 580
+.meas tran vdout0_0ck57 FIND v(dout0_0) AT=580.05n
+
+* CHECK dout0_1 Vdout0_1ck57 = 0 time = 580
+.meas tran vdout0_1ck57 FIND v(dout0_1) AT=580.05n
+
+* CHECK dout0_2 Vdout0_2ck57 = 0 time = 580
+.meas tran vdout0_2ck57 FIND v(dout0_2) AT=580.05n
+
+* CHECK dout0_3 Vdout0_3ck57 = 0 time = 580
+.meas tran vdout0_3ck57 FIND v(dout0_3) AT=580.05n
+
+* CHECK dout0_4 Vdout0_4ck57 = 0 time = 580
+.meas tran vdout0_4ck57 FIND v(dout0_4) AT=580.05n
+
+* CHECK dout0_5 Vdout0_5ck57 = 3.3 time = 580
+.meas tran vdout0_5ck57 FIND v(dout0_5) AT=580.05n
+
+* CHECK dout0_6 Vdout0_6ck57 = 3.3 time = 580
+.meas tran vdout0_6ck57 FIND v(dout0_6) AT=580.05n
+
+* CHECK dout0_7 Vdout0_7ck57 = 0 time = 580
+.meas tran vdout0_7ck57 FIND v(dout0_7) AT=580.05n
+
+* CHECK dout0_0 Vdout0_0ck59 = 3.3 time = 600
 .meas tran vdout0_0ck59 FIND v(dout0_0) AT=600.05n
 
-* CHECK dout0_1 Vdout0_1ck59 = 3.3 time = 600
+* CHECK dout0_1 Vdout0_1ck59 = 0 time = 600
 .meas tran vdout0_1ck59 FIND v(dout0_1) AT=600.05n
 
 * CHECK dout0_2 Vdout0_2ck59 = 0 time = 600
 .meas tran vdout0_2ck59 FIND v(dout0_2) AT=600.05n
 
-* CHECK dout0_3 Vdout0_3ck59 = 3.3 time = 600
+* CHECK dout0_3 Vdout0_3ck59 = 0 time = 600
 .meas tran vdout0_3ck59 FIND v(dout0_3) AT=600.05n
 
 * CHECK dout0_4 Vdout0_4ck59 = 0 time = 600
 .meas tran vdout0_4ck59 FIND v(dout0_4) AT=600.05n
 
-* CHECK dout0_5 Vdout0_5ck59 = 0 time = 600
+* CHECK dout0_5 Vdout0_5ck59 = 3.3 time = 600
 .meas tran vdout0_5ck59 FIND v(dout0_5) AT=600.05n
 
 * CHECK dout0_6 Vdout0_6ck59 = 3.3 time = 600
@@ -1018,77 +1039,77 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck59 = 0 time = 600
 .meas tran vdout0_7ck59 FIND v(dout0_7) AT=600.05n
 
-* CHECK dout0_0 Vdout0_0ck60 = 0 time = 610
-.meas tran vdout0_0ck60 FIND v(dout0_0) AT=610.05n
+* CHECK dout0_0 Vdout0_0ck61 = 3.3 time = 620
+.meas tran vdout0_0ck61 FIND v(dout0_0) AT=620.05n
 
-* CHECK dout0_1 Vdout0_1ck60 = 0 time = 610
-.meas tran vdout0_1ck60 FIND v(dout0_1) AT=610.05n
+* CHECK dout0_1 Vdout0_1ck61 = 0 time = 620
+.meas tran vdout0_1ck61 FIND v(dout0_1) AT=620.05n
 
-* CHECK dout0_2 Vdout0_2ck60 = 0 time = 610
-.meas tran vdout0_2ck60 FIND v(dout0_2) AT=610.05n
+* CHECK dout0_2 Vdout0_2ck61 = 0 time = 620
+.meas tran vdout0_2ck61 FIND v(dout0_2) AT=620.05n
 
-* CHECK dout0_3 Vdout0_3ck60 = 0 time = 610
-.meas tran vdout0_3ck60 FIND v(dout0_3) AT=610.05n
+* CHECK dout0_3 Vdout0_3ck61 = 0 time = 620
+.meas tran vdout0_3ck61 FIND v(dout0_3) AT=620.05n
 
-* CHECK dout0_4 Vdout0_4ck60 = 0 time = 610
-.meas tran vdout0_4ck60 FIND v(dout0_4) AT=610.05n
+* CHECK dout0_4 Vdout0_4ck61 = 0 time = 620
+.meas tran vdout0_4ck61 FIND v(dout0_4) AT=620.05n
 
-* CHECK dout0_5 Vdout0_5ck60 = 0 time = 610
-.meas tran vdout0_5ck60 FIND v(dout0_5) AT=610.05n
+* CHECK dout0_5 Vdout0_5ck61 = 3.3 time = 620
+.meas tran vdout0_5ck61 FIND v(dout0_5) AT=620.05n
 
-* CHECK dout0_6 Vdout0_6ck60 = 3.3 time = 610
-.meas tran vdout0_6ck60 FIND v(dout0_6) AT=610.05n
+* CHECK dout0_6 Vdout0_6ck61 = 3.3 time = 620
+.meas tran vdout0_6ck61 FIND v(dout0_6) AT=620.05n
 
-* CHECK dout0_7 Vdout0_7ck60 = 0 time = 610
-.meas tran vdout0_7ck60 FIND v(dout0_7) AT=610.05n
+* CHECK dout0_7 Vdout0_7ck61 = 0 time = 620
+.meas tran vdout0_7ck61 FIND v(dout0_7) AT=620.05n
 
-* CHECK dout0_0 Vdout0_0ck62 = 0 time = 630
-.meas tran vdout0_0ck62 FIND v(dout0_0) AT=630.05n
+* CHECK dout0_0 Vdout0_0ck63 = 3.3 time = 640
+.meas tran vdout0_0ck63 FIND v(dout0_0) AT=640.05n
 
-* CHECK dout0_1 Vdout0_1ck62 = 0 time = 630
-.meas tran vdout0_1ck62 FIND v(dout0_1) AT=630.05n
+* CHECK dout0_1 Vdout0_1ck63 = 0 time = 640
+.meas tran vdout0_1ck63 FIND v(dout0_1) AT=640.05n
 
-* CHECK dout0_2 Vdout0_2ck62 = 0 time = 630
-.meas tran vdout0_2ck62 FIND v(dout0_2) AT=630.05n
+* CHECK dout0_2 Vdout0_2ck63 = 0 time = 640
+.meas tran vdout0_2ck63 FIND v(dout0_2) AT=640.05n
 
-* CHECK dout0_3 Vdout0_3ck62 = 0 time = 630
-.meas tran vdout0_3ck62 FIND v(dout0_3) AT=630.05n
+* CHECK dout0_3 Vdout0_3ck63 = 0 time = 640
+.meas tran vdout0_3ck63 FIND v(dout0_3) AT=640.05n
 
-* CHECK dout0_4 Vdout0_4ck62 = 0 time = 630
-.meas tran vdout0_4ck62 FIND v(dout0_4) AT=630.05n
+* CHECK dout0_4 Vdout0_4ck63 = 0 time = 640
+.meas tran vdout0_4ck63 FIND v(dout0_4) AT=640.05n
 
-* CHECK dout0_5 Vdout0_5ck62 = 0 time = 630
-.meas tran vdout0_5ck62 FIND v(dout0_5) AT=630.05n
+* CHECK dout0_5 Vdout0_5ck63 = 3.3 time = 640
+.meas tran vdout0_5ck63 FIND v(dout0_5) AT=640.05n
 
-* CHECK dout0_6 Vdout0_6ck62 = 3.3 time = 630
-.meas tran vdout0_6ck62 FIND v(dout0_6) AT=630.05n
+* CHECK dout0_6 Vdout0_6ck63 = 3.3 time = 640
+.meas tran vdout0_6ck63 FIND v(dout0_6) AT=640.05n
 
-* CHECK dout0_7 Vdout0_7ck62 = 0 time = 630
-.meas tran vdout0_7ck62 FIND v(dout0_7) AT=630.05n
+* CHECK dout0_7 Vdout0_7ck63 = 0 time = 640
+.meas tran vdout0_7ck63 FIND v(dout0_7) AT=640.05n
 
-* CHECK dout0_0 Vdout0_0ck66 = 0 time = 670
-.meas tran vdout0_0ck66 FIND v(dout0_0) AT=670.05n
+* CHECK dout0_0 Vdout0_0ck65 = 0 time = 660
+.meas tran vdout0_0ck65 FIND v(dout0_0) AT=660.05n
 
-* CHECK dout0_1 Vdout0_1ck66 = 3.3 time = 670
-.meas tran vdout0_1ck66 FIND v(dout0_1) AT=670.05n
+* CHECK dout0_1 Vdout0_1ck65 = 3.3 time = 660
+.meas tran vdout0_1ck65 FIND v(dout0_1) AT=660.05n
 
-* CHECK dout0_2 Vdout0_2ck66 = 0 time = 670
-.meas tran vdout0_2ck66 FIND v(dout0_2) AT=670.05n
+* CHECK dout0_2 Vdout0_2ck65 = 3.3 time = 660
+.meas tran vdout0_2ck65 FIND v(dout0_2) AT=660.05n
 
-* CHECK dout0_3 Vdout0_3ck66 = 3.3 time = 670
-.meas tran vdout0_3ck66 FIND v(dout0_3) AT=670.05n
+* CHECK dout0_3 Vdout0_3ck65 = 3.3 time = 660
+.meas tran vdout0_3ck65 FIND v(dout0_3) AT=660.05n
 
-* CHECK dout0_4 Vdout0_4ck66 = 0 time = 670
-.meas tran vdout0_4ck66 FIND v(dout0_4) AT=670.05n
+* CHECK dout0_4 Vdout0_4ck65 = 0 time = 660
+.meas tran vdout0_4ck65 FIND v(dout0_4) AT=660.05n
 
-* CHECK dout0_5 Vdout0_5ck66 = 0 time = 670
-.meas tran vdout0_5ck66 FIND v(dout0_5) AT=670.05n
+* CHECK dout0_5 Vdout0_5ck65 = 0 time = 660
+.meas tran vdout0_5ck65 FIND v(dout0_5) AT=660.05n
 
-* CHECK dout0_6 Vdout0_6ck66 = 3.3 time = 670
-.meas tran vdout0_6ck66 FIND v(dout0_6) AT=670.05n
+* CHECK dout0_6 Vdout0_6ck65 = 0 time = 660
+.meas tran vdout0_6ck65 FIND v(dout0_6) AT=660.05n
 
-* CHECK dout0_7 Vdout0_7ck66 = 0 time = 670
-.meas tran vdout0_7ck66 FIND v(dout0_7) AT=670.05n
+* CHECK dout0_7 Vdout0_7ck65 = 3.3 time = 660
+.meas tran vdout0_7ck65 FIND v(dout0_7) AT=660.05n
 
 * CHECK dout0_0 Vdout0_0ck67 = 0 time = 680
 .meas tran vdout0_0ck67 FIND v(dout0_0) AT=680.05n
@@ -1096,7 +1117,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck67 = 3.3 time = 680
 .meas tran vdout0_1ck67 FIND v(dout0_1) AT=680.05n
 
-* CHECK dout0_2 Vdout0_2ck67 = 0 time = 680
+* CHECK dout0_2 Vdout0_2ck67 = 3.3 time = 680
 .meas tran vdout0_2ck67 FIND v(dout0_2) AT=680.05n
 
 * CHECK dout0_3 Vdout0_3ck67 = 3.3 time = 680
@@ -1108,19 +1129,43 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_5 Vdout0_5ck67 = 0 time = 680
 .meas tran vdout0_5ck67 FIND v(dout0_5) AT=680.05n
 
-* CHECK dout0_6 Vdout0_6ck67 = 3.3 time = 680
+* CHECK dout0_6 Vdout0_6ck67 = 0 time = 680
 .meas tran vdout0_6ck67 FIND v(dout0_6) AT=680.05n
 
-* CHECK dout0_7 Vdout0_7ck67 = 0 time = 680
+* CHECK dout0_7 Vdout0_7ck67 = 3.3 time = 680
 .meas tran vdout0_7ck67 FIND v(dout0_7) AT=680.05n
 
-* CHECK dout0_0 Vdout0_0ck69 = 0 time = 700
+* CHECK dout0_0 Vdout0_0ck68 = 3.3 time = 690
+.meas tran vdout0_0ck68 FIND v(dout0_0) AT=690.05n
+
+* CHECK dout0_1 Vdout0_1ck68 = 3.3 time = 690
+.meas tran vdout0_1ck68 FIND v(dout0_1) AT=690.05n
+
+* CHECK dout0_2 Vdout0_2ck68 = 0 time = 690
+.meas tran vdout0_2ck68 FIND v(dout0_2) AT=690.05n
+
+* CHECK dout0_3 Vdout0_3ck68 = 0 time = 690
+.meas tran vdout0_3ck68 FIND v(dout0_3) AT=690.05n
+
+* CHECK dout0_4 Vdout0_4ck68 = 0 time = 690
+.meas tran vdout0_4ck68 FIND v(dout0_4) AT=690.05n
+
+* CHECK dout0_5 Vdout0_5ck68 = 3.3 time = 690
+.meas tran vdout0_5ck68 FIND v(dout0_5) AT=690.05n
+
+* CHECK dout0_6 Vdout0_6ck68 = 0 time = 690
+.meas tran vdout0_6ck68 FIND v(dout0_6) AT=690.05n
+
+* CHECK dout0_7 Vdout0_7ck68 = 3.3 time = 690
+.meas tran vdout0_7ck68 FIND v(dout0_7) AT=690.05n
+
+* CHECK dout0_0 Vdout0_0ck69 = 3.3 time = 700
 .meas tran vdout0_0ck69 FIND v(dout0_0) AT=700.05n
 
 * CHECK dout0_1 Vdout0_1ck69 = 3.3 time = 700
 .meas tran vdout0_1ck69 FIND v(dout0_1) AT=700.05n
 
-* CHECK dout0_2 Vdout0_2ck69 = 3.3 time = 700
+* CHECK dout0_2 Vdout0_2ck69 = 0 time = 700
 .meas tran vdout0_2ck69 FIND v(dout0_2) AT=700.05n
 
 * CHECK dout0_3 Vdout0_3ck69 = 0 time = 700
@@ -1129,88 +1174,136 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_4 Vdout0_4ck69 = 0 time = 700
 .meas tran vdout0_4ck69 FIND v(dout0_4) AT=700.05n
 
-* CHECK dout0_5 Vdout0_5ck69 = 0 time = 700
+* CHECK dout0_5 Vdout0_5ck69 = 3.3 time = 700
 .meas tran vdout0_5ck69 FIND v(dout0_5) AT=700.05n
 
-* CHECK dout0_6 Vdout0_6ck69 = 3.3 time = 700
+* CHECK dout0_6 Vdout0_6ck69 = 0 time = 700
 .meas tran vdout0_6ck69 FIND v(dout0_6) AT=700.05n
 
-* CHECK dout0_7 Vdout0_7ck69 = 0 time = 700
+* CHECK dout0_7 Vdout0_7ck69 = 3.3 time = 700
 .meas tran vdout0_7ck69 FIND v(dout0_7) AT=700.05n
 
-* CHECK dout0_0 Vdout0_0ck74 = 0 time = 750
-.meas tran vdout0_0ck74 FIND v(dout0_0) AT=750.05n
+* CHECK dout0_0 Vdout0_0ck70 = 0 time = 710
+.meas tran vdout0_0ck70 FIND v(dout0_0) AT=710.05n
 
-* CHECK dout0_1 Vdout0_1ck74 = 3.3 time = 750
-.meas tran vdout0_1ck74 FIND v(dout0_1) AT=750.05n
+* CHECK dout0_1 Vdout0_1ck70 = 3.3 time = 710
+.meas tran vdout0_1ck70 FIND v(dout0_1) AT=710.05n
 
-* CHECK dout0_2 Vdout0_2ck74 = 0 time = 750
-.meas tran vdout0_2ck74 FIND v(dout0_2) AT=750.05n
+* CHECK dout0_2 Vdout0_2ck70 = 3.3 time = 710
+.meas tran vdout0_2ck70 FIND v(dout0_2) AT=710.05n
 
-* CHECK dout0_3 Vdout0_3ck74 = 3.3 time = 750
-.meas tran vdout0_3ck74 FIND v(dout0_3) AT=750.05n
+* CHECK dout0_3 Vdout0_3ck70 = 3.3 time = 710
+.meas tran vdout0_3ck70 FIND v(dout0_3) AT=710.05n
 
-* CHECK dout0_4 Vdout0_4ck74 = 0 time = 750
-.meas tran vdout0_4ck74 FIND v(dout0_4) AT=750.05n
+* CHECK dout0_4 Vdout0_4ck70 = 0 time = 710
+.meas tran vdout0_4ck70 FIND v(dout0_4) AT=710.05n
 
-* CHECK dout0_5 Vdout0_5ck74 = 3.3 time = 750
-.meas tran vdout0_5ck74 FIND v(dout0_5) AT=750.05n
+* CHECK dout0_5 Vdout0_5ck70 = 0 time = 710
+.meas tran vdout0_5ck70 FIND v(dout0_5) AT=710.05n
 
-* CHECK dout0_6 Vdout0_6ck74 = 0 time = 750
-.meas tran vdout0_6ck74 FIND v(dout0_6) AT=750.05n
+* CHECK dout0_6 Vdout0_6ck70 = 0 time = 710
+.meas tran vdout0_6ck70 FIND v(dout0_6) AT=710.05n
 
-* CHECK dout0_7 Vdout0_7ck74 = 0 time = 750
-.meas tran vdout0_7ck74 FIND v(dout0_7) AT=750.05n
+* CHECK dout0_7 Vdout0_7ck70 = 3.3 time = 710
+.meas tran vdout0_7ck70 FIND v(dout0_7) AT=710.05n
+
+* CHECK dout0_0 Vdout0_0ck72 = 3.3 time = 730
+.meas tran vdout0_0ck72 FIND v(dout0_0) AT=730.05n
+
+* CHECK dout0_1 Vdout0_1ck72 = 3.3 time = 730
+.meas tran vdout0_1ck72 FIND v(dout0_1) AT=730.05n
+
+* CHECK dout0_2 Vdout0_2ck72 = 0 time = 730
+.meas tran vdout0_2ck72 FIND v(dout0_2) AT=730.05n
+
+* CHECK dout0_3 Vdout0_3ck72 = 0 time = 730
+.meas tran vdout0_3ck72 FIND v(dout0_3) AT=730.05n
+
+* CHECK dout0_4 Vdout0_4ck72 = 0 time = 730
+.meas tran vdout0_4ck72 FIND v(dout0_4) AT=730.05n
+
+* CHECK dout0_5 Vdout0_5ck72 = 3.3 time = 730
+.meas tran vdout0_5ck72 FIND v(dout0_5) AT=730.05n
+
+* CHECK dout0_6 Vdout0_6ck72 = 0 time = 730
+.meas tran vdout0_6ck72 FIND v(dout0_6) AT=730.05n
+
+* CHECK dout0_7 Vdout0_7ck72 = 3.3 time = 730
+.meas tran vdout0_7ck72 FIND v(dout0_7) AT=730.05n
 
 * CHECK dout0_0 Vdout0_0ck77 = 0 time = 780
 .meas tran vdout0_0ck77 FIND v(dout0_0) AT=780.05n
 
-* CHECK dout0_1 Vdout0_1ck77 = 3.3 time = 780
+* CHECK dout0_1 Vdout0_1ck77 = 0 time = 780
 .meas tran vdout0_1ck77 FIND v(dout0_1) AT=780.05n
 
-* CHECK dout0_2 Vdout0_2ck77 = 0 time = 780
+* CHECK dout0_2 Vdout0_2ck77 = 3.3 time = 780
 .meas tran vdout0_2ck77 FIND v(dout0_2) AT=780.05n
 
-* CHECK dout0_3 Vdout0_3ck77 = 0 time = 780
+* CHECK dout0_3 Vdout0_3ck77 = 3.3 time = 780
 .meas tran vdout0_3ck77 FIND v(dout0_3) AT=780.05n
 
-* CHECK dout0_4 Vdout0_4ck77 = 0 time = 780
+* CHECK dout0_4 Vdout0_4ck77 = 3.3 time = 780
 .meas tran vdout0_4ck77 FIND v(dout0_4) AT=780.05n
 
 * CHECK dout0_5 Vdout0_5ck77 = 3.3 time = 780
 .meas tran vdout0_5ck77 FIND v(dout0_5) AT=780.05n
 
-* CHECK dout0_6 Vdout0_6ck77 = 3.3 time = 780
+* CHECK dout0_6 Vdout0_6ck77 = 0 time = 780
 .meas tran vdout0_6ck77 FIND v(dout0_6) AT=780.05n
 
 * CHECK dout0_7 Vdout0_7ck77 = 0 time = 780
 .meas tran vdout0_7ck77 FIND v(dout0_7) AT=780.05n
 
-* CHECK dout0_0 Vdout0_0ck82 = 0 time = 830
-.meas tran vdout0_0ck82 FIND v(dout0_0) AT=830.05n
+* CHECK dout0_0 Vdout0_0ck78 = 0 time = 790
+.meas tran vdout0_0ck78 FIND v(dout0_0) AT=790.05n
 
-* CHECK dout0_1 Vdout0_1ck82 = 3.3 time = 830
-.meas tran vdout0_1ck82 FIND v(dout0_1) AT=830.05n
+* CHECK dout0_1 Vdout0_1ck78 = 0 time = 790
+.meas tran vdout0_1ck78 FIND v(dout0_1) AT=790.05n
 
-* CHECK dout0_2 Vdout0_2ck82 = 0 time = 830
-.meas tran vdout0_2ck82 FIND v(dout0_2) AT=830.05n
+* CHECK dout0_2 Vdout0_2ck78 = 3.3 time = 790
+.meas tran vdout0_2ck78 FIND v(dout0_2) AT=790.05n
 
-* CHECK dout0_3 Vdout0_3ck82 = 3.3 time = 830
-.meas tran vdout0_3ck82 FIND v(dout0_3) AT=830.05n
+* CHECK dout0_3 Vdout0_3ck78 = 3.3 time = 790
+.meas tran vdout0_3ck78 FIND v(dout0_3) AT=790.05n
 
-* CHECK dout0_4 Vdout0_4ck82 = 0 time = 830
-.meas tran vdout0_4ck82 FIND v(dout0_4) AT=830.05n
+* CHECK dout0_4 Vdout0_4ck78 = 3.3 time = 790
+.meas tran vdout0_4ck78 FIND v(dout0_4) AT=790.05n
 
-* CHECK dout0_5 Vdout0_5ck82 = 3.3 time = 830
-.meas tran vdout0_5ck82 FIND v(dout0_5) AT=830.05n
+* CHECK dout0_5 Vdout0_5ck78 = 3.3 time = 790
+.meas tran vdout0_5ck78 FIND v(dout0_5) AT=790.05n
 
-* CHECK dout0_6 Vdout0_6ck82 = 0 time = 830
-.meas tran vdout0_6ck82 FIND v(dout0_6) AT=830.05n
+* CHECK dout0_6 Vdout0_6ck78 = 0 time = 790
+.meas tran vdout0_6ck78 FIND v(dout0_6) AT=790.05n
 
-* CHECK dout0_7 Vdout0_7ck82 = 0 time = 830
-.meas tran vdout0_7ck82 FIND v(dout0_7) AT=830.05n
+* CHECK dout0_7 Vdout0_7ck78 = 0 time = 790
+.meas tran vdout0_7ck78 FIND v(dout0_7) AT=790.05n
 
-* CHECK dout0_0 Vdout0_0ck83 = 0 time = 840
+* CHECK dout0_0 Vdout0_0ck81 = 0 time = 820
+.meas tran vdout0_0ck81 FIND v(dout0_0) AT=820.05n
+
+* CHECK dout0_1 Vdout0_1ck81 = 0 time = 820
+.meas tran vdout0_1ck81 FIND v(dout0_1) AT=820.05n
+
+* CHECK dout0_2 Vdout0_2ck81 = 3.3 time = 820
+.meas tran vdout0_2ck81 FIND v(dout0_2) AT=820.05n
+
+* CHECK dout0_3 Vdout0_3ck81 = 3.3 time = 820
+.meas tran vdout0_3ck81 FIND v(dout0_3) AT=820.05n
+
+* CHECK dout0_4 Vdout0_4ck81 = 3.3 time = 820
+.meas tran vdout0_4ck81 FIND v(dout0_4) AT=820.05n
+
+* CHECK dout0_5 Vdout0_5ck81 = 3.3 time = 820
+.meas tran vdout0_5ck81 FIND v(dout0_5) AT=820.05n
+
+* CHECK dout0_6 Vdout0_6ck81 = 0 time = 820
+.meas tran vdout0_6ck81 FIND v(dout0_6) AT=820.05n
+
+* CHECK dout0_7 Vdout0_7ck81 = 3.3 time = 820
+.meas tran vdout0_7ck81 FIND v(dout0_7) AT=820.05n
+
+* CHECK dout0_0 Vdout0_0ck83 = 3.3 time = 840
 .meas tran vdout0_0ck83 FIND v(dout0_0) AT=840.05n
 
 * CHECK dout0_1 Vdout0_1ck83 = 3.3 time = 840
@@ -1219,7 +1312,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck83 = 0 time = 840
 .meas tran vdout0_2ck83 FIND v(dout0_2) AT=840.05n
 
-* CHECK dout0_3 Vdout0_3ck83 = 0 time = 840
+* CHECK dout0_3 Vdout0_3ck83 = 3.3 time = 840
 .meas tran vdout0_3ck83 FIND v(dout0_3) AT=840.05n
 
 * CHECK dout0_4 Vdout0_4ck83 = 0 time = 840
@@ -1228,49 +1321,49 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_5 Vdout0_5ck83 = 3.3 time = 840
 .meas tran vdout0_5ck83 FIND v(dout0_5) AT=840.05n
 
-* CHECK dout0_6 Vdout0_6ck83 = 0 time = 840
+* CHECK dout0_6 Vdout0_6ck83 = 3.3 time = 840
 .meas tran vdout0_6ck83 FIND v(dout0_6) AT=840.05n
 
 * CHECK dout0_7 Vdout0_7ck83 = 3.3 time = 840
 .meas tran vdout0_7ck83 FIND v(dout0_7) AT=840.05n
 
-* CHECK dout0_0 Vdout0_0ck84 = 0 time = 850
-.meas tran vdout0_0ck84 FIND v(dout0_0) AT=850.05n
+* CHECK dout0_0 Vdout0_0ck85 = 0 time = 860
+.meas tran vdout0_0ck85 FIND v(dout0_0) AT=860.05n
 
-* CHECK dout0_1 Vdout0_1ck84 = 3.3 time = 850
-.meas tran vdout0_1ck84 FIND v(dout0_1) AT=850.05n
+* CHECK dout0_1 Vdout0_1ck85 = 0 time = 860
+.meas tran vdout0_1ck85 FIND v(dout0_1) AT=860.05n
 
-* CHECK dout0_2 Vdout0_2ck84 = 0 time = 850
-.meas tran vdout0_2ck84 FIND v(dout0_2) AT=850.05n
+* CHECK dout0_2 Vdout0_2ck85 = 3.3 time = 860
+.meas tran vdout0_2ck85 FIND v(dout0_2) AT=860.05n
 
-* CHECK dout0_3 Vdout0_3ck84 = 0 time = 850
-.meas tran vdout0_3ck84 FIND v(dout0_3) AT=850.05n
+* CHECK dout0_3 Vdout0_3ck85 = 3.3 time = 860
+.meas tran vdout0_3ck85 FIND v(dout0_3) AT=860.05n
 
-* CHECK dout0_4 Vdout0_4ck84 = 0 time = 850
-.meas tran vdout0_4ck84 FIND v(dout0_4) AT=850.05n
+* CHECK dout0_4 Vdout0_4ck85 = 3.3 time = 860
+.meas tran vdout0_4ck85 FIND v(dout0_4) AT=860.05n
 
-* CHECK dout0_5 Vdout0_5ck84 = 3.3 time = 850
-.meas tran vdout0_5ck84 FIND v(dout0_5) AT=850.05n
+* CHECK dout0_5 Vdout0_5ck85 = 3.3 time = 860
+.meas tran vdout0_5ck85 FIND v(dout0_5) AT=860.05n
 
-* CHECK dout0_6 Vdout0_6ck84 = 0 time = 850
-.meas tran vdout0_6ck84 FIND v(dout0_6) AT=850.05n
+* CHECK dout0_6 Vdout0_6ck85 = 0 time = 860
+.meas tran vdout0_6ck85 FIND v(dout0_6) AT=860.05n
 
-* CHECK dout0_7 Vdout0_7ck84 = 3.3 time = 850
-.meas tran vdout0_7ck84 FIND v(dout0_7) AT=850.05n
+* CHECK dout0_7 Vdout0_7ck85 = 0 time = 860
+.meas tran vdout0_7ck85 FIND v(dout0_7) AT=860.05n
 
 * CHECK dout0_0 Vdout0_0ck86 = 0 time = 870
 .meas tran vdout0_0ck86 FIND v(dout0_0) AT=870.05n
 
-* CHECK dout0_1 Vdout0_1ck86 = 3.3 time = 870
+* CHECK dout0_1 Vdout0_1ck86 = 0 time = 870
 .meas tran vdout0_1ck86 FIND v(dout0_1) AT=870.05n
 
-* CHECK dout0_2 Vdout0_2ck86 = 0 time = 870
+* CHECK dout0_2 Vdout0_2ck86 = 3.3 time = 870
 .meas tran vdout0_2ck86 FIND v(dout0_2) AT=870.05n
 
 * CHECK dout0_3 Vdout0_3ck86 = 3.3 time = 870
 .meas tran vdout0_3ck86 FIND v(dout0_3) AT=870.05n
 
-* CHECK dout0_4 Vdout0_4ck86 = 0 time = 870
+* CHECK dout0_4 Vdout0_4ck86 = 3.3 time = 870
 .meas tran vdout0_4ck86 FIND v(dout0_4) AT=870.05n
 
 * CHECK dout0_5 Vdout0_5ck86 = 3.3 time = 870
@@ -1282,19 +1375,67 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck86 = 0 time = 870
 .meas tran vdout0_7ck86 FIND v(dout0_7) AT=870.05n
 
+* CHECK dout0_0 Vdout0_0ck87 = 3.3 time = 880
+.meas tran vdout0_0ck87 FIND v(dout0_0) AT=880.05n
+
+* CHECK dout0_1 Vdout0_1ck87 = 3.3 time = 880
+.meas tran vdout0_1ck87 FIND v(dout0_1) AT=880.05n
+
+* CHECK dout0_2 Vdout0_2ck87 = 3.3 time = 880
+.meas tran vdout0_2ck87 FIND v(dout0_2) AT=880.05n
+
+* CHECK dout0_3 Vdout0_3ck87 = 0 time = 880
+.meas tran vdout0_3ck87 FIND v(dout0_3) AT=880.05n
+
+* CHECK dout0_4 Vdout0_4ck87 = 3.3 time = 880
+.meas tran vdout0_4ck87 FIND v(dout0_4) AT=880.05n
+
+* CHECK dout0_5 Vdout0_5ck87 = 3.3 time = 880
+.meas tran vdout0_5ck87 FIND v(dout0_5) AT=880.05n
+
+* CHECK dout0_6 Vdout0_6ck87 = 0 time = 880
+.meas tran vdout0_6ck87 FIND v(dout0_6) AT=880.05n
+
+* CHECK dout0_7 Vdout0_7ck87 = 3.3 time = 880
+.meas tran vdout0_7ck87 FIND v(dout0_7) AT=880.05n
+
+* CHECK dout0_0 Vdout0_0ck88 = 0 time = 890
+.meas tran vdout0_0ck88 FIND v(dout0_0) AT=890.05n
+
+* CHECK dout0_1 Vdout0_1ck88 = 0 time = 890
+.meas tran vdout0_1ck88 FIND v(dout0_1) AT=890.05n
+
+* CHECK dout0_2 Vdout0_2ck88 = 3.3 time = 890
+.meas tran vdout0_2ck88 FIND v(dout0_2) AT=890.05n
+
+* CHECK dout0_3 Vdout0_3ck88 = 3.3 time = 890
+.meas tran vdout0_3ck88 FIND v(dout0_3) AT=890.05n
+
+* CHECK dout0_4 Vdout0_4ck88 = 3.3 time = 890
+.meas tran vdout0_4ck88 FIND v(dout0_4) AT=890.05n
+
+* CHECK dout0_5 Vdout0_5ck88 = 3.3 time = 890
+.meas tran vdout0_5ck88 FIND v(dout0_5) AT=890.05n
+
+* CHECK dout0_6 Vdout0_6ck88 = 0 time = 890
+.meas tran vdout0_6ck88 FIND v(dout0_6) AT=890.05n
+
+* CHECK dout0_7 Vdout0_7ck88 = 0 time = 890
+.meas tran vdout0_7ck88 FIND v(dout0_7) AT=890.05n
+
 * CHECK dout0_0 Vdout0_0ck89 = 0 time = 900
 .meas tran vdout0_0ck89 FIND v(dout0_0) AT=900.05n
 
-* CHECK dout0_1 Vdout0_1ck89 = 3.3 time = 900
+* CHECK dout0_1 Vdout0_1ck89 = 0 time = 900
 .meas tran vdout0_1ck89 FIND v(dout0_1) AT=900.05n
 
-* CHECK dout0_2 Vdout0_2ck89 = 0 time = 900
+* CHECK dout0_2 Vdout0_2ck89 = 3.3 time = 900
 .meas tran vdout0_2ck89 FIND v(dout0_2) AT=900.05n
 
 * CHECK dout0_3 Vdout0_3ck89 = 3.3 time = 900
 .meas tran vdout0_3ck89 FIND v(dout0_3) AT=900.05n
 
-* CHECK dout0_4 Vdout0_4ck89 = 0 time = 900
+* CHECK dout0_4 Vdout0_4ck89 = 3.3 time = 900
 .meas tran vdout0_4ck89 FIND v(dout0_4) AT=900.05n
 
 * CHECK dout0_5 Vdout0_5ck89 = 3.3 time = 900
@@ -1306,19 +1447,67 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck89 = 0 time = 900
 .meas tran vdout0_7ck89 FIND v(dout0_7) AT=900.05n
 
+* CHECK dout0_0 Vdout0_0ck90 = 3.3 time = 910
+.meas tran vdout0_0ck90 FIND v(dout0_0) AT=910.05n
+
+* CHECK dout0_1 Vdout0_1ck90 = 3.3 time = 910
+.meas tran vdout0_1ck90 FIND v(dout0_1) AT=910.05n
+
+* CHECK dout0_2 Vdout0_2ck90 = 3.3 time = 910
+.meas tran vdout0_2ck90 FIND v(dout0_2) AT=910.05n
+
+* CHECK dout0_3 Vdout0_3ck90 = 0 time = 910
+.meas tran vdout0_3ck90 FIND v(dout0_3) AT=910.05n
+
+* CHECK dout0_4 Vdout0_4ck90 = 3.3 time = 910
+.meas tran vdout0_4ck90 FIND v(dout0_4) AT=910.05n
+
+* CHECK dout0_5 Vdout0_5ck90 = 3.3 time = 910
+.meas tran vdout0_5ck90 FIND v(dout0_5) AT=910.05n
+
+* CHECK dout0_6 Vdout0_6ck90 = 0 time = 910
+.meas tran vdout0_6ck90 FIND v(dout0_6) AT=910.05n
+
+* CHECK dout0_7 Vdout0_7ck90 = 3.3 time = 910
+.meas tran vdout0_7ck90 FIND v(dout0_7) AT=910.05n
+
+* CHECK dout0_0 Vdout0_0ck91 = 3.3 time = 920
+.meas tran vdout0_0ck91 FIND v(dout0_0) AT=920.05n
+
+* CHECK dout0_1 Vdout0_1ck91 = 3.3 time = 920
+.meas tran vdout0_1ck91 FIND v(dout0_1) AT=920.05n
+
+* CHECK dout0_2 Vdout0_2ck91 = 3.3 time = 920
+.meas tran vdout0_2ck91 FIND v(dout0_2) AT=920.05n
+
+* CHECK dout0_3 Vdout0_3ck91 = 0 time = 920
+.meas tran vdout0_3ck91 FIND v(dout0_3) AT=920.05n
+
+* CHECK dout0_4 Vdout0_4ck91 = 3.3 time = 920
+.meas tran vdout0_4ck91 FIND v(dout0_4) AT=920.05n
+
+* CHECK dout0_5 Vdout0_5ck91 = 3.3 time = 920
+.meas tran vdout0_5ck91 FIND v(dout0_5) AT=920.05n
+
+* CHECK dout0_6 Vdout0_6ck91 = 0 time = 920
+.meas tran vdout0_6ck91 FIND v(dout0_6) AT=920.05n
+
+* CHECK dout0_7 Vdout0_7ck91 = 3.3 time = 920
+.meas tran vdout0_7ck91 FIND v(dout0_7) AT=920.05n
+
 * CHECK dout0_0 Vdout0_0ck92 = 0 time = 930
 .meas tran vdout0_0ck92 FIND v(dout0_0) AT=930.05n
 
-* CHECK dout0_1 Vdout0_1ck92 = 3.3 time = 930
+* CHECK dout0_1 Vdout0_1ck92 = 0 time = 930
 .meas tran vdout0_1ck92 FIND v(dout0_1) AT=930.05n
 
-* CHECK dout0_2 Vdout0_2ck92 = 0 time = 930
+* CHECK dout0_2 Vdout0_2ck92 = 3.3 time = 930
 .meas tran vdout0_2ck92 FIND v(dout0_2) AT=930.05n
 
 * CHECK dout0_3 Vdout0_3ck92 = 3.3 time = 930
 .meas tran vdout0_3ck92 FIND v(dout0_3) AT=930.05n
 
-* CHECK dout0_4 Vdout0_4ck92 = 0 time = 930
+* CHECK dout0_4 Vdout0_4ck92 = 3.3 time = 930
 .meas tran vdout0_4ck92 FIND v(dout0_4) AT=930.05n
 
 * CHECK dout0_5 Vdout0_5ck92 = 3.3 time = 930
@@ -1330,125 +1519,29 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck92 = 0 time = 930
 .meas tran vdout0_7ck92 FIND v(dout0_7) AT=930.05n
 
-* CHECK dout0_0 Vdout0_0ck93 = 0 time = 940
-.meas tran vdout0_0ck93 FIND v(dout0_0) AT=940.05n
+* CHECK dout0_0 Vdout0_0ck98 = 0 time = 990
+.meas tran vdout0_0ck98 FIND v(dout0_0) AT=990.05n
 
-* CHECK dout0_1 Vdout0_1ck93 = 3.3 time = 940
-.meas tran vdout0_1ck93 FIND v(dout0_1) AT=940.05n
+* CHECK dout0_1 Vdout0_1ck98 = 3.3 time = 990
+.meas tran vdout0_1ck98 FIND v(dout0_1) AT=990.05n
 
-* CHECK dout0_2 Vdout0_2ck93 = 0 time = 940
-.meas tran vdout0_2ck93 FIND v(dout0_2) AT=940.05n
+* CHECK dout0_2 Vdout0_2ck98 = 3.3 time = 990
+.meas tran vdout0_2ck98 FIND v(dout0_2) AT=990.05n
 
-* CHECK dout0_3 Vdout0_3ck93 = 3.3 time = 940
-.meas tran vdout0_3ck93 FIND v(dout0_3) AT=940.05n
+* CHECK dout0_3 Vdout0_3ck98 = 0 time = 990
+.meas tran vdout0_3ck98 FIND v(dout0_3) AT=990.05n
 
-* CHECK dout0_4 Vdout0_4ck93 = 0 time = 940
-.meas tran vdout0_4ck93 FIND v(dout0_4) AT=940.05n
+* CHECK dout0_4 Vdout0_4ck98 = 0 time = 990
+.meas tran vdout0_4ck98 FIND v(dout0_4) AT=990.05n
 
-* CHECK dout0_5 Vdout0_5ck93 = 3.3 time = 940
-.meas tran vdout0_5ck93 FIND v(dout0_5) AT=940.05n
+* CHECK dout0_5 Vdout0_5ck98 = 0 time = 990
+.meas tran vdout0_5ck98 FIND v(dout0_5) AT=990.05n
 
-* CHECK dout0_6 Vdout0_6ck93 = 0 time = 940
-.meas tran vdout0_6ck93 FIND v(dout0_6) AT=940.05n
+* CHECK dout0_6 Vdout0_6ck98 = 0 time = 990
+.meas tran vdout0_6ck98 FIND v(dout0_6) AT=990.05n
 
-* CHECK dout0_7 Vdout0_7ck93 = 0 time = 940
-.meas tran vdout0_7ck93 FIND v(dout0_7) AT=940.05n
-
-* CHECK dout0_0 Vdout0_0ck94 = 0 time = 950
-.meas tran vdout0_0ck94 FIND v(dout0_0) AT=950.05n
-
-* CHECK dout0_1 Vdout0_1ck94 = 3.3 time = 950
-.meas tran vdout0_1ck94 FIND v(dout0_1) AT=950.05n
-
-* CHECK dout0_2 Vdout0_2ck94 = 3.3 time = 950
-.meas tran vdout0_2ck94 FIND v(dout0_2) AT=950.05n
-
-* CHECK dout0_3 Vdout0_3ck94 = 3.3 time = 950
-.meas tran vdout0_3ck94 FIND v(dout0_3) AT=950.05n
-
-* CHECK dout0_4 Vdout0_4ck94 = 3.3 time = 950
-.meas tran vdout0_4ck94 FIND v(dout0_4) AT=950.05n
-
-* CHECK dout0_5 Vdout0_5ck94 = 3.3 time = 950
-.meas tran vdout0_5ck94 FIND v(dout0_5) AT=950.05n
-
-* CHECK dout0_6 Vdout0_6ck94 = 3.3 time = 950
-.meas tran vdout0_6ck94 FIND v(dout0_6) AT=950.05n
-
-* CHECK dout0_7 Vdout0_7ck94 = 0 time = 950
-.meas tran vdout0_7ck94 FIND v(dout0_7) AT=950.05n
-
-* CHECK dout0_0 Vdout0_0ck95 = 0 time = 960
-.meas tran vdout0_0ck95 FIND v(dout0_0) AT=960.05n
-
-* CHECK dout0_1 Vdout0_1ck95 = 3.3 time = 960
-.meas tran vdout0_1ck95 FIND v(dout0_1) AT=960.05n
-
-* CHECK dout0_2 Vdout0_2ck95 = 3.3 time = 960
-.meas tran vdout0_2ck95 FIND v(dout0_2) AT=960.05n
-
-* CHECK dout0_3 Vdout0_3ck95 = 3.3 time = 960
-.meas tran vdout0_3ck95 FIND v(dout0_3) AT=960.05n
-
-* CHECK dout0_4 Vdout0_4ck95 = 3.3 time = 960
-.meas tran vdout0_4ck95 FIND v(dout0_4) AT=960.05n
-
-* CHECK dout0_5 Vdout0_5ck95 = 3.3 time = 960
-.meas tran vdout0_5ck95 FIND v(dout0_5) AT=960.05n
-
-* CHECK dout0_6 Vdout0_6ck95 = 3.3 time = 960
-.meas tran vdout0_6ck95 FIND v(dout0_6) AT=960.05n
-
-* CHECK dout0_7 Vdout0_7ck95 = 0 time = 960
-.meas tran vdout0_7ck95 FIND v(dout0_7) AT=960.05n
-
-* CHECK dout0_0 Vdout0_0ck96 = 0 time = 970
-.meas tran vdout0_0ck96 FIND v(dout0_0) AT=970.05n
-
-* CHECK dout0_1 Vdout0_1ck96 = 3.3 time = 970
-.meas tran vdout0_1ck96 FIND v(dout0_1) AT=970.05n
-
-* CHECK dout0_2 Vdout0_2ck96 = 0 time = 970
-.meas tran vdout0_2ck96 FIND v(dout0_2) AT=970.05n
-
-* CHECK dout0_3 Vdout0_3ck96 = 3.3 time = 970
-.meas tran vdout0_3ck96 FIND v(dout0_3) AT=970.05n
-
-* CHECK dout0_4 Vdout0_4ck96 = 0 time = 970
-.meas tran vdout0_4ck96 FIND v(dout0_4) AT=970.05n
-
-* CHECK dout0_5 Vdout0_5ck96 = 3.3 time = 970
-.meas tran vdout0_5ck96 FIND v(dout0_5) AT=970.05n
-
-* CHECK dout0_6 Vdout0_6ck96 = 0 time = 970
-.meas tran vdout0_6ck96 FIND v(dout0_6) AT=970.05n
-
-* CHECK dout0_7 Vdout0_7ck96 = 0 time = 970
-.meas tran vdout0_7ck96 FIND v(dout0_7) AT=970.05n
-
-* CHECK dout0_0 Vdout0_0ck97 = 0 time = 980
-.meas tran vdout0_0ck97 FIND v(dout0_0) AT=980.05n
-
-* CHECK dout0_1 Vdout0_1ck97 = 3.3 time = 980
-.meas tran vdout0_1ck97 FIND v(dout0_1) AT=980.05n
-
-* CHECK dout0_2 Vdout0_2ck97 = 3.3 time = 980
-.meas tran vdout0_2ck97 FIND v(dout0_2) AT=980.05n
-
-* CHECK dout0_3 Vdout0_3ck97 = 3.3 time = 980
-.meas tran vdout0_3ck97 FIND v(dout0_3) AT=980.05n
-
-* CHECK dout0_4 Vdout0_4ck97 = 3.3 time = 980
-.meas tran vdout0_4ck97 FIND v(dout0_4) AT=980.05n
-
-* CHECK dout0_5 Vdout0_5ck97 = 3.3 time = 980
-.meas tran vdout0_5ck97 FIND v(dout0_5) AT=980.05n
-
-* CHECK dout0_6 Vdout0_6ck97 = 3.3 time = 980
-.meas tran vdout0_6ck97 FIND v(dout0_6) AT=980.05n
-
-* CHECK dout0_7 Vdout0_7ck97 = 0 time = 980
-.meas tran vdout0_7ck97 FIND v(dout0_7) AT=980.05n
+* CHECK dout0_7 Vdout0_7ck98 = 3.3 time = 990
+.meas tran vdout0_7ck98 FIND v(dout0_7) AT=990.05n
 
 * CHECK dout0_0 Vdout0_0ck99 = 0 time = 1000
 .meas tran vdout0_0ck99 FIND v(dout0_0) AT=1000.05n
@@ -1456,25 +1549,25 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck99 = 3.3 time = 1000
 .meas tran vdout0_1ck99 FIND v(dout0_1) AT=1000.05n
 
-* CHECK dout0_2 Vdout0_2ck99 = 0 time = 1000
+* CHECK dout0_2 Vdout0_2ck99 = 3.3 time = 1000
 .meas tran vdout0_2ck99 FIND v(dout0_2) AT=1000.05n
 
-* CHECK dout0_3 Vdout0_3ck99 = 3.3 time = 1000
+* CHECK dout0_3 Vdout0_3ck99 = 0 time = 1000
 .meas tran vdout0_3ck99 FIND v(dout0_3) AT=1000.05n
 
 * CHECK dout0_4 Vdout0_4ck99 = 0 time = 1000
 .meas tran vdout0_4ck99 FIND v(dout0_4) AT=1000.05n
 
-* CHECK dout0_5 Vdout0_5ck99 = 3.3 time = 1000
+* CHECK dout0_5 Vdout0_5ck99 = 0 time = 1000
 .meas tran vdout0_5ck99 FIND v(dout0_5) AT=1000.05n
 
 * CHECK dout0_6 Vdout0_6ck99 = 0 time = 1000
 .meas tran vdout0_6ck99 FIND v(dout0_6) AT=1000.05n
 
-* CHECK dout0_7 Vdout0_7ck99 = 0 time = 1000
+* CHECK dout0_7 Vdout0_7ck99 = 3.3 time = 1000
 .meas tran vdout0_7ck99 FIND v(dout0_7) AT=1000.05n
 
-* CHECK dout0_0 Vdout0_0ck100 = 0 time = 1010
+* CHECK dout0_0 Vdout0_0ck100 = 3.3 time = 1010
 .meas tran vdout0_0ck100 FIND v(dout0_0) AT=1010.05n
 
 * CHECK dout0_1 Vdout0_1ck100 = 3.3 time = 1010
@@ -1483,20 +1576,44 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck100 = 3.3 time = 1010
 .meas tran vdout0_2ck100 FIND v(dout0_2) AT=1010.05n
 
-* CHECK dout0_3 Vdout0_3ck100 = 3.3 time = 1010
+* CHECK dout0_3 Vdout0_3ck100 = 0 time = 1010
 .meas tran vdout0_3ck100 FIND v(dout0_3) AT=1010.05n
 
-* CHECK dout0_4 Vdout0_4ck100 = 3.3 time = 1010
+* CHECK dout0_4 Vdout0_4ck100 = 0 time = 1010
 .meas tran vdout0_4ck100 FIND v(dout0_4) AT=1010.05n
 
-* CHECK dout0_5 Vdout0_5ck100 = 3.3 time = 1010
+* CHECK dout0_5 Vdout0_5ck100 = 0 time = 1010
 .meas tran vdout0_5ck100 FIND v(dout0_5) AT=1010.05n
 
-* CHECK dout0_6 Vdout0_6ck100 = 3.3 time = 1010
+* CHECK dout0_6 Vdout0_6ck100 = 0 time = 1010
 .meas tran vdout0_6ck100 FIND v(dout0_6) AT=1010.05n
 
 * CHECK dout0_7 Vdout0_7ck100 = 0 time = 1010
 .meas tran vdout0_7ck100 FIND v(dout0_7) AT=1010.05n
+
+* CHECK dout0_0 Vdout0_0ck101 = 3.3 time = 1020
+.meas tran vdout0_0ck101 FIND v(dout0_0) AT=1020.05n
+
+* CHECK dout0_1 Vdout0_1ck101 = 3.3 time = 1020
+.meas tran vdout0_1ck101 FIND v(dout0_1) AT=1020.05n
+
+* CHECK dout0_2 Vdout0_2ck101 = 3.3 time = 1020
+.meas tran vdout0_2ck101 FIND v(dout0_2) AT=1020.05n
+
+* CHECK dout0_3 Vdout0_3ck101 = 0 time = 1020
+.meas tran vdout0_3ck101 FIND v(dout0_3) AT=1020.05n
+
+* CHECK dout0_4 Vdout0_4ck101 = 0 time = 1020
+.meas tran vdout0_4ck101 FIND v(dout0_4) AT=1020.05n
+
+* CHECK dout0_5 Vdout0_5ck101 = 0 time = 1020
+.meas tran vdout0_5ck101 FIND v(dout0_5) AT=1020.05n
+
+* CHECK dout0_6 Vdout0_6ck101 = 0 time = 1020
+.meas tran vdout0_6ck101 FIND v(dout0_6) AT=1020.05n
+
+* CHECK dout0_7 Vdout0_7ck101 = 0 time = 1020
+.meas tran vdout0_7ck101 FIND v(dout0_7) AT=1020.05n
 
 * CHECK dout0_0 Vdout0_0ck103 = 0 time = 1040
 .meas tran vdout0_0ck103 FIND v(dout0_0) AT=1040.05n
@@ -1504,253 +1621,205 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck103 = 3.3 time = 1040
 .meas tran vdout0_1ck103 FIND v(dout0_1) AT=1040.05n
 
-* CHECK dout0_2 Vdout0_2ck103 = 0 time = 1040
+* CHECK dout0_2 Vdout0_2ck103 = 3.3 time = 1040
 .meas tran vdout0_2ck103 FIND v(dout0_2) AT=1040.05n
 
-* CHECK dout0_3 Vdout0_3ck103 = 3.3 time = 1040
+* CHECK dout0_3 Vdout0_3ck103 = 0 time = 1040
 .meas tran vdout0_3ck103 FIND v(dout0_3) AT=1040.05n
 
 * CHECK dout0_4 Vdout0_4ck103 = 0 time = 1040
 .meas tran vdout0_4ck103 FIND v(dout0_4) AT=1040.05n
 
-* CHECK dout0_5 Vdout0_5ck103 = 3.3 time = 1040
+* CHECK dout0_5 Vdout0_5ck103 = 0 time = 1040
 .meas tran vdout0_5ck103 FIND v(dout0_5) AT=1040.05n
 
-* CHECK dout0_6 Vdout0_6ck103 = 3.3 time = 1040
+* CHECK dout0_6 Vdout0_6ck103 = 0 time = 1040
 .meas tran vdout0_6ck103 FIND v(dout0_6) AT=1040.05n
 
 * CHECK dout0_7 Vdout0_7ck103 = 3.3 time = 1040
 .meas tran vdout0_7ck103 FIND v(dout0_7) AT=1040.05n
 
-* CHECK dout0_0 Vdout0_0ck104 = 0 time = 1050
+* CHECK dout0_0 Vdout0_0ck104 = 3.3 time = 1050
 .meas tran vdout0_0ck104 FIND v(dout0_0) AT=1050.05n
 
 * CHECK dout0_1 Vdout0_1ck104 = 3.3 time = 1050
 .meas tran vdout0_1ck104 FIND v(dout0_1) AT=1050.05n
 
-* CHECK dout0_2 Vdout0_2ck104 = 0 time = 1050
+* CHECK dout0_2 Vdout0_2ck104 = 3.3 time = 1050
 .meas tran vdout0_2ck104 FIND v(dout0_2) AT=1050.05n
 
-* CHECK dout0_3 Vdout0_3ck104 = 3.3 time = 1050
+* CHECK dout0_3 Vdout0_3ck104 = 0 time = 1050
 .meas tran vdout0_3ck104 FIND v(dout0_3) AT=1050.05n
 
 * CHECK dout0_4 Vdout0_4ck104 = 0 time = 1050
 .meas tran vdout0_4ck104 FIND v(dout0_4) AT=1050.05n
 
-* CHECK dout0_5 Vdout0_5ck104 = 3.3 time = 1050
+* CHECK dout0_5 Vdout0_5ck104 = 0 time = 1050
 .meas tran vdout0_5ck104 FIND v(dout0_5) AT=1050.05n
 
-* CHECK dout0_6 Vdout0_6ck104 = 3.3 time = 1050
+* CHECK dout0_6 Vdout0_6ck104 = 0 time = 1050
 .meas tran vdout0_6ck104 FIND v(dout0_6) AT=1050.05n
 
-* CHECK dout0_7 Vdout0_7ck104 = 3.3 time = 1050
+* CHECK dout0_7 Vdout0_7ck104 = 0 time = 1050
 .meas tran vdout0_7ck104 FIND v(dout0_7) AT=1050.05n
 
-* CHECK dout0_0 Vdout0_0ck105 = 0 time = 1060
-.meas tran vdout0_0ck105 FIND v(dout0_0) AT=1060.05n
+* CHECK dout0_0 Vdout0_0ck106 = 0 time = 1070
+.meas tran vdout0_0ck106 FIND v(dout0_0) AT=1070.05n
 
-* CHECK dout0_1 Vdout0_1ck105 = 3.3 time = 1060
-.meas tran vdout0_1ck105 FIND v(dout0_1) AT=1060.05n
+* CHECK dout0_1 Vdout0_1ck106 = 0 time = 1070
+.meas tran vdout0_1ck106 FIND v(dout0_1) AT=1070.05n
 
-* CHECK dout0_2 Vdout0_2ck105 = 3.3 time = 1060
-.meas tran vdout0_2ck105 FIND v(dout0_2) AT=1060.05n
+* CHECK dout0_2 Vdout0_2ck106 = 3.3 time = 1070
+.meas tran vdout0_2ck106 FIND v(dout0_2) AT=1070.05n
 
-* CHECK dout0_3 Vdout0_3ck105 = 3.3 time = 1060
-.meas tran vdout0_3ck105 FIND v(dout0_3) AT=1060.05n
+* CHECK dout0_3 Vdout0_3ck106 = 0 time = 1070
+.meas tran vdout0_3ck106 FIND v(dout0_3) AT=1070.05n
 
-* CHECK dout0_4 Vdout0_4ck105 = 3.3 time = 1060
-.meas tran vdout0_4ck105 FIND v(dout0_4) AT=1060.05n
+* CHECK dout0_4 Vdout0_4ck106 = 3.3 time = 1070
+.meas tran vdout0_4ck106 FIND v(dout0_4) AT=1070.05n
 
-* CHECK dout0_5 Vdout0_5ck105 = 3.3 time = 1060
-.meas tran vdout0_5ck105 FIND v(dout0_5) AT=1060.05n
+* CHECK dout0_5 Vdout0_5ck106 = 0 time = 1070
+.meas tran vdout0_5ck106 FIND v(dout0_5) AT=1070.05n
 
-* CHECK dout0_6 Vdout0_6ck105 = 3.3 time = 1060
-.meas tran vdout0_6ck105 FIND v(dout0_6) AT=1060.05n
+* CHECK dout0_6 Vdout0_6ck106 = 0 time = 1070
+.meas tran vdout0_6ck106 FIND v(dout0_6) AT=1070.05n
 
-* CHECK dout0_7 Vdout0_7ck105 = 0 time = 1060
-.meas tran vdout0_7ck105 FIND v(dout0_7) AT=1060.05n
+* CHECK dout0_7 Vdout0_7ck106 = 3.3 time = 1070
+.meas tran vdout0_7ck106 FIND v(dout0_7) AT=1070.05n
 
-* CHECK dout0_0 Vdout0_0ck109 = 0 time = 1100
+* CHECK dout0_0 Vdout0_0ck107 = 0 time = 1080
+.meas tran vdout0_0ck107 FIND v(dout0_0) AT=1080.05n
+
+* CHECK dout0_1 Vdout0_1ck107 = 0 time = 1080
+.meas tran vdout0_1ck107 FIND v(dout0_1) AT=1080.05n
+
+* CHECK dout0_2 Vdout0_2ck107 = 3.3 time = 1080
+.meas tran vdout0_2ck107 FIND v(dout0_2) AT=1080.05n
+
+* CHECK dout0_3 Vdout0_3ck107 = 0 time = 1080
+.meas tran vdout0_3ck107 FIND v(dout0_3) AT=1080.05n
+
+* CHECK dout0_4 Vdout0_4ck107 = 3.3 time = 1080
+.meas tran vdout0_4ck107 FIND v(dout0_4) AT=1080.05n
+
+* CHECK dout0_5 Vdout0_5ck107 = 0 time = 1080
+.meas tran vdout0_5ck107 FIND v(dout0_5) AT=1080.05n
+
+* CHECK dout0_6 Vdout0_6ck107 = 0 time = 1080
+.meas tran vdout0_6ck107 FIND v(dout0_6) AT=1080.05n
+
+* CHECK dout0_7 Vdout0_7ck107 = 3.3 time = 1080
+.meas tran vdout0_7ck107 FIND v(dout0_7) AT=1080.05n
+
+* CHECK dout0_0 Vdout0_0ck109 = 3.3 time = 1100
 .meas tran vdout0_0ck109 FIND v(dout0_0) AT=1100.05n
 
-* CHECK dout0_1 Vdout0_1ck109 = 3.3 time = 1100
+* CHECK dout0_1 Vdout0_1ck109 = 0 time = 1100
 .meas tran vdout0_1ck109 FIND v(dout0_1) AT=1100.05n
 
-* CHECK dout0_2 Vdout0_2ck109 = 3.3 time = 1100
+* CHECK dout0_2 Vdout0_2ck109 = 0 time = 1100
 .meas tran vdout0_2ck109 FIND v(dout0_2) AT=1100.05n
 
-* CHECK dout0_3 Vdout0_3ck109 = 3.3 time = 1100
+* CHECK dout0_3 Vdout0_3ck109 = 0 time = 1100
 .meas tran vdout0_3ck109 FIND v(dout0_3) AT=1100.05n
 
-* CHECK dout0_4 Vdout0_4ck109 = 3.3 time = 1100
+* CHECK dout0_4 Vdout0_4ck109 = 0 time = 1100
 .meas tran vdout0_4ck109 FIND v(dout0_4) AT=1100.05n
 
 * CHECK dout0_5 Vdout0_5ck109 = 3.3 time = 1100
 .meas tran vdout0_5ck109 FIND v(dout0_5) AT=1100.05n
 
-* CHECK dout0_6 Vdout0_6ck109 = 3.3 time = 1100
+* CHECK dout0_6 Vdout0_6ck109 = 0 time = 1100
 .meas tran vdout0_6ck109 FIND v(dout0_6) AT=1100.05n
 
 * CHECK dout0_7 Vdout0_7ck109 = 0 time = 1100
 .meas tran vdout0_7ck109 FIND v(dout0_7) AT=1100.05n
 
-* CHECK dout0_0 Vdout0_0ck110 = 0 time = 1110
-.meas tran vdout0_0ck110 FIND v(dout0_0) AT=1110.05n
+* CHECK dout0_0 Vdout0_0ck111 = 3.3 time = 1120
+.meas tran vdout0_0ck111 FIND v(dout0_0) AT=1120.05n
 
-* CHECK dout0_1 Vdout0_1ck110 = 3.3 time = 1110
-.meas tran vdout0_1ck110 FIND v(dout0_1) AT=1110.05n
+* CHECK dout0_1 Vdout0_1ck111 = 3.3 time = 1120
+.meas tran vdout0_1ck111 FIND v(dout0_1) AT=1120.05n
 
-* CHECK dout0_2 Vdout0_2ck110 = 3.3 time = 1110
-.meas tran vdout0_2ck110 FIND v(dout0_2) AT=1110.05n
+* CHECK dout0_2 Vdout0_2ck111 = 3.3 time = 1120
+.meas tran vdout0_2ck111 FIND v(dout0_2) AT=1120.05n
 
-* CHECK dout0_3 Vdout0_3ck110 = 3.3 time = 1110
-.meas tran vdout0_3ck110 FIND v(dout0_3) AT=1110.05n
+* CHECK dout0_3 Vdout0_3ck111 = 0 time = 1120
+.meas tran vdout0_3ck111 FIND v(dout0_3) AT=1120.05n
 
-* CHECK dout0_4 Vdout0_4ck110 = 3.3 time = 1110
-.meas tran vdout0_4ck110 FIND v(dout0_4) AT=1110.05n
+* CHECK dout0_4 Vdout0_4ck111 = 0 time = 1120
+.meas tran vdout0_4ck111 FIND v(dout0_4) AT=1120.05n
 
-* CHECK dout0_5 Vdout0_5ck110 = 3.3 time = 1110
-.meas tran vdout0_5ck110 FIND v(dout0_5) AT=1110.05n
+* CHECK dout0_5 Vdout0_5ck111 = 0 time = 1120
+.meas tran vdout0_5ck111 FIND v(dout0_5) AT=1120.05n
 
-* CHECK dout0_6 Vdout0_6ck110 = 3.3 time = 1110
-.meas tran vdout0_6ck110 FIND v(dout0_6) AT=1110.05n
+* CHECK dout0_6 Vdout0_6ck111 = 0 time = 1120
+.meas tran vdout0_6ck111 FIND v(dout0_6) AT=1120.05n
 
-* CHECK dout0_7 Vdout0_7ck110 = 0 time = 1110
-.meas tran vdout0_7ck110 FIND v(dout0_7) AT=1110.05n
+* CHECK dout0_7 Vdout0_7ck111 = 0 time = 1120
+.meas tran vdout0_7ck111 FIND v(dout0_7) AT=1120.05n
 
-* CHECK dout0_0 Vdout0_0ck115 = 0 time = 1160
-.meas tran vdout0_0ck115 FIND v(dout0_0) AT=1160.05n
+* CHECK dout0_0 Vdout0_0ck113 = 3.3 time = 1140
+.meas tran vdout0_0ck113 FIND v(dout0_0) AT=1140.05n
 
-* CHECK dout0_1 Vdout0_1ck115 = 3.3 time = 1160
-.meas tran vdout0_1ck115 FIND v(dout0_1) AT=1160.05n
+* CHECK dout0_1 Vdout0_1ck113 = 3.3 time = 1140
+.meas tran vdout0_1ck113 FIND v(dout0_1) AT=1140.05n
 
-* CHECK dout0_2 Vdout0_2ck115 = 3.3 time = 1160
-.meas tran vdout0_2ck115 FIND v(dout0_2) AT=1160.05n
+* CHECK dout0_2 Vdout0_2ck113 = 3.3 time = 1140
+.meas tran vdout0_2ck113 FIND v(dout0_2) AT=1140.05n
 
-* CHECK dout0_3 Vdout0_3ck115 = 3.3 time = 1160
-.meas tran vdout0_3ck115 FIND v(dout0_3) AT=1160.05n
+* CHECK dout0_3 Vdout0_3ck113 = 0 time = 1140
+.meas tran vdout0_3ck113 FIND v(dout0_3) AT=1140.05n
 
-* CHECK dout0_4 Vdout0_4ck115 = 3.3 time = 1160
-.meas tran vdout0_4ck115 FIND v(dout0_4) AT=1160.05n
+* CHECK dout0_4 Vdout0_4ck113 = 3.3 time = 1140
+.meas tran vdout0_4ck113 FIND v(dout0_4) AT=1140.05n
 
-* CHECK dout0_5 Vdout0_5ck115 = 3.3 time = 1160
-.meas tran vdout0_5ck115 FIND v(dout0_5) AT=1160.05n
+* CHECK dout0_5 Vdout0_5ck113 = 0 time = 1140
+.meas tran vdout0_5ck113 FIND v(dout0_5) AT=1140.05n
 
-* CHECK dout0_6 Vdout0_6ck115 = 3.3 time = 1160
-.meas tran vdout0_6ck115 FIND v(dout0_6) AT=1160.05n
+* CHECK dout0_6 Vdout0_6ck113 = 3.3 time = 1140
+.meas tran vdout0_6ck113 FIND v(dout0_6) AT=1140.05n
 
-* CHECK dout0_7 Vdout0_7ck115 = 0 time = 1160
-.meas tran vdout0_7ck115 FIND v(dout0_7) AT=1160.05n
+* CHECK dout0_7 Vdout0_7ck113 = 0 time = 1140
+.meas tran vdout0_7ck113 FIND v(dout0_7) AT=1140.05n
 
-* CHECK dout0_0 Vdout0_0ck116 = 0 time = 1170
-.meas tran vdout0_0ck116 FIND v(dout0_0) AT=1170.05n
+* CHECK dout0_0 Vdout0_0ck118 = 3.3 time = 1190
+.meas tran vdout0_0ck118 FIND v(dout0_0) AT=1190.05n
 
-* CHECK dout0_1 Vdout0_1ck116 = 3.3 time = 1170
-.meas tran vdout0_1ck116 FIND v(dout0_1) AT=1170.05n
+* CHECK dout0_1 Vdout0_1ck118 = 3.3 time = 1190
+.meas tran vdout0_1ck118 FIND v(dout0_1) AT=1190.05n
 
-* CHECK dout0_2 Vdout0_2ck116 = 3.3 time = 1170
-.meas tran vdout0_2ck116 FIND v(dout0_2) AT=1170.05n
+* CHECK dout0_2 Vdout0_2ck118 = 3.3 time = 1190
+.meas tran vdout0_2ck118 FIND v(dout0_2) AT=1190.05n
 
-* CHECK dout0_3 Vdout0_3ck116 = 3.3 time = 1170
-.meas tran vdout0_3ck116 FIND v(dout0_3) AT=1170.05n
+* CHECK dout0_3 Vdout0_3ck118 = 0 time = 1190
+.meas tran vdout0_3ck118 FIND v(dout0_3) AT=1190.05n
 
-* CHECK dout0_4 Vdout0_4ck116 = 3.3 time = 1170
-.meas tran vdout0_4ck116 FIND v(dout0_4) AT=1170.05n
+* CHECK dout0_4 Vdout0_4ck118 = 3.3 time = 1190
+.meas tran vdout0_4ck118 FIND v(dout0_4) AT=1190.05n
 
-* CHECK dout0_5 Vdout0_5ck116 = 3.3 time = 1170
-.meas tran vdout0_5ck116 FIND v(dout0_5) AT=1170.05n
+* CHECK dout0_5 Vdout0_5ck118 = 0 time = 1190
+.meas tran vdout0_5ck118 FIND v(dout0_5) AT=1190.05n
 
-* CHECK dout0_6 Vdout0_6ck116 = 3.3 time = 1170
-.meas tran vdout0_6ck116 FIND v(dout0_6) AT=1170.05n
+* CHECK dout0_6 Vdout0_6ck118 = 3.3 time = 1190
+.meas tran vdout0_6ck118 FIND v(dout0_6) AT=1190.05n
 
-* CHECK dout0_7 Vdout0_7ck116 = 0 time = 1170
-.meas tran vdout0_7ck116 FIND v(dout0_7) AT=1170.05n
-
-* CHECK dout0_0 Vdout0_0ck117 = 3.3 time = 1180
-.meas tran vdout0_0ck117 FIND v(dout0_0) AT=1180.05n
-
-* CHECK dout0_1 Vdout0_1ck117 = 3.3 time = 1180
-.meas tran vdout0_1ck117 FIND v(dout0_1) AT=1180.05n
-
-* CHECK dout0_2 Vdout0_2ck117 = 0 time = 1180
-.meas tran vdout0_2ck117 FIND v(dout0_2) AT=1180.05n
-
-* CHECK dout0_3 Vdout0_3ck117 = 3.3 time = 1180
-.meas tran vdout0_3ck117 FIND v(dout0_3) AT=1180.05n
-
-* CHECK dout0_4 Vdout0_4ck117 = 3.3 time = 1180
-.meas tran vdout0_4ck117 FIND v(dout0_4) AT=1180.05n
-
-* CHECK dout0_5 Vdout0_5ck117 = 0 time = 1180
-.meas tran vdout0_5ck117 FIND v(dout0_5) AT=1180.05n
-
-* CHECK dout0_6 Vdout0_6ck117 = 0 time = 1180
-.meas tran vdout0_6ck117 FIND v(dout0_6) AT=1180.05n
-
-* CHECK dout0_7 Vdout0_7ck117 = 3.3 time = 1180
-.meas tran vdout0_7ck117 FIND v(dout0_7) AT=1180.05n
-
-* CHECK dout0_0 Vdout0_0ck119 = 0 time = 1200
-.meas tran vdout0_0ck119 FIND v(dout0_0) AT=1200.05n
-
-* CHECK dout0_1 Vdout0_1ck119 = 3.3 time = 1200
-.meas tran vdout0_1ck119 FIND v(dout0_1) AT=1200.05n
-
-* CHECK dout0_2 Vdout0_2ck119 = 3.3 time = 1200
-.meas tran vdout0_2ck119 FIND v(dout0_2) AT=1200.05n
-
-* CHECK dout0_3 Vdout0_3ck119 = 3.3 time = 1200
-.meas tran vdout0_3ck119 FIND v(dout0_3) AT=1200.05n
-
-* CHECK dout0_4 Vdout0_4ck119 = 3.3 time = 1200
-.meas tran vdout0_4ck119 FIND v(dout0_4) AT=1200.05n
-
-* CHECK dout0_5 Vdout0_5ck119 = 3.3 time = 1200
-.meas tran vdout0_5ck119 FIND v(dout0_5) AT=1200.05n
-
-* CHECK dout0_6 Vdout0_6ck119 = 3.3 time = 1200
-.meas tran vdout0_6ck119 FIND v(dout0_6) AT=1200.05n
-
-* CHECK dout0_7 Vdout0_7ck119 = 0 time = 1200
-.meas tran vdout0_7ck119 FIND v(dout0_7) AT=1200.05n
-
-* CHECK dout0_0 Vdout0_0ck120 = 0 time = 1210
-.meas tran vdout0_0ck120 FIND v(dout0_0) AT=1210.05n
-
-* CHECK dout0_1 Vdout0_1ck120 = 3.3 time = 1210
-.meas tran vdout0_1ck120 FIND v(dout0_1) AT=1210.05n
-
-* CHECK dout0_2 Vdout0_2ck120 = 3.3 time = 1210
-.meas tran vdout0_2ck120 FIND v(dout0_2) AT=1210.05n
-
-* CHECK dout0_3 Vdout0_3ck120 = 3.3 time = 1210
-.meas tran vdout0_3ck120 FIND v(dout0_3) AT=1210.05n
-
-* CHECK dout0_4 Vdout0_4ck120 = 3.3 time = 1210
-.meas tran vdout0_4ck120 FIND v(dout0_4) AT=1210.05n
-
-* CHECK dout0_5 Vdout0_5ck120 = 3.3 time = 1210
-.meas tran vdout0_5ck120 FIND v(dout0_5) AT=1210.05n
-
-* CHECK dout0_6 Vdout0_6ck120 = 3.3 time = 1210
-.meas tran vdout0_6ck120 FIND v(dout0_6) AT=1210.05n
-
-* CHECK dout0_7 Vdout0_7ck120 = 0 time = 1210
-.meas tran vdout0_7ck120 FIND v(dout0_7) AT=1210.05n
+* CHECK dout0_7 Vdout0_7ck118 = 0 time = 1190
+.meas tran vdout0_7ck118 FIND v(dout0_7) AT=1190.05n
 
 * CHECK dout0_0 Vdout0_0ck121 = 3.3 time = 1220
 .meas tran vdout0_0ck121 FIND v(dout0_0) AT=1220.05n
 
-* CHECK dout0_1 Vdout0_1ck121 = 3.3 time = 1220
+* CHECK dout0_1 Vdout0_1ck121 = 0 time = 1220
 .meas tran vdout0_1ck121 FIND v(dout0_1) AT=1220.05n
 
-* CHECK dout0_2 Vdout0_2ck121 = 0 time = 1220
+* CHECK dout0_2 Vdout0_2ck121 = 3.3 time = 1220
 .meas tran vdout0_2ck121 FIND v(dout0_2) AT=1220.05n
 
-* CHECK dout0_3 Vdout0_3ck121 = 3.3 time = 1220
+* CHECK dout0_3 Vdout0_3ck121 = 0 time = 1220
 .meas tran vdout0_3ck121 FIND v(dout0_3) AT=1220.05n
 
-* CHECK dout0_4 Vdout0_4ck121 = 3.3 time = 1220
+* CHECK dout0_4 Vdout0_4ck121 = 0 time = 1220
 .meas tran vdout0_4ck121 FIND v(dout0_4) AT=1220.05n
 
 * CHECK dout0_5 Vdout0_5ck121 = 0 time = 1220
@@ -1759,10 +1828,10 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_6 Vdout0_6ck121 = 0 time = 1220
 .meas tran vdout0_6ck121 FIND v(dout0_6) AT=1220.05n
 
-* CHECK dout0_7 Vdout0_7ck121 = 3.3 time = 1220
+* CHECK dout0_7 Vdout0_7ck121 = 0 time = 1220
 .meas tran vdout0_7ck121 FIND v(dout0_7) AT=1220.05n
 
-* CHECK dout0_0 Vdout0_0ck122 = 0 time = 1230
+* CHECK dout0_0 Vdout0_0ck122 = 3.3 time = 1230
 .meas tran vdout0_0ck122 FIND v(dout0_0) AT=1230.05n
 
 * CHECK dout0_1 Vdout0_1ck122 = 3.3 time = 1230
@@ -1771,13 +1840,13 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck122 = 3.3 time = 1230
 .meas tran vdout0_2ck122 FIND v(dout0_2) AT=1230.05n
 
-* CHECK dout0_3 Vdout0_3ck122 = 3.3 time = 1230
+* CHECK dout0_3 Vdout0_3ck122 = 0 time = 1230
 .meas tran vdout0_3ck122 FIND v(dout0_3) AT=1230.05n
 
 * CHECK dout0_4 Vdout0_4ck122 = 3.3 time = 1230
 .meas tran vdout0_4ck122 FIND v(dout0_4) AT=1230.05n
 
-* CHECK dout0_5 Vdout0_5ck122 = 3.3 time = 1230
+* CHECK dout0_5 Vdout0_5ck122 = 0 time = 1230
 .meas tran vdout0_5ck122 FIND v(dout0_5) AT=1230.05n
 
 * CHECK dout0_6 Vdout0_6ck122 = 3.3 time = 1230
@@ -1789,16 +1858,16 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_0 Vdout0_0ck124 = 3.3 time = 1250
 .meas tran vdout0_0ck124 FIND v(dout0_0) AT=1250.05n
 
-* CHECK dout0_1 Vdout0_1ck124 = 3.3 time = 1250
+* CHECK dout0_1 Vdout0_1ck124 = 0 time = 1250
 .meas tran vdout0_1ck124 FIND v(dout0_1) AT=1250.05n
 
-* CHECK dout0_2 Vdout0_2ck124 = 0 time = 1250
+* CHECK dout0_2 Vdout0_2ck124 = 3.3 time = 1250
 .meas tran vdout0_2ck124 FIND v(dout0_2) AT=1250.05n
 
-* CHECK dout0_3 Vdout0_3ck124 = 3.3 time = 1250
+* CHECK dout0_3 Vdout0_3ck124 = 0 time = 1250
 .meas tran vdout0_3ck124 FIND v(dout0_3) AT=1250.05n
 
-* CHECK dout0_4 Vdout0_4ck124 = 3.3 time = 1250
+* CHECK dout0_4 Vdout0_4ck124 = 0 time = 1250
 .meas tran vdout0_4ck124 FIND v(dout0_4) AT=1250.05n
 
 * CHECK dout0_5 Vdout0_5ck124 = 0 time = 1250
@@ -1807,7 +1876,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_6 Vdout0_6ck124 = 0 time = 1250
 .meas tran vdout0_6ck124 FIND v(dout0_6) AT=1250.05n
 
-* CHECK dout0_7 Vdout0_7ck124 = 3.3 time = 1250
+* CHECK dout0_7 Vdout0_7ck124 = 0 time = 1250
 .meas tran vdout0_7ck124 FIND v(dout0_7) AT=1250.05n
 
 * CHECK dout0_0 Vdout0_0ck125 = 3.3 time = 1260
@@ -1816,10 +1885,10 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck125 = 3.3 time = 1260
 .meas tran vdout0_1ck125 FIND v(dout0_1) AT=1260.05n
 
-* CHECK dout0_2 Vdout0_2ck125 = 0 time = 1260
+* CHECK dout0_2 Vdout0_2ck125 = 3.3 time = 1260
 .meas tran vdout0_2ck125 FIND v(dout0_2) AT=1260.05n
 
-* CHECK dout0_3 Vdout0_3ck125 = 3.3 time = 1260
+* CHECK dout0_3 Vdout0_3ck125 = 0 time = 1260
 .meas tran vdout0_3ck125 FIND v(dout0_3) AT=1260.05n
 
 * CHECK dout0_4 Vdout0_4ck125 = 3.3 time = 1260
@@ -1828,49 +1897,25 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_5 Vdout0_5ck125 = 0 time = 1260
 .meas tran vdout0_5ck125 FIND v(dout0_5) AT=1260.05n
 
-* CHECK dout0_6 Vdout0_6ck125 = 0 time = 1260
+* CHECK dout0_6 Vdout0_6ck125 = 3.3 time = 1260
 .meas tran vdout0_6ck125 FIND v(dout0_6) AT=1260.05n
 
-* CHECK dout0_7 Vdout0_7ck125 = 3.3 time = 1260
+* CHECK dout0_7 Vdout0_7ck125 = 0 time = 1260
 .meas tran vdout0_7ck125 FIND v(dout0_7) AT=1260.05n
-
-* CHECK dout0_0 Vdout0_0ck126 = 3.3 time = 1270
-.meas tran vdout0_0ck126 FIND v(dout0_0) AT=1270.05n
-
-* CHECK dout0_1 Vdout0_1ck126 = 3.3 time = 1270
-.meas tran vdout0_1ck126 FIND v(dout0_1) AT=1270.05n
-
-* CHECK dout0_2 Vdout0_2ck126 = 0 time = 1270
-.meas tran vdout0_2ck126 FIND v(dout0_2) AT=1270.05n
-
-* CHECK dout0_3 Vdout0_3ck126 = 3.3 time = 1270
-.meas tran vdout0_3ck126 FIND v(dout0_3) AT=1270.05n
-
-* CHECK dout0_4 Vdout0_4ck126 = 3.3 time = 1270
-.meas tran vdout0_4ck126 FIND v(dout0_4) AT=1270.05n
-
-* CHECK dout0_5 Vdout0_5ck126 = 0 time = 1270
-.meas tran vdout0_5ck126 FIND v(dout0_5) AT=1270.05n
-
-* CHECK dout0_6 Vdout0_6ck126 = 0 time = 1270
-.meas tran vdout0_6ck126 FIND v(dout0_6) AT=1270.05n
-
-* CHECK dout0_7 Vdout0_7ck126 = 3.3 time = 1270
-.meas tran vdout0_7ck126 FIND v(dout0_7) AT=1270.05n
 
 * CHECK dout0_0 Vdout0_0ck128 = 3.3 time = 1290
 .meas tran vdout0_0ck128 FIND v(dout0_0) AT=1290.05n
 
-* CHECK dout0_1 Vdout0_1ck128 = 3.3 time = 1290
+* CHECK dout0_1 Vdout0_1ck128 = 0 time = 1290
 .meas tran vdout0_1ck128 FIND v(dout0_1) AT=1290.05n
 
-* CHECK dout0_2 Vdout0_2ck128 = 0 time = 1290
+* CHECK dout0_2 Vdout0_2ck128 = 3.3 time = 1290
 .meas tran vdout0_2ck128 FIND v(dout0_2) AT=1290.05n
 
-* CHECK dout0_3 Vdout0_3ck128 = 3.3 time = 1290
+* CHECK dout0_3 Vdout0_3ck128 = 0 time = 1290
 .meas tran vdout0_3ck128 FIND v(dout0_3) AT=1290.05n
 
-* CHECK dout0_4 Vdout0_4ck128 = 3.3 time = 1290
+* CHECK dout0_4 Vdout0_4ck128 = 0 time = 1290
 .meas tran vdout0_4ck128 FIND v(dout0_4) AT=1290.05n
 
 * CHECK dout0_5 Vdout0_5ck128 = 0 time = 1290
@@ -1879,32 +1924,56 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_6 Vdout0_6ck128 = 0 time = 1290
 .meas tran vdout0_6ck128 FIND v(dout0_6) AT=1290.05n
 
-* CHECK dout0_7 Vdout0_7ck128 = 3.3 time = 1290
+* CHECK dout0_7 Vdout0_7ck128 = 0 time = 1290
 .meas tran vdout0_7ck128 FIND v(dout0_7) AT=1290.05n
 
-* CHECK dout0_0 Vdout0_0ck129 = 3.3 time = 1300
-.meas tran vdout0_0ck129 FIND v(dout0_0) AT=1300.05n
+* CHECK dout0_0 Vdout0_0ck132 = 3.3 time = 1330
+.meas tran vdout0_0ck132 FIND v(dout0_0) AT=1330.05n
 
-* CHECK dout0_1 Vdout0_1ck129 = 3.3 time = 1300
-.meas tran vdout0_1ck129 FIND v(dout0_1) AT=1300.05n
+* CHECK dout0_1 Vdout0_1ck132 = 0 time = 1330
+.meas tran vdout0_1ck132 FIND v(dout0_1) AT=1330.05n
 
-* CHECK dout0_2 Vdout0_2ck129 = 0 time = 1300
-.meas tran vdout0_2ck129 FIND v(dout0_2) AT=1300.05n
+* CHECK dout0_2 Vdout0_2ck132 = 3.3 time = 1330
+.meas tran vdout0_2ck132 FIND v(dout0_2) AT=1330.05n
 
-* CHECK dout0_3 Vdout0_3ck129 = 3.3 time = 1300
-.meas tran vdout0_3ck129 FIND v(dout0_3) AT=1300.05n
+* CHECK dout0_3 Vdout0_3ck132 = 0 time = 1330
+.meas tran vdout0_3ck132 FIND v(dout0_3) AT=1330.05n
 
-* CHECK dout0_4 Vdout0_4ck129 = 3.3 time = 1300
-.meas tran vdout0_4ck129 FIND v(dout0_4) AT=1300.05n
+* CHECK dout0_4 Vdout0_4ck132 = 0 time = 1330
+.meas tran vdout0_4ck132 FIND v(dout0_4) AT=1330.05n
 
-* CHECK dout0_5 Vdout0_5ck129 = 0 time = 1300
-.meas tran vdout0_5ck129 FIND v(dout0_5) AT=1300.05n
+* CHECK dout0_5 Vdout0_5ck132 = 0 time = 1330
+.meas tran vdout0_5ck132 FIND v(dout0_5) AT=1330.05n
 
-* CHECK dout0_6 Vdout0_6ck129 = 0 time = 1300
-.meas tran vdout0_6ck129 FIND v(dout0_6) AT=1300.05n
+* CHECK dout0_6 Vdout0_6ck132 = 0 time = 1330
+.meas tran vdout0_6ck132 FIND v(dout0_6) AT=1330.05n
 
-* CHECK dout0_7 Vdout0_7ck129 = 3.3 time = 1300
-.meas tran vdout0_7ck129 FIND v(dout0_7) AT=1300.05n
+* CHECK dout0_7 Vdout0_7ck132 = 0 time = 1330
+.meas tran vdout0_7ck132 FIND v(dout0_7) AT=1330.05n
+
+* CHECK dout0_0 Vdout0_0ck133 = 3.3 time = 1340
+.meas tran vdout0_0ck133 FIND v(dout0_0) AT=1340.05n
+
+* CHECK dout0_1 Vdout0_1ck133 = 0 time = 1340
+.meas tran vdout0_1ck133 FIND v(dout0_1) AT=1340.05n
+
+* CHECK dout0_2 Vdout0_2ck133 = 3.3 time = 1340
+.meas tran vdout0_2ck133 FIND v(dout0_2) AT=1340.05n
+
+* CHECK dout0_3 Vdout0_3ck133 = 0 time = 1340
+.meas tran vdout0_3ck133 FIND v(dout0_3) AT=1340.05n
+
+* CHECK dout0_4 Vdout0_4ck133 = 0 time = 1340
+.meas tran vdout0_4ck133 FIND v(dout0_4) AT=1340.05n
+
+* CHECK dout0_5 Vdout0_5ck133 = 0 time = 1340
+.meas tran vdout0_5ck133 FIND v(dout0_5) AT=1340.05n
+
+* CHECK dout0_6 Vdout0_6ck133 = 0 time = 1340
+.meas tran vdout0_6ck133 FIND v(dout0_6) AT=1340.05n
+
+* CHECK dout0_7 Vdout0_7ck133 = 0 time = 1340
+.meas tran vdout0_7ck133 FIND v(dout0_7) AT=1340.05n
 
 * CHECK dout0_0 Vdout0_0ck134 = 3.3 time = 1350
 .meas tran vdout0_0ck134 FIND v(dout0_0) AT=1350.05n
@@ -1912,7 +1981,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_1 Vdout0_1ck134 = 3.3 time = 1350
 .meas tran vdout0_1ck134 FIND v(dout0_1) AT=1350.05n
 
-* CHECK dout0_2 Vdout0_2ck134 = 0 time = 1350
+* CHECK dout0_2 Vdout0_2ck134 = 3.3 time = 1350
 .meas tran vdout0_2ck134 FIND v(dout0_2) AT=1350.05n
 
 * CHECK dout0_3 Vdout0_3ck134 = 0 time = 1350
@@ -1921,7 +1990,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_4 Vdout0_4ck134 = 3.3 time = 1350
 .meas tran vdout0_4ck134 FIND v(dout0_4) AT=1350.05n
 
-* CHECK dout0_5 Vdout0_5ck134 = 3.3 time = 1350
+* CHECK dout0_5 Vdout0_5ck134 = 0 time = 1350
 .meas tran vdout0_5ck134 FIND v(dout0_5) AT=1350.05n
 
 * CHECK dout0_6 Vdout0_6ck134 = 3.3 time = 1350
@@ -1930,103 +1999,31 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck134 = 0 time = 1350
 .meas tran vdout0_7ck134 FIND v(dout0_7) AT=1350.05n
 
-* CHECK dout0_0 Vdout0_0ck137 = 3.3 time = 1380
-.meas tran vdout0_0ck137 FIND v(dout0_0) AT=1380.05n
+* CHECK dout0_0 Vdout0_0ck147 = 0 time = 1480
+.meas tran vdout0_0ck147 FIND v(dout0_0) AT=1480.05n
 
-* CHECK dout0_1 Vdout0_1ck137 = 3.3 time = 1380
-.meas tran vdout0_1ck137 FIND v(dout0_1) AT=1380.05n
+* CHECK dout0_1 Vdout0_1ck147 = 3.3 time = 1480
+.meas tran vdout0_1ck147 FIND v(dout0_1) AT=1480.05n
 
-* CHECK dout0_2 Vdout0_2ck137 = 0 time = 1380
-.meas tran vdout0_2ck137 FIND v(dout0_2) AT=1380.05n
+* CHECK dout0_2 Vdout0_2ck147 = 3.3 time = 1480
+.meas tran vdout0_2ck147 FIND v(dout0_2) AT=1480.05n
 
-* CHECK dout0_3 Vdout0_3ck137 = 0 time = 1380
-.meas tran vdout0_3ck137 FIND v(dout0_3) AT=1380.05n
+* CHECK dout0_3 Vdout0_3ck147 = 0 time = 1480
+.meas tran vdout0_3ck147 FIND v(dout0_3) AT=1480.05n
 
-* CHECK dout0_4 Vdout0_4ck137 = 3.3 time = 1380
-.meas tran vdout0_4ck137 FIND v(dout0_4) AT=1380.05n
+* CHECK dout0_4 Vdout0_4ck147 = 0 time = 1480
+.meas tran vdout0_4ck147 FIND v(dout0_4) AT=1480.05n
 
-* CHECK dout0_5 Vdout0_5ck137 = 3.3 time = 1380
-.meas tran vdout0_5ck137 FIND v(dout0_5) AT=1380.05n
+* CHECK dout0_5 Vdout0_5ck147 = 0 time = 1480
+.meas tran vdout0_5ck147 FIND v(dout0_5) AT=1480.05n
 
-* CHECK dout0_6 Vdout0_6ck137 = 3.3 time = 1380
-.meas tran vdout0_6ck137 FIND v(dout0_6) AT=1380.05n
+* CHECK dout0_6 Vdout0_6ck147 = 0 time = 1480
+.meas tran vdout0_6ck147 FIND v(dout0_6) AT=1480.05n
 
-* CHECK dout0_7 Vdout0_7ck137 = 0 time = 1380
-.meas tran vdout0_7ck137 FIND v(dout0_7) AT=1380.05n
+* CHECK dout0_7 Vdout0_7ck147 = 3.3 time = 1480
+.meas tran vdout0_7ck147 FIND v(dout0_7) AT=1480.05n
 
-* CHECK dout0_0 Vdout0_0ck140 = 0 time = 1410
-.meas tran vdout0_0ck140 FIND v(dout0_0) AT=1410.05n
-
-* CHECK dout0_1 Vdout0_1ck140 = 0 time = 1410
-.meas tran vdout0_1ck140 FIND v(dout0_1) AT=1410.05n
-
-* CHECK dout0_2 Vdout0_2ck140 = 3.3 time = 1410
-.meas tran vdout0_2ck140 FIND v(dout0_2) AT=1410.05n
-
-* CHECK dout0_3 Vdout0_3ck140 = 3.3 time = 1410
-.meas tran vdout0_3ck140 FIND v(dout0_3) AT=1410.05n
-
-* CHECK dout0_4 Vdout0_4ck140 = 3.3 time = 1410
-.meas tran vdout0_4ck140 FIND v(dout0_4) AT=1410.05n
-
-* CHECK dout0_5 Vdout0_5ck140 = 0 time = 1410
-.meas tran vdout0_5ck140 FIND v(dout0_5) AT=1410.05n
-
-* CHECK dout0_6 Vdout0_6ck140 = 0 time = 1410
-.meas tran vdout0_6ck140 FIND v(dout0_6) AT=1410.05n
-
-* CHECK dout0_7 Vdout0_7ck140 = 3.3 time = 1410
-.meas tran vdout0_7ck140 FIND v(dout0_7) AT=1410.05n
-
-* CHECK dout0_0 Vdout0_0ck142 = 3.3 time = 1430
-.meas tran vdout0_0ck142 FIND v(dout0_0) AT=1430.05n
-
-* CHECK dout0_1 Vdout0_1ck142 = 3.3 time = 1430
-.meas tran vdout0_1ck142 FIND v(dout0_1) AT=1430.05n
-
-* CHECK dout0_2 Vdout0_2ck142 = 0 time = 1430
-.meas tran vdout0_2ck142 FIND v(dout0_2) AT=1430.05n
-
-* CHECK dout0_3 Vdout0_3ck142 = 0 time = 1430
-.meas tran vdout0_3ck142 FIND v(dout0_3) AT=1430.05n
-
-* CHECK dout0_4 Vdout0_4ck142 = 3.3 time = 1430
-.meas tran vdout0_4ck142 FIND v(dout0_4) AT=1430.05n
-
-* CHECK dout0_5 Vdout0_5ck142 = 3.3 time = 1430
-.meas tran vdout0_5ck142 FIND v(dout0_5) AT=1430.05n
-
-* CHECK dout0_6 Vdout0_6ck142 = 3.3 time = 1430
-.meas tran vdout0_6ck142 FIND v(dout0_6) AT=1430.05n
-
-* CHECK dout0_7 Vdout0_7ck142 = 0 time = 1430
-.meas tran vdout0_7ck142 FIND v(dout0_7) AT=1430.05n
-
-* CHECK dout0_0 Vdout0_0ck143 = 3.3 time = 1440
-.meas tran vdout0_0ck143 FIND v(dout0_0) AT=1440.05n
-
-* CHECK dout0_1 Vdout0_1ck143 = 3.3 time = 1440
-.meas tran vdout0_1ck143 FIND v(dout0_1) AT=1440.05n
-
-* CHECK dout0_2 Vdout0_2ck143 = 3.3 time = 1440
-.meas tran vdout0_2ck143 FIND v(dout0_2) AT=1440.05n
-
-* CHECK dout0_3 Vdout0_3ck143 = 0 time = 1440
-.meas tran vdout0_3ck143 FIND v(dout0_3) AT=1440.05n
-
-* CHECK dout0_4 Vdout0_4ck143 = 3.3 time = 1440
-.meas tran vdout0_4ck143 FIND v(dout0_4) AT=1440.05n
-
-* CHECK dout0_5 Vdout0_5ck143 = 3.3 time = 1440
-.meas tran vdout0_5ck143 FIND v(dout0_5) AT=1440.05n
-
-* CHECK dout0_6 Vdout0_6ck143 = 0 time = 1440
-.meas tran vdout0_6ck143 FIND v(dout0_6) AT=1440.05n
-
-* CHECK dout0_7 Vdout0_7ck143 = 3.3 time = 1440
-.meas tran vdout0_7ck143 FIND v(dout0_7) AT=1440.05n
-
-* CHECK dout0_0 Vdout0_0ck148 = 3.3 time = 1490
+* CHECK dout0_0 Vdout0_0ck148 = 0 time = 1490
 .meas tran vdout0_0ck148 FIND v(dout0_0) AT=1490.05n
 
 * CHECK dout0_1 Vdout0_1ck148 = 3.3 time = 1490
@@ -2035,7 +2032,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck148 = 3.3 time = 1490
 .meas tran vdout0_2ck148 FIND v(dout0_2) AT=1490.05n
 
-* CHECK dout0_3 Vdout0_3ck148 = 0 time = 1490
+* CHECK dout0_3 Vdout0_3ck148 = 3.3 time = 1490
 .meas tran vdout0_3ck148 FIND v(dout0_3) AT=1490.05n
 
 * CHECK dout0_4 Vdout0_4ck148 = 3.3 time = 1490
@@ -2047,82 +2044,82 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_6 Vdout0_6ck148 = 0 time = 1490
 .meas tran vdout0_6ck148 FIND v(dout0_6) AT=1490.05n
 
-* CHECK dout0_7 Vdout0_7ck148 = 3.3 time = 1490
+* CHECK dout0_7 Vdout0_7ck148 = 0 time = 1490
 .meas tran vdout0_7ck148 FIND v(dout0_7) AT=1490.05n
 
-* CHECK dout0_0 Vdout0_0ck149 = 3.3 time = 1500
-.meas tran vdout0_0ck149 FIND v(dout0_0) AT=1500.05n
+* CHECK dout0_0 Vdout0_0ck150 = 0 time = 1510
+.meas tran vdout0_0ck150 FIND v(dout0_0) AT=1510.05n
 
-* CHECK dout0_1 Vdout0_1ck149 = 3.3 time = 1500
-.meas tran vdout0_1ck149 FIND v(dout0_1) AT=1500.05n
+* CHECK dout0_1 Vdout0_1ck150 = 3.3 time = 1510
+.meas tran vdout0_1ck150 FIND v(dout0_1) AT=1510.05n
 
-* CHECK dout0_2 Vdout0_2ck149 = 3.3 time = 1500
-.meas tran vdout0_2ck149 FIND v(dout0_2) AT=1500.05n
+* CHECK dout0_2 Vdout0_2ck150 = 3.3 time = 1510
+.meas tran vdout0_2ck150 FIND v(dout0_2) AT=1510.05n
 
-* CHECK dout0_3 Vdout0_3ck149 = 0 time = 1500
-.meas tran vdout0_3ck149 FIND v(dout0_3) AT=1500.05n
+* CHECK dout0_3 Vdout0_3ck150 = 3.3 time = 1510
+.meas tran vdout0_3ck150 FIND v(dout0_3) AT=1510.05n
 
-* CHECK dout0_4 Vdout0_4ck149 = 3.3 time = 1500
-.meas tran vdout0_4ck149 FIND v(dout0_4) AT=1500.05n
+* CHECK dout0_4 Vdout0_4ck150 = 3.3 time = 1510
+.meas tran vdout0_4ck150 FIND v(dout0_4) AT=1510.05n
 
-* CHECK dout0_5 Vdout0_5ck149 = 3.3 time = 1500
-.meas tran vdout0_5ck149 FIND v(dout0_5) AT=1500.05n
+* CHECK dout0_5 Vdout0_5ck150 = 3.3 time = 1510
+.meas tran vdout0_5ck150 FIND v(dout0_5) AT=1510.05n
 
-* CHECK dout0_6 Vdout0_6ck149 = 0 time = 1500
-.meas tran vdout0_6ck149 FIND v(dout0_6) AT=1500.05n
+* CHECK dout0_6 Vdout0_6ck150 = 0 time = 1510
+.meas tran vdout0_6ck150 FIND v(dout0_6) AT=1510.05n
 
-* CHECK dout0_7 Vdout0_7ck149 = 3.3 time = 1500
-.meas tran vdout0_7ck149 FIND v(dout0_7) AT=1500.05n
+* CHECK dout0_7 Vdout0_7ck150 = 0 time = 1510
+.meas tran vdout0_7ck150 FIND v(dout0_7) AT=1510.05n
 
-* CHECK dout0_0 Vdout0_0ck155 = 3.3 time = 1560
-.meas tran vdout0_0ck155 FIND v(dout0_0) AT=1560.05n
+* CHECK dout0_0 Vdout0_0ck153 = 0 time = 1540
+.meas tran vdout0_0ck153 FIND v(dout0_0) AT=1540.05n
 
-* CHECK dout0_1 Vdout0_1ck155 = 3.3 time = 1560
-.meas tran vdout0_1ck155 FIND v(dout0_1) AT=1560.05n
+* CHECK dout0_1 Vdout0_1ck153 = 3.3 time = 1540
+.meas tran vdout0_1ck153 FIND v(dout0_1) AT=1540.05n
 
-* CHECK dout0_2 Vdout0_2ck155 = 3.3 time = 1560
-.meas tran vdout0_2ck155 FIND v(dout0_2) AT=1560.05n
+* CHECK dout0_2 Vdout0_2ck153 = 3.3 time = 1540
+.meas tran vdout0_2ck153 FIND v(dout0_2) AT=1540.05n
 
-* CHECK dout0_3 Vdout0_3ck155 = 3.3 time = 1560
-.meas tran vdout0_3ck155 FIND v(dout0_3) AT=1560.05n
+* CHECK dout0_3 Vdout0_3ck153 = 3.3 time = 1540
+.meas tran vdout0_3ck153 FIND v(dout0_3) AT=1540.05n
 
-* CHECK dout0_4 Vdout0_4ck155 = 3.3 time = 1560
-.meas tran vdout0_4ck155 FIND v(dout0_4) AT=1560.05n
+* CHECK dout0_4 Vdout0_4ck153 = 0 time = 1540
+.meas tran vdout0_4ck153 FIND v(dout0_4) AT=1540.05n
 
-* CHECK dout0_5 Vdout0_5ck155 = 3.3 time = 1560
-.meas tran vdout0_5ck155 FIND v(dout0_5) AT=1560.05n
+* CHECK dout0_5 Vdout0_5ck153 = 3.3 time = 1540
+.meas tran vdout0_5ck153 FIND v(dout0_5) AT=1540.05n
 
-* CHECK dout0_6 Vdout0_6ck155 = 0 time = 1560
-.meas tran vdout0_6ck155 FIND v(dout0_6) AT=1560.05n
+* CHECK dout0_6 Vdout0_6ck153 = 0 time = 1540
+.meas tran vdout0_6ck153 FIND v(dout0_6) AT=1540.05n
 
-* CHECK dout0_7 Vdout0_7ck155 = 0 time = 1560
-.meas tran vdout0_7ck155 FIND v(dout0_7) AT=1560.05n
+* CHECK dout0_7 Vdout0_7ck153 = 3.3 time = 1540
+.meas tran vdout0_7ck153 FIND v(dout0_7) AT=1540.05n
 
-* CHECK dout0_0 Vdout0_0ck157 = 3.3 time = 1580
-.meas tran vdout0_0ck157 FIND v(dout0_0) AT=1580.05n
+* CHECK dout0_0 Vdout0_0ck154 = 0 time = 1550
+.meas tran vdout0_0ck154 FIND v(dout0_0) AT=1550.05n
 
-* CHECK dout0_1 Vdout0_1ck157 = 0 time = 1580
-.meas tran vdout0_1ck157 FIND v(dout0_1) AT=1580.05n
+* CHECK dout0_1 Vdout0_1ck154 = 3.3 time = 1550
+.meas tran vdout0_1ck154 FIND v(dout0_1) AT=1550.05n
 
-* CHECK dout0_2 Vdout0_2ck157 = 0 time = 1580
-.meas tran vdout0_2ck157 FIND v(dout0_2) AT=1580.05n
+* CHECK dout0_2 Vdout0_2ck154 = 3.3 time = 1550
+.meas tran vdout0_2ck154 FIND v(dout0_2) AT=1550.05n
 
-* CHECK dout0_3 Vdout0_3ck157 = 0 time = 1580
-.meas tran vdout0_3ck157 FIND v(dout0_3) AT=1580.05n
+* CHECK dout0_3 Vdout0_3ck154 = 3.3 time = 1550
+.meas tran vdout0_3ck154 FIND v(dout0_3) AT=1550.05n
 
-* CHECK dout0_4 Vdout0_4ck157 = 3.3 time = 1580
-.meas tran vdout0_4ck157 FIND v(dout0_4) AT=1580.05n
+* CHECK dout0_4 Vdout0_4ck154 = 0 time = 1550
+.meas tran vdout0_4ck154 FIND v(dout0_4) AT=1550.05n
 
-* CHECK dout0_5 Vdout0_5ck157 = 3.3 time = 1580
-.meas tran vdout0_5ck157 FIND v(dout0_5) AT=1580.05n
+* CHECK dout0_5 Vdout0_5ck154 = 3.3 time = 1550
+.meas tran vdout0_5ck154 FIND v(dout0_5) AT=1550.05n
 
-* CHECK dout0_6 Vdout0_6ck157 = 3.3 time = 1580
-.meas tran vdout0_6ck157 FIND v(dout0_6) AT=1580.05n
+* CHECK dout0_6 Vdout0_6ck154 = 0 time = 1550
+.meas tran vdout0_6ck154 FIND v(dout0_6) AT=1550.05n
 
-* CHECK dout0_7 Vdout0_7ck157 = 0 time = 1580
-.meas tran vdout0_7ck157 FIND v(dout0_7) AT=1580.05n
+* CHECK dout0_7 Vdout0_7ck154 = 3.3 time = 1550
+.meas tran vdout0_7ck154 FIND v(dout0_7) AT=1550.05n
 
-* CHECK dout0_0 Vdout0_0ck158 = 3.3 time = 1590
+* CHECK dout0_0 Vdout0_0ck158 = 0 time = 1590
 .meas tran vdout0_0ck158 FIND v(dout0_0) AT=1590.05n
 
 * CHECK dout0_1 Vdout0_1ck158 = 3.3 time = 1590
@@ -2137,7 +2134,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_4 Vdout0_4ck158 = 3.3 time = 1590
 .meas tran vdout0_4ck158 FIND v(dout0_4) AT=1590.05n
 
-* CHECK dout0_5 Vdout0_5ck158 = 3.3 time = 1590
+* CHECK dout0_5 Vdout0_5ck158 = 0 time = 1590
 .meas tran vdout0_5ck158 FIND v(dout0_5) AT=1590.05n
 
 * CHECK dout0_6 Vdout0_6ck158 = 0 time = 1590
@@ -2146,31 +2143,79 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck158 = 0 time = 1590
 .meas tran vdout0_7ck158 FIND v(dout0_7) AT=1590.05n
 
-* CHECK dout0_0 Vdout0_0ck163 = 3.3 time = 1640
-.meas tran vdout0_0ck163 FIND v(dout0_0) AT=1640.05n
+* CHECK dout0_0 Vdout0_0ck159 = 0 time = 1600
+.meas tran vdout0_0ck159 FIND v(dout0_0) AT=1600.05n
 
-* CHECK dout0_1 Vdout0_1ck163 = 3.3 time = 1640
-.meas tran vdout0_1ck163 FIND v(dout0_1) AT=1640.05n
+* CHECK dout0_1 Vdout0_1ck159 = 3.3 time = 1600
+.meas tran vdout0_1ck159 FIND v(dout0_1) AT=1600.05n
 
-* CHECK dout0_2 Vdout0_2ck163 = 3.3 time = 1640
-.meas tran vdout0_2ck163 FIND v(dout0_2) AT=1640.05n
+* CHECK dout0_2 Vdout0_2ck159 = 3.3 time = 1600
+.meas tran vdout0_2ck159 FIND v(dout0_2) AT=1600.05n
 
-* CHECK dout0_3 Vdout0_3ck163 = 3.3 time = 1640
-.meas tran vdout0_3ck163 FIND v(dout0_3) AT=1640.05n
+* CHECK dout0_3 Vdout0_3ck159 = 3.3 time = 1600
+.meas tran vdout0_3ck159 FIND v(dout0_3) AT=1600.05n
 
-* CHECK dout0_4 Vdout0_4ck163 = 0 time = 1640
-.meas tran vdout0_4ck163 FIND v(dout0_4) AT=1640.05n
+* CHECK dout0_4 Vdout0_4ck159 = 3.3 time = 1600
+.meas tran vdout0_4ck159 FIND v(dout0_4) AT=1600.05n
 
-* CHECK dout0_5 Vdout0_5ck163 = 0 time = 1640
-.meas tran vdout0_5ck163 FIND v(dout0_5) AT=1640.05n
+* CHECK dout0_5 Vdout0_5ck159 = 0 time = 1600
+.meas tran vdout0_5ck159 FIND v(dout0_5) AT=1600.05n
 
-* CHECK dout0_6 Vdout0_6ck163 = 0 time = 1640
-.meas tran vdout0_6ck163 FIND v(dout0_6) AT=1640.05n
+* CHECK dout0_6 Vdout0_6ck159 = 0 time = 1600
+.meas tran vdout0_6ck159 FIND v(dout0_6) AT=1600.05n
 
-* CHECK dout0_7 Vdout0_7ck163 = 3.3 time = 1640
-.meas tran vdout0_7ck163 FIND v(dout0_7) AT=1640.05n
+* CHECK dout0_7 Vdout0_7ck159 = 0 time = 1600
+.meas tran vdout0_7ck159 FIND v(dout0_7) AT=1600.05n
 
-* CHECK dout0_0 Vdout0_0ck167 = 0 time = 1680
+* CHECK dout0_0 Vdout0_0ck160 = 0 time = 1610
+.meas tran vdout0_0ck160 FIND v(dout0_0) AT=1610.05n
+
+* CHECK dout0_1 Vdout0_1ck160 = 3.3 time = 1610
+.meas tran vdout0_1ck160 FIND v(dout0_1) AT=1610.05n
+
+* CHECK dout0_2 Vdout0_2ck160 = 3.3 time = 1610
+.meas tran vdout0_2ck160 FIND v(dout0_2) AT=1610.05n
+
+* CHECK dout0_3 Vdout0_3ck160 = 3.3 time = 1610
+.meas tran vdout0_3ck160 FIND v(dout0_3) AT=1610.05n
+
+* CHECK dout0_4 Vdout0_4ck160 = 0 time = 1610
+.meas tran vdout0_4ck160 FIND v(dout0_4) AT=1610.05n
+
+* CHECK dout0_5 Vdout0_5ck160 = 3.3 time = 1610
+.meas tran vdout0_5ck160 FIND v(dout0_5) AT=1610.05n
+
+* CHECK dout0_6 Vdout0_6ck160 = 0 time = 1610
+.meas tran vdout0_6ck160 FIND v(dout0_6) AT=1610.05n
+
+* CHECK dout0_7 Vdout0_7ck160 = 3.3 time = 1610
+.meas tran vdout0_7ck160 FIND v(dout0_7) AT=1610.05n
+
+* CHECK dout0_0 Vdout0_0ck164 = 0 time = 1650
+.meas tran vdout0_0ck164 FIND v(dout0_0) AT=1650.05n
+
+* CHECK dout0_1 Vdout0_1ck164 = 3.3 time = 1650
+.meas tran vdout0_1ck164 FIND v(dout0_1) AT=1650.05n
+
+* CHECK dout0_2 Vdout0_2ck164 = 0 time = 1650
+.meas tran vdout0_2ck164 FIND v(dout0_2) AT=1650.05n
+
+* CHECK dout0_3 Vdout0_3ck164 = 3.3 time = 1650
+.meas tran vdout0_3ck164 FIND v(dout0_3) AT=1650.05n
+
+* CHECK dout0_4 Vdout0_4ck164 = 0 time = 1650
+.meas tran vdout0_4ck164 FIND v(dout0_4) AT=1650.05n
+
+* CHECK dout0_5 Vdout0_5ck164 = 0 time = 1650
+.meas tran vdout0_5ck164 FIND v(dout0_5) AT=1650.05n
+
+* CHECK dout0_6 Vdout0_6ck164 = 0 time = 1650
+.meas tran vdout0_6ck164 FIND v(dout0_6) AT=1650.05n
+
+* CHECK dout0_7 Vdout0_7ck164 = 0 time = 1650
+.meas tran vdout0_7ck164 FIND v(dout0_7) AT=1650.05n
+
+* CHECK dout0_0 Vdout0_0ck167 = 3.3 time = 1680
 .meas tran vdout0_0ck167 FIND v(dout0_0) AT=1680.05n
 
 * CHECK dout0_1 Vdout0_1ck167 = 0 time = 1680
@@ -2194,7 +2239,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck167 = 3.3 time = 1680
 .meas tran vdout0_7ck167 FIND v(dout0_7) AT=1680.05n
 
-* CHECK dout0_0 Vdout0_0ck169 = 0 time = 1700
+* CHECK dout0_0 Vdout0_0ck169 = 3.3 time = 1700
 .meas tran vdout0_0ck169 FIND v(dout0_0) AT=1700.05n
 
 * CHECK dout0_1 Vdout0_1ck169 = 0 time = 1700
@@ -2218,37 +2263,37 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck169 = 3.3 time = 1700
 .meas tran vdout0_7ck169 FIND v(dout0_7) AT=1700.05n
 
-* CHECK dout0_0 Vdout0_0ck172 = 3.3 time = 1730
-.meas tran vdout0_0ck172 FIND v(dout0_0) AT=1730.05n
+* CHECK dout0_0 Vdout0_0ck171 = 3.3 time = 1720
+.meas tran vdout0_0ck171 FIND v(dout0_0) AT=1720.05n
 
-* CHECK dout0_1 Vdout0_1ck172 = 3.3 time = 1730
-.meas tran vdout0_1ck172 FIND v(dout0_1) AT=1730.05n
+* CHECK dout0_1 Vdout0_1ck171 = 0 time = 1720
+.meas tran vdout0_1ck171 FIND v(dout0_1) AT=1720.05n
 
-* CHECK dout0_2 Vdout0_2ck172 = 3.3 time = 1730
-.meas tran vdout0_2ck172 FIND v(dout0_2) AT=1730.05n
+* CHECK dout0_2 Vdout0_2ck171 = 0 time = 1720
+.meas tran vdout0_2ck171 FIND v(dout0_2) AT=1720.05n
 
-* CHECK dout0_3 Vdout0_3ck172 = 3.3 time = 1730
-.meas tran vdout0_3ck172 FIND v(dout0_3) AT=1730.05n
+* CHECK dout0_3 Vdout0_3ck171 = 0 time = 1720
+.meas tran vdout0_3ck171 FIND v(dout0_3) AT=1720.05n
 
-* CHECK dout0_4 Vdout0_4ck172 = 0 time = 1730
-.meas tran vdout0_4ck172 FIND v(dout0_4) AT=1730.05n
+* CHECK dout0_4 Vdout0_4ck171 = 0 time = 1720
+.meas tran vdout0_4ck171 FIND v(dout0_4) AT=1720.05n
 
-* CHECK dout0_5 Vdout0_5ck172 = 0 time = 1730
-.meas tran vdout0_5ck172 FIND v(dout0_5) AT=1730.05n
+* CHECK dout0_5 Vdout0_5ck171 = 3.3 time = 1720
+.meas tran vdout0_5ck171 FIND v(dout0_5) AT=1720.05n
 
-* CHECK dout0_6 Vdout0_6ck172 = 0 time = 1730
-.meas tran vdout0_6ck172 FIND v(dout0_6) AT=1730.05n
+* CHECK dout0_6 Vdout0_6ck171 = 3.3 time = 1720
+.meas tran vdout0_6ck171 FIND v(dout0_6) AT=1720.05n
 
-* CHECK dout0_7 Vdout0_7ck172 = 3.3 time = 1730
-.meas tran vdout0_7ck172 FIND v(dout0_7) AT=1730.05n
+* CHECK dout0_7 Vdout0_7ck171 = 0 time = 1720
+.meas tran vdout0_7ck171 FIND v(dout0_7) AT=1720.05n
 
-* CHECK dout0_0 Vdout0_0ck173 = 0 time = 1740
+* CHECK dout0_0 Vdout0_0ck173 = 3.3 time = 1740
 .meas tran vdout0_0ck173 FIND v(dout0_0) AT=1740.05n
 
 * CHECK dout0_1 Vdout0_1ck173 = 0 time = 1740
 .meas tran vdout0_1ck173 FIND v(dout0_1) AT=1740.05n
 
-* CHECK dout0_2 Vdout0_2ck173 = 3.3 time = 1740
+* CHECK dout0_2 Vdout0_2ck173 = 0 time = 1740
 .meas tran vdout0_2ck173 FIND v(dout0_2) AT=1740.05n
 
 * CHECK dout0_3 Vdout0_3ck173 = 0 time = 1740
@@ -2257,7 +2302,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_4 Vdout0_4ck173 = 0 time = 1740
 .meas tran vdout0_4ck173 FIND v(dout0_4) AT=1740.05n
 
-* CHECK dout0_5 Vdout0_5ck173 = 0 time = 1740
+* CHECK dout0_5 Vdout0_5ck173 = 3.3 time = 1740
 .meas tran vdout0_5ck173 FIND v(dout0_5) AT=1740.05n
 
 * CHECK dout0_6 Vdout0_6ck173 = 3.3 time = 1740
@@ -2269,74 +2314,98 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_0 Vdout0_0ck174 = 3.3 time = 1750
 .meas tran vdout0_0ck174 FIND v(dout0_0) AT=1750.05n
 
-* CHECK dout0_1 Vdout0_1ck174 = 3.3 time = 1750
+* CHECK dout0_1 Vdout0_1ck174 = 0 time = 1750
 .meas tran vdout0_1ck174 FIND v(dout0_1) AT=1750.05n
 
-* CHECK dout0_2 Vdout0_2ck174 = 3.3 time = 1750
+* CHECK dout0_2 Vdout0_2ck174 = 0 time = 1750
 .meas tran vdout0_2ck174 FIND v(dout0_2) AT=1750.05n
 
-* CHECK dout0_3 Vdout0_3ck174 = 3.3 time = 1750
+* CHECK dout0_3 Vdout0_3ck174 = 0 time = 1750
 .meas tran vdout0_3ck174 FIND v(dout0_3) AT=1750.05n
 
 * CHECK dout0_4 Vdout0_4ck174 = 0 time = 1750
 .meas tran vdout0_4ck174 FIND v(dout0_4) AT=1750.05n
 
-* CHECK dout0_5 Vdout0_5ck174 = 0 time = 1750
+* CHECK dout0_5 Vdout0_5ck174 = 3.3 time = 1750
 .meas tran vdout0_5ck174 FIND v(dout0_5) AT=1750.05n
 
-* CHECK dout0_6 Vdout0_6ck174 = 0 time = 1750
+* CHECK dout0_6 Vdout0_6ck174 = 3.3 time = 1750
 .meas tran vdout0_6ck174 FIND v(dout0_6) AT=1750.05n
 
-* CHECK dout0_7 Vdout0_7ck174 = 3.3 time = 1750
+* CHECK dout0_7 Vdout0_7ck174 = 0 time = 1750
 .meas tran vdout0_7ck174 FIND v(dout0_7) AT=1750.05n
+
+* CHECK dout0_0 Vdout0_0ck175 = 3.3 time = 1760
+.meas tran vdout0_0ck175 FIND v(dout0_0) AT=1760.05n
+
+* CHECK dout0_1 Vdout0_1ck175 = 0 time = 1760
+.meas tran vdout0_1ck175 FIND v(dout0_1) AT=1760.05n
+
+* CHECK dout0_2 Vdout0_2ck175 = 0 time = 1760
+.meas tran vdout0_2ck175 FIND v(dout0_2) AT=1760.05n
+
+* CHECK dout0_3 Vdout0_3ck175 = 3.3 time = 1760
+.meas tran vdout0_3ck175 FIND v(dout0_3) AT=1760.05n
+
+* CHECK dout0_4 Vdout0_4ck175 = 3.3 time = 1760
+.meas tran vdout0_4ck175 FIND v(dout0_4) AT=1760.05n
+
+* CHECK dout0_5 Vdout0_5ck175 = 3.3 time = 1760
+.meas tran vdout0_5ck175 FIND v(dout0_5) AT=1760.05n
+
+* CHECK dout0_6 Vdout0_6ck175 = 3.3 time = 1760
+.meas tran vdout0_6ck175 FIND v(dout0_6) AT=1760.05n
+
+* CHECK dout0_7 Vdout0_7ck175 = 3.3 time = 1760
+.meas tran vdout0_7ck175 FIND v(dout0_7) AT=1760.05n
 
 * CHECK dout0_0 Vdout0_0ck176 = 3.3 time = 1770
 .meas tran vdout0_0ck176 FIND v(dout0_0) AT=1770.05n
 
-* CHECK dout0_1 Vdout0_1ck176 = 3.3 time = 1770
+* CHECK dout0_1 Vdout0_1ck176 = 0 time = 1770
 .meas tran vdout0_1ck176 FIND v(dout0_1) AT=1770.05n
 
-* CHECK dout0_2 Vdout0_2ck176 = 3.3 time = 1770
+* CHECK dout0_2 Vdout0_2ck176 = 0 time = 1770
 .meas tran vdout0_2ck176 FIND v(dout0_2) AT=1770.05n
 
 * CHECK dout0_3 Vdout0_3ck176 = 3.3 time = 1770
 .meas tran vdout0_3ck176 FIND v(dout0_3) AT=1770.05n
 
-* CHECK dout0_4 Vdout0_4ck176 = 0 time = 1770
+* CHECK dout0_4 Vdout0_4ck176 = 3.3 time = 1770
 .meas tran vdout0_4ck176 FIND v(dout0_4) AT=1770.05n
 
-* CHECK dout0_5 Vdout0_5ck176 = 0 time = 1770
+* CHECK dout0_5 Vdout0_5ck176 = 3.3 time = 1770
 .meas tran vdout0_5ck176 FIND v(dout0_5) AT=1770.05n
 
-* CHECK dout0_6 Vdout0_6ck176 = 0 time = 1770
+* CHECK dout0_6 Vdout0_6ck176 = 3.3 time = 1770
 .meas tran vdout0_6ck176 FIND v(dout0_6) AT=1770.05n
 
 * CHECK dout0_7 Vdout0_7ck176 = 3.3 time = 1770
 .meas tran vdout0_7ck176 FIND v(dout0_7) AT=1770.05n
 
-* CHECK dout0_0 Vdout0_0ck178 = 3.3 time = 1790
-.meas tran vdout0_0ck178 FIND v(dout0_0) AT=1790.05n
+* CHECK dout0_0 Vdout0_0ck179 = 0 time = 1800
+.meas tran vdout0_0ck179 FIND v(dout0_0) AT=1800.05n
 
-* CHECK dout0_1 Vdout0_1ck178 = 0 time = 1790
-.meas tran vdout0_1ck178 FIND v(dout0_1) AT=1790.05n
+* CHECK dout0_1 Vdout0_1ck179 = 3.3 time = 1800
+.meas tran vdout0_1ck179 FIND v(dout0_1) AT=1800.05n
 
-* CHECK dout0_2 Vdout0_2ck178 = 0 time = 1790
-.meas tran vdout0_2ck178 FIND v(dout0_2) AT=1790.05n
+* CHECK dout0_2 Vdout0_2ck179 = 0 time = 1800
+.meas tran vdout0_2ck179 FIND v(dout0_2) AT=1800.05n
 
-* CHECK dout0_3 Vdout0_3ck178 = 3.3 time = 1790
-.meas tran vdout0_3ck178 FIND v(dout0_3) AT=1790.05n
+* CHECK dout0_3 Vdout0_3ck179 = 0 time = 1800
+.meas tran vdout0_3ck179 FIND v(dout0_3) AT=1800.05n
 
-* CHECK dout0_4 Vdout0_4ck178 = 0 time = 1790
-.meas tran vdout0_4ck178 FIND v(dout0_4) AT=1790.05n
+* CHECK dout0_4 Vdout0_4ck179 = 3.3 time = 1800
+.meas tran vdout0_4ck179 FIND v(dout0_4) AT=1800.05n
 
-* CHECK dout0_5 Vdout0_5ck178 = 0 time = 1790
-.meas tran vdout0_5ck178 FIND v(dout0_5) AT=1790.05n
+* CHECK dout0_5 Vdout0_5ck179 = 3.3 time = 1800
+.meas tran vdout0_5ck179 FIND v(dout0_5) AT=1800.05n
 
-* CHECK dout0_6 Vdout0_6ck178 = 3.3 time = 1790
-.meas tran vdout0_6ck178 FIND v(dout0_6) AT=1790.05n
+* CHECK dout0_6 Vdout0_6ck179 = 3.3 time = 1800
+.meas tran vdout0_6ck179 FIND v(dout0_6) AT=1800.05n
 
-* CHECK dout0_7 Vdout0_7ck178 = 3.3 time = 1790
-.meas tran vdout0_7ck178 FIND v(dout0_7) AT=1790.05n
+* CHECK dout0_7 Vdout0_7ck179 = 0 time = 1800
+.meas tran vdout0_7ck179 FIND v(dout0_7) AT=1800.05n
 
 * CHECK dout0_0 Vdout0_0ck181 = 0 time = 1820
 .meas tran vdout0_0ck181 FIND v(dout0_0) AT=1820.05n
@@ -2350,7 +2419,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_3 Vdout0_3ck181 = 0 time = 1820
 .meas tran vdout0_3ck181 FIND v(dout0_3) AT=1820.05n
 
-* CHECK dout0_4 Vdout0_4ck181 = 0 time = 1820
+* CHECK dout0_4 Vdout0_4ck181 = 3.3 time = 1820
 .meas tran vdout0_4ck181 FIND v(dout0_4) AT=1820.05n
 
 * CHECK dout0_5 Vdout0_5ck181 = 3.3 time = 1820
@@ -2362,70 +2431,94 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck181 = 0 time = 1820
 .meas tran vdout0_7ck181 FIND v(dout0_7) AT=1820.05n
 
-* CHECK dout0_0 Vdout0_0ck184 = 3.3 time = 1850
+* CHECK dout0_0 Vdout0_0ck182 = 0 time = 1830
+.meas tran vdout0_0ck182 FIND v(dout0_0) AT=1830.05n
+
+* CHECK dout0_1 Vdout0_1ck182 = 3.3 time = 1830
+.meas tran vdout0_1ck182 FIND v(dout0_1) AT=1830.05n
+
+* CHECK dout0_2 Vdout0_2ck182 = 0 time = 1830
+.meas tran vdout0_2ck182 FIND v(dout0_2) AT=1830.05n
+
+* CHECK dout0_3 Vdout0_3ck182 = 0 time = 1830
+.meas tran vdout0_3ck182 FIND v(dout0_3) AT=1830.05n
+
+* CHECK dout0_4 Vdout0_4ck182 = 3.3 time = 1830
+.meas tran vdout0_4ck182 FIND v(dout0_4) AT=1830.05n
+
+* CHECK dout0_5 Vdout0_5ck182 = 3.3 time = 1830
+.meas tran vdout0_5ck182 FIND v(dout0_5) AT=1830.05n
+
+* CHECK dout0_6 Vdout0_6ck182 = 3.3 time = 1830
+.meas tran vdout0_6ck182 FIND v(dout0_6) AT=1830.05n
+
+* CHECK dout0_7 Vdout0_7ck182 = 0 time = 1830
+.meas tran vdout0_7ck182 FIND v(dout0_7) AT=1830.05n
+
+* CHECK dout0_0 Vdout0_0ck183 = 0 time = 1840
+.meas tran vdout0_0ck183 FIND v(dout0_0) AT=1840.05n
+
+* CHECK dout0_1 Vdout0_1ck183 = 3.3 time = 1840
+.meas tran vdout0_1ck183 FIND v(dout0_1) AT=1840.05n
+
+* CHECK dout0_2 Vdout0_2ck183 = 0 time = 1840
+.meas tran vdout0_2ck183 FIND v(dout0_2) AT=1840.05n
+
+* CHECK dout0_3 Vdout0_3ck183 = 0 time = 1840
+.meas tran vdout0_3ck183 FIND v(dout0_3) AT=1840.05n
+
+* CHECK dout0_4 Vdout0_4ck183 = 3.3 time = 1840
+.meas tran vdout0_4ck183 FIND v(dout0_4) AT=1840.05n
+
+* CHECK dout0_5 Vdout0_5ck183 = 3.3 time = 1840
+.meas tran vdout0_5ck183 FIND v(dout0_5) AT=1840.05n
+
+* CHECK dout0_6 Vdout0_6ck183 = 3.3 time = 1840
+.meas tran vdout0_6ck183 FIND v(dout0_6) AT=1840.05n
+
+* CHECK dout0_7 Vdout0_7ck183 = 0 time = 1840
+.meas tran vdout0_7ck183 FIND v(dout0_7) AT=1840.05n
+
+* CHECK dout0_0 Vdout0_0ck184 = 0 time = 1850
 .meas tran vdout0_0ck184 FIND v(dout0_0) AT=1850.05n
 
 * CHECK dout0_1 Vdout0_1ck184 = 3.3 time = 1850
 .meas tran vdout0_1ck184 FIND v(dout0_1) AT=1850.05n
 
-* CHECK dout0_2 Vdout0_2ck184 = 3.3 time = 1850
+* CHECK dout0_2 Vdout0_2ck184 = 0 time = 1850
 .meas tran vdout0_2ck184 FIND v(dout0_2) AT=1850.05n
 
 * CHECK dout0_3 Vdout0_3ck184 = 0 time = 1850
 .meas tran vdout0_3ck184 FIND v(dout0_3) AT=1850.05n
 
-* CHECK dout0_4 Vdout0_4ck184 = 0 time = 1850
+* CHECK dout0_4 Vdout0_4ck184 = 3.3 time = 1850
 .meas tran vdout0_4ck184 FIND v(dout0_4) AT=1850.05n
 
 * CHECK dout0_5 Vdout0_5ck184 = 3.3 time = 1850
 .meas tran vdout0_5ck184 FIND v(dout0_5) AT=1850.05n
 
-* CHECK dout0_6 Vdout0_6ck184 = 0 time = 1850
+* CHECK dout0_6 Vdout0_6ck184 = 3.3 time = 1850
 .meas tran vdout0_6ck184 FIND v(dout0_6) AT=1850.05n
 
-* CHECK dout0_7 Vdout0_7ck184 = 3.3 time = 1850
+* CHECK dout0_7 Vdout0_7ck184 = 0 time = 1850
 .meas tran vdout0_7ck184 FIND v(dout0_7) AT=1850.05n
 
-* CHECK dout0_0 Vdout0_0ck185 = 3.3 time = 1860
-.meas tran vdout0_0ck185 FIND v(dout0_0) AT=1860.05n
-
-* CHECK dout0_1 Vdout0_1ck185 = 3.3 time = 1860
-.meas tran vdout0_1ck185 FIND v(dout0_1) AT=1860.05n
-
-* CHECK dout0_2 Vdout0_2ck185 = 3.3 time = 1860
-.meas tran vdout0_2ck185 FIND v(dout0_2) AT=1860.05n
-
-* CHECK dout0_3 Vdout0_3ck185 = 0 time = 1860
-.meas tran vdout0_3ck185 FIND v(dout0_3) AT=1860.05n
-
-* CHECK dout0_4 Vdout0_4ck185 = 0 time = 1860
-.meas tran vdout0_4ck185 FIND v(dout0_4) AT=1860.05n
-
-* CHECK dout0_5 Vdout0_5ck185 = 3.3 time = 1860
-.meas tran vdout0_5ck185 FIND v(dout0_5) AT=1860.05n
-
-* CHECK dout0_6 Vdout0_6ck185 = 0 time = 1860
-.meas tran vdout0_6ck185 FIND v(dout0_6) AT=1860.05n
-
-* CHECK dout0_7 Vdout0_7ck185 = 3.3 time = 1860
-.meas tran vdout0_7ck185 FIND v(dout0_7) AT=1860.05n
-
-* CHECK dout0_0 Vdout0_0ck187 = 0 time = 1880
+* CHECK dout0_0 Vdout0_0ck187 = 3.3 time = 1880
 .meas tran vdout0_0ck187 FIND v(dout0_0) AT=1880.05n
 
-* CHECK dout0_1 Vdout0_1ck187 = 3.3 time = 1880
+* CHECK dout0_1 Vdout0_1ck187 = 0 time = 1880
 .meas tran vdout0_1ck187 FIND v(dout0_1) AT=1880.05n
 
-* CHECK dout0_2 Vdout0_2ck187 = 3.3 time = 1880
+* CHECK dout0_2 Vdout0_2ck187 = 0 time = 1880
 .meas tran vdout0_2ck187 FIND v(dout0_2) AT=1880.05n
 
 * CHECK dout0_3 Vdout0_3ck187 = 0 time = 1880
 .meas tran vdout0_3ck187 FIND v(dout0_3) AT=1880.05n
 
-* CHECK dout0_4 Vdout0_4ck187 = 3.3 time = 1880
+* CHECK dout0_4 Vdout0_4ck187 = 0 time = 1880
 .meas tran vdout0_4ck187 FIND v(dout0_4) AT=1880.05n
 
-* CHECK dout0_5 Vdout0_5ck187 = 0 time = 1880
+* CHECK dout0_5 Vdout0_5ck187 = 3.3 time = 1880
 .meas tran vdout0_5ck187 FIND v(dout0_5) AT=1880.05n
 
 * CHECK dout0_6 Vdout0_6ck187 = 3.3 time = 1880
@@ -2434,22 +2527,22 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck187 = 0 time = 1880
 .meas tran vdout0_7ck187 FIND v(dout0_7) AT=1880.05n
 
-* CHECK dout0_0 Vdout0_0ck188 = 0 time = 1890
+* CHECK dout0_0 Vdout0_0ck188 = 3.3 time = 1890
 .meas tran vdout0_0ck188 FIND v(dout0_0) AT=1890.05n
 
-* CHECK dout0_1 Vdout0_1ck188 = 3.3 time = 1890
+* CHECK dout0_1 Vdout0_1ck188 = 0 time = 1890
 .meas tran vdout0_1ck188 FIND v(dout0_1) AT=1890.05n
 
-* CHECK dout0_2 Vdout0_2ck188 = 3.3 time = 1890
+* CHECK dout0_2 Vdout0_2ck188 = 0 time = 1890
 .meas tran vdout0_2ck188 FIND v(dout0_2) AT=1890.05n
 
 * CHECK dout0_3 Vdout0_3ck188 = 0 time = 1890
 .meas tran vdout0_3ck188 FIND v(dout0_3) AT=1890.05n
 
-* CHECK dout0_4 Vdout0_4ck188 = 3.3 time = 1890
+* CHECK dout0_4 Vdout0_4ck188 = 0 time = 1890
 .meas tran vdout0_4ck188 FIND v(dout0_4) AT=1890.05n
 
-* CHECK dout0_5 Vdout0_5ck188 = 0 time = 1890
+* CHECK dout0_5 Vdout0_5ck188 = 3.3 time = 1890
 .meas tran vdout0_5ck188 FIND v(dout0_5) AT=1890.05n
 
 * CHECK dout0_6 Vdout0_6ck188 = 3.3 time = 1890
@@ -2458,37 +2551,37 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck188 = 0 time = 1890
 .meas tran vdout0_7ck188 FIND v(dout0_7) AT=1890.05n
 
-* CHECK dout0_0 Vdout0_0ck190 = 0 time = 1910
+* CHECK dout0_0 Vdout0_0ck190 = 3.3 time = 1910
 .meas tran vdout0_0ck190 FIND v(dout0_0) AT=1910.05n
 
-* CHECK dout0_1 Vdout0_1ck190 = 3.3 time = 1910
+* CHECK dout0_1 Vdout0_1ck190 = 0 time = 1910
 .meas tran vdout0_1ck190 FIND v(dout0_1) AT=1910.05n
 
-* CHECK dout0_2 Vdout0_2ck190 = 3.3 time = 1910
+* CHECK dout0_2 Vdout0_2ck190 = 0 time = 1910
 .meas tran vdout0_2ck190 FIND v(dout0_2) AT=1910.05n
 
 * CHECK dout0_3 Vdout0_3ck190 = 0 time = 1910
 .meas tran vdout0_3ck190 FIND v(dout0_3) AT=1910.05n
 
-* CHECK dout0_4 Vdout0_4ck190 = 3.3 time = 1910
+* CHECK dout0_4 Vdout0_4ck190 = 0 time = 1910
 .meas tran vdout0_4ck190 FIND v(dout0_4) AT=1910.05n
 
-* CHECK dout0_5 Vdout0_5ck190 = 0 time = 1910
+* CHECK dout0_5 Vdout0_5ck190 = 3.3 time = 1910
 .meas tran vdout0_5ck190 FIND v(dout0_5) AT=1910.05n
 
-* CHECK dout0_6 Vdout0_6ck190 = 3.3 time = 1910
+* CHECK dout0_6 Vdout0_6ck190 = 0 time = 1910
 .meas tran vdout0_6ck190 FIND v(dout0_6) AT=1910.05n
 
 * CHECK dout0_7 Vdout0_7ck190 = 0 time = 1910
 .meas tran vdout0_7ck190 FIND v(dout0_7) AT=1910.05n
 
-* CHECK dout0_0 Vdout0_0ck191 = 0 time = 1920
+* CHECK dout0_0 Vdout0_0ck191 = 3.3 time = 1920
 .meas tran vdout0_0ck191 FIND v(dout0_0) AT=1920.05n
 
 * CHECK dout0_1 Vdout0_1ck191 = 3.3 time = 1920
 .meas tran vdout0_1ck191 FIND v(dout0_1) AT=1920.05n
 
-* CHECK dout0_2 Vdout0_2ck191 = 3.3 time = 1920
+* CHECK dout0_2 Vdout0_2ck191 = 0 time = 1920
 .meas tran vdout0_2ck191 FIND v(dout0_2) AT=1920.05n
 
 * CHECK dout0_3 Vdout0_3ck191 = 0 time = 1920
@@ -2497,38 +2590,38 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_4 Vdout0_4ck191 = 3.3 time = 1920
 .meas tran vdout0_4ck191 FIND v(dout0_4) AT=1920.05n
 
-* CHECK dout0_5 Vdout0_5ck191 = 0 time = 1920
+* CHECK dout0_5 Vdout0_5ck191 = 3.3 time = 1920
 .meas tran vdout0_5ck191 FIND v(dout0_5) AT=1920.05n
 
-* CHECK dout0_6 Vdout0_6ck191 = 3.3 time = 1920
+* CHECK dout0_6 Vdout0_6ck191 = 0 time = 1920
 .meas tran vdout0_6ck191 FIND v(dout0_6) AT=1920.05n
 
-* CHECK dout0_7 Vdout0_7ck191 = 0 time = 1920
+* CHECK dout0_7 Vdout0_7ck191 = 3.3 time = 1920
 .meas tran vdout0_7ck191 FIND v(dout0_7) AT=1920.05n
 
-* CHECK dout0_0 Vdout0_0ck192 = 3.3 time = 1930
-.meas tran vdout0_0ck192 FIND v(dout0_0) AT=1930.05n
+* CHECK dout0_0 Vdout0_0ck193 = 3.3 time = 1940
+.meas tran vdout0_0ck193 FIND v(dout0_0) AT=1940.05n
 
-* CHECK dout0_1 Vdout0_1ck192 = 0 time = 1930
-.meas tran vdout0_1ck192 FIND v(dout0_1) AT=1930.05n
+* CHECK dout0_1 Vdout0_1ck193 = 3.3 time = 1940
+.meas tran vdout0_1ck193 FIND v(dout0_1) AT=1940.05n
 
-* CHECK dout0_2 Vdout0_2ck192 = 3.3 time = 1930
-.meas tran vdout0_2ck192 FIND v(dout0_2) AT=1930.05n
+* CHECK dout0_2 Vdout0_2ck193 = 0 time = 1940
+.meas tran vdout0_2ck193 FIND v(dout0_2) AT=1940.05n
 
-* CHECK dout0_3 Vdout0_3ck192 = 3.3 time = 1930
-.meas tran vdout0_3ck192 FIND v(dout0_3) AT=1930.05n
+* CHECK dout0_3 Vdout0_3ck193 = 0 time = 1940
+.meas tran vdout0_3ck193 FIND v(dout0_3) AT=1940.05n
 
-* CHECK dout0_4 Vdout0_4ck192 = 0 time = 1930
-.meas tran vdout0_4ck192 FIND v(dout0_4) AT=1930.05n
+* CHECK dout0_4 Vdout0_4ck193 = 3.3 time = 1940
+.meas tran vdout0_4ck193 FIND v(dout0_4) AT=1940.05n
 
-* CHECK dout0_5 Vdout0_5ck192 = 0 time = 1930
-.meas tran vdout0_5ck192 FIND v(dout0_5) AT=1930.05n
+* CHECK dout0_5 Vdout0_5ck193 = 3.3 time = 1940
+.meas tran vdout0_5ck193 FIND v(dout0_5) AT=1940.05n
 
-* CHECK dout0_6 Vdout0_6ck192 = 3.3 time = 1930
-.meas tran vdout0_6ck192 FIND v(dout0_6) AT=1930.05n
+* CHECK dout0_6 Vdout0_6ck193 = 0 time = 1940
+.meas tran vdout0_6ck193 FIND v(dout0_6) AT=1940.05n
 
-* CHECK dout0_7 Vdout0_7ck192 = 0 time = 1930
-.meas tran vdout0_7ck192 FIND v(dout0_7) AT=1930.05n
+* CHECK dout0_7 Vdout0_7ck193 = 3.3 time = 1940
+.meas tran vdout0_7ck193 FIND v(dout0_7) AT=1940.05n
 
 * CHECK dout0_0 Vdout0_0ck194 = 0 time = 1950
 .meas tran vdout0_0ck194 FIND v(dout0_0) AT=1950.05n
@@ -2542,58 +2635,58 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_3 Vdout0_3ck194 = 0 time = 1950
 .meas tran vdout0_3ck194 FIND v(dout0_3) AT=1950.05n
 
-* CHECK dout0_4 Vdout0_4ck194 = 3.3 time = 1950
+* CHECK dout0_4 Vdout0_4ck194 = 0 time = 1950
 .meas tran vdout0_4ck194 FIND v(dout0_4) AT=1950.05n
 
-* CHECK dout0_5 Vdout0_5ck194 = 0 time = 1950
+* CHECK dout0_5 Vdout0_5ck194 = 3.3 time = 1950
 .meas tran vdout0_5ck194 FIND v(dout0_5) AT=1950.05n
 
 * CHECK dout0_6 Vdout0_6ck194 = 3.3 time = 1950
 .meas tran vdout0_6ck194 FIND v(dout0_6) AT=1950.05n
 
-* CHECK dout0_7 Vdout0_7ck194 = 0 time = 1950
+* CHECK dout0_7 Vdout0_7ck194 = 3.3 time = 1950
 .meas tran vdout0_7ck194 FIND v(dout0_7) AT=1950.05n
 
-* CHECK dout0_0 Vdout0_0ck195 = 3.3 time = 1960
+* CHECK dout0_0 Vdout0_0ck195 = 0 time = 1960
 .meas tran vdout0_0ck195 FIND v(dout0_0) AT=1960.05n
 
-* CHECK dout0_1 Vdout0_1ck195 = 0 time = 1960
+* CHECK dout0_1 Vdout0_1ck195 = 3.3 time = 1960
 .meas tran vdout0_1ck195 FIND v(dout0_1) AT=1960.05n
 
 * CHECK dout0_2 Vdout0_2ck195 = 3.3 time = 1960
 .meas tran vdout0_2ck195 FIND v(dout0_2) AT=1960.05n
 
-* CHECK dout0_3 Vdout0_3ck195 = 3.3 time = 1960
+* CHECK dout0_3 Vdout0_3ck195 = 0 time = 1960
 .meas tran vdout0_3ck195 FIND v(dout0_3) AT=1960.05n
 
 * CHECK dout0_4 Vdout0_4ck195 = 0 time = 1960
 .meas tran vdout0_4ck195 FIND v(dout0_4) AT=1960.05n
 
-* CHECK dout0_5 Vdout0_5ck195 = 0 time = 1960
+* CHECK dout0_5 Vdout0_5ck195 = 3.3 time = 1960
 .meas tran vdout0_5ck195 FIND v(dout0_5) AT=1960.05n
 
 * CHECK dout0_6 Vdout0_6ck195 = 3.3 time = 1960
 .meas tran vdout0_6ck195 FIND v(dout0_6) AT=1960.05n
 
-* CHECK dout0_7 Vdout0_7ck195 = 0 time = 1960
+* CHECK dout0_7 Vdout0_7ck195 = 3.3 time = 1960
 .meas tran vdout0_7ck195 FIND v(dout0_7) AT=1960.05n
 
 * CHECK dout0_0 Vdout0_0ck197 = 0 time = 1980
 .meas tran vdout0_0ck197 FIND v(dout0_0) AT=1980.05n
 
-* CHECK dout0_1 Vdout0_1ck197 = 0 time = 1980
+* CHECK dout0_1 Vdout0_1ck197 = 3.3 time = 1980
 .meas tran vdout0_1ck197 FIND v(dout0_1) AT=1980.05n
 
-* CHECK dout0_2 Vdout0_2ck197 = 0 time = 1980
+* CHECK dout0_2 Vdout0_2ck197 = 3.3 time = 1980
 .meas tran vdout0_2ck197 FIND v(dout0_2) AT=1980.05n
 
-* CHECK dout0_3 Vdout0_3ck197 = 3.3 time = 1980
+* CHECK dout0_3 Vdout0_3ck197 = 0 time = 1980
 .meas tran vdout0_3ck197 FIND v(dout0_3) AT=1980.05n
 
 * CHECK dout0_4 Vdout0_4ck197 = 0 time = 1980
 .meas tran vdout0_4ck197 FIND v(dout0_4) AT=1980.05n
 
-* CHECK dout0_5 Vdout0_5ck197 = 0 time = 1980
+* CHECK dout0_5 Vdout0_5ck197 = 3.3 time = 1980
 .meas tran vdout0_5ck197 FIND v(dout0_5) AT=1980.05n
 
 * CHECK dout0_6 Vdout0_6ck197 = 3.3 time = 1980
@@ -2602,31 +2695,7 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_7 Vdout0_7ck197 = 3.3 time = 1980
 .meas tran vdout0_7ck197 FIND v(dout0_7) AT=1980.05n
 
-* CHECK dout0_0 Vdout0_0ck198 = 0 time = 1990
-.meas tran vdout0_0ck198 FIND v(dout0_0) AT=1990.05n
-
-* CHECK dout0_1 Vdout0_1ck198 = 3.3 time = 1990
-.meas tran vdout0_1ck198 FIND v(dout0_1) AT=1990.05n
-
-* CHECK dout0_2 Vdout0_2ck198 = 3.3 time = 1990
-.meas tran vdout0_2ck198 FIND v(dout0_2) AT=1990.05n
-
-* CHECK dout0_3 Vdout0_3ck198 = 0 time = 1990
-.meas tran vdout0_3ck198 FIND v(dout0_3) AT=1990.05n
-
-* CHECK dout0_4 Vdout0_4ck198 = 3.3 time = 1990
-.meas tran vdout0_4ck198 FIND v(dout0_4) AT=1990.05n
-
-* CHECK dout0_5 Vdout0_5ck198 = 0 time = 1990
-.meas tran vdout0_5ck198 FIND v(dout0_5) AT=1990.05n
-
-* CHECK dout0_6 Vdout0_6ck198 = 3.3 time = 1990
-.meas tran vdout0_6ck198 FIND v(dout0_6) AT=1990.05n
-
-* CHECK dout0_7 Vdout0_7ck198 = 0 time = 1990
-.meas tran vdout0_7ck198 FIND v(dout0_7) AT=1990.05n
-
-* CHECK dout0_0 Vdout0_0ck199 = 0 time = 2000
+* CHECK dout0_0 Vdout0_0ck199 = 3.3 time = 2000
 .meas tran vdout0_0ck199 FIND v(dout0_0) AT=2000.05n
 
 * CHECK dout0_1 Vdout0_1ck199 = 0 time = 2000
@@ -2635,20 +2704,92 @@ Vclk0 clk0 0 PULSE (0 3.3 9.95n 0.1n 0.1n 4.9n 10n)
 * CHECK dout0_2 Vdout0_2ck199 = 0 time = 2000
 .meas tran vdout0_2ck199 FIND v(dout0_2) AT=2000.05n
 
-* CHECK dout0_3 Vdout0_3ck199 = 3.3 time = 2000
+* CHECK dout0_3 Vdout0_3ck199 = 0 time = 2000
 .meas tran vdout0_3ck199 FIND v(dout0_3) AT=2000.05n
 
-* CHECK dout0_4 Vdout0_4ck199 = 0 time = 2000
+* CHECK dout0_4 Vdout0_4ck199 = 3.3 time = 2000
 .meas tran vdout0_4ck199 FIND v(dout0_4) AT=2000.05n
 
 * CHECK dout0_5 Vdout0_5ck199 = 0 time = 2000
 .meas tran vdout0_5ck199 FIND v(dout0_5) AT=2000.05n
 
-* CHECK dout0_6 Vdout0_6ck199 = 3.3 time = 2000
+* CHECK dout0_6 Vdout0_6ck199 = 0 time = 2000
 .meas tran vdout0_6ck199 FIND v(dout0_6) AT=2000.05n
 
 * CHECK dout0_7 Vdout0_7ck199 = 3.3 time = 2000
 .meas tran vdout0_7ck199 FIND v(dout0_7) AT=2000.05n
+
+* CHECK dout0_0 Vdout0_0ck200 = 0 time = 2010
+.meas tran vdout0_0ck200 FIND v(dout0_0) AT=2010.05n
+
+* CHECK dout0_1 Vdout0_1ck200 = 3.3 time = 2010
+.meas tran vdout0_1ck200 FIND v(dout0_1) AT=2010.05n
+
+* CHECK dout0_2 Vdout0_2ck200 = 3.3 time = 2010
+.meas tran vdout0_2ck200 FIND v(dout0_2) AT=2010.05n
+
+* CHECK dout0_3 Vdout0_3ck200 = 0 time = 2010
+.meas tran vdout0_3ck200 FIND v(dout0_3) AT=2010.05n
+
+* CHECK dout0_4 Vdout0_4ck200 = 0 time = 2010
+.meas tran vdout0_4ck200 FIND v(dout0_4) AT=2010.05n
+
+* CHECK dout0_5 Vdout0_5ck200 = 3.3 time = 2010
+.meas tran vdout0_5ck200 FIND v(dout0_5) AT=2010.05n
+
+* CHECK dout0_6 Vdout0_6ck200 = 3.3 time = 2010
+.meas tran vdout0_6ck200 FIND v(dout0_6) AT=2010.05n
+
+* CHECK dout0_7 Vdout0_7ck200 = 3.3 time = 2010
+.meas tran vdout0_7ck200 FIND v(dout0_7) AT=2010.05n
+
+* CHECK dout0_0 Vdout0_0ck203 = 0 time = 2040
+.meas tran vdout0_0ck203 FIND v(dout0_0) AT=2040.05n
+
+* CHECK dout0_1 Vdout0_1ck203 = 0 time = 2040
+.meas tran vdout0_1ck203 FIND v(dout0_1) AT=2040.05n
+
+* CHECK dout0_2 Vdout0_2ck203 = 3.3 time = 2040
+.meas tran vdout0_2ck203 FIND v(dout0_2) AT=2040.05n
+
+* CHECK dout0_3 Vdout0_3ck203 = 3.3 time = 2040
+.meas tran vdout0_3ck203 FIND v(dout0_3) AT=2040.05n
+
+* CHECK dout0_4 Vdout0_4ck203 = 0 time = 2040
+.meas tran vdout0_4ck203 FIND v(dout0_4) AT=2040.05n
+
+* CHECK dout0_5 Vdout0_5ck203 = 0 time = 2040
+.meas tran vdout0_5ck203 FIND v(dout0_5) AT=2040.05n
+
+* CHECK dout0_6 Vdout0_6ck203 = 3.3 time = 2040
+.meas tran vdout0_6ck203 FIND v(dout0_6) AT=2040.05n
+
+* CHECK dout0_7 Vdout0_7ck203 = 3.3 time = 2040
+.meas tran vdout0_7ck203 FIND v(dout0_7) AT=2040.05n
+
+* CHECK dout0_0 Vdout0_0ck204 = 3.3 time = 2050
+.meas tran vdout0_0ck204 FIND v(dout0_0) AT=2050.05n
+
+* CHECK dout0_1 Vdout0_1ck204 = 0 time = 2050
+.meas tran vdout0_1ck204 FIND v(dout0_1) AT=2050.05n
+
+* CHECK dout0_2 Vdout0_2ck204 = 0 time = 2050
+.meas tran vdout0_2ck204 FIND v(dout0_2) AT=2050.05n
+
+* CHECK dout0_3 Vdout0_3ck204 = 0 time = 2050
+.meas tran vdout0_3ck204 FIND v(dout0_3) AT=2050.05n
+
+* CHECK dout0_4 Vdout0_4ck204 = 3.3 time = 2050
+.meas tran vdout0_4ck204 FIND v(dout0_4) AT=2050.05n
+
+* CHECK dout0_5 Vdout0_5ck204 = 0 time = 2050
+.meas tran vdout0_5ck204 FIND v(dout0_5) AT=2050.05n
+
+* CHECK dout0_6 Vdout0_6ck204 = 0 time = 2050
+.meas tran vdout0_6ck204 FIND v(dout0_6) AT=2050.05n
+
+* CHECK dout0_7 Vdout0_7ck204 = 3.3 time = 2050
+.meas tran vdout0_7ck204 FIND v(dout0_7) AT=2050.05n
 
 * probe is used for hspice/xa, while plot is used in ngspice
 *.probe V(*)
