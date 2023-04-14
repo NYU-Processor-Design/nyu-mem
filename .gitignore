@@ -1,6 +1,10 @@
 # build files
 build
 
+# temporary folders and caches
+temp
+__pycache__
+
 # Text editor configs
 .vscode
 .idea
