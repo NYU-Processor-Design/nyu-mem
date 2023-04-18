@@ -1,9 +1,17 @@
 # build files
 build
 
+# temporary folders and caches
+temp
+__pycache__
+
 # Text editor configs
 .vscode
 .idea
 
 # OS Specific files
 .DS_Store
+
+# OpenRAM generated files
+mem_generation/RAM/generated_mem/*
+mem_generation/ROM/generated_mem/*
