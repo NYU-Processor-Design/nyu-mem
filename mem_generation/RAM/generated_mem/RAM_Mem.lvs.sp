@@ -38,34 +38,6 @@ M1021 Q a_280_24# gnd gnd n w=4u l=0.4u
 
 .ENDS
 
-.SUBCKT RAM_Mem_row_addr_dff
-+ din_0 din_1 din_2 din_3 dout_0 dout_1 dout_2 dout_3 clk vdd gnd
-* INPUT : din_0 
-* INPUT : din_1 
-* INPUT : din_2 
-* INPUT : din_3 
-* OUTPUT: dout_0 
-* OUTPUT: dout_1 
-* OUTPUT: dout_2 
-* OUTPUT: dout_3 
-* INPUT : clk 
-* POWER : vdd 
-* GROUND: gnd 
-* rows: 4 cols: 1
-Xdff_r0_c0
-+ din_0 dout_0 clk vdd gnd
-+ dff
-Xdff_r1_c0
-+ din_1 dout_1 clk vdd gnd
-+ dff
-Xdff_r2_c0
-+ din_2 dout_2 clk vdd gnd
-+ dff
-Xdff_r3_c0
-+ din_3 dout_3 clk vdd gnd
-+ dff
-.ENDS RAM_Mem_row_addr_dff
-
 .SUBCKT RAM_Mem_data_dff
 + din_0 din_1 din_2 din_3 din_4 din_5 din_6 din_7 dout_0 dout_1 dout_2
 + dout_3 dout_4 dout_5 dout_6 dout_7 clk vdd gnd
@@ -115,23 +87,23 @@ Xdff_r0_c7
 + dff
 .ENDS RAM_Mem_data_dff
 
-* spice ptx M{0} {1} p m=1 w=1.6u l=0.4u pd=4.00u ps=4.00u as=1.60p ad=1.60p
+* spice ptx M{0} {1} p m=1 w=3.2u l=0.4u pd=7.20u ps=7.20u as=3.20p ad=3.20p
 
-* spice ptx M{0} {1} n m=1 w=0.8u l=0.4u pd=2.40u ps=2.40u as=0.80p ad=0.80p
+* spice ptx M{0} {1} n m=1 w=1.6u l=0.4u pd=4.00u ps=4.00u as=1.60p ad=1.60p
 
-.SUBCKT RAM_Mem_pinv
+.SUBCKT RAM_Mem_pinv_0
 + A Z vdd gnd
 * INPUT : A 
 * OUTPUT: Z 
 * POWER : vdd 
 * GROUND: gnd 
-Mpinv_pmos Z A vdd vdd p m=1 w=1.6u l=0.4u 
-Mpinv_nmos Z A gnd gnd n m=1 w=0.8u l=0.4u 
-.ENDS RAM_Mem_pinv
-
-* spice ptx M{0} {1} p m=1 w=1.6u l=0.4u pd=4.00u ps=4.00u as=1.60p ad=1.60p
+Mpinv_pmos Z A vdd vdd p m=1 w=3.2u l=0.4u 
+Mpinv_nmos Z A gnd gnd n m=1 w=1.6u l=0.4u 
+.ENDS RAM_Mem_pinv_0
 
 * spice ptx M{0} {1} n m=1 w=1.6u l=0.4u pd=4.00u ps=4.00u as=1.60p ad=1.60p
+
+* spice ptx M{0} {1} p m=1 w=1.6u l=0.4u pd=4.00u ps=4.00u as=1.60p ad=1.60p
 
 * spice ptx M{0} {1} n m=1 w=1.6u l=0.4u pd=4.00u ps=4.00u as=1.60p ad=1.60p
 
@@ -147,6 +119,125 @@ Mpnand2_pmos2 Z B vdd vdd p m=1 w=1.6u l=0.4u
 Mpnand2_nmos1 Z B net1 gnd n m=1 w=1.6u l=0.4u 
 Mpnand2_nmos2 net1 A gnd gnd n m=1 w=1.6u l=0.4u 
 .ENDS RAM_Mem_pnand2
+
+.SUBCKT RAM_Mem_wordline_driver
++ A B Z vdd gnd
+* INPUT : A 
+* INPUT : B 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Xwld_nand
++ A B zb_int vdd gnd
++ RAM_Mem_pnand2
+Xwl_driver
++ zb_int Z vdd gnd
++ RAM_Mem_pinv_0
+.ENDS RAM_Mem_wordline_driver
+
+.SUBCKT RAM_Mem_wordline_driver_array
++ in_0 in_1 in_2 in_3 in_4 in_5 in_6 in_7 in_8 in_9 in_10 in_11 in_12
++ in_13 in_14 in_15 wl_0 wl_1 wl_2 wl_3 wl_4 wl_5 wl_6 wl_7 wl_8 wl_9
++ wl_10 wl_11 wl_12 wl_13 wl_14 wl_15 en vdd gnd
+* INPUT : in_0 
+* INPUT : in_1 
+* INPUT : in_2 
+* INPUT : in_3 
+* INPUT : in_4 
+* INPUT : in_5 
+* INPUT : in_6 
+* INPUT : in_7 
+* INPUT : in_8 
+* INPUT : in_9 
+* INPUT : in_10 
+* INPUT : in_11 
+* INPUT : in_12 
+* INPUT : in_13 
+* INPUT : in_14 
+* INPUT : in_15 
+* OUTPUT: wl_0 
+* OUTPUT: wl_1 
+* OUTPUT: wl_2 
+* OUTPUT: wl_3 
+* OUTPUT: wl_4 
+* OUTPUT: wl_5 
+* OUTPUT: wl_6 
+* OUTPUT: wl_7 
+* OUTPUT: wl_8 
+* OUTPUT: wl_9 
+* OUTPUT: wl_10 
+* OUTPUT: wl_11 
+* OUTPUT: wl_12 
+* OUTPUT: wl_13 
+* OUTPUT: wl_14 
+* OUTPUT: wl_15 
+* INPUT : en 
+* POWER : vdd 
+* GROUND: gnd 
+* rows: 16 cols: 8
+Xwl_driver_and0
++ in_0 en wl_0 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and1
++ in_1 en wl_1 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and2
++ in_2 en wl_2 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and3
++ in_3 en wl_3 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and4
++ in_4 en wl_4 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and5
++ in_5 en wl_5 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and6
++ in_6 en wl_6 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and7
++ in_7 en wl_7 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and8
++ in_8 en wl_8 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and9
++ in_9 en wl_9 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and10
++ in_10 en wl_10 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and11
++ in_11 en wl_11 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and12
++ in_12 en wl_12 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and13
++ in_13 en wl_13 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and14
++ in_14 en wl_14 vdd gnd
++ RAM_Mem_wordline_driver
+Xwl_driver_and15
++ in_15 en wl_15 vdd gnd
++ RAM_Mem_wordline_driver
+.ENDS RAM_Mem_wordline_driver_array
+
+* spice ptx M{0} {1} n m=1 w=0.8u l=0.4u pd=2.40u ps=2.40u as=0.80p ad=0.80p
+
+* spice ptx M{0} {1} p m=1 w=1.6u l=0.4u pd=4.00u ps=4.00u as=1.60p ad=1.60p
+
+.SUBCKT RAM_Mem_pinv
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Mpinv_pmos Z A vdd vdd p m=1 w=1.6u l=0.4u 
+Mpinv_nmos Z A gnd gnd n m=1 w=0.8u l=0.4u 
+.ENDS RAM_Mem_pinv
 
 .SUBCKT RAM_Mem_and2_dec
 + A B Z vdd gnd
@@ -276,20 +367,6 @@ XDEC_AND_15
 + RAM_Mem_and2_dec
 .ENDS RAM_Mem_hierarchical_decoder
 
-* spice ptx M{0} {1} p m=1 w=3.2u l=0.4u pd=7.20u ps=7.20u as=3.20p ad=3.20p
-
-* spice ptx M{0} {1} n m=1 w=1.6u l=0.4u pd=4.00u ps=4.00u as=1.60p ad=1.60p
-
-.SUBCKT RAM_Mem_pinv_0
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Mpinv_pmos Z A vdd vdd p m=1 w=3.2u l=0.4u 
-Mpinv_nmos Z A gnd gnd n m=1 w=1.6u l=0.4u 
-.ENDS RAM_Mem_pinv_0
-
 .SUBCKT RAM_Mem_and2_dec_0
 + A B Z vdd gnd
 * INPUT : A 
@@ -305,111 +382,6 @@ Xpand2_dec_inv
 + zb_int Z vdd gnd
 + RAM_Mem_pinv_0
 .ENDS RAM_Mem_and2_dec_0
-
-.SUBCKT RAM_Mem_wordline_driver
-+ A B Z vdd gnd
-* INPUT : A 
-* INPUT : B 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Xwld_nand
-+ A B zb_int vdd gnd
-+ RAM_Mem_pnand2
-Xwl_driver
-+ zb_int Z vdd gnd
-+ RAM_Mem_pinv_0
-.ENDS RAM_Mem_wordline_driver
-
-.SUBCKT RAM_Mem_wordline_driver_array
-+ in_0 in_1 in_2 in_3 in_4 in_5 in_6 in_7 in_8 in_9 in_10 in_11 in_12
-+ in_13 in_14 in_15 wl_0 wl_1 wl_2 wl_3 wl_4 wl_5 wl_6 wl_7 wl_8 wl_9
-+ wl_10 wl_11 wl_12 wl_13 wl_14 wl_15 en vdd gnd
-* INPUT : in_0 
-* INPUT : in_1 
-* INPUT : in_2 
-* INPUT : in_3 
-* INPUT : in_4 
-* INPUT : in_5 
-* INPUT : in_6 
-* INPUT : in_7 
-* INPUT : in_8 
-* INPUT : in_9 
-* INPUT : in_10 
-* INPUT : in_11 
-* INPUT : in_12 
-* INPUT : in_13 
-* INPUT : in_14 
-* INPUT : in_15 
-* OUTPUT: wl_0 
-* OUTPUT: wl_1 
-* OUTPUT: wl_2 
-* OUTPUT: wl_3 
-* OUTPUT: wl_4 
-* OUTPUT: wl_5 
-* OUTPUT: wl_6 
-* OUTPUT: wl_7 
-* OUTPUT: wl_8 
-* OUTPUT: wl_9 
-* OUTPUT: wl_10 
-* OUTPUT: wl_11 
-* OUTPUT: wl_12 
-* OUTPUT: wl_13 
-* OUTPUT: wl_14 
-* OUTPUT: wl_15 
-* INPUT : en 
-* POWER : vdd 
-* GROUND: gnd 
-* rows: 16 cols: 8
-Xwl_driver_and0
-+ in_0 en wl_0 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and1
-+ in_1 en wl_1 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and2
-+ in_2 en wl_2 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and3
-+ in_3 en wl_3 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and4
-+ in_4 en wl_4 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and5
-+ in_5 en wl_5 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and6
-+ in_6 en wl_6 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and7
-+ in_7 en wl_7 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and8
-+ in_8 en wl_8 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and9
-+ in_9 en wl_9 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and10
-+ in_10 en wl_10 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and11
-+ in_11 en wl_11 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and12
-+ in_12 en wl_12 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and13
-+ in_13 en wl_13 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and14
-+ in_14 en wl_14 vdd gnd
-+ RAM_Mem_wordline_driver
-Xwl_driver_and15
-+ in_15 en wl_15 vdd gnd
-+ RAM_Mem_wordline_driver
-.ENDS RAM_Mem_wordline_driver_array
 
 .SUBCKT RAM_Mem_port_address
 + addr_0 addr_1 addr_2 addr_3 wl_en wl_0 wl_1 wl_2 wl_3 wl_4 wl_5 wl_6
@@ -470,92 +442,6 @@ M1004 Q wl bl_noconn gnd n w=0.8u l=0.4u
 M1005 Q_bar wl br_noconn gnd n w=0.8u l=0.4u
 
 .ENDS
-
-.SUBCKT RAM_Mem_dummy_array_3
-+ bl_0_0 br_0_0 wl_0_0 wl_0_1 wl_0_2 wl_0_3 wl_0_4 wl_0_5 wl_0_6 wl_0_7
-+ wl_0_8 wl_0_9 wl_0_10 wl_0_11 wl_0_12 wl_0_13 wl_0_14 wl_0_15 wl_0_16
-+ wl_0_17 wl_0_18 vdd gnd
-* INOUT : bl_0_0 
-* INOUT : br_0_0 
-* INPUT : wl_0_0 
-* INPUT : wl_0_1 
-* INPUT : wl_0_2 
-* INPUT : wl_0_3 
-* INPUT : wl_0_4 
-* INPUT : wl_0_5 
-* INPUT : wl_0_6 
-* INPUT : wl_0_7 
-* INPUT : wl_0_8 
-* INPUT : wl_0_9 
-* INPUT : wl_0_10 
-* INPUT : wl_0_11 
-* INPUT : wl_0_12 
-* INPUT : wl_0_13 
-* INPUT : wl_0_14 
-* INPUT : wl_0_15 
-* INPUT : wl_0_16 
-* INPUT : wl_0_17 
-* INPUT : wl_0_18 
-* POWER : vdd 
-* GROUND: gnd 
-Xbit_r0_c0
-+ bl_0_0 br_0_0 wl_0_0 vdd gnd
-+ dummy_cell_1rw
-Xbit_r1_c0
-+ bl_0_0 br_0_0 wl_0_1 vdd gnd
-+ dummy_cell_1rw
-Xbit_r2_c0
-+ bl_0_0 br_0_0 wl_0_2 vdd gnd
-+ dummy_cell_1rw
-Xbit_r3_c0
-+ bl_0_0 br_0_0 wl_0_3 vdd gnd
-+ dummy_cell_1rw
-Xbit_r4_c0
-+ bl_0_0 br_0_0 wl_0_4 vdd gnd
-+ dummy_cell_1rw
-Xbit_r5_c0
-+ bl_0_0 br_0_0 wl_0_5 vdd gnd
-+ dummy_cell_1rw
-Xbit_r6_c0
-+ bl_0_0 br_0_0 wl_0_6 vdd gnd
-+ dummy_cell_1rw
-Xbit_r7_c0
-+ bl_0_0 br_0_0 wl_0_7 vdd gnd
-+ dummy_cell_1rw
-Xbit_r8_c0
-+ bl_0_0 br_0_0 wl_0_8 vdd gnd
-+ dummy_cell_1rw
-Xbit_r9_c0
-+ bl_0_0 br_0_0 wl_0_9 vdd gnd
-+ dummy_cell_1rw
-Xbit_r10_c0
-+ bl_0_0 br_0_0 wl_0_10 vdd gnd
-+ dummy_cell_1rw
-Xbit_r11_c0
-+ bl_0_0 br_0_0 wl_0_11 vdd gnd
-+ dummy_cell_1rw
-Xbit_r12_c0
-+ bl_0_0 br_0_0 wl_0_12 vdd gnd
-+ dummy_cell_1rw
-Xbit_r13_c0
-+ bl_0_0 br_0_0 wl_0_13 vdd gnd
-+ dummy_cell_1rw
-Xbit_r14_c0
-+ bl_0_0 br_0_0 wl_0_14 vdd gnd
-+ dummy_cell_1rw
-Xbit_r15_c0
-+ bl_0_0 br_0_0 wl_0_15 vdd gnd
-+ dummy_cell_1rw
-Xbit_r16_c0
-+ bl_0_0 br_0_0 wl_0_16 vdd gnd
-+ dummy_cell_1rw
-Xbit_r17_c0
-+ bl_0_0 br_0_0 wl_0_17 vdd gnd
-+ dummy_cell_1rw
-Xbit_r18_c0
-+ bl_0_0 br_0_0 wl_0_18 vdd gnd
-+ dummy_cell_1rw
-.ENDS RAM_Mem_dummy_array_3
 
 .SUBCKT RAM_Mem_dummy_array_1
 + bl_0_0 br_0_0 bl_0_1 br_0_1 bl_0_2 br_0_2 bl_0_3 br_0_3 bl_0_4 br_0_4
@@ -748,6 +634,54 @@ Xbit_r18_c0
 + bl_0_0 br_0_0 wl_0_18 vdd gnd
 + dummy_cell_1rw
 .ENDS RAM_Mem_dummy_array_2
+
+.SUBCKT RAM_Mem_dummy_array
++ bl_0_0 br_0_0 bl_0_1 br_0_1 bl_0_2 br_0_2 bl_0_3 br_0_3 bl_0_4 br_0_4
++ bl_0_5 br_0_5 bl_0_6 br_0_6 bl_0_7 br_0_7 wl_0_0 vdd gnd
+* INOUT : bl_0_0 
+* INOUT : br_0_0 
+* INOUT : bl_0_1 
+* INOUT : br_0_1 
+* INOUT : bl_0_2 
+* INOUT : br_0_2 
+* INOUT : bl_0_3 
+* INOUT : br_0_3 
+* INOUT : bl_0_4 
+* INOUT : br_0_4 
+* INOUT : bl_0_5 
+* INOUT : br_0_5 
+* INOUT : bl_0_6 
+* INOUT : br_0_6 
+* INOUT : bl_0_7 
+* INOUT : br_0_7 
+* INPUT : wl_0_0 
+* POWER : vdd 
+* GROUND: gnd 
+Xbit_r0_c0
++ bl_0_0 br_0_0 wl_0_0 vdd gnd
++ dummy_cell_1rw
+Xbit_r0_c1
++ bl_0_1 br_0_1 wl_0_0 vdd gnd
++ dummy_cell_1rw
+Xbit_r0_c2
++ bl_0_2 br_0_2 wl_0_0 vdd gnd
++ dummy_cell_1rw
+Xbit_r0_c3
++ bl_0_3 br_0_3 wl_0_0 vdd gnd
++ dummy_cell_1rw
+Xbit_r0_c4
++ bl_0_4 br_0_4 wl_0_0 vdd gnd
++ dummy_cell_1rw
+Xbit_r0_c5
++ bl_0_5 br_0_5 wl_0_0 vdd gnd
++ dummy_cell_1rw
+Xbit_r0_c6
++ bl_0_6 br_0_6 wl_0_0 vdd gnd
++ dummy_cell_1rw
+Xbit_r0_c7
++ bl_0_7 br_0_7 wl_0_0 vdd gnd
++ dummy_cell_1rw
+.ENDS RAM_Mem_dummy_array
 
 *********************** "cell_1rw" ******************************
 .SUBCKT cell_1rw bl br wl vdd gnd
@@ -1289,54 +1223,6 @@ Xrbc_16
 + replica_cell_1rw
 .ENDS RAM_Mem_replica_column
 
-.SUBCKT RAM_Mem_dummy_array
-+ bl_0_0 br_0_0 bl_0_1 br_0_1 bl_0_2 br_0_2 bl_0_3 br_0_3 bl_0_4 br_0_4
-+ bl_0_5 br_0_5 bl_0_6 br_0_6 bl_0_7 br_0_7 wl_0_0 vdd gnd
-* INOUT : bl_0_0 
-* INOUT : br_0_0 
-* INOUT : bl_0_1 
-* INOUT : br_0_1 
-* INOUT : bl_0_2 
-* INOUT : br_0_2 
-* INOUT : bl_0_3 
-* INOUT : br_0_3 
-* INOUT : bl_0_4 
-* INOUT : br_0_4 
-* INOUT : bl_0_5 
-* INOUT : br_0_5 
-* INOUT : bl_0_6 
-* INOUT : br_0_6 
-* INOUT : bl_0_7 
-* INOUT : br_0_7 
-* INPUT : wl_0_0 
-* POWER : vdd 
-* GROUND: gnd 
-Xbit_r0_c0
-+ bl_0_0 br_0_0 wl_0_0 vdd gnd
-+ dummy_cell_1rw
-Xbit_r0_c1
-+ bl_0_1 br_0_1 wl_0_0 vdd gnd
-+ dummy_cell_1rw
-Xbit_r0_c2
-+ bl_0_2 br_0_2 wl_0_0 vdd gnd
-+ dummy_cell_1rw
-Xbit_r0_c3
-+ bl_0_3 br_0_3 wl_0_0 vdd gnd
-+ dummy_cell_1rw
-Xbit_r0_c4
-+ bl_0_4 br_0_4 wl_0_0 vdd gnd
-+ dummy_cell_1rw
-Xbit_r0_c5
-+ bl_0_5 br_0_5 wl_0_0 vdd gnd
-+ dummy_cell_1rw
-Xbit_r0_c6
-+ bl_0_6 br_0_6 wl_0_0 vdd gnd
-+ dummy_cell_1rw
-Xbit_r0_c7
-+ bl_0_7 br_0_7 wl_0_0 vdd gnd
-+ dummy_cell_1rw
-.ENDS RAM_Mem_dummy_array
-
 .SUBCKT RAM_Mem_replica_bitcell_array
 + rbl_bl_0_0 rbl_br_0_0 bl_0_0 br_0_0 bl_0_1 br_0_1 bl_0_2 br_0_2 bl_0_3
 + br_0_3 bl_0_4 br_0_4 bl_0_5 br_0_5 bl_0_6 br_0_6 bl_0_7 br_0_7
@@ -1396,6 +1282,92 @@ Xdummy_row_0
 + bl_0_5 br_0_5 bl_0_6 br_0_6 bl_0_7 br_0_7 rbl_wl_0_0 vdd gnd
 + RAM_Mem_dummy_array
 .ENDS RAM_Mem_replica_bitcell_array
+
+.SUBCKT RAM_Mem_dummy_array_3
++ bl_0_0 br_0_0 wl_0_0 wl_0_1 wl_0_2 wl_0_3 wl_0_4 wl_0_5 wl_0_6 wl_0_7
++ wl_0_8 wl_0_9 wl_0_10 wl_0_11 wl_0_12 wl_0_13 wl_0_14 wl_0_15 wl_0_16
++ wl_0_17 wl_0_18 vdd gnd
+* INOUT : bl_0_0 
+* INOUT : br_0_0 
+* INPUT : wl_0_0 
+* INPUT : wl_0_1 
+* INPUT : wl_0_2 
+* INPUT : wl_0_3 
+* INPUT : wl_0_4 
+* INPUT : wl_0_5 
+* INPUT : wl_0_6 
+* INPUT : wl_0_7 
+* INPUT : wl_0_8 
+* INPUT : wl_0_9 
+* INPUT : wl_0_10 
+* INPUT : wl_0_11 
+* INPUT : wl_0_12 
+* INPUT : wl_0_13 
+* INPUT : wl_0_14 
+* INPUT : wl_0_15 
+* INPUT : wl_0_16 
+* INPUT : wl_0_17 
+* INPUT : wl_0_18 
+* POWER : vdd 
+* GROUND: gnd 
+Xbit_r0_c0
++ bl_0_0 br_0_0 wl_0_0 vdd gnd
++ dummy_cell_1rw
+Xbit_r1_c0
++ bl_0_0 br_0_0 wl_0_1 vdd gnd
++ dummy_cell_1rw
+Xbit_r2_c0
++ bl_0_0 br_0_0 wl_0_2 vdd gnd
++ dummy_cell_1rw
+Xbit_r3_c0
++ bl_0_0 br_0_0 wl_0_3 vdd gnd
++ dummy_cell_1rw
+Xbit_r4_c0
++ bl_0_0 br_0_0 wl_0_4 vdd gnd
++ dummy_cell_1rw
+Xbit_r5_c0
++ bl_0_0 br_0_0 wl_0_5 vdd gnd
++ dummy_cell_1rw
+Xbit_r6_c0
++ bl_0_0 br_0_0 wl_0_6 vdd gnd
++ dummy_cell_1rw
+Xbit_r7_c0
++ bl_0_0 br_0_0 wl_0_7 vdd gnd
++ dummy_cell_1rw
+Xbit_r8_c0
++ bl_0_0 br_0_0 wl_0_8 vdd gnd
++ dummy_cell_1rw
+Xbit_r9_c0
++ bl_0_0 br_0_0 wl_0_9 vdd gnd
++ dummy_cell_1rw
+Xbit_r10_c0
++ bl_0_0 br_0_0 wl_0_10 vdd gnd
++ dummy_cell_1rw
+Xbit_r11_c0
++ bl_0_0 br_0_0 wl_0_11 vdd gnd
++ dummy_cell_1rw
+Xbit_r12_c0
++ bl_0_0 br_0_0 wl_0_12 vdd gnd
++ dummy_cell_1rw
+Xbit_r13_c0
++ bl_0_0 br_0_0 wl_0_13 vdd gnd
++ dummy_cell_1rw
+Xbit_r14_c0
++ bl_0_0 br_0_0 wl_0_14 vdd gnd
++ dummy_cell_1rw
+Xbit_r15_c0
++ bl_0_0 br_0_0 wl_0_15 vdd gnd
++ dummy_cell_1rw
+Xbit_r16_c0
++ bl_0_0 br_0_0 wl_0_16 vdd gnd
++ dummy_cell_1rw
+Xbit_r17_c0
++ bl_0_0 br_0_0 wl_0_17 vdd gnd
++ dummy_cell_1rw
+Xbit_r18_c0
++ bl_0_0 br_0_0 wl_0_18 vdd gnd
++ dummy_cell_1rw
+.ENDS RAM_Mem_dummy_array_3
 
 .SUBCKT RAM_Mem_capped_replica_bitcell_array
 + rbl_bl_0_0 rbl_br_0_0 bl_0_0 br_0_0 bl_0_1 br_0_1 bl_0_2 br_0_2 bl_0_3
@@ -1810,59 +1782,43 @@ Xport_address0
 + RAM_Mem_port_address
 .ENDS RAM_Mem_bank
 
-* spice ptx M{0} {1} p m=3 w=6.4u l=0.4u pd=13.60u ps=13.60u as=6.40p ad=6.40p
+.SUBCKT RAM_Mem_row_addr_dff
++ din_0 din_1 din_2 din_3 dout_0 dout_1 dout_2 dout_3 clk vdd gnd
+* INPUT : din_0 
+* INPUT : din_1 
+* INPUT : din_2 
+* INPUT : din_3 
+* OUTPUT: dout_0 
+* OUTPUT: dout_1 
+* OUTPUT: dout_2 
+* OUTPUT: dout_3 
+* INPUT : clk 
+* POWER : vdd 
+* GROUND: gnd 
+* rows: 4 cols: 1
+Xdff_r0_c0
++ din_0 dout_0 clk vdd gnd
++ dff
+Xdff_r1_c0
++ din_1 dout_1 clk vdd gnd
++ dff
+Xdff_r2_c0
++ din_2 dout_2 clk vdd gnd
++ dff
+Xdff_r3_c0
++ din_3 dout_3 clk vdd gnd
++ dff
+.ENDS RAM_Mem_row_addr_dff
 
-* spice ptx M{0} {1} n m=3 w=3.2u l=0.4u pd=7.20u ps=7.20u as=3.20p ad=3.20p
-
-.SUBCKT RAM_Mem_pinv_3
+.SUBCKT RAM_Mem_pinv_1
 + A Z vdd gnd
 * INPUT : A 
 * OUTPUT: Z 
 * POWER : vdd 
 * GROUND: gnd 
-Mpinv_pmos Z A vdd vdd p m=3 w=6.4u l=0.4u 
-Mpinv_nmos Z A gnd gnd n m=3 w=3.2u l=0.4u 
-.ENDS RAM_Mem_pinv_3
-
-.SUBCKT RAM_Mem_pdriver
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-* sizes: [12]
-Xbuf_inv1
-+ A Z vdd gnd
-+ RAM_Mem_pinv_3
-.ENDS RAM_Mem_pdriver
-
-.SUBCKT RAM_Mem_pnand2_0
-+ A B Z vdd gnd
-* INPUT : A 
-* INPUT : B 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Mpnand2_pmos1 vdd A Z vdd p m=1 w=1.6u l=0.4u 
-Mpnand2_pmos2 Z B vdd vdd p m=1 w=1.6u l=0.4u 
-Mpnand2_nmos1 Z B net1 gnd n m=1 w=1.6u l=0.4u 
-Mpnand2_nmos2 net1 A gnd gnd n m=1 w=1.6u l=0.4u 
-.ENDS RAM_Mem_pnand2_0
-
-.SUBCKT RAM_Mem_pand2
-+ A B Z vdd gnd
-* INPUT : A 
-* INPUT : B 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Xpand2_nand
-+ A B zb_int vdd gnd
-+ RAM_Mem_pnand2_0
-Xpand2_inv
-+ zb_int Z vdd gnd
-+ RAM_Mem_pdriver
-.ENDS RAM_Mem_pand2
+Mpinv_pmos Z A vdd vdd p m=1 w=3.2u l=0.4u 
+Mpinv_nmos Z A gnd gnd n m=1 w=1.6u l=0.4u 
+.ENDS RAM_Mem_pinv_1
 
 * spice ptx M{0} {1} n m=1 w=3.2u l=0.4u pd=7.20u ps=7.20u as=3.20p ad=3.20p
 
@@ -1877,16 +1833,6 @@ Xpand2_inv
 Mpinv_pmos Z A vdd vdd p m=1 w=6.4u l=0.4u 
 Mpinv_nmos Z A gnd gnd n m=1 w=3.2u l=0.4u 
 .ENDS RAM_Mem_pinv_2
-
-.SUBCKT RAM_Mem_pinv_1
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Mpinv_pmos Z A vdd vdd p m=1 w=3.2u l=0.4u 
-Mpinv_nmos Z A gnd gnd n m=1 w=1.6u l=0.4u 
-.ENDS RAM_Mem_pinv_1
 
 .SUBCKT RAM_Mem_dff_buf_0
 + D Q Qb clk vdd gnd
@@ -1928,81 +1874,6 @@ Xdff_r1_c0
 + RAM_Mem_dff_buf_0
 .ENDS RAM_Mem_dff_buf_array
 
-.SUBCKT RAM_Mem_pinv_11
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Mpinv_pmos Z A vdd vdd p m=1 w=1.6u l=0.4u 
-Mpinv_nmos Z A gnd gnd n m=1 w=0.8u l=0.4u 
-.ENDS RAM_Mem_pinv_11
-
-* spice ptx M{0} {1} p m=1 w=4.800000000000001u l=0.4u pd=10.40u ps=10.40u as=4.80p ad=4.80p
-
-* spice ptx M{0} {1} n m=1 w=2.4000000000000004u l=0.4u pd=5.60u ps=5.60u as=2.40p ad=2.40p
-
-.SUBCKT RAM_Mem_pinv_6
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Mpinv_pmos Z A vdd vdd p m=1 w=4.800000000000001u l=0.4u 
-Mpinv_nmos Z A gnd gnd n m=1 w=2.4000000000000004u l=0.4u 
-.ENDS RAM_Mem_pinv_6
-
-.SUBCKT RAM_Mem_pinv_5
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Mpinv_pmos Z A vdd vdd p m=1 w=1.6u l=0.4u 
-Mpinv_nmos Z A gnd gnd n m=1 w=0.8u l=0.4u 
-.ENDS RAM_Mem_pinv_5
-
-.SUBCKT RAM_Mem_pdriver_4
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-* sizes: [1, 3]
-Xbuf_inv1
-+ A Zb1_int vdd gnd
-+ RAM_Mem_pinv_5
-Xbuf_inv2
-+ Zb1_int Z vdd gnd
-+ RAM_Mem_pinv_6
-.ENDS RAM_Mem_pdriver_4
-
-* spice ptx M{0} {1} p m=2 w=6.4u l=0.4u pd=13.60u ps=13.60u as=6.40p ad=6.40p
-
-* spice ptx M{0} {1} n m=2 w=3.2u l=0.4u pd=7.20u ps=7.20u as=3.20p ad=3.20p
-
-.SUBCKT RAM_Mem_pinv_7
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Mpinv_pmos Z A vdd vdd p m=2 w=6.4u l=0.4u 
-Mpinv_nmos Z A gnd gnd n m=2 w=3.2u l=0.4u 
-.ENDS RAM_Mem_pinv_7
-
-.SUBCKT RAM_Mem_pdriver_3
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-* sizes: [8]
-Xbuf_inv1
-+ A Z vdd gnd
-+ RAM_Mem_pinv_7
-.ENDS RAM_Mem_pdriver_3
-
 * spice ptx M{0} {1} n m=1 w=1.6u l=0.4u pd=4.00u ps=4.00u as=1.60p ad=1.60p
 
 .SUBCKT RAM_Mem_pnand3_0
@@ -2021,60 +1892,9 @@ Mpnand3_nmos2 net1 B net2 gnd n m=1 w=1.6u l=0.4u
 Mpnand3_nmos3 net2 A gnd gnd n m=1 w=1.6u l=0.4u 
 .ENDS RAM_Mem_pnand3_0
 
-.SUBCKT RAM_Mem_pand3_0
-+ A B C Z vdd gnd
-* INPUT : A 
-* INPUT : B 
-* INPUT : C 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Xpand3_nand
-+ A B C zb_int vdd gnd
-+ RAM_Mem_pnand3_0
-Xpand3_inv
-+ zb_int Z vdd gnd
-+ RAM_Mem_pdriver_3
-.ENDS RAM_Mem_pand3_0
-
-* spice ptx M{0} {1} n m=5 w=4.0u l=0.4u pd=8.80u ps=8.80u as=4.00p ad=4.00p
-
-* spice ptx M{0} {1} p m=5 w=8.0u l=0.4u pd=16.80u ps=16.80u as=8.00p ad=8.00p
-
-.SUBCKT RAM_Mem_pinv_8
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Mpinv_pmos Z A vdd vdd p m=5 w=8.0u l=0.4u 
-Mpinv_nmos Z A gnd gnd n m=5 w=4.0u l=0.4u 
-.ENDS RAM_Mem_pinv_8
-
-.SUBCKT RAM_Mem_pdriver_0
-+ A Z vdd gnd
-* INPUT : A 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-* sizes: [1, 3, 8, 25]
-Xbuf_inv1
-+ A Zb1_int vdd gnd
-+ RAM_Mem_pinv_5
-Xbuf_inv2
-+ Zb1_int Zb2_int vdd gnd
-+ RAM_Mem_pinv_6
-Xbuf_inv3
-+ Zb2_int Zb3_int vdd gnd
-+ RAM_Mem_pinv_7
-Xbuf_inv4
-+ Zb3_int Z vdd gnd
-+ RAM_Mem_pinv_8
-.ENDS RAM_Mem_pdriver_0
+* spice ptx M{0} {1} n m=4 w=3.2u l=0.4u pd=7.20u ps=7.20u as=3.20p ad=3.20p
 
 * spice ptx M{0} {1} p m=4 w=6.4u l=0.4u pd=13.60u ps=13.60u as=6.40p ad=6.40p
-
-* spice ptx M{0} {1} n m=4 w=3.2u l=0.4u pd=7.20u ps=7.20u as=3.20p ad=3.20p
 
 .SUBCKT RAM_Mem_pinv_10
 + A Z vdd gnd
@@ -2114,6 +1934,55 @@ Xpand3_inv
 + RAM_Mem_pdriver_2
 .ENDS RAM_Mem_pand3
 
+* spice ptx M{0} {1} n m=1 w=2.4000000000000004u l=0.4u pd=5.60u ps=5.60u as=2.40p ad=2.40p
+
+* spice ptx M{0} {1} p m=1 w=4.800000000000001u l=0.4u pd=10.40u ps=10.40u as=4.80p ad=4.80p
+
+.SUBCKT RAM_Mem_pinv_6
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Mpinv_pmos Z A vdd vdd p m=1 w=4.800000000000001u l=0.4u 
+Mpinv_nmos Z A gnd gnd n m=1 w=2.4000000000000004u l=0.4u 
+.ENDS RAM_Mem_pinv_6
+
+.SUBCKT RAM_Mem_pinv_5
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Mpinv_pmos Z A vdd vdd p m=1 w=1.6u l=0.4u 
+Mpinv_nmos Z A gnd gnd n m=1 w=0.8u l=0.4u 
+.ENDS RAM_Mem_pinv_5
+
+.SUBCKT RAM_Mem_pdriver_4
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+* sizes: [1, 3]
+Xbuf_inv1
++ A Zb1_int vdd gnd
++ RAM_Mem_pinv_5
+Xbuf_inv2
++ Zb1_int Z vdd gnd
++ RAM_Mem_pinv_6
+.ENDS RAM_Mem_pdriver_4
+
+.SUBCKT RAM_Mem_pinv_11
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Mpinv_pmos Z A vdd vdd p m=1 w=1.6u l=0.4u 
+Mpinv_nmos Z A gnd gnd n m=1 w=0.8u l=0.4u 
+.ENDS RAM_Mem_pinv_11
+
 * spice ptx M{0} {1} n m=1 w=4.0u l=0.4u pd=8.80u ps=8.80u as=4.00p ad=4.00p
 
 * spice ptx M{0} {1} p m=1 w=8.0u l=0.4u pd=16.80u ps=16.80u as=8.00p ad=8.00p
@@ -2142,6 +2011,150 @@ Xbuf_inv2
 + Zb1_int Z vdd gnd
 + RAM_Mem_pinv_9
 .ENDS RAM_Mem_pdriver_1
+
+* spice ptx M{0} {1} n m=2 w=3.2u l=0.4u pd=7.20u ps=7.20u as=3.20p ad=3.20p
+
+* spice ptx M{0} {1} p m=2 w=6.4u l=0.4u pd=13.60u ps=13.60u as=6.40p ad=6.40p
+
+.SUBCKT RAM_Mem_pinv_7
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Mpinv_pmos Z A vdd vdd p m=2 w=6.4u l=0.4u 
+Mpinv_nmos Z A gnd gnd n m=2 w=3.2u l=0.4u 
+.ENDS RAM_Mem_pinv_7
+
+.SUBCKT RAM_Mem_pdriver_3
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+* sizes: [8]
+Xbuf_inv1
++ A Z vdd gnd
++ RAM_Mem_pinv_7
+.ENDS RAM_Mem_pdriver_3
+
+.SUBCKT RAM_Mem_pand3_0
++ A B C Z vdd gnd
+* INPUT : A 
+* INPUT : B 
+* INPUT : C 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Xpand3_nand
++ A B C zb_int vdd gnd
++ RAM_Mem_pnand3_0
+Xpand3_inv
++ zb_int Z vdd gnd
++ RAM_Mem_pdriver_3
+.ENDS RAM_Mem_pand3_0
+
+* spice ptx M{0} {1} p m=5 w=8.0u l=0.4u pd=16.80u ps=16.80u as=8.00p ad=8.00p
+
+* spice ptx M{0} {1} n m=5 w=4.0u l=0.4u pd=8.80u ps=8.80u as=4.00p ad=4.00p
+
+.SUBCKT RAM_Mem_pinv_8
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Mpinv_pmos Z A vdd vdd p m=5 w=8.0u l=0.4u 
+Mpinv_nmos Z A gnd gnd n m=5 w=4.0u l=0.4u 
+.ENDS RAM_Mem_pinv_8
+
+.SUBCKT RAM_Mem_pdriver_0
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+* sizes: [1, 3, 8, 25]
+Xbuf_inv1
++ A Zb1_int vdd gnd
++ RAM_Mem_pinv_5
+Xbuf_inv2
++ Zb1_int Zb2_int vdd gnd
++ RAM_Mem_pinv_6
+Xbuf_inv3
++ Zb2_int Zb3_int vdd gnd
++ RAM_Mem_pinv_7
+Xbuf_inv4
++ Zb3_int Z vdd gnd
++ RAM_Mem_pinv_8
+.ENDS RAM_Mem_pdriver_0
+
+.SUBCKT RAM_Mem_pnand2_1
++ A B Z vdd gnd
+* INPUT : A 
+* INPUT : B 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Mpnand2_pmos1 vdd A Z vdd p m=1 w=1.6u l=0.4u 
+Mpnand2_pmos2 Z B vdd vdd p m=1 w=1.6u l=0.4u 
+Mpnand2_nmos1 Z B net1 gnd n m=1 w=1.6u l=0.4u 
+Mpnand2_nmos2 net1 A gnd gnd n m=1 w=1.6u l=0.4u 
+.ENDS RAM_Mem_pnand2_1
+
+.SUBCKT RAM_Mem_pnand2_0
++ A B Z vdd gnd
+* INPUT : A 
+* INPUT : B 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Mpnand2_pmos1 vdd A Z vdd p m=1 w=1.6u l=0.4u 
+Mpnand2_pmos2 Z B vdd vdd p m=1 w=1.6u l=0.4u 
+Mpnand2_nmos1 Z B net1 gnd n m=1 w=1.6u l=0.4u 
+Mpnand2_nmos2 net1 A gnd gnd n m=1 w=1.6u l=0.4u 
+.ENDS RAM_Mem_pnand2_0
+
+* spice ptx M{0} {1} n m=3 w=3.2u l=0.4u pd=7.20u ps=7.20u as=3.20p ad=3.20p
+
+* spice ptx M{0} {1} p m=3 w=6.4u l=0.4u pd=13.60u ps=13.60u as=6.40p ad=6.40p
+
+.SUBCKT RAM_Mem_pinv_3
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Mpinv_pmos Z A vdd vdd p m=3 w=6.4u l=0.4u 
+Mpinv_nmos Z A gnd gnd n m=3 w=3.2u l=0.4u 
+.ENDS RAM_Mem_pinv_3
+
+.SUBCKT RAM_Mem_pdriver
++ A Z vdd gnd
+* INPUT : A 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+* sizes: [12]
+Xbuf_inv1
++ A Z vdd gnd
++ RAM_Mem_pinv_3
+.ENDS RAM_Mem_pdriver
+
+.SUBCKT RAM_Mem_pand2
++ A B Z vdd gnd
+* INPUT : A 
+* INPUT : B 
+* OUTPUT: Z 
+* POWER : vdd 
+* GROUND: gnd 
+Xpand2_nand
++ A B zb_int vdd gnd
++ RAM_Mem_pnand2_0
+Xpand2_inv
++ zb_int Z vdd gnd
++ RAM_Mem_pdriver
+.ENDS RAM_Mem_pand2
 
 .SUBCKT RAM_Mem_pinv_12
 + A Z vdd gnd
@@ -2296,19 +2309,6 @@ Xdload_8_3
 + out n_8_3 vdd gnd
 + RAM_Mem_pinv_12
 .ENDS RAM_Mem_delay_chain
-
-.SUBCKT RAM_Mem_pnand2_1
-+ A B Z vdd gnd
-* INPUT : A 
-* INPUT : B 
-* OUTPUT: Z 
-* POWER : vdd 
-* GROUND: gnd 
-Mpnand2_pmos1 vdd A Z vdd p m=1 w=1.6u l=0.4u 
-Mpnand2_pmos2 Z B vdd vdd p m=1 w=1.6u l=0.4u 
-Mpnand2_nmos1 Z B net1 gnd n m=1 w=1.6u l=0.4u 
-Mpnand2_nmos2 net1 A gnd gnd n m=1 w=1.6u l=0.4u 
-.ENDS RAM_Mem_pnand2_1
 
 .SUBCKT RAM_Mem_control_logic_rw
 + csb web clk rbl_bl s_en w_en p_en_bar wl_en clk_buf vdd gnd

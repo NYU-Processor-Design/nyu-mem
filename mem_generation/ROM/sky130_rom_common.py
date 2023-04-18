@@ -1,5 +1,5 @@
 
-tech_name = "sky130"
+tech_name = "scn4m_subm"
 nominal_corner_only = True
 
 route_supplies = "ring"

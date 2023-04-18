@@ -10,12 +10,12 @@ word_size = 1
 
 check_lvsdrc = True
 
-rom_data = "/Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/ROM/example_1kbyte.py"
-
-output_name = "ROM_memory"
-output_path = "/Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/ROM/generated_mem"
+rom_data = "/mem_generation/ROM/example_1kbyte.py"
 
 import os
 
-print("os.path.join(os.path.dirname(__file__): ", os.path.join(os.path.dirname(__file__)))
+output_name = "ROM_memory"
+output_path = os.path.dirname(__file__) + "/generated_mem"
+
+
 exec(open(os.path.join(os.path.dirname(__file__), 'sky130_rom_common.py')).read())

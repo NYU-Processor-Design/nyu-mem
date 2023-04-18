@@ -24,13 +24,7 @@ output_path = "generated_mem"
 # Output file base name
 output_name = "RAM_Mem"
 
-output_dir = "/Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM"
+output_dir = "/mem_generation/RAM"
 
 # Disable analytical models for full characterization (WARNING: slow!)
 # analytical_delay = False
-
-# To force this to use magic and netgen for DRC/LVS/PEX
-# Could be calibre for FreePDK45
-drc_name = "magic"
-lvs_name = "netgen"
-pex_name = "magic"

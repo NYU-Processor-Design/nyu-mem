@@ -9,7 +9,7 @@
 |=========        Development help: openram-dev-group@ucsc.edu        =========|
 |=========                See LICENSE for license info                =========|
 |==============================================================================|
-** Start: 04/13/2023 11:06:23
+** Start: 04/18/2023 11:55:30
 Technology: scn4m_subm
 Total size: 128 bits
 Word size: 8
@@ -40,7 +40,7 @@ Output files are:
 **** Converting blockages: 0.0 seconds
 **** Converting pins: 0.0 seconds
 **** Separating adjacent pins: 0.0 seconds
-*** Finding pins and blockages: 0.8 seconds
+*** Finding pins and blockages: 0.9 seconds
 *** Maze routing pins: 5.8 seconds
 **** Retrieving pins: 0.0 seconds
 **** Analyzing pins: 0.0 seconds
@@ -49,7 +49,7 @@ Output files are:
 **** Converting pins: 0.6 seconds
 **** Separating adjacent pins: 0.4 seconds
 *** Finding pins and blockages: 1.8 seconds
-*** Maze routing supplies: 20.6 seconds
+*** Maze routing supplies: 20.5 seconds
 ** Routing: 35.3 seconds
 ** Verification: 0.0 seconds
 ** SRAM creation: 35.7 seconds
@@ -62,14 +62,6 @@ LEF: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generat
 LVS: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM/generated_mem/RAM_Mem.lvs.sp
 ** LVS writing: 0.0 seconds
 LIB: Characterizing... 
-WARNING: file lib.py: line 777: Failed to retrieve git id
-
-WARNING: file lib.py: line 777: Failed to retrieve git id
-
-WARNING: file lib.py: line 777: Failed to retrieve git id
-
-WARNING: file lib.py: line 777: Failed to retrieve git id
-
 ** Characterization: 0.3 seconds
 Config: Writing to /Users/seandoyle/NYU/classes/ProcessorDesign/nyu-mem/mem_generation/RAM/generated_mem/RAM_Mem.py
 ** Config: 0.0 seconds
