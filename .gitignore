@@ -11,3 +11,7 @@ __pycache__
 
 # OS Specific files
 .DS_Store
+
+# OpenRAM generated files
+mem_generation/RAM/generated_mem/*
+mem_generation/ROM/generated_mem/*
