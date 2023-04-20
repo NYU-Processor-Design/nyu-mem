@@ -63,7 +63,7 @@ a result of following the above procedure
 **As of 4/18/23 these instructions for generating ROM have not been verified to 
 work. OpenRAM is in the process of overhauling the ROM generation documentation 
 so it is recommended to check [here](https://github.com/VLSIDA/OpenRAM/tree/stable/docs/source)
-and [here] (https://github.com/VLSIDA/OpenRAM/issues/191) for the most up to 
+and [here](https://github.com/VLSIDA/OpenRAM/issues/191) for the most up to 
 date documentation on how to generate ROM**
 
 ## Files Generated
